@@ -1,0 +1,2 @@
+# Szakdolgozat
+C# .Net Szakdolgozat
