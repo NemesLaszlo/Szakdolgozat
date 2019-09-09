@@ -11,9 +11,9 @@ namespace TFS_ServerOperation
     {
         public string MailSmtpHost { get; private set; }
         public int MailSmtpPort { get; private set; }
-        private const string MailFrom = "";
-        private const string MailSmtpUsername = "";
-        private const string MailSmtpPassword = "";
+        private const string MailFrom = "tfs.serveroperation@gmail.com";
+        private const string MailSmtpUsername = "tfs.serveroperation@gmail.com";
+        private const string MailSmtpPassword = "Szakdolgozat";
 
         private Logger log;
 

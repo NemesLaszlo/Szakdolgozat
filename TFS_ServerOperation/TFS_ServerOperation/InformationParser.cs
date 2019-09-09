@@ -79,6 +79,23 @@ namespace TFS_ServerOperation
             return ToMailAddress;
         }
 
+        public string GetUpToDateFileCSV()
+        {
+            string currentMonth = string.Empty;
+            DateTime today = DateTime.Today;
+            string upToDateMonth = today.Month.ToString();
+
+            string[] files = Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory, "*.csv", SearchOption.AllDirectories);
+            foreach (var file in files)
+            {
+                if (file.Contains(upToDateMonth))
+                {
+                    currentMonth = file;
+                }
+            }
+            return currentMonth;
+        }
+
         /// <summary>
         /// Running from console. Only Upload and delete from file.
         /// </summary>
@@ -88,6 +105,7 @@ namespace TFS_ServerOperation
             try
             {
                 var ServerOperation = Init_ServerOperation(log);
+                var MailSender = Init_MailSender(log);
                 if (array.Contains(@"/delete") && File.Exists(array[Array.IndexOf(array, @"/delete") + 1]))
                 {
                     ServerOperation.DeleteFromFile(array[Array.IndexOf(array, @"/delete") + 1]);
@@ -103,6 +121,7 @@ namespace TFS_ServerOperation
                         ServerOperation.Upload(pbi);
                     }
                     writer.WriteInCSV(ServerOperation.datasForFileModification);
+                    MailSender.SendEmail(GetAddressToMail(),"Month File","Test body", GetUpToDateFileCSV());
                     Console.WriteLine("Upload was successful!");
                 }
             }
