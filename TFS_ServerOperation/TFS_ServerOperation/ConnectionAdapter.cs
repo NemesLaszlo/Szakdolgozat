@@ -18,6 +18,7 @@ namespace TFS_ServerOperation
         /// </summary>
         /// <param name="TfsConnection">The server URL, where we would like to connect</param>
         /// <param name="TeamProjectName">The Project name on the server, where we would like to do something</param>
+        /// <param name="log">Custom logger class</param>
         public ConnectionAdapter(string TfsConnection, string TeamProjectName, Logger log)
         {
             this.log = log;

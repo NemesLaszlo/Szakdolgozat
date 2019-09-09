@@ -8,6 +8,10 @@ namespace TFS_ServerOperation
     {
         private Logger log;
 
+        /// <summary>
+        /// Constructor of FileOperation
+        /// </summary>
+        /// <param name="log">Custom logger class, for logging</param>
         public FileOperations(Logger log)
         {
             this.log = log;

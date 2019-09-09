@@ -17,7 +17,7 @@ namespace TFS_ServerOperation
         /// <summary>
         /// Initialize the Custom Logging System Path
         /// </summary>
-        /// <returns></returns>
+        /// <returns>Costom Logger class</returns>
         public Logger Init_Log()
         {
             string initializeData = string.Empty;
@@ -71,7 +71,7 @@ namespace TFS_ServerOperation
         }
 
         /// <summary>
-        /// Get the E-Mail Address Where we would like to send a mail / message.
+        /// Get the E-Mail Address Where we would like to send a mail / message
         /// </summary>
         /// <returns></returns>
         public string GetAddressToMail()
@@ -79,6 +79,10 @@ namespace TFS_ServerOperation
             return ToMailAddress;
         }
 
+        /// <summary>
+        /// Get the path to the up to date Month .csv file, to attach to the email
+        /// </summary>
+        /// <returns></returns>
         public string GetUpToDateFileCSV()
         {
             string currentMonth = string.Empty;

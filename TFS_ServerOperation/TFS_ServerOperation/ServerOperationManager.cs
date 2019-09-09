@@ -24,10 +24,7 @@ namespace TFS_ServerOperation
         /// ServerOperationManager constructor.
         /// </summary>
         /// <param name="conn">ConnectionAdapter calss parameter, whitch makes the connection with the server.</param>
-        /// <param name="Mail_address_toSend">Mail address where we would like to send a message / email.</param>
-        /// <param name="Smtp_host">Mail smtp server host.</param>
-        /// <param name="Port">Mail smtp server port.</param>
-        /// <param name="initLogData">Path for the logging.</param>
+        /// <param name="log">Custom logger class, for logging.</param>
         public ServerOperationManager(ConnectionAdapter conn, string AreaPath, string Iteration, Logger log)
         {
             this.AreaPath = AreaPath;
