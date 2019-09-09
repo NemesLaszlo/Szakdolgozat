@@ -42,6 +42,13 @@ namespace TFS_ServerOperation
         {
             textLogTraceListener.Close();
         }
+        /// <summary>
+        /// Logger flush.
+        /// </summary>
+        public void Flush()
+        {
+            textLogTraceListener.Flush();
+        }
 
         /// <summary>
         /// Error log message writer with Error specify type.

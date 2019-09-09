@@ -59,12 +59,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConnectionAdapter.cs" />
     <Compile Include="CustomConfigSetup\ConfigTask.cs" />
     <Compile Include="CustomConfigSetup\PBI.cs" />
     <Compile Include="CustomConfigSetup\PBIS.cs" />
     <Compile Include="CustomConfigSetup\PbisConfigSection.cs" />
     <Compile Include="CustomTraceLogging\Logger.cs" />
     <Compile Include="CustomTraceLogging\TextLogTraceListener.cs" />
+    <Compile Include="FileOperations.cs" />
     <Compile Include="Interfaces\IConnection.cs" />
     <Compile Include="Interfaces\IFileInteraction.cs" />
     <Compile Include="Interfaces\IMailInteraction.cs" />
