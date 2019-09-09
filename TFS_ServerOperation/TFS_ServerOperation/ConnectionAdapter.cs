@@ -43,7 +43,7 @@ namespace TFS_ServerOperation
             }
             else
             {
-                log.Error(" ConnectionException in the constructor of ConnectionAdapter class");
+                log.Error("ConnectionException in the ConnectionAdapter class");
                 log.Flush();
                 throw new ConnectionException();
             }

@@ -35,7 +35,7 @@ namespace TFS_ServerOperation
                     pbi_ids.Add(id);
                 }
                 sr.Close();
-                log.Info("The Read was succesful from the file into the Delete method.");
+                log.Info("The Read was succesful from the file.");
                 log.Flush();
                 return pbi_ids;
             }
@@ -55,7 +55,10 @@ namespace TFS_ServerOperation
         {
             try
             {
-                using (var fileStream = new FileStream("UploadedDatas.csv", FileMode.OpenOrCreate))
+                DateTime date = DateTime.Today;
+                string dateMonth = date.Month.ToString();
+
+                using (var fileStream = new FileStream("UploadedDatas_" + dateMonth + ".csv", FileMode.CreateNew))
                 using (var streamWriter = new StreamWriter(fileStream))
                 {
                     streamWriter.WriteLine("Id;Title;AssignedTo;State");

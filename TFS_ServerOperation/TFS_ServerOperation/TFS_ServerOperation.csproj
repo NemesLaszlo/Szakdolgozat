@@ -67,6 +67,7 @@
     <Compile Include="CustomTraceLogging\Logger.cs" />
     <Compile Include="CustomTraceLogging\TextLogTraceListener.cs" />
     <Compile Include="FileOperations.cs" />
+    <Compile Include="InformationParser.cs" />
     <Compile Include="Interfaces\IConnection.cs" />
     <Compile Include="Interfaces\IFileInteraction.cs" />
     <Compile Include="Interfaces\IMailInteraction.cs" />

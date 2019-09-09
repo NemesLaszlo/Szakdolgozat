@@ -9,5 +9,6 @@ namespace TFS_ServerOperation
         bool Upload(PBI pbi);
         bool DeleteFromFile(string fileName);
         bool DeleteByIds(List<string> ids);
+        void ServerContentDelete();
     }
 }

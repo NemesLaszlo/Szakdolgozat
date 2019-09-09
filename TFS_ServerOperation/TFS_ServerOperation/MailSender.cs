@@ -9,17 +9,27 @@ namespace TFS_ServerOperation
 {
     public class MailSender : IMailInteraction
     {
-        public string MailSmtpHost { get; set; }
-        public int MailSmtpPort { get; set; }
+        public string MailSmtpHost { get; private set; }
+        public int MailSmtpPort { get; private set; }
         private const string MailFrom = "";
         private const string MailSmtpUsername = "";
         private const string MailSmtpPassword = "";
 
         private Logger log;
 
-        public MailSender(string initLogData)
+        public MailSender(string initLogData, string MailSmtpHost, string MailSmtpPort )
         {
             log = new Logger(initLogData);
+            this.MailSmtpHost = MailSmtpHost;
+            try
+            {
+                this.MailSmtpPort = int.Parse(MailSmtpPort);
+            }
+            catch(FormatException ex)
+            {
+                log.Error(ex);
+                log.Flush();
+            }
         }
 
         /// <summary>
