@@ -18,11 +18,10 @@ namespace TFS_ServerOperation
         /// </summary>
         /// <param name="TfsConnection">The server URL, where we would like to connect</param>
         /// <param name="TeamProjectName">The Project name on the server, where we would like to do something</param>
-        /// <param name="initLogData">Log file path</param>
-        public ConnectionAdapter(string TfsConnection, string TeamProjectName, string initLogData)
+        public ConnectionAdapter(string TfsConnection, string TeamProjectName, Logger log)
         {
-            Connection(TfsConnection, TeamProjectName);
-            log = new Logger(initLogData);
+            this.log = log;
+            Connection(TfsConnection, TeamProjectName);           
         }
 
         /// <summary>
@@ -38,7 +37,8 @@ namespace TFS_ServerOperation
                 tpc = new TfsTeamProjectCollection(connUri);
                 WorkItemStore = tpc.GetService<WorkItemStore>();
                 TeamProject = WorkItemStore.Projects[TeamProjectName];
-                log.Info(string.Format("Connection was successful to {0} and the ProjectName is {1}", TfsConnection, TeamProjectName));
+                string message = string.Format("Connection was successful to {0} and the ProjectName is {1}", TfsConnection, TeamProjectName);
+                log.Info(message);
                 log.Flush();
             }
             else

@@ -18,8 +18,9 @@ namespace TFS_ServerOperation
         {
             this.path = path;
             dateForLogTitle = DateTime.Now.ToString();
+            string correctForm = dateForLogTitle.Replace(" ", string.Empty).Replace(".", "-").Replace(":", "_");
             string[] str = path.Split('.');
-            textLogTraceListener = new TextLogTraceListener(str[0] + " " + dateForLogTitle + "." + str[1]);
+            textLogTraceListener = new TextLogTraceListener(str[0] + " " + correctForm + "." + str[1]);
         }
 
         /// <summary>

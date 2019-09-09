@@ -14,15 +14,9 @@ namespace TFS_ServerOperation
         private WorkItemType PBIType;
         private WorkItemType TaskType;
         private Logger log;
-        private MailSender mailSender;
 
         private string AreaPath;
         private string Iteration;
-
-        private string Mail_address_toSend;
-        private string Smtp_host;
-        private string Port;
-        private string initLogData;
 
         public List<string> datasForFileModification = new List<string>();
 
@@ -34,16 +28,11 @@ namespace TFS_ServerOperation
         /// <param name="Smtp_host">Mail smtp server host.</param>
         /// <param name="Port">Mail smtp server port.</param>
         /// <param name="initLogData">Path for the logging.</param>
-        public ServerOperationManager(ConnectionAdapter conn, string AreaPath, string Iteration, string Mail_address_toSend, string Smtp_host, string Port, string initLogData)
+        public ServerOperationManager(ConnectionAdapter conn, string AreaPath, string Iteration, Logger log)
         {
             this.AreaPath = AreaPath;
             this.Iteration = Iteration;
-            this.Mail_address_toSend = Mail_address_toSend;
-            this.Smtp_host = Smtp_host;
-            this.Port = Port;
-            this.initLogData = initLogData;
-            log = new Logger(initLogData);
-            mailSender = new MailSender(initLogData, Smtp_host, Port);
+            this.log = log;
 
             if (conn != null)
             {
@@ -72,10 +61,10 @@ namespace TFS_ServerOperation
             var firstDayOfMonth = new DateTime(date.Year, date.Month, 1);
             var lastDayOfMonth = firstDayOfMonth.AddMonths(1).AddDays(-1);
 
-            sb.Append(date.Year + "." + date.Month + "." + firstDayOfMonth);
+            sb.Append(firstDayOfMonth.ToShortDateString());
             sb.Append(" - ");
-            sb.Append(date.Year + "." + date.Month + "." + lastDayOfMonth);
-            sb.Append(")");
+            sb.Append(lastDayOfMonth.ToShortDateString());
+            sb.Append(" )");
 
             return sb.ToString();
         }
@@ -85,7 +74,7 @@ namespace TFS_ServerOperation
         /// </summary>
         public void Archive()
         {
-            FileOperations fOp = new FileOperations(initLogData);
+            FileOperations fOp = new FileOperations(log);
             string lastMonthFile = string.Empty;
 
             DateTime today = DateTime.Today;
@@ -97,7 +86,7 @@ namespace TFS_ServerOperation
             {
                 if (file.Contains(lastMonth))
                 {
-                    lastMonthFile += file;
+                    lastMonthFile = file;
                 }
             }
 
@@ -154,10 +143,10 @@ namespace TFS_ServerOperation
                 WorkItem TFSpbi = new WorkItem(PBIType);
                 // Set the Title and Tags to the PBI / User Stroy
                 TFSpbi.Title = pbi.Title + RunDatePeriod();
-                TFSpbi.Fields["Tags"].Value = "Created_By_Program" + ";" + "Szakdolgozat";
+                TFSpbi.Fields["Tags"].Value = "Created_By_Program" + ";" + "Szakdolgozat" + ";" + "ELTE";
 
                 //Run a query for check this WorkItem with this title already exist or not
-                Query query = new Query(conn.WorkItemStore, string.Format("SELECT Id FROM WorkItems WHERE  System.Title = '{0}'", TFSpbi.Title));
+                Query query = new Query(conn.WorkItemStore, string.Format("SELECT Id FROM WorkItems WHERE System.Title = '{0}' AND (System.State = '{1}' OR System.State = '{2}')", TFSpbi.Title,"Active","New"));
                 WorkItemCollection workItemCollection = query.RunQuery();
                 if (workItemCollection.Count == 0)
                 {
@@ -266,7 +255,7 @@ namespace TFS_ServerOperation
         {
             try
             {
-                FileOperations reader = new FileOperations(initLogData);
+                FileOperations reader = new FileOperations(log);
                 var pbi_ids = reader.ReadCSV(fileName);
                 conn.WorkItemStore.DestroyWorkItems(pbi_ids);
                 log.Info("Delete was successful!");
@@ -320,6 +309,8 @@ namespace TFS_ServerOperation
                 }
             }
             conn.WorkItemStore.DestroyWorkItems(dellist);
+            log.Info("Format was successful!");
+            log.Flush();
         }
     }
 }

@@ -17,9 +17,9 @@ namespace TFS_ServerOperation
 
         private Logger log;
 
-        public MailSender(string initLogData, string MailSmtpHost, string MailSmtpPort )
+        public MailSender(string MailSmtpHost, string MailSmtpPort, Logger log )
         {
-            log = new Logger(initLogData);
+            this.log = log;
             this.MailSmtpHost = MailSmtpHost;
             try
             {

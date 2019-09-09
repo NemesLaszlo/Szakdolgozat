@@ -8,9 +8,9 @@ namespace TFS_ServerOperation
     {
         private Logger log;
 
-        public FileOperations(string initLogData)
+        public FileOperations(Logger log)
         {
-            log = new Logger(initLogData);
+            this.log = log;
         }
 
         /// <summary>
@@ -38,6 +38,7 @@ namespace TFS_ServerOperation
                 log.Info("The Read was succesful from the file.");
                 log.Flush();
                 return pbi_ids;
+
             }
             catch (Exception ex)
             {
@@ -68,13 +69,13 @@ namespace TFS_ServerOperation
                     }
                     streamWriter.Flush();
                     streamWriter.Close();
-                    log.Info(" The Upload write was successful to the UploadedDatas.csv file");
+                    log.Info("The Upload write was successful to the UploadedDatas.csv file");
                     log.Flush();
                 }
             }
             catch (Exception ex)
             {
-                log.Error(ex);
+                log.Error("File of this Month already exist!");
                 log.Flush();
             }
         }
