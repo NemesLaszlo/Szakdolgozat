@@ -71,6 +71,7 @@
     <Compile Include="Interfaces\IFileInteraction.cs" />
     <Compile Include="Interfaces\IMailInteraction.cs" />
     <Compile Include="Interfaces\IServerInteraction.cs" />
+    <Compile Include="MailSender.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

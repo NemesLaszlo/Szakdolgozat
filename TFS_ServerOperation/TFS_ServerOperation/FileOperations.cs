@@ -13,6 +13,10 @@ namespace TFS_ServerOperation
             log = new Logger(initLogData);
         }
 
+        /// <summary>
+        /// Reading method from a file, we only read the ids into a list.
+        /// </summary>
+        /// <param name="filename">The FileName from where we would like to read</param>
         public List<int> ReadCSV(string fileName)
         {
             try
@@ -43,6 +47,10 @@ namespace TFS_ServerOperation
             }
         }
 
+        /// <summary>
+        /// This method write the Upload datas into a file.
+        /// </summary>
+        /// <param name="datas"> Upload datas in string list </param>
         public void WriteInCSV(List<string> datas)
         {
             try
