@@ -383,6 +383,7 @@ namespace TFS_ServerOperation
                 }
             }
             conn.WorkItemStore.DestroyWorkItems(dellist);
+            Console.WriteLine("Format was successful!");
             log.Info("Format was successful!");
             log.Flush();
         }

@@ -8,6 +8,8 @@ namespace TFS_ServerOperation
             InformationParser informationParser = new InformationParser();
             Logger log = informationParser.Init_Log();
             informationParser.ConsoleRun(args, log);
+            //ServerOperationManager oSm = informationParser.Init_ServerOperation(log);
+            //oSm.ServerContentDelete();
         }
     }
 }
