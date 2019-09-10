@@ -73,13 +73,13 @@ namespace TFS_ServerOperation
                     }
                     streamWriter.Flush();
                     streamWriter.Close();
-                    log.Info("The Upload write was successful to the UploadedDatas.csv file");
+                    log.Info("File period fine!");
                     log.Flush();
                 }
             }
             catch (Exception ex)
             {
-                log.Error("File of this Month already exist!");
+                log.Error(ex);
                 log.Flush();
             }
         }

@@ -37,5 +37,10 @@ namespace TFS_ServerOperation.CustomConfigSetup
         {
             return ((ConfigTask)element).AssingTo;
         }
+
+        protected object GetElementEffort(ConfigurationElement element)
+        {
+            return ((ConfigTask)element).Effort;
+        }
     }
 }
