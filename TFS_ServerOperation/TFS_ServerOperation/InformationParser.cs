@@ -125,12 +125,12 @@ namespace TFS_ServerOperation
         }
 
         /// <summary>
-        /// Upload and Send a mail about the result file.
+        /// Upload and Send a mail about the result file. Return True if its dome with no problem.
         /// </summary>
         /// <param name="ServerOperation">ServerOperationManager object</param>
         /// <param name="MailSender">MailSender object</param>
         /// <param name="log">Custom Logger object</param>
-        public void UploadAndMailSend_Process(bool isUIRun,ServerOperationManager ServerOperation, MailSender MailSender, Logger log)
+        public bool UploadAndMailSend_Process(bool isUIRun,ServerOperationManager ServerOperation, MailSender MailSender, Logger log)
         {
             ServerOperation.Archive(isUIRun);
             FileOperations writer = new FileOperations(log);
@@ -142,6 +142,10 @@ namespace TFS_ServerOperation
             }
             writer.WriteInCSV(ServerOperation.datasForFileModification);
             MailSender.SendEmail(GetAddressToMail(), "Month Uploaded FilePeriod", "You can find the Result file in the Attachments.", GetUpToDateFileCSV());
+
+            return true;
         }
+
+
     }
 }

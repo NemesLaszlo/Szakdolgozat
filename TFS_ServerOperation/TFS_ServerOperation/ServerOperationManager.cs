@@ -293,8 +293,8 @@ namespace TFS_ServerOperation
             Task.Fields["System.Description"].Value = htmlString;
 
             //Effort Configuration Basics
-            Task.Fields["Microsoft.VSTS.Scheduling.OriginalEstimate"].Value = 11;
-            Task.Fields["Microsoft.VSTS.Scheduling.RemainingWork"].Value = 11;
+            Task.Fields["Microsoft.VSTS.Scheduling.OriginalEstimate"].Value = double.Parse(task.Effort);
+            Task.Fields["Microsoft.VSTS.Scheduling.RemainingWork"].Value = double.Parse(task.Effort);
             Task.Fields["Microsoft.VSTS.Scheduling.CompletedWork"].Value = 0;
 
             var AssignedTo_String = task.AssingTo;
