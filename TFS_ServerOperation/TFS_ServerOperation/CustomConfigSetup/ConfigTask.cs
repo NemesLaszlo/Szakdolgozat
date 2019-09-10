@@ -9,5 +9,8 @@ namespace TFS_ServerOperation.CustomConfigSetup
 
         [ConfigurationProperty("AssingTo", IsRequired = true, IsKey = true)]
         public string AssingTo { get { return (string)base["AssingTo"]; } }
+
+        [ConfigurationProperty("Effort", IsRequired = true, IsKey = true)]
+        public string Effort { get { return (string)base["Effort"]; } }
     }
 }
