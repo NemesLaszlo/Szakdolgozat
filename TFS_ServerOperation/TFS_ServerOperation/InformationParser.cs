@@ -43,7 +43,6 @@ namespace TFS_ServerOperation
             var connection_section = ConfigurationManager.GetSection("Connection") as NameValueCollection;
             foreach (var part in connection_section.AllKeys)
             {
-                Console.WriteLine(part + " " + connection_section[part]);
                 connection_data.Add(part, connection_section[part]);
             }
 
@@ -61,7 +60,6 @@ namespace TFS_ServerOperation
             var mail_section = ConfigurationManager.GetSection("MailInformation") as NameValueCollection;
             foreach (var part in mail_section.AllKeys)
             {
-                Console.WriteLine(part + " " + mail_section[part]);
                 mail_data.Add(part, mail_section[part]);
             }
 
@@ -123,10 +121,7 @@ namespace TFS_ServerOperation
             {
                 log.Error(ex);
                 log.Flush();
-                Console.WriteLine("Something went wrong, check the logFile.");
-                Console.ReadLine();
             }
-            Console.ReadLine();
         }
 
         /// <summary>
@@ -147,7 +142,6 @@ namespace TFS_ServerOperation
             }
             writer.WriteInCSV(ServerOperation.datasForFileModification);
             MailSender.SendEmail(GetAddressToMail(), "Month Uploaded FilePeriod", "You can find the Result file in the Attachments.", GetUpToDateFileCSV());
-            Console.WriteLine("Upload was successful!");
         }
     }
 }

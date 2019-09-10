@@ -202,7 +202,6 @@ namespace TFS_ServerOperation
                 WorkItemCollection workItemCollection = query.RunQuery();
                 if (workItemCollection.Count == 0)
                 {
-                    Console.WriteLine(pbi.Title);
                     // WorkItem Parent Query
                     Query queryParent = new Query(conn.WorkItemStore, string.Format("SELECT Id FROM WorkItems WHERE  System.Id = '{0}'", pbi.ParentID));
                     WorkItemCollection workItemCollectionParent = queryParent.RunQuery();
@@ -254,7 +253,6 @@ namespace TFS_ServerOperation
                 }
                 else
                 {
-                    Console.WriteLine("Already Exist!");
                     log.Error("PBI already exist! Fail to Upload");
                     log.Flush();
                     return false;
@@ -300,7 +298,6 @@ namespace TFS_ServerOperation
             Task.Fields["Microsoft.VSTS.Scheduling.CompletedWork"].Value = 0;
 
             var AssignedTo_String = task.AssingTo;
-            Console.WriteLine(task.AssingTo);
 
             // Link to the PBI / User Stroy
             Task.Links.Add(new RelatedLink(conn.WorkItemStore.WorkItemLinkTypes.LinkTypeEnds["Parent"], TFSpbi.Id));
@@ -383,7 +380,6 @@ namespace TFS_ServerOperation
                 }
             }
             conn.WorkItemStore.DestroyWorkItems(dellist);
-            Console.WriteLine("Format was successful!");
             log.Info("Format was successful!");
             log.Flush();
         }
