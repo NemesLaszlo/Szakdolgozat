@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Text;
 using TFS_ServerOperation.CustomConfigSetup;
 
@@ -68,58 +69,104 @@ namespace TFS_ServerOperation
 
         /// <summary>
         /// Check the active WorkItems and change the states to "Done" before the next Month period creation run.
+        /// If the bool flag is true, so this is a restore run from the UI, so take every actual month file to the closed section
         /// </summary>
-        public void Archive()
+        /// <param name="isUIRun">logical flag, is it a UI run or Automated run</param>
+        public void Archive(bool isUIRun)
         {
             FileOperations fOp = new FileOperations(log);
             string lastMonthFile = string.Empty;
+            string actualMonthFilePath = GetUpToDateFileCSVForUserOverWrite();
 
             DateTime today = DateTime.Today;
             DateTime month = new DateTime(today.Year, today.Month, 1);
             string lastMonth = month.AddDays(-1).Month.ToString();
 
-            string[] files = Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory, "*.csv", SearchOption.AllDirectories);
-            foreach(var file in files)
-            {
-                if (file.Contains(lastMonth))
-                {
-                    lastMonthFile = file;
-                }
-            }
-
-            if (String.IsNullOrEmpty(lastMonthFile))
-            {
-                List<int> LastMonthWorkItems = new List<int>();
-                log.Error("Archive failure!");
-                log.Flush();
-                return;
+            if (isUIRun)
+            {               
+                List<int> ActualMonthWorkItems = fOp.ReadCSV(actualMonthFilePath);
+                WorkItemStateChagerLoop(isUIRun, ActualMonthWorkItems);
             }
             else
             {
-                List<int> LastMonthWorkItems = fOp.ReadCSV(lastMonthFile);
-                foreach(int id in LastMonthWorkItems)
+                string[] files = Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory, "*.csv", SearchOption.AllDirectories);
+                foreach (var file in files)
                 {
-                    WorkItem current = conn.WorkItemStore.GetWorkItem(id);
-                    if (current.Fields["State"].Value.Equals("Active"))
+                    if (file.Contains(lastMonth))
                     {
-                        current.Fields["State"].Value = "Closed";
-                        if (current.Validate().Count == 0)
-                        {
-                            current.Save();
-                        }
-                        else
-                        {
-                            log.Error("Archive failure! WorkItem State Change / Save Problem!");
-                            log.Flush();
-                            return;
-                        }
+                        lastMonthFile = file;
+                    }
+                }
+
+                if (String.IsNullOrEmpty(lastMonthFile))
+                {
+                    List<int> LastMonthWorkItems = new List<int>();
+                    log.Info("Archive failure!");
+                    log.Flush();
+                    return;
+                }
+                else
+                {
+                    List<int> LastMonthWorkItems = fOp.ReadCSV(lastMonthFile);
+                    WorkItemStateChagerLoop(isUIRun, LastMonthWorkItems);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Change the states and optional flags of the workItems.
+        /// </summary>
+        /// <param name="isUIRun">logical flag, is it a UI run or Automated run section</param>
+        /// <param name="workItemIds">List of the workitems for this operation</param>
+        private void WorkItemStateChagerLoop(bool isUIRun,List<int> workItemIds)
+        {
+            foreach (int id in workItemIds)
+            {
+                WorkItem current = conn.WorkItemStore.GetWorkItem(id);
+                if (current.Fields["State"].Value.Equals("Active"))
+                {
+                    current.Fields["State"].Value = "Closed";
+                    if (isUIRun)
+                    {
+                        current.Fields["Tags"].Value += ";" + "UI_Run_Close";
+                    }
+                    if (current.Validate().Count == 0)
+                    {
+                        current.Save();
                     }
                     else
                     {
-                        continue;
-                    }  
+                        log.Error("Archive failure! WorkItem State Change / Save Problem!");
+                        log.Flush();
+                        return;
+                    }
+                }
+                else
+                {
+                    continue;
                 }
             }
+        }
+
+        /// <summary>
+        /// Get the path to the up to date Month .csv file, for the user overwrite run from UI
+        /// </summary>
+        /// <returns></returns>
+        private string GetUpToDateFileCSVForUserOverWrite()
+        {
+            string currentMonth = string.Empty;
+            DateTime today = DateTime.Today;
+            string upToDateMonth = today.Month.ToString();
+
+            string[] files = Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory, "*.csv", SearchOption.AllDirectories);
+            foreach (var file in files)
+            {
+                if (file.Contains(upToDateMonth))
+                {
+                    currentMonth = file;
+                }
+            }
+            return currentMonth;
         }
 
         /// <summary>
@@ -127,7 +174,7 @@ namespace TFS_ServerOperation
         /// </summary>
         /// <param name="pbi"> Parameter is a PBI / User Story, what we would like to upload to the server.</param>
         /// <returns></returns>
-        public bool Upload(PBI pbi)
+        public bool Upload(bool isUIRun, PBI pbi)
         {
             try
             {
@@ -140,7 +187,15 @@ namespace TFS_ServerOperation
                 WorkItem TFSpbi = new WorkItem(PBIType);
                 // Set the Title and Tags to the PBI / User Stroy
                 TFSpbi.Title = pbi.Title + RunDatePeriod();
-                TFSpbi.Fields["Tags"].Value = "Created_By_Program" + ";" + "Szakdolgozat" + ";" + "ELTE";
+                if (isUIRun)
+                {
+                    TFSpbi.Fields["Tags"].Value = "Created_By_Person_With_UI" + ";" + "Szakdolgozat" + ";" + "ELTE";
+                }
+                else
+                {
+                    TFSpbi.Fields["Tags"].Value = "Created_By_Program" + ";" + "Szakdolgozat" + ";" + "ELTE";
+                }
+
 
                 //Run a query for check this WorkItem with this title already exist or not
                 Query query = new Query(conn.WorkItemStore, string.Format("SELECT Id FROM WorkItems WHERE System.Title = '{0}' AND (System.State = '{1}' OR System.State = '{2}')", TFSpbi.Title,"Active","New"));
@@ -166,6 +221,12 @@ namespace TFS_ServerOperation
                     TFSpbi.Fields["System.AssignedTo"].Value = pbi.AssignedTo;
                     TFSpbi.Fields["System.AreaPath"].Value = AreaPath;
                     TFSpbi.Fields["System.IterationPath"].Value = Iteration;
+                    TFSpbi.Fields["Microsoft.VSTS.Common.Risk"].Value = "3 - Low";
+
+                    string description = "Created Ready To Work User Stroy/PBI Period.";
+                    var htmlString = WebUtility.HtmlEncode(description);
+                    TFSpbi.Fields["System.Description"].Value = htmlString;
+
                     // validation check (ready for save)
                     if (TFSpbi.Validate().Count == 0)
                     {
@@ -184,7 +245,7 @@ namespace TFS_ServerOperation
                     // PBI / User Stroy Task Configuration period
                     foreach (ConfigTask task in pbi.Tasks)
                     {
-                        ConfigTaskConfigurator(task,TFSpbi);
+                        ConfigTaskConfigurator(isUIRun, task, TFSpbi);
                     }
 
                     log.Info("Upload was successful" + "  " + TFSpbi.Title);
@@ -212,16 +273,32 @@ namespace TFS_ServerOperation
         /// </summary>
         /// <param name="task">PBI / User stroy current task from the config</param>
         /// <param name="TFSpbi">Parent of this task</param>
-        private void ConfigTaskConfigurator(ConfigTask task, WorkItem TFSpbi)
+        private void ConfigTaskConfigurator(bool isUIRun,ConfigTask task, WorkItem TFSpbi)
         {
             // Task creation for the PBI / User Story
             WorkItem Task = new WorkItem(TaskType);
             // Task Configuration
             Task.Title = task.Title;
-            Task.Fields["Tags"].Value = "Created_By_Program_Task" + ";" + "Szakdolgozat";
+            if (isUIRun)
+            {
+                Task.Fields["Tags"].Value = "Created_By_Person_With_UI_Task" + ";" + "Szakdolgozat";
+            }
+            else
+            {
+                Task.Fields["Tags"].Value = "Created_By_Program_Task" + ";" + "Szakdolgozat";
+            }
             Task.Fields["System.AssignedTo"].Value = task.AssingTo;
             Task.Fields["System.AreaPath"].Value = AreaPath;
             Task.Fields["System.IterationPath"].Value = Iteration;
+            string description = "Created Ready To Work Task Period.";
+            var htmlString = WebUtility.HtmlEncode(description);
+            Task.Fields["System.Description"].Value = htmlString;
+
+            //Effort Configuration Basics
+            Task.Fields["Microsoft.VSTS.Scheduling.OriginalEstimate"].Value = 11;
+            Task.Fields["Microsoft.VSTS.Scheduling.RemainingWork"].Value = 11;
+            Task.Fields["Microsoft.VSTS.Scheduling.CompletedWork"].Value = 0;
+
             var AssignedTo_String = task.AssingTo;
             Console.WriteLine(task.AssingTo);
 

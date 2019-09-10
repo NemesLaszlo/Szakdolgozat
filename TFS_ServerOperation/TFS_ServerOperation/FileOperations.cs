@@ -77,7 +77,7 @@ namespace TFS_ServerOperation
                     log.Flush();
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
                 log.Error("File of this Month already exist!");
                 log.Flush();

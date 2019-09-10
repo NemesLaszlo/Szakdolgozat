@@ -74,7 +74,7 @@ namespace TFS_ServerOperation
         /// Get the E-Mail Address Where we would like to send a mail / message
         /// </summary>
         /// <returns></returns>
-        public string GetAddressToMail()
+        private string GetAddressToMail()
         {
             return ToMailAddress;
         }
@@ -83,7 +83,7 @@ namespace TFS_ServerOperation
         /// Get the path to the up to date Month .csv file, to attach to the email
         /// </summary>
         /// <returns></returns>
-        public string GetUpToDateFileCSV()
+        private string GetUpToDateFileCSV()
         {
             string currentMonth = string.Empty;
             DateTime today = DateTime.Today;
@@ -116,17 +116,7 @@ namespace TFS_ServerOperation
                 }
                 else
                 {
-                    ServerOperation.Archive();
-                    FileOperations writer = new FileOperations(log);
-                    PbisConfigSection myPBISection = ConfigurationManager.GetSection("PBICollectionSection") as PbisConfigSection;
-                    for (int i = 0; i < myPBISection.Members.Count; i++)
-                    {
-                        PBI pbi = myPBISection.Members[i];
-                        ServerOperation.Upload(pbi);
-                    }
-                    writer.WriteInCSV(ServerOperation.datasForFileModification);
-                    MailSender.SendEmail(GetAddressToMail(),"Month File","Test body", GetUpToDateFileCSV());
-                    Console.WriteLine("Upload was successful!");
+                    UploadAndMailSend_Process(false,ServerOperation, MailSender, log);
                 }
             }
             catch (Exception ex)
@@ -137,6 +127,27 @@ namespace TFS_ServerOperation
                 Console.ReadLine();
             }
             Console.ReadLine();
+        }
+
+        /// <summary>
+        /// Upload and Send a mail about the result file.
+        /// </summary>
+        /// <param name="ServerOperation">ServerOperationManager object</param>
+        /// <param name="MailSender">MailSender object</param>
+        /// <param name="log">Custom Logger object</param>
+        public void UploadAndMailSend_Process(bool isUIRun,ServerOperationManager ServerOperation, MailSender MailSender, Logger log)
+        {
+            ServerOperation.Archive(isUIRun);
+            FileOperations writer = new FileOperations(log);
+            PbisConfigSection myPBISection = ConfigurationManager.GetSection("PBICollectionSection") as PbisConfigSection;
+            for (int i = 0; i < myPBISection.Members.Count; i++)
+            {
+                PBI pbi = myPBISection.Members[i];
+                ServerOperation.Upload(isUIRun,pbi);
+            }
+            writer.WriteInCSV(ServerOperation.datasForFileModification);
+            MailSender.SendEmail(GetAddressToMail(), "Month Uploaded FilePeriod", "You can find the Result file in the Attachments.", GetUpToDateFileCSV());
+            Console.WriteLine("Upload was successful!");
         }
     }
 }
