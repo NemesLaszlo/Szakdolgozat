@@ -138,7 +138,7 @@ namespace TFS_ServerOperation
             for (int i = 0; i < myPBISection.Members.Count; i++)
             {
                 PBI pbi = myPBISection.Members[i];
-                ServerOperation.Upload(isUIRun,pbi);
+                ServerOperation.Upload(isUIRun, pbi);
             }
             writer.WriteInCSV(ServerOperation.datasForFileModification);
             MailSender.SendEmail(GetAddressToMail(), "Month Uploaded FilePeriod", "You can find the Result file in the Attachments.", GetUpToDateFileCSV());
@@ -146,6 +146,46 @@ namespace TFS_ServerOperation
             return true;
         }
 
+        /// <summary>
+        /// Delete datas from the server about the file, and send a mail about it.
+        /// </summary>
+        /// <param name="fileName">Name of the file for the delete section</param>
+        /// <param name="ServerOperation">ServerOperationManager object</param>
+        /// <param name="MailSender">MailSender object</param>
+        /// <returns></returns>
+        public bool DeleteFromFile_Process(string fileName, ServerOperationManager ServerOperation, MailSender MailSender)
+        {
+            ServerOperation.DeleteFromFile(fileName);
+            MailSender.SendEmail(GetAddressToMail(), "Delete From File on the Server", "Delete method ran on the server. File Name: " + fileName, null);
 
+            return true;
+        }
+
+        /// <summary>
+        /// Delete datas from the server about the ids, and send a mail about it.
+        /// </summary>
+        /// <param name="ids">List of string ids, what we would like to delete</param>
+        /// <param name="ServerOperation">ServerOperationManager object</param>
+        /// <param name="MailSender">MailSender object</param>
+        /// <returns></returns>
+        public bool DeleteByIds_Process(List<string> ids, ServerOperationManager ServerOperation, MailSender MailSender)
+        {
+            string deletedIds = string.Join(",", ids);
+            ServerOperation.DeleteByIds(ids);
+            MailSender.SendEmail(GetAddressToMail(), "Delete From Ids on the Server", "Delete method ran on the server. Deleted workItem ids: " + deletedIds, null);
+
+            return true;
+        }
+
+        /// <summary>
+        /// Comlete server reset (datas).
+        /// </summary>
+        /// <param name="ServerOperation">ServerOperationManager object</param>
+        /// <param name="MailSender">MailSender object</param>
+        public void ServerContentDelete_Process(ServerOperationManager ServerOperation, MailSender MailSender)
+        {
+            ServerOperation.ServerContentDelete();
+            MailSender.SendEmail(GetAddressToMail(), "All server data is gone", "Everything has been deleted from the server", null);
+        }
     }
 }

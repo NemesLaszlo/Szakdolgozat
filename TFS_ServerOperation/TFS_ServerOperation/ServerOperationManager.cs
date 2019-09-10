@@ -172,6 +172,7 @@ namespace TFS_ServerOperation
         /// <summary>
         /// PBI / User Story configuration Creator and Uploader to the Server.
         /// </summary>
+        /// <param name="isUIRun">logical flag, is it a UI run or Automated run section</param>
         /// <param name="pbi"> Parameter is a PBI / User Story, what we would like to upload to the server.</param>
         /// <returns></returns>
         public bool Upload(bool isUIRun, PBI pbi)
@@ -269,6 +270,7 @@ namespace TFS_ServerOperation
         /// <summary>
         /// Task configuration for the PBI / User Story
         /// </summary>
+        /// <param name="isUIRun">logical flag, is it a UI run or Automated run section</param>
         /// <param name="task">PBI / User stroy current task from the config</param>
         /// <param name="TFSpbi">Parent of this task</param>
         private void ConfigTaskConfigurator(bool isUIRun,ConfigTask task, WorkItem TFSpbi)
@@ -329,7 +331,7 @@ namespace TFS_ServerOperation
                 FileOperations reader = new FileOperations(log);
                 var pbi_ids = reader.ReadCSV(fileName);
                 conn.WorkItemStore.DestroyWorkItems(pbi_ids);
-                log.Info("Delete was successful!");
+                log.Info("Delete was successful(from File)!");
                 log.Flush();
                 return true;
             }
@@ -352,7 +354,7 @@ namespace TFS_ServerOperation
             {
                 List<int> IdsWithRightType = ids.Select(int.Parse).ToList();
                 conn.WorkItemStore.DestroyWorkItems(IdsWithRightType);
-                log.Info("Delete was successful!");
+                log.Info("Delete was successful(from Ids by User)!");
                 log.Flush();
                 return true;
             }
@@ -378,10 +380,15 @@ namespace TFS_ServerOperation
                 {
                     dellist.Add(item.Id);
                 }
+                conn.WorkItemStore.DestroyWorkItems(dellist);
+                log.Info("Server Format was successful!");
+                log.Flush();
             }
-            conn.WorkItemStore.DestroyWorkItems(dellist);
-            log.Info("Format was successful!");
-            log.Flush();
+            else
+            {
+                log.Info("Server is Empty");
+                log.Flush();
+            }
         }
     }
 }
