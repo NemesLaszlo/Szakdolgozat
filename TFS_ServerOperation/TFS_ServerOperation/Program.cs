@@ -1,4 +1,6 @@
 ﻿
+using System.Collections.Generic;
+
 namespace TFS_ServerOperation
 {
     class Program
@@ -7,9 +9,14 @@ namespace TFS_ServerOperation
         {
             InformationParser informationParser = new InformationParser();
             Logger log = informationParser.Init_Log();
-            informationParser.ConsoleRun(args, log);
-            //ServerOperationManager oSm = informationParser.Init_ServerOperation(log);
-            //oSm.ServerContentDelete();
+            //informationParser.ConsoleRun(args, log);
+            ServerOperationManager oSm = informationParser.Init_ServerOperation(log);
+            MailSender mS = informationParser.Init_MailSender(log);
+            List<string> datas = new List<string>() { "73", "74" };
+
+            //informationParser.DeleteByIds_Process(datas, oSm, mS);
+            informationParser.DeleteFromFile_Process("UploadedDatas_9.csv",oSm,mS);
+            //informationParser.ServerContentDelete_Process(oSm,mS);
         }
     }
 }
