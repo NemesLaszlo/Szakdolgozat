@@ -44,9 +44,9 @@
             this.BigLogo = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.subMenuUnderPanel = new System.Windows.Forms.Panel();
-            this.subMenu1 = new UI_TFS_ServerOperation.subMenu();
             this.LogoAnimator = new Bunifu.UI.WinForms.BunifuTransition(this.components);
             this.PanelAnimator = new Bunifu.UI.WinForms.BunifuTransition(this.components);
+            this.subMenu1 = new UI_TFS_ServerOperation.subMenu();
             this.LeftTransformMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.smallLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MenuButton)).BeginInit();
@@ -371,17 +371,8 @@
             this.subMenuUnderPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.subMenuUnderPanel.Location = new System.Drawing.Point(0, 0);
             this.subMenuUnderPanel.Name = "subMenuUnderPanel";
-            this.subMenuUnderPanel.Size = new System.Drawing.Size(198, 579);
+            this.subMenuUnderPanel.Size = new System.Drawing.Size(214, 579);
             this.subMenuUnderPanel.TabIndex = 0;
-            // 
-            // subMenu1
-            // 
-            this.LogoAnimator.SetDecoration(this.subMenu1, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.PanelAnimator.SetDecoration(this.subMenu1, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.subMenu1.Location = new System.Drawing.Point(0, 0);
-            this.subMenu1.Name = "subMenu1";
-            this.subMenu1.Size = new System.Drawing.Size(196, 579);
-            this.subMenu1.TabIndex = 1;
             // 
             // LogoAnimator
             // 
@@ -424,6 +415,15 @@
             animation2.TimeCoeff = 0F;
             animation2.TransparencyCoeff = 1F;
             this.PanelAnimator.DefaultAnimation = animation2;
+            // 
+            // subMenu1
+            // 
+            this.LogoAnimator.SetDecoration(this.subMenu1, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.PanelAnimator.SetDecoration(this.subMenu1, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.subMenu1.Location = new System.Drawing.Point(0, 0);
+            this.subMenu1.Name = "subMenu1";
+            this.subMenu1.Size = new System.Drawing.Size(214, 579);
+            this.subMenu1.TabIndex = 1;
             // 
             // TFS_Operator
             // 

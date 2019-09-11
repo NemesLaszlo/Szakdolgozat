@@ -20,5 +20,10 @@ namespace UI_TFS_ServerOperation
 
             VSReactive<int>.Subscribe("menu", e => tabControl1.SelectedIndex = e);
         }
+
+        private void subOpenCurrentConfig_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
