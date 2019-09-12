@@ -657,9 +657,9 @@
             // 
             // subContact
             // 
-            this.subContact.Active = false;
+            this.subContact.Active = true;
             this.subContact.Activecolor = System.Drawing.Color.Gainsboro;
-            this.subContact.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.subContact.BackColor = System.Drawing.Color.Gainsboro;
             this.subContact.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.subContact.BorderRadius = 0;
             this.subContact.ButtonText = "          Contact";
@@ -682,7 +682,7 @@
             this.subContact.Normalcolor = System.Drawing.Color.WhiteSmoke;
             this.subContact.OnHovercolor = System.Drawing.Color.WhiteSmoke;
             this.subContact.OnHoverTextColor = System.Drawing.Color.Black;
-            this.subContact.selected = false;
+            this.subContact.selected = true;
             this.subContact.Size = new System.Drawing.Size(235, 48);
             this.subContact.TabIndex = 17;
             this.subContact.Tag = "0";

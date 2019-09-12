@@ -75,5 +75,10 @@ namespace UI_TFS_ServerOperation
             ContentControllerPages.SetPage(5);
             VSReactive<int>.SetState("menu", int.Parse(((Control)sender).Tag.ToString()));
         }
+
+        private void bunifuFlatButton2_Click(object sender, EventArgs e)
+        {
+            Alert.AlertCreation("Hello Hello", AlertType.success);
+        }
     }
 }

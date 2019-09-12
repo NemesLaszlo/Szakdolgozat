@@ -31,10 +31,10 @@
             this.components = new System.ComponentModel.Container();
             Utilities.BunifuPages.BunifuAnimatorNS.Animation animation5 = new Utilities.BunifuPages.BunifuAnimatorNS.Animation();
             Utilities.BunifuPages.BunifuAnimatorNS.Animation animation3 = new Utilities.BunifuPages.BunifuAnimatorNS.Animation();
+            Utilities.BunifuPages.BunifuAnimatorNS.Animation animation4 = new Utilities.BunifuPages.BunifuAnimatorNS.Animation();
             Bunifu.UI.WinForms.BunifuAnimatorNS.Animation animation1 = new Bunifu.UI.WinForms.BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TFS_Operator));
             Bunifu.UI.WinForms.BunifuAnimatorNS.Animation animation2 = new Bunifu.UI.WinForms.BunifuAnimatorNS.Animation();
-            Utilities.BunifuPages.BunifuAnimatorNS.Animation animation4 = new Utilities.BunifuPages.BunifuAnimatorNS.Animation();
             this.LeftTransformMenu = new System.Windows.Forms.Panel();
             this.smallLogo = new System.Windows.Forms.PictureBox();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -50,31 +50,32 @@
             this.SettingsPage = new System.Windows.Forms.TabPage();
             this.SettingsRichTextBox = new System.Windows.Forms.RichTextBox();
             this.UploadPage = new System.Windows.Forms.TabPage();
+            this.bunifuCircleProgressbar1 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.DeletePage = new System.Windows.Forms.TabPage();
             this.subDeleteTabPages = new Bunifu.UI.WinForms.BunifuPages();
             this.IdDelete = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
             this.DeleteFromFile = new System.Windows.Forms.TabPage();
+            this.label2 = new System.Windows.Forms.Label();
             this.TotalDelete = new System.Windows.Forms.TabPage();
+            this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.FilePage = new System.Windows.Forms.TabPage();
             this.label4 = new System.Windows.Forms.Label();
             this.LogPage = new System.Windows.Forms.TabPage();
             this.label5 = new System.Windows.Forms.Label();
             this.InfoPage = new System.Windows.Forms.TabPage();
+            this.subInfoPages = new Bunifu.UI.WinForms.BunifuPages();
+            this.ContactPage = new System.Windows.Forms.TabPage();
+            this.label8 = new System.Windows.Forms.Label();
+            this.BugReportPage = new System.Windows.Forms.TabPage();
+            this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.subMenuUnderPanel = new System.Windows.Forms.Panel();
             this.subMenu1 = new UI_TFS_ServerOperation.subMenu();
             this.LogoAnimator = new Bunifu.UI.WinForms.BunifuTransition(this.components);
             this.PanelAnimator = new Bunifu.UI.WinForms.BunifuTransition(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.subInfoPages = new Bunifu.UI.WinForms.BunifuPages();
-            this.ContactPage = new System.Windows.Forms.TabPage();
-            this.BugReportPage = new System.Windows.Forms.TabPage();
-            this.bunifuCircleProgressbar1 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.LeftTransformMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.smallLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MenuButton)).BeginInit();
@@ -91,10 +92,10 @@
             this.FilePage.SuspendLayout();
             this.LogPage.SuspendLayout();
             this.InfoPage.SuspendLayout();
-            this.subMenuUnderPanel.SuspendLayout();
             this.subInfoPages.SuspendLayout();
             this.ContactPage.SuspendLayout();
             this.BugReportPage.SuspendLayout();
+            this.subMenuUnderPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // LeftTransformMenu
@@ -489,6 +490,34 @@
             this.UploadPage.Text = "UploadPage";
             this.UploadPage.UseVisualStyleBackColor = true;
             // 
+            // bunifuCircleProgressbar1
+            // 
+            this.bunifuCircleProgressbar1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.bunifuCircleProgressbar1.animated = false;
+            this.bunifuCircleProgressbar1.animationIterval = 5;
+            this.bunifuCircleProgressbar1.animationSpeed = 300;
+            this.bunifuCircleProgressbar1.AutoSize = true;
+            this.bunifuCircleProgressbar1.BackColor = System.Drawing.Color.White;
+            this.bunifuCircleProgressbar1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuCircleProgressbar1.BackgroundImage")));
+            this.PanelAnimator.SetDecoration(this.bunifuCircleProgressbar1, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.LogoAnimator.SetDecoration(this.bunifuCircleProgressbar1, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.bunifuCircleProgressbar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F);
+            this.bunifuCircleProgressbar1.ForeColor = System.Drawing.Color.SeaGreen;
+            this.bunifuCircleProgressbar1.LabelVisible = false;
+            this.bunifuCircleProgressbar1.LineProgressThickness = 8;
+            this.bunifuCircleProgressbar1.LineThickness = 5;
+            this.bunifuCircleProgressbar1.Location = new System.Drawing.Point(78, 50);
+            this.bunifuCircleProgressbar1.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.bunifuCircleProgressbar1.MaxValue = 100;
+            this.bunifuCircleProgressbar1.Name = "bunifuCircleProgressbar1";
+            this.bunifuCircleProgressbar1.ProgressBackColor = System.Drawing.Color.Gainsboro;
+            this.bunifuCircleProgressbar1.ProgressColor = System.Drawing.Color.SeaGreen;
+            this.bunifuCircleProgressbar1.Size = new System.Drawing.Size(408, 408);
+            this.bunifuCircleProgressbar1.TabIndex = 0;
+            this.bunifuCircleProgressbar1.Value = 0;
+            // 
             // DeletePage
             // 
             this.DeletePage.Controls.Add(this.subDeleteTabPages);
@@ -558,6 +587,17 @@
             this.IdDelete.Text = "IdDelete";
             this.IdDelete.UseVisualStyleBackColor = true;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.LogoAnimator.SetDecoration(this.label1, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.PanelAnimator.SetDecoration(this.label1, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.label1.Location = new System.Drawing.Point(46, 45);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "iddelete";
+            // 
             // DeleteFromFile
             // 
             this.DeleteFromFile.Controls.Add(this.label2);
@@ -571,6 +611,17 @@
             this.DeleteFromFile.Text = "DeleteFromFile";
             this.DeleteFromFile.UseVisualStyleBackColor = true;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.LogoAnimator.SetDecoration(this.label2, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.PanelAnimator.SetDecoration(this.label2, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.label2.Location = new System.Drawing.Point(66, 78);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(49, 13);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "filedelete";
+            // 
             // TotalDelete
             // 
             this.TotalDelete.Controls.Add(this.label7);
@@ -583,6 +634,17 @@
             this.TotalDelete.TabIndex = 2;
             this.TotalDelete.Text = "TotalDelete";
             this.TotalDelete.UseVisualStyleBackColor = true;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.LogoAnimator.SetDecoration(this.label7, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.PanelAnimator.SetDecoration(this.label7, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.label7.Location = new System.Drawing.Point(66, 78);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(73, 13);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "completdelete";
             // 
             // label3
             // 
@@ -645,6 +707,7 @@
             // 
             // InfoPage
             // 
+            this.InfoPage.Controls.Add(this.bunifuFlatButton2);
             this.InfoPage.Controls.Add(this.subInfoPages);
             this.InfoPage.Controls.Add(this.label6);
             this.PanelAnimator.SetDecoration(this.InfoPage, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
@@ -656,6 +719,93 @@
             this.InfoPage.TabIndex = 5;
             this.InfoPage.Text = "InfoPage";
             this.InfoPage.UseVisualStyleBackColor = true;
+            // 
+            // subInfoPages
+            // 
+            this.subInfoPages.Alignment = System.Windows.Forms.TabAlignment.Bottom;
+            this.subInfoPages.AllowTransitions = true;
+            this.subInfoPages.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.subInfoPages.Controls.Add(this.ContactPage);
+            this.subInfoPages.Controls.Add(this.BugReportPage);
+            this.PanelAnimator.SetDecoration(this.subInfoPages, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.LogoAnimator.SetDecoration(this.subInfoPages, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.subInfoPages.Location = new System.Drawing.Point(0, 114);
+            this.subInfoPages.Multiline = true;
+            this.subInfoPages.Name = "subInfoPages";
+            this.subInfoPages.Page = this.BugReportPage;
+            this.subInfoPages.PageIndex = 1;
+            this.subInfoPages.PageName = "BugReportPage";
+            this.subInfoPages.PageTitle = "BugReportPage";
+            this.subInfoPages.SelectedIndex = 0;
+            this.subInfoPages.Size = new System.Drawing.Size(575, 430);
+            this.subInfoPages.TabIndex = 1;
+            animation4.AnimateOnlyDifferences = false;
+            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
+            animation4.LeafCoeff = 0F;
+            animation4.MaxTime = 1F;
+            animation4.MinTime = 0F;
+            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
+            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
+            animation4.MosaicSize = 0;
+            animation4.Padding = new System.Windows.Forms.Padding(0);
+            animation4.RotateCoeff = 0F;
+            animation4.RotateLimit = 0F;
+            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
+            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
+            animation4.TimeCoeff = 0F;
+            animation4.TransparencyCoeff = 0F;
+            this.subInfoPages.Transition = animation4;
+            this.subInfoPages.TransitionType = Utilities.BunifuPages.BunifuAnimatorNS.AnimationType.Custom;
+            // 
+            // ContactPage
+            // 
+            this.ContactPage.Controls.Add(this.label8);
+            this.PanelAnimator.SetDecoration(this.ContactPage, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.LogoAnimator.SetDecoration(this.ContactPage, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.ContactPage.Location = new System.Drawing.Point(4, 4);
+            this.ContactPage.Name = "ContactPage";
+            this.ContactPage.Padding = new System.Windows.Forms.Padding(3);
+            this.ContactPage.Size = new System.Drawing.Size(567, 404);
+            this.ContactPage.TabIndex = 0;
+            this.ContactPage.Text = "ContactPage";
+            this.ContactPage.UseVisualStyleBackColor = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.LogoAnimator.SetDecoration(this.label8, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.PanelAnimator.SetDecoration(this.label8, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.label8.Location = new System.Drawing.Point(42, 77);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(67, 13);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "contactpage";
+            // 
+            // BugReportPage
+            // 
+            this.BugReportPage.Controls.Add(this.label9);
+            this.PanelAnimator.SetDecoration(this.BugReportPage, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.LogoAnimator.SetDecoration(this.BugReportPage, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.BugReportPage.Location = new System.Drawing.Point(4, 4);
+            this.BugReportPage.Name = "BugReportPage";
+            this.BugReportPage.Padding = new System.Windows.Forms.Padding(3);
+            this.BugReportPage.Size = new System.Drawing.Size(567, 404);
+            this.BugReportPage.TabIndex = 1;
+            this.BugReportPage.Text = "BugReportPage";
+            this.BugReportPage.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.LogoAnimator.SetDecoration(this.label9, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.PanelAnimator.SetDecoration(this.label9, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.label9.Location = new System.Drawing.Point(70, 89);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(76, 13);
+            this.label9.TabIndex = 0;
+            this.label9.Text = "bugreportpage";
             // 
             // label6
             // 
@@ -731,153 +881,43 @@
             animation2.TransparencyCoeff = 1F;
             this.PanelAnimator.DefaultAnimation = animation2;
             // 
-            // label1
+            // bunifuFlatButton2
             // 
-            this.label1.AutoSize = true;
-            this.LogoAnimator.SetDecoration(this.label1, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.PanelAnimator.SetDecoration(this.label1, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.label1.Location = new System.Drawing.Point(46, 45);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "iddelete";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.LogoAnimator.SetDecoration(this.label2, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.PanelAnimator.SetDecoration(this.label2, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.label2.Location = new System.Drawing.Point(66, 78);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 13);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "filedelete";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.LogoAnimator.SetDecoration(this.label7, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.PanelAnimator.SetDecoration(this.label7, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.label7.Location = new System.Drawing.Point(66, 78);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(73, 13);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "completdelete";
-            // 
-            // subInfoPages
-            // 
-            this.subInfoPages.Alignment = System.Windows.Forms.TabAlignment.Bottom;
-            this.subInfoPages.AllowTransitions = true;
-            this.subInfoPages.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.subInfoPages.Controls.Add(this.ContactPage);
-            this.subInfoPages.Controls.Add(this.BugReportPage);
-            this.PanelAnimator.SetDecoration(this.subInfoPages, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.LogoAnimator.SetDecoration(this.subInfoPages, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.subInfoPages.Location = new System.Drawing.Point(0, 114);
-            this.subInfoPages.Multiline = true;
-            this.subInfoPages.Name = "subInfoPages";
-            this.subInfoPages.Page = this.BugReportPage;
-            this.subInfoPages.PageIndex = 1;
-            this.subInfoPages.PageName = "BugReportPage";
-            this.subInfoPages.PageTitle = "BugReportPage";
-            this.subInfoPages.SelectedIndex = 0;
-            this.subInfoPages.Size = new System.Drawing.Size(575, 430);
-            this.subInfoPages.TabIndex = 1;
-            animation4.AnimateOnlyDifferences = false;
-            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
-            animation4.LeafCoeff = 0F;
-            animation4.MaxTime = 1F;
-            animation4.MinTime = 0F;
-            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
-            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
-            animation4.MosaicSize = 0;
-            animation4.Padding = new System.Windows.Forms.Padding(0);
-            animation4.RotateCoeff = 0F;
-            animation4.RotateLimit = 0F;
-            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
-            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
-            animation4.TimeCoeff = 0F;
-            animation4.TransparencyCoeff = 0F;
-            this.subInfoPages.Transition = animation4;
-            this.subInfoPages.TransitionType = Utilities.BunifuPages.BunifuAnimatorNS.AnimationType.Custom;
-            // 
-            // ContactPage
-            // 
-            this.ContactPage.Controls.Add(this.label8);
-            this.PanelAnimator.SetDecoration(this.ContactPage, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.LogoAnimator.SetDecoration(this.ContactPage, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.ContactPage.Location = new System.Drawing.Point(4, 4);
-            this.ContactPage.Name = "ContactPage";
-            this.ContactPage.Padding = new System.Windows.Forms.Padding(3);
-            this.ContactPage.Size = new System.Drawing.Size(567, 497);
-            this.ContactPage.TabIndex = 0;
-            this.ContactPage.Text = "ContactPage";
-            this.ContactPage.UseVisualStyleBackColor = true;
-            // 
-            // BugReportPage
-            // 
-            this.BugReportPage.Controls.Add(this.label9);
-            this.PanelAnimator.SetDecoration(this.BugReportPage, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.LogoAnimator.SetDecoration(this.BugReportPage, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.BugReportPage.Location = new System.Drawing.Point(4, 4);
-            this.BugReportPage.Name = "BugReportPage";
-            this.BugReportPage.Padding = new System.Windows.Forms.Padding(3);
-            this.BugReportPage.Size = new System.Drawing.Size(567, 404);
-            this.BugReportPage.TabIndex = 1;
-            this.BugReportPage.Text = "BugReportPage";
-            this.BugReportPage.UseVisualStyleBackColor = true;
-            // 
-            // bunifuCircleProgressbar1
-            // 
-            this.bunifuCircleProgressbar1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuCircleProgressbar1.animated = false;
-            this.bunifuCircleProgressbar1.animationIterval = 5;
-            this.bunifuCircleProgressbar1.animationSpeed = 300;
-            this.bunifuCircleProgressbar1.AutoSize = true;
-            this.bunifuCircleProgressbar1.BackColor = System.Drawing.Color.White;
-            this.bunifuCircleProgressbar1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuCircleProgressbar1.BackgroundImage")));
-            this.PanelAnimator.SetDecoration(this.bunifuCircleProgressbar1, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.LogoAnimator.SetDecoration(this.bunifuCircleProgressbar1, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.bunifuCircleProgressbar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F);
-            this.bunifuCircleProgressbar1.ForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCircleProgressbar1.LabelVisible = false;
-            this.bunifuCircleProgressbar1.LineProgressThickness = 8;
-            this.bunifuCircleProgressbar1.LineThickness = 5;
-            this.bunifuCircleProgressbar1.Location = new System.Drawing.Point(78, 50);
-            this.bunifuCircleProgressbar1.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
-            this.bunifuCircleProgressbar1.MaxValue = 100;
-            this.bunifuCircleProgressbar1.Name = "bunifuCircleProgressbar1";
-            this.bunifuCircleProgressbar1.ProgressBackColor = System.Drawing.Color.Gainsboro;
-            this.bunifuCircleProgressbar1.ProgressColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCircleProgressbar1.Size = new System.Drawing.Size(408, 408);
-            this.bunifuCircleProgressbar1.TabIndex = 0;
-            this.bunifuCircleProgressbar1.Value = 0;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.LogoAnimator.SetDecoration(this.label8, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.PanelAnimator.SetDecoration(this.label8, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.label8.Location = new System.Drawing.Point(42, 77);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(67, 13);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "contactpage";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.LogoAnimator.SetDecoration(this.label9, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.PanelAnimator.SetDecoration(this.label9, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.label9.Location = new System.Drawing.Point(70, 89);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(76, 13);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "bugreportpage";
+            this.bunifuFlatButton2.Active = false;
+            this.bunifuFlatButton2.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton2.BorderRadius = 0;
+            this.bunifuFlatButton2.ButtonText = "bunifuFlatButton2";
+            this.bunifuFlatButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LogoAnimator.SetDecoration(this.bunifuFlatButton2, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.PanelAnimator.SetDecoration(this.bunifuFlatButton2, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.bunifuFlatButton2.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton2.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton2.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton2.Iconimage")));
+            this.bunifuFlatButton2.Iconimage_right = null;
+            this.bunifuFlatButton2.Iconimage_right_Selected = null;
+            this.bunifuFlatButton2.Iconimage_Selected = null;
+            this.bunifuFlatButton2.IconMarginLeft = 0;
+            this.bunifuFlatButton2.IconMarginRight = 0;
+            this.bunifuFlatButton2.IconRightVisible = true;
+            this.bunifuFlatButton2.IconRightZoom = 0D;
+            this.bunifuFlatButton2.IconVisible = true;
+            this.bunifuFlatButton2.IconZoom = 90D;
+            this.bunifuFlatButton2.IsTab = false;
+            this.bunifuFlatButton2.Location = new System.Drawing.Point(50, 50);
+            this.bunifuFlatButton2.Name = "bunifuFlatButton2";
+            this.bunifuFlatButton2.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton2.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.bunifuFlatButton2.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFlatButton2.selected = false;
+            this.bunifuFlatButton2.Size = new System.Drawing.Size(241, 48);
+            this.bunifuFlatButton2.TabIndex = 2;
+            this.bunifuFlatButton2.Text = "bunifuFlatButton2";
+            this.bunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuFlatButton2.Textcolor = System.Drawing.Color.White;
+            this.bunifuFlatButton2.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuFlatButton2.Click += new System.EventHandler(this.bunifuFlatButton2_Click);
             // 
             // TFS_Operator
             // 
@@ -916,12 +956,12 @@
             this.LogPage.PerformLayout();
             this.InfoPage.ResumeLayout(false);
             this.InfoPage.PerformLayout();
-            this.subMenuUnderPanel.ResumeLayout(false);
             this.subInfoPages.ResumeLayout(false);
             this.ContactPage.ResumeLayout(false);
             this.ContactPage.PerformLayout();
             this.BugReportPage.ResumeLayout(false);
             this.BugReportPage.PerformLayout();
+            this.subMenuUnderPanel.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -968,6 +1008,7 @@
         private Bunifu.Framework.UI.BunifuCircleProgressbar bunifuCircleProgressbar1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
     }
 }
 
