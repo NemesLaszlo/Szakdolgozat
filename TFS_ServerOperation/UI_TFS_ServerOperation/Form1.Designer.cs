@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Bunifu.UI.WinForms.BunifuAnimatorNS.Animation animation1 = new Bunifu.UI.WinForms.BunifuAnimatorNS.Animation();
+            Bunifu.UI.WinForms.BunifuAnimatorNS.Animation animation3 = new Bunifu.UI.WinForms.BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TFS_Operator));
-            Bunifu.UI.WinForms.BunifuAnimatorNS.Animation animation2 = new Bunifu.UI.WinForms.BunifuAnimatorNS.Animation();
+            Bunifu.UI.WinForms.BunifuAnimatorNS.Animation animation4 = new Bunifu.UI.WinForms.BunifuAnimatorNS.Animation();
             this.LeftTransformMenu = new System.Windows.Forms.Panel();
             this.smallLogo = new System.Windows.Forms.PictureBox();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -44,9 +44,9 @@
             this.BigLogo = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.subMenuUnderPanel = new System.Windows.Forms.Panel();
+            this.subMenu1 = new UI_TFS_ServerOperation.subMenu();
             this.LogoAnimator = new Bunifu.UI.WinForms.BunifuTransition(this.components);
             this.PanelAnimator = new Bunifu.UI.WinForms.BunifuTransition(this.components);
-            this.subMenu1 = new UI_TFS_ServerOperation.subMenu();
             this.LeftTransformMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.smallLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MenuButton)).BeginInit();
@@ -57,7 +57,7 @@
             // 
             // LeftTransformMenu
             // 
-            this.LeftTransformMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
+            this.LeftTransformMenu.BackColor = System.Drawing.Color.Silver;
             this.LeftTransformMenu.Controls.Add(this.smallLogo);
             this.LeftTransformMenu.Controls.Add(this.bunifuFlatButton1);
             this.LeftTransformMenu.Controls.Add(this.Log);
@@ -91,15 +91,15 @@
             // bunifuFlatButton1
             // 
             this.bunifuFlatButton1.Active = false;
-            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(110)))));
-            this.bunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
+            this.bunifuFlatButton1.Activecolor = System.Drawing.Color.Gainsboro;
+            this.bunifuFlatButton1.BackColor = System.Drawing.Color.Silver;
             this.bunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.bunifuFlatButton1.BorderRadius = 0;
             this.bunifuFlatButton1.ButtonText = "          Info";
             this.bunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LogoAnimator.SetDecoration(this.bunifuFlatButton1, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
             this.PanelAnimator.SetDecoration(this.bunifuFlatButton1, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton1.DisabledColor = System.Drawing.Color.Silver;
             this.bunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent;
             this.bunifuFlatButton1.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton1.Iconimage")));
             this.bunifuFlatButton1.Iconimage_right = null;
@@ -114,11 +114,11 @@
             this.bunifuFlatButton1.IsTab = true;
             this.bunifuFlatButton1.Location = new System.Drawing.Point(0, 344);
             this.bunifuFlatButton1.Name = "bunifuFlatButton1";
-            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
-            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
-            this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.Silver;
+            this.bunifuFlatButton1.Normalcolor = System.Drawing.Color.Silver;
+            this.bunifuFlatButton1.OnHovercolor = System.Drawing.Color.Silver;
+            this.bunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.Black;
             this.bunifuFlatButton1.selected = false;
-            this.bunifuFlatButton1.Size = new System.Drawing.Size(223, 48);
+            this.bunifuFlatButton1.Size = new System.Drawing.Size(233, 48);
             this.bunifuFlatButton1.TabIndex = 7;
             this.bunifuFlatButton1.Tag = "5";
             this.bunifuFlatButton1.Text = "          Info";
@@ -130,15 +130,15 @@
             // Log
             // 
             this.Log.Active = false;
-            this.Log.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(110)))));
-            this.Log.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
+            this.Log.Activecolor = System.Drawing.Color.Gainsboro;
+            this.Log.BackColor = System.Drawing.Color.Silver;
             this.Log.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Log.BorderRadius = 0;
             this.Log.ButtonText = "          Log";
             this.Log.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LogoAnimator.SetDecoration(this.Log, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
             this.PanelAnimator.SetDecoration(this.Log, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.Log.DisabledColor = System.Drawing.Color.Gray;
+            this.Log.DisabledColor = System.Drawing.Color.Silver;
             this.Log.Iconcolor = System.Drawing.Color.Transparent;
             this.Log.Iconimage = ((System.Drawing.Image)(resources.GetObject("Log.Iconimage")));
             this.Log.Iconimage_right = null;
@@ -151,13 +151,13 @@
             this.Log.IconVisible = true;
             this.Log.IconZoom = 50D;
             this.Log.IsTab = true;
-            this.Log.Location = new System.Drawing.Point(0, 300);
+            this.Log.Location = new System.Drawing.Point(0, 299);
             this.Log.Name = "Log";
-            this.Log.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
-            this.Log.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
-            this.Log.OnHoverTextColor = System.Drawing.Color.Silver;
+            this.Log.Normalcolor = System.Drawing.Color.Silver;
+            this.Log.OnHovercolor = System.Drawing.Color.Silver;
+            this.Log.OnHoverTextColor = System.Drawing.Color.Black;
             this.Log.selected = false;
-            this.Log.Size = new System.Drawing.Size(223, 48);
+            this.Log.Size = new System.Drawing.Size(233, 48);
             this.Log.TabIndex = 6;
             this.Log.Tag = "4";
             this.Log.Text = "          Log";
@@ -169,15 +169,15 @@
             // File
             // 
             this.File.Active = false;
-            this.File.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(110)))));
-            this.File.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
+            this.File.Activecolor = System.Drawing.Color.Gainsboro;
+            this.File.BackColor = System.Drawing.Color.Silver;
             this.File.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.File.BorderRadius = 0;
             this.File.ButtonText = "          File";
             this.File.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LogoAnimator.SetDecoration(this.File, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
             this.PanelAnimator.SetDecoration(this.File, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.File.DisabledColor = System.Drawing.Color.Gray;
+            this.File.DisabledColor = System.Drawing.Color.Silver;
             this.File.Iconcolor = System.Drawing.Color.Transparent;
             this.File.Iconimage = ((System.Drawing.Image)(resources.GetObject("File.Iconimage")));
             this.File.Iconimage_right = null;
@@ -190,13 +190,13 @@
             this.File.IconVisible = true;
             this.File.IconZoom = 50D;
             this.File.IsTab = true;
-            this.File.Location = new System.Drawing.Point(0, 256);
+            this.File.Location = new System.Drawing.Point(0, 254);
             this.File.Name = "File";
-            this.File.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
-            this.File.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
-            this.File.OnHoverTextColor = System.Drawing.Color.Silver;
+            this.File.Normalcolor = System.Drawing.Color.Silver;
+            this.File.OnHovercolor = System.Drawing.Color.Silver;
+            this.File.OnHoverTextColor = System.Drawing.Color.Black;
             this.File.selected = false;
-            this.File.Size = new System.Drawing.Size(226, 48);
+            this.File.Size = new System.Drawing.Size(233, 48);
             this.File.TabIndex = 5;
             this.File.Tag = "3";
             this.File.Text = "          File";
@@ -208,15 +208,15 @@
             // Delete
             // 
             this.Delete.Active = false;
-            this.Delete.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(110)))));
-            this.Delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
+            this.Delete.Activecolor = System.Drawing.Color.Gainsboro;
+            this.Delete.BackColor = System.Drawing.Color.Silver;
             this.Delete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Delete.BorderRadius = 0;
             this.Delete.ButtonText = "          Delete";
             this.Delete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LogoAnimator.SetDecoration(this.Delete, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
             this.PanelAnimator.SetDecoration(this.Delete, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.Delete.DisabledColor = System.Drawing.Color.Gray;
+            this.Delete.DisabledColor = System.Drawing.Color.Silver;
             this.Delete.Iconcolor = System.Drawing.Color.Transparent;
             this.Delete.Iconimage = ((System.Drawing.Image)(resources.GetObject("Delete.Iconimage")));
             this.Delete.Iconimage_right = null;
@@ -229,13 +229,13 @@
             this.Delete.IconVisible = true;
             this.Delete.IconZoom = 50D;
             this.Delete.IsTab = true;
-            this.Delete.Location = new System.Drawing.Point(0, 211);
+            this.Delete.Location = new System.Drawing.Point(0, 209);
             this.Delete.Name = "Delete";
-            this.Delete.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
-            this.Delete.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
-            this.Delete.OnHoverTextColor = System.Drawing.Color.Silver;
+            this.Delete.Normalcolor = System.Drawing.Color.Silver;
+            this.Delete.OnHovercolor = System.Drawing.Color.Silver;
+            this.Delete.OnHoverTextColor = System.Drawing.Color.Black;
             this.Delete.selected = false;
-            this.Delete.Size = new System.Drawing.Size(223, 48);
+            this.Delete.Size = new System.Drawing.Size(233, 48);
             this.Delete.TabIndex = 4;
             this.Delete.Tag = "2";
             this.Delete.Text = "          Delete";
@@ -247,15 +247,15 @@
             // Upload
             // 
             this.Upload.Active = false;
-            this.Upload.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(110)))));
-            this.Upload.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
+            this.Upload.Activecolor = System.Drawing.Color.Gainsboro;
+            this.Upload.BackColor = System.Drawing.Color.Silver;
             this.Upload.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.Upload.BorderRadius = 0;
             this.Upload.ButtonText = "          Upload";
             this.Upload.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LogoAnimator.SetDecoration(this.Upload, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
             this.PanelAnimator.SetDecoration(this.Upload, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.Upload.DisabledColor = System.Drawing.Color.Gray;
+            this.Upload.DisabledColor = System.Drawing.Color.Silver;
             this.Upload.Iconcolor = System.Drawing.Color.Transparent;
             this.Upload.Iconimage = ((System.Drawing.Image)(resources.GetObject("Upload.Iconimage")));
             this.Upload.Iconimage_right = null;
@@ -268,13 +268,13 @@
             this.Upload.IconVisible = true;
             this.Upload.IconZoom = 50D;
             this.Upload.IsTab = true;
-            this.Upload.Location = new System.Drawing.Point(0, 166);
+            this.Upload.Location = new System.Drawing.Point(0, 165);
             this.Upload.Name = "Upload";
-            this.Upload.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
-            this.Upload.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
-            this.Upload.OnHoverTextColor = System.Drawing.Color.Silver;
+            this.Upload.Normalcolor = System.Drawing.Color.Silver;
+            this.Upload.OnHovercolor = System.Drawing.Color.Silver;
+            this.Upload.OnHoverTextColor = System.Drawing.Color.Black;
             this.Upload.selected = false;
-            this.Upload.Size = new System.Drawing.Size(223, 48);
+            this.Upload.Size = new System.Drawing.Size(233, 48);
             this.Upload.TabIndex = 3;
             this.Upload.Tag = "1";
             this.Upload.Text = "          Upload";
@@ -286,15 +286,15 @@
             // SettingsButton
             // 
             this.SettingsButton.Active = true;
-            this.SettingsButton.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(110)))));
-            this.SettingsButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(110)))));
+            this.SettingsButton.Activecolor = System.Drawing.Color.Gainsboro;
+            this.SettingsButton.BackColor = System.Drawing.Color.Silver;
             this.SettingsButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.SettingsButton.BorderRadius = 0;
             this.SettingsButton.ButtonText = "          Settings";
             this.SettingsButton.Cursor = System.Windows.Forms.Cursors.Hand;
             this.LogoAnimator.SetDecoration(this.SettingsButton, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
             this.PanelAnimator.SetDecoration(this.SettingsButton, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.SettingsButton.DisabledColor = System.Drawing.Color.Gray;
+            this.SettingsButton.DisabledColor = System.Drawing.Color.Silver;
             this.SettingsButton.Iconcolor = System.Drawing.Color.Transparent;
             this.SettingsButton.Iconimage = ((System.Drawing.Image)(resources.GetObject("SettingsButton.Iconimage")));
             this.SettingsButton.Iconimage_right = null;
@@ -309,11 +309,11 @@
             this.SettingsButton.IsTab = true;
             this.SettingsButton.Location = new System.Drawing.Point(0, 121);
             this.SettingsButton.Name = "SettingsButton";
-            this.SettingsButton.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
-            this.SettingsButton.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(55)))), ((int)(((byte)(132)))));
-            this.SettingsButton.OnHoverTextColor = System.Drawing.Color.Silver;
+            this.SettingsButton.Normalcolor = System.Drawing.Color.Silver;
+            this.SettingsButton.OnHovercolor = System.Drawing.Color.Silver;
+            this.SettingsButton.OnHoverTextColor = System.Drawing.Color.Black;
             this.SettingsButton.selected = true;
-            this.SettingsButton.Size = new System.Drawing.Size(223, 48);
+            this.SettingsButton.Size = new System.Drawing.Size(233, 48);
             this.SettingsButton.TabIndex = 2;
             this.SettingsButton.Tag = "0";
             this.SettingsButton.Text = "          Settings";
@@ -374,48 +374,6 @@
             this.subMenuUnderPanel.Size = new System.Drawing.Size(214, 579);
             this.subMenuUnderPanel.TabIndex = 0;
             // 
-            // LogoAnimator
-            // 
-            this.LogoAnimator.AnimationType = Bunifu.UI.WinForms.BunifuAnimatorNS.AnimationType.ScaleAndRotate;
-            this.LogoAnimator.Cursor = null;
-            animation1.AnimateOnlyDifferences = true;
-            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
-            animation1.LeafCoeff = 0F;
-            animation1.MaxTime = 1F;
-            animation1.MinTime = 0F;
-            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
-            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
-            animation1.MosaicSize = 0;
-            animation1.Padding = new System.Windows.Forms.Padding(30);
-            animation1.RotateCoeff = 0.5F;
-            animation1.RotateLimit = 0.2F;
-            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
-            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
-            animation1.TimeCoeff = 0F;
-            animation1.TransparencyCoeff = 0F;
-            this.LogoAnimator.DefaultAnimation = animation1;
-            // 
-            // PanelAnimator
-            // 
-            this.PanelAnimator.AnimationType = Bunifu.UI.WinForms.BunifuAnimatorNS.AnimationType.Transparent;
-            this.PanelAnimator.Cursor = null;
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 0F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 0;
-            animation2.Padding = new System.Windows.Forms.Padding(0);
-            animation2.RotateCoeff = 0F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 0F;
-            animation2.TransparencyCoeff = 1F;
-            this.PanelAnimator.DefaultAnimation = animation2;
-            // 
             // subMenu1
             // 
             this.LogoAnimator.SetDecoration(this.subMenu1, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
@@ -424,6 +382,48 @@
             this.subMenu1.Name = "subMenu1";
             this.subMenu1.Size = new System.Drawing.Size(214, 579);
             this.subMenu1.TabIndex = 1;
+            // 
+            // LogoAnimator
+            // 
+            this.LogoAnimator.AnimationType = Bunifu.UI.WinForms.BunifuAnimatorNS.AnimationType.ScaleAndRotate;
+            this.LogoAnimator.Cursor = null;
+            animation3.AnimateOnlyDifferences = true;
+            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
+            animation3.LeafCoeff = 0F;
+            animation3.MaxTime = 1F;
+            animation3.MinTime = 0F;
+            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
+            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
+            animation3.MosaicSize = 0;
+            animation3.Padding = new System.Windows.Forms.Padding(30);
+            animation3.RotateCoeff = 0.5F;
+            animation3.RotateLimit = 0.2F;
+            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
+            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
+            animation3.TimeCoeff = 0F;
+            animation3.TransparencyCoeff = 0F;
+            this.LogoAnimator.DefaultAnimation = animation3;
+            // 
+            // PanelAnimator
+            // 
+            this.PanelAnimator.AnimationType = Bunifu.UI.WinForms.BunifuAnimatorNS.AnimationType.Transparent;
+            this.PanelAnimator.Cursor = null;
+            animation4.AnimateOnlyDifferences = true;
+            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
+            animation4.LeafCoeff = 0F;
+            animation4.MaxTime = 1F;
+            animation4.MinTime = 0F;
+            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
+            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
+            animation4.MosaicSize = 0;
+            animation4.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            animation4.RotateCoeff = 0F;
+            animation4.RotateLimit = 0F;
+            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
+            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
+            animation4.TimeCoeff = 0F;
+            animation4.TransparencyCoeff = 1F;
+            this.PanelAnimator.DefaultAnimation = animation4;
             // 
             // TFS_Operator
             // 

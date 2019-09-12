@@ -36,6 +36,8 @@
             this.subConfigLoad = new Bunifu.Framework.UI.BunifuFlatButton();
             this.subSave = new Bunifu.Framework.UI.BunifuFlatButton();
             this.Upload = new System.Windows.Forms.TabPage();
+            this.subUploadStart = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.subUploadConfigCheck = new Bunifu.Framework.UI.BunifuFlatButton();
             this.Delete = new System.Windows.Forms.TabPage();
             this.subDeleteByIds = new Bunifu.Framework.UI.BunifuFlatButton();
             this.subCompleteDelete = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -48,13 +50,11 @@
             this.subOpenCurrentLog = new Bunifu.Framework.UI.BunifuFlatButton();
             this.subLogBrowse = new Bunifu.Framework.UI.BunifuFlatButton();
             this.Info = new System.Windows.Forms.TabPage();
+            this.subContact = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.subBugReport = new Bunifu.Framework.UI.BunifuFlatButton();
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Dashboard = new System.Windows.Forms.Label();
-            this.subContact = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.subBugReport = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.subUploadStart = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.subUploadConfigCheck = new Bunifu.Framework.UI.BunifuFlatButton();
             this.tabControl1.SuspendLayout();
             this.Settings.SuspendLayout();
             this.Upload.SuspendLayout();
@@ -100,7 +100,7 @@
             // subOpenCurrentConfig
             // 
             this.subOpenCurrentConfig.Active = false;
-            this.subOpenCurrentConfig.Activecolor = System.Drawing.Color.Silver;
+            this.subOpenCurrentConfig.Activecolor = System.Drawing.Color.Gainsboro;
             this.subOpenCurrentConfig.BackColor = System.Drawing.Color.WhiteSmoke;
             this.subOpenCurrentConfig.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.subOpenCurrentConfig.BorderRadius = 0;
@@ -123,7 +123,7 @@
             this.subOpenCurrentConfig.Name = "subOpenCurrentConfig";
             this.subOpenCurrentConfig.Normalcolor = System.Drawing.Color.WhiteSmoke;
             this.subOpenCurrentConfig.OnHovercolor = System.Drawing.Color.WhiteSmoke;
-            this.subOpenCurrentConfig.OnHoverTextColor = System.Drawing.Color.Silver;
+            this.subOpenCurrentConfig.OnHoverTextColor = System.Drawing.Color.Black;
             this.subOpenCurrentConfig.selected = false;
             this.subOpenCurrentConfig.Size = new System.Drawing.Size(235, 48);
             this.subOpenCurrentConfig.TabIndex = 8;
@@ -136,7 +136,7 @@
             // subReset
             // 
             this.subReset.Active = false;
-            this.subReset.Activecolor = System.Drawing.Color.Silver;
+            this.subReset.Activecolor = System.Drawing.Color.Gainsboro;
             this.subReset.BackColor = System.Drawing.Color.WhiteSmoke;
             this.subReset.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.subReset.BorderRadius = 0;
@@ -159,7 +159,7 @@
             this.subReset.Name = "subReset";
             this.subReset.Normalcolor = System.Drawing.Color.WhiteSmoke;
             this.subReset.OnHovercolor = System.Drawing.Color.WhiteSmoke;
-            this.subReset.OnHoverTextColor = System.Drawing.Color.Silver;
+            this.subReset.OnHoverTextColor = System.Drawing.Color.Black;
             this.subReset.selected = false;
             this.subReset.Size = new System.Drawing.Size(235, 48);
             this.subReset.TabIndex = 7;
@@ -171,7 +171,7 @@
             // subConfigLoad
             // 
             this.subConfigLoad.Active = false;
-            this.subConfigLoad.Activecolor = System.Drawing.Color.Silver;
+            this.subConfigLoad.Activecolor = System.Drawing.Color.Gainsboro;
             this.subConfigLoad.BackColor = System.Drawing.Color.WhiteSmoke;
             this.subConfigLoad.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.subConfigLoad.BorderRadius = 0;
@@ -194,7 +194,7 @@
             this.subConfigLoad.Name = "subConfigLoad";
             this.subConfigLoad.Normalcolor = System.Drawing.Color.WhiteSmoke;
             this.subConfigLoad.OnHovercolor = System.Drawing.Color.WhiteSmoke;
-            this.subConfigLoad.OnHoverTextColor = System.Drawing.Color.Silver;
+            this.subConfigLoad.OnHoverTextColor = System.Drawing.Color.Black;
             this.subConfigLoad.selected = false;
             this.subConfigLoad.Size = new System.Drawing.Size(235, 48);
             this.subConfigLoad.TabIndex = 5;
@@ -206,7 +206,7 @@
             // subSave
             // 
             this.subSave.Active = false;
-            this.subSave.Activecolor = System.Drawing.Color.Silver;
+            this.subSave.Activecolor = System.Drawing.Color.Gainsboro;
             this.subSave.BackColor = System.Drawing.Color.WhiteSmoke;
             this.subSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.subSave.BorderRadius = 0;
@@ -229,7 +229,7 @@
             this.subSave.Name = "subSave";
             this.subSave.Normalcolor = System.Drawing.Color.WhiteSmoke;
             this.subSave.OnHovercolor = System.Drawing.Color.WhiteSmoke;
-            this.subSave.OnHoverTextColor = System.Drawing.Color.Silver;
+            this.subSave.OnHoverTextColor = System.Drawing.Color.Black;
             this.subSave.selected = false;
             this.subSave.Size = new System.Drawing.Size(235, 48);
             this.subSave.TabIndex = 4;
@@ -250,6 +250,76 @@
             this.Upload.TabIndex = 1;
             this.Upload.Text = "Upload";
             // 
+            // subUploadStart
+            // 
+            this.subUploadStart.Active = false;
+            this.subUploadStart.Activecolor = System.Drawing.Color.Gainsboro;
+            this.subUploadStart.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.subUploadStart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.subUploadStart.BorderRadius = 0;
+            this.subUploadStart.ButtonText = "          Start";
+            this.subUploadStart.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.subUploadStart.DisabledColor = System.Drawing.Color.Gray;
+            this.subUploadStart.Iconcolor = System.Drawing.Color.Transparent;
+            this.subUploadStart.Iconimage = null;
+            this.subUploadStart.Iconimage_right = null;
+            this.subUploadStart.Iconimage_right_Selected = null;
+            this.subUploadStart.Iconimage_Selected = null;
+            this.subUploadStart.IconMarginLeft = 0;
+            this.subUploadStart.IconMarginRight = 0;
+            this.subUploadStart.IconRightVisible = false;
+            this.subUploadStart.IconRightZoom = 0D;
+            this.subUploadStart.IconVisible = false;
+            this.subUploadStart.IconZoom = 50D;
+            this.subUploadStart.IsTab = true;
+            this.subUploadStart.Location = new System.Drawing.Point(-6, 6);
+            this.subUploadStart.Name = "subUploadStart";
+            this.subUploadStart.Normalcolor = System.Drawing.Color.WhiteSmoke;
+            this.subUploadStart.OnHovercolor = System.Drawing.Color.WhiteSmoke;
+            this.subUploadStart.OnHoverTextColor = System.Drawing.Color.Black;
+            this.subUploadStart.selected = false;
+            this.subUploadStart.Size = new System.Drawing.Size(235, 48);
+            this.subUploadStart.TabIndex = 19;
+            this.subUploadStart.Text = "          Start";
+            this.subUploadStart.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.subUploadStart.Textcolor = System.Drawing.Color.DimGray;
+            this.subUploadStart.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            // 
+            // subUploadConfigCheck
+            // 
+            this.subUploadConfigCheck.Active = false;
+            this.subUploadConfigCheck.Activecolor = System.Drawing.Color.Gainsboro;
+            this.subUploadConfigCheck.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.subUploadConfigCheck.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.subUploadConfigCheck.BorderRadius = 0;
+            this.subUploadConfigCheck.ButtonText = "          Check";
+            this.subUploadConfigCheck.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.subUploadConfigCheck.DisabledColor = System.Drawing.Color.Gray;
+            this.subUploadConfigCheck.Iconcolor = System.Drawing.Color.Transparent;
+            this.subUploadConfigCheck.Iconimage = null;
+            this.subUploadConfigCheck.Iconimage_right = null;
+            this.subUploadConfigCheck.Iconimage_right_Selected = null;
+            this.subUploadConfigCheck.Iconimage_Selected = null;
+            this.subUploadConfigCheck.IconMarginLeft = 0;
+            this.subUploadConfigCheck.IconMarginRight = 0;
+            this.subUploadConfigCheck.IconRightVisible = false;
+            this.subUploadConfigCheck.IconRightZoom = 0D;
+            this.subUploadConfigCheck.IconVisible = false;
+            this.subUploadConfigCheck.IconZoom = 50D;
+            this.subUploadConfigCheck.IsTab = true;
+            this.subUploadConfigCheck.Location = new System.Drawing.Point(-4, 51);
+            this.subUploadConfigCheck.Name = "subUploadConfigCheck";
+            this.subUploadConfigCheck.Normalcolor = System.Drawing.Color.WhiteSmoke;
+            this.subUploadConfigCheck.OnHovercolor = System.Drawing.Color.WhiteSmoke;
+            this.subUploadConfigCheck.OnHoverTextColor = System.Drawing.Color.Black;
+            this.subUploadConfigCheck.selected = false;
+            this.subUploadConfigCheck.Size = new System.Drawing.Size(235, 48);
+            this.subUploadConfigCheck.TabIndex = 18;
+            this.subUploadConfigCheck.Text = "          Check";
+            this.subUploadConfigCheck.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.subUploadConfigCheck.Textcolor = System.Drawing.Color.DimGray;
+            this.subUploadConfigCheck.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            // 
             // Delete
             // 
             this.Delete.BackColor = System.Drawing.Color.WhiteSmoke;
@@ -266,7 +336,7 @@
             // subDeleteByIds
             // 
             this.subDeleteByIds.Active = false;
-            this.subDeleteByIds.Activecolor = System.Drawing.Color.Silver;
+            this.subDeleteByIds.Activecolor = System.Drawing.Color.Gainsboro;
             this.subDeleteByIds.BackColor = System.Drawing.Color.WhiteSmoke;
             this.subDeleteByIds.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.subDeleteByIds.BorderRadius = 0;
@@ -289,7 +359,7 @@
             this.subDeleteByIds.Name = "subDeleteByIds";
             this.subDeleteByIds.Normalcolor = System.Drawing.Color.WhiteSmoke;
             this.subDeleteByIds.OnHovercolor = System.Drawing.Color.WhiteSmoke;
-            this.subDeleteByIds.OnHoverTextColor = System.Drawing.Color.Silver;
+            this.subDeleteByIds.OnHoverTextColor = System.Drawing.Color.Black;
             this.subDeleteByIds.selected = false;
             this.subDeleteByIds.Size = new System.Drawing.Size(235, 48);
             this.subDeleteByIds.TabIndex = 11;
@@ -301,7 +371,7 @@
             // subCompleteDelete
             // 
             this.subCompleteDelete.Active = false;
-            this.subCompleteDelete.Activecolor = System.Drawing.Color.Silver;
+            this.subCompleteDelete.Activecolor = System.Drawing.Color.Gainsboro;
             this.subCompleteDelete.BackColor = System.Drawing.Color.WhiteSmoke;
             this.subCompleteDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.subCompleteDelete.BorderRadius = 0;
@@ -324,7 +394,7 @@
             this.subCompleteDelete.Name = "subCompleteDelete";
             this.subCompleteDelete.Normalcolor = System.Drawing.Color.WhiteSmoke;
             this.subCompleteDelete.OnHovercolor = System.Drawing.Color.WhiteSmoke;
-            this.subCompleteDelete.OnHoverTextColor = System.Drawing.Color.Silver;
+            this.subCompleteDelete.OnHoverTextColor = System.Drawing.Color.Black;
             this.subCompleteDelete.selected = false;
             this.subCompleteDelete.Size = new System.Drawing.Size(235, 48);
             this.subCompleteDelete.TabIndex = 10;
@@ -336,7 +406,7 @@
             // subDeleteFromFile
             // 
             this.subDeleteFromFile.Active = false;
-            this.subDeleteFromFile.Activecolor = System.Drawing.Color.Silver;
+            this.subDeleteFromFile.Activecolor = System.Drawing.Color.Gainsboro;
             this.subDeleteFromFile.BackColor = System.Drawing.Color.WhiteSmoke;
             this.subDeleteFromFile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.subDeleteFromFile.BorderRadius = 0;
@@ -359,7 +429,7 @@
             this.subDeleteFromFile.Name = "subDeleteFromFile";
             this.subDeleteFromFile.Normalcolor = System.Drawing.Color.WhiteSmoke;
             this.subDeleteFromFile.OnHovercolor = System.Drawing.Color.WhiteSmoke;
-            this.subDeleteFromFile.OnHoverTextColor = System.Drawing.Color.Silver;
+            this.subDeleteFromFile.OnHoverTextColor = System.Drawing.Color.Black;
             this.subDeleteFromFile.selected = false;
             this.subDeleteFromFile.Size = new System.Drawing.Size(235, 48);
             this.subDeleteFromFile.TabIndex = 9;
@@ -383,7 +453,7 @@
             // subOpenCurrentFile
             // 
             this.subOpenCurrentFile.Active = false;
-            this.subOpenCurrentFile.Activecolor = System.Drawing.Color.Silver;
+            this.subOpenCurrentFile.Activecolor = System.Drawing.Color.Gainsboro;
             this.subOpenCurrentFile.BackColor = System.Drawing.Color.WhiteSmoke;
             this.subOpenCurrentFile.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.subOpenCurrentFile.BorderRadius = 0;
@@ -406,7 +476,7 @@
             this.subOpenCurrentFile.Name = "subOpenCurrentFile";
             this.subOpenCurrentFile.Normalcolor = System.Drawing.Color.WhiteSmoke;
             this.subOpenCurrentFile.OnHovercolor = System.Drawing.Color.WhiteSmoke;
-            this.subOpenCurrentFile.OnHoverTextColor = System.Drawing.Color.Silver;
+            this.subOpenCurrentFile.OnHoverTextColor = System.Drawing.Color.Black;
             this.subOpenCurrentFile.selected = false;
             this.subOpenCurrentFile.Size = new System.Drawing.Size(235, 48);
             this.subOpenCurrentFile.TabIndex = 13;
@@ -418,7 +488,7 @@
             // subOpenFileBrowse
             // 
             this.subOpenFileBrowse.Active = false;
-            this.subOpenFileBrowse.Activecolor = System.Drawing.Color.Silver;
+            this.subOpenFileBrowse.Activecolor = System.Drawing.Color.Gainsboro;
             this.subOpenFileBrowse.BackColor = System.Drawing.Color.WhiteSmoke;
             this.subOpenFileBrowse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.subOpenFileBrowse.BorderRadius = 0;
@@ -441,7 +511,7 @@
             this.subOpenFileBrowse.Name = "subOpenFileBrowse";
             this.subOpenFileBrowse.Normalcolor = System.Drawing.Color.WhiteSmoke;
             this.subOpenFileBrowse.OnHovercolor = System.Drawing.Color.WhiteSmoke;
-            this.subOpenFileBrowse.OnHoverTextColor = System.Drawing.Color.Silver;
+            this.subOpenFileBrowse.OnHoverTextColor = System.Drawing.Color.Black;
             this.subOpenFileBrowse.selected = false;
             this.subOpenFileBrowse.Size = new System.Drawing.Size(235, 48);
             this.subOpenFileBrowse.TabIndex = 12;
@@ -466,7 +536,7 @@
             // subLogExternal
             // 
             this.subLogExternal.Active = false;
-            this.subLogExternal.Activecolor = System.Drawing.Color.Silver;
+            this.subLogExternal.Activecolor = System.Drawing.Color.Gainsboro;
             this.subLogExternal.BackColor = System.Drawing.Color.WhiteSmoke;
             this.subLogExternal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.subLogExternal.BorderRadius = 0;
@@ -489,7 +559,7 @@
             this.subLogExternal.Name = "subLogExternal";
             this.subLogExternal.Normalcolor = System.Drawing.Color.WhiteSmoke;
             this.subLogExternal.OnHovercolor = System.Drawing.Color.WhiteSmoke;
-            this.subLogExternal.OnHoverTextColor = System.Drawing.Color.Silver;
+            this.subLogExternal.OnHoverTextColor = System.Drawing.Color.Black;
             this.subLogExternal.selected = false;
             this.subLogExternal.Size = new System.Drawing.Size(235, 48);
             this.subLogExternal.TabIndex = 16;
@@ -501,7 +571,7 @@
             // subOpenCurrentLog
             // 
             this.subOpenCurrentLog.Active = false;
-            this.subOpenCurrentLog.Activecolor = System.Drawing.Color.Silver;
+            this.subOpenCurrentLog.Activecolor = System.Drawing.Color.Gainsboro;
             this.subOpenCurrentLog.BackColor = System.Drawing.Color.WhiteSmoke;
             this.subOpenCurrentLog.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.subOpenCurrentLog.BorderRadius = 0;
@@ -524,7 +594,7 @@
             this.subOpenCurrentLog.Name = "subOpenCurrentLog";
             this.subOpenCurrentLog.Normalcolor = System.Drawing.Color.WhiteSmoke;
             this.subOpenCurrentLog.OnHovercolor = System.Drawing.Color.WhiteSmoke;
-            this.subOpenCurrentLog.OnHoverTextColor = System.Drawing.Color.Silver;
+            this.subOpenCurrentLog.OnHoverTextColor = System.Drawing.Color.Black;
             this.subOpenCurrentLog.selected = false;
             this.subOpenCurrentLog.Size = new System.Drawing.Size(235, 48);
             this.subOpenCurrentLog.TabIndex = 15;
@@ -536,7 +606,7 @@
             // subLogBrowse
             // 
             this.subLogBrowse.Active = false;
-            this.subLogBrowse.Activecolor = System.Drawing.Color.Silver;
+            this.subLogBrowse.Activecolor = System.Drawing.Color.Gainsboro;
             this.subLogBrowse.BackColor = System.Drawing.Color.WhiteSmoke;
             this.subLogBrowse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.subLogBrowse.BorderRadius = 0;
@@ -559,7 +629,7 @@
             this.subLogBrowse.Name = "subLogBrowse";
             this.subLogBrowse.Normalcolor = System.Drawing.Color.WhiteSmoke;
             this.subLogBrowse.OnHovercolor = System.Drawing.Color.WhiteSmoke;
-            this.subLogBrowse.OnHoverTextColor = System.Drawing.Color.Silver;
+            this.subLogBrowse.OnHoverTextColor = System.Drawing.Color.Black;
             this.subLogBrowse.selected = false;
             this.subLogBrowse.Size = new System.Drawing.Size(235, 48);
             this.subLogBrowse.TabIndex = 14;
@@ -579,6 +649,76 @@
             this.Info.Size = new System.Drawing.Size(237, 638);
             this.Info.TabIndex = 5;
             this.Info.Text = "Info";
+            // 
+            // subContact
+            // 
+            this.subContact.Active = false;
+            this.subContact.Activecolor = System.Drawing.Color.Gainsboro;
+            this.subContact.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.subContact.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.subContact.BorderRadius = 0;
+            this.subContact.ButtonText = "          Contact";
+            this.subContact.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.subContact.DisabledColor = System.Drawing.Color.Gray;
+            this.subContact.Iconcolor = System.Drawing.Color.Transparent;
+            this.subContact.Iconimage = null;
+            this.subContact.Iconimage_right = null;
+            this.subContact.Iconimage_right_Selected = null;
+            this.subContact.Iconimage_Selected = null;
+            this.subContact.IconMarginLeft = 0;
+            this.subContact.IconMarginRight = 0;
+            this.subContact.IconRightVisible = false;
+            this.subContact.IconRightZoom = 0D;
+            this.subContact.IconVisible = false;
+            this.subContact.IconZoom = 50D;
+            this.subContact.IsTab = true;
+            this.subContact.Location = new System.Drawing.Point(-4, 6);
+            this.subContact.Name = "subContact";
+            this.subContact.Normalcolor = System.Drawing.Color.WhiteSmoke;
+            this.subContact.OnHovercolor = System.Drawing.Color.WhiteSmoke;
+            this.subContact.OnHoverTextColor = System.Drawing.Color.Black;
+            this.subContact.selected = false;
+            this.subContact.Size = new System.Drawing.Size(235, 48);
+            this.subContact.TabIndex = 17;
+            this.subContact.Text = "          Contact";
+            this.subContact.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.subContact.Textcolor = System.Drawing.Color.DimGray;
+            this.subContact.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            // 
+            // subBugReport
+            // 
+            this.subBugReport.Active = false;
+            this.subBugReport.Activecolor = System.Drawing.Color.Gainsboro;
+            this.subBugReport.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.subBugReport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.subBugReport.BorderRadius = 0;
+            this.subBugReport.ButtonText = "          Bug Report";
+            this.subBugReport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.subBugReport.DisabledColor = System.Drawing.Color.Gray;
+            this.subBugReport.Iconcolor = System.Drawing.Color.Transparent;
+            this.subBugReport.Iconimage = null;
+            this.subBugReport.Iconimage_right = null;
+            this.subBugReport.Iconimage_right_Selected = null;
+            this.subBugReport.Iconimage_Selected = null;
+            this.subBugReport.IconMarginLeft = 0;
+            this.subBugReport.IconMarginRight = 0;
+            this.subBugReport.IconRightVisible = false;
+            this.subBugReport.IconRightZoom = 0D;
+            this.subBugReport.IconVisible = false;
+            this.subBugReport.IconZoom = 50D;
+            this.subBugReport.IsTab = true;
+            this.subBugReport.Location = new System.Drawing.Point(-4, 51);
+            this.subBugReport.Name = "subBugReport";
+            this.subBugReport.Normalcolor = System.Drawing.Color.WhiteSmoke;
+            this.subBugReport.OnHovercolor = System.Drawing.Color.WhiteSmoke;
+            this.subBugReport.OnHoverTextColor = System.Drawing.Color.Black;
+            this.subBugReport.selected = false;
+            this.subBugReport.Size = new System.Drawing.Size(235, 48);
+            this.subBugReport.TabIndex = 16;
+            this.subBugReport.Text = "          Bug Report";
+            this.subBugReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.subBugReport.Textcolor = System.Drawing.Color.DimGray;
+            this.subBugReport.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             // 
             // panel1
             // 
@@ -611,146 +751,6 @@
             this.Dashboard.Size = new System.Drawing.Size(95, 19);
             this.Dashboard.TabIndex = 0;
             this.Dashboard.Text = "Dashboard";
-            // 
-            // subContact
-            // 
-            this.subContact.Active = false;
-            this.subContact.Activecolor = System.Drawing.Color.Silver;
-            this.subContact.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.subContact.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.subContact.BorderRadius = 0;
-            this.subContact.ButtonText = "          Contact";
-            this.subContact.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.subContact.DisabledColor = System.Drawing.Color.Gray;
-            this.subContact.Iconcolor = System.Drawing.Color.Transparent;
-            this.subContact.Iconimage = null;
-            this.subContact.Iconimage_right = null;
-            this.subContact.Iconimage_right_Selected = null;
-            this.subContact.Iconimage_Selected = null;
-            this.subContact.IconMarginLeft = 0;
-            this.subContact.IconMarginRight = 0;
-            this.subContact.IconRightVisible = false;
-            this.subContact.IconRightZoom = 0D;
-            this.subContact.IconVisible = false;
-            this.subContact.IconZoom = 50D;
-            this.subContact.IsTab = true;
-            this.subContact.Location = new System.Drawing.Point(-4, 6);
-            this.subContact.Name = "subContact";
-            this.subContact.Normalcolor = System.Drawing.Color.WhiteSmoke;
-            this.subContact.OnHovercolor = System.Drawing.Color.WhiteSmoke;
-            this.subContact.OnHoverTextColor = System.Drawing.Color.Silver;
-            this.subContact.selected = false;
-            this.subContact.Size = new System.Drawing.Size(235, 48);
-            this.subContact.TabIndex = 17;
-            this.subContact.Text = "          Contact";
-            this.subContact.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.subContact.Textcolor = System.Drawing.Color.DimGray;
-            this.subContact.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            // 
-            // subBugReport
-            // 
-            this.subBugReport.Active = false;
-            this.subBugReport.Activecolor = System.Drawing.Color.Silver;
-            this.subBugReport.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.subBugReport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.subBugReport.BorderRadius = 0;
-            this.subBugReport.ButtonText = "          Bug Report";
-            this.subBugReport.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.subBugReport.DisabledColor = System.Drawing.Color.Gray;
-            this.subBugReport.Iconcolor = System.Drawing.Color.Transparent;
-            this.subBugReport.Iconimage = null;
-            this.subBugReport.Iconimage_right = null;
-            this.subBugReport.Iconimage_right_Selected = null;
-            this.subBugReport.Iconimage_Selected = null;
-            this.subBugReport.IconMarginLeft = 0;
-            this.subBugReport.IconMarginRight = 0;
-            this.subBugReport.IconRightVisible = false;
-            this.subBugReport.IconRightZoom = 0D;
-            this.subBugReport.IconVisible = false;
-            this.subBugReport.IconZoom = 50D;
-            this.subBugReport.IsTab = true;
-            this.subBugReport.Location = new System.Drawing.Point(-4, 51);
-            this.subBugReport.Name = "subBugReport";
-            this.subBugReport.Normalcolor = System.Drawing.Color.WhiteSmoke;
-            this.subBugReport.OnHovercolor = System.Drawing.Color.WhiteSmoke;
-            this.subBugReport.OnHoverTextColor = System.Drawing.Color.Silver;
-            this.subBugReport.selected = false;
-            this.subBugReport.Size = new System.Drawing.Size(235, 48);
-            this.subBugReport.TabIndex = 16;
-            this.subBugReport.Text = "          Bug Report";
-            this.subBugReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.subBugReport.Textcolor = System.Drawing.Color.DimGray;
-            this.subBugReport.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            // 
-            // subUploadStart
-            // 
-            this.subUploadStart.Active = false;
-            this.subUploadStart.Activecolor = System.Drawing.Color.Silver;
-            this.subUploadStart.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.subUploadStart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.subUploadStart.BorderRadius = 0;
-            this.subUploadStart.ButtonText = "          Start";
-            this.subUploadStart.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.subUploadStart.DisabledColor = System.Drawing.Color.Gray;
-            this.subUploadStart.Iconcolor = System.Drawing.Color.Transparent;
-            this.subUploadStart.Iconimage = null;
-            this.subUploadStart.Iconimage_right = null;
-            this.subUploadStart.Iconimage_right_Selected = null;
-            this.subUploadStart.Iconimage_Selected = null;
-            this.subUploadStart.IconMarginLeft = 0;
-            this.subUploadStart.IconMarginRight = 0;
-            this.subUploadStart.IconRightVisible = true;
-            this.subUploadStart.IconRightZoom = 0D;
-            this.subUploadStart.IconVisible = true;
-            this.subUploadStart.IconZoom = 50D;
-            this.subUploadStart.IsTab = true;
-            this.subUploadStart.Location = new System.Drawing.Point(-6, 6);
-            this.subUploadStart.Name = "subUploadStart";
-            this.subUploadStart.Normalcolor = System.Drawing.Color.WhiteSmoke;
-            this.subUploadStart.OnHovercolor = System.Drawing.Color.WhiteSmoke;
-            this.subUploadStart.OnHoverTextColor = System.Drawing.Color.Silver;
-            this.subUploadStart.selected = false;
-            this.subUploadStart.Size = new System.Drawing.Size(235, 48);
-            this.subUploadStart.TabIndex = 19;
-            this.subUploadStart.Text = "          Start";
-            this.subUploadStart.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.subUploadStart.Textcolor = System.Drawing.Color.DimGray;
-            this.subUploadStart.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            // 
-            // subUploadConfigCheck
-            // 
-            this.subUploadConfigCheck.Active = false;
-            this.subUploadConfigCheck.Activecolor = System.Drawing.Color.Silver;
-            this.subUploadConfigCheck.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.subUploadConfigCheck.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.subUploadConfigCheck.BorderRadius = 0;
-            this.subUploadConfigCheck.ButtonText = "          Check";
-            this.subUploadConfigCheck.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.subUploadConfigCheck.DisabledColor = System.Drawing.Color.Gray;
-            this.subUploadConfigCheck.Iconcolor = System.Drawing.Color.Transparent;
-            this.subUploadConfigCheck.Iconimage = null;
-            this.subUploadConfigCheck.Iconimage_right = null;
-            this.subUploadConfigCheck.Iconimage_right_Selected = null;
-            this.subUploadConfigCheck.Iconimage_Selected = null;
-            this.subUploadConfigCheck.IconMarginLeft = 0;
-            this.subUploadConfigCheck.IconMarginRight = 0;
-            this.subUploadConfigCheck.IconRightVisible = true;
-            this.subUploadConfigCheck.IconRightZoom = 0D;
-            this.subUploadConfigCheck.IconVisible = true;
-            this.subUploadConfigCheck.IconZoom = 50D;
-            this.subUploadConfigCheck.IsTab = true;
-            this.subUploadConfigCheck.Location = new System.Drawing.Point(-4, 51);
-            this.subUploadConfigCheck.Name = "subUploadConfigCheck";
-            this.subUploadConfigCheck.Normalcolor = System.Drawing.Color.WhiteSmoke;
-            this.subUploadConfigCheck.OnHovercolor = System.Drawing.Color.WhiteSmoke;
-            this.subUploadConfigCheck.OnHoverTextColor = System.Drawing.Color.Silver;
-            this.subUploadConfigCheck.selected = false;
-            this.subUploadConfigCheck.Size = new System.Drawing.Size(235, 48);
-            this.subUploadConfigCheck.TabIndex = 18;
-            this.subUploadConfigCheck.Text = "          Check";
-            this.subUploadConfigCheck.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.subUploadConfigCheck.Textcolor = System.Drawing.Color.DimGray;
-            this.subUploadConfigCheck.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             // 
             // subMenu
             // 
