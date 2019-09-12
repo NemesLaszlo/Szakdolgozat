@@ -131,7 +131,6 @@
             this.subOpenCurrentConfig.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.subOpenCurrentConfig.Textcolor = System.Drawing.Color.DimGray;
             this.subOpenCurrentConfig.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.subOpenCurrentConfig.Click += new System.EventHandler(this.subOpenCurrentConfig_Click);
             // 
             // subReset
             // 
@@ -363,10 +362,12 @@
             this.subDeleteByIds.selected = false;
             this.subDeleteByIds.Size = new System.Drawing.Size(235, 48);
             this.subDeleteByIds.TabIndex = 11;
+            this.subDeleteByIds.Tag = "0";
             this.subDeleteByIds.Text = "          Delete By Ids";
             this.subDeleteByIds.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.subDeleteByIds.Textcolor = System.Drawing.Color.DimGray;
             this.subDeleteByIds.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.subDeleteByIds.Click += new System.EventHandler(this.subDeleteClick_Click);
             // 
             // subCompleteDelete
             // 
@@ -398,10 +399,12 @@
             this.subCompleteDelete.selected = false;
             this.subCompleteDelete.Size = new System.Drawing.Size(235, 48);
             this.subCompleteDelete.TabIndex = 10;
+            this.subCompleteDelete.Tag = "2";
             this.subCompleteDelete.Text = "          Complete Delete";
             this.subCompleteDelete.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.subCompleteDelete.Textcolor = System.Drawing.Color.DimGray;
             this.subCompleteDelete.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.subCompleteDelete.Click += new System.EventHandler(this.subDeleteClick_Click);
             // 
             // subDeleteFromFile
             // 
@@ -433,10 +436,12 @@
             this.subDeleteFromFile.selected = false;
             this.subDeleteFromFile.Size = new System.Drawing.Size(235, 48);
             this.subDeleteFromFile.TabIndex = 9;
+            this.subDeleteFromFile.Tag = "1";
             this.subDeleteFromFile.Text = "          Delete From File";
             this.subDeleteFromFile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.subDeleteFromFile.Textcolor = System.Drawing.Color.DimGray;
             this.subDeleteFromFile.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.subDeleteFromFile.Click += new System.EventHandler(this.subDeleteClick_Click);
             // 
             // File
             // 
@@ -680,10 +685,12 @@
             this.subContact.selected = false;
             this.subContact.Size = new System.Drawing.Size(235, 48);
             this.subContact.TabIndex = 17;
+            this.subContact.Tag = "0";
             this.subContact.Text = "          Contact";
             this.subContact.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.subContact.Textcolor = System.Drawing.Color.DimGray;
             this.subContact.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.subContact.Click += new System.EventHandler(this.subInfoClick_Click);
             // 
             // subBugReport
             // 
@@ -715,10 +722,12 @@
             this.subBugReport.selected = false;
             this.subBugReport.Size = new System.Drawing.Size(235, 48);
             this.subBugReport.TabIndex = 16;
+            this.subBugReport.Tag = "1";
             this.subBugReport.Text = "          Bug Report";
             this.subBugReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.subBugReport.Textcolor = System.Drawing.Color.DimGray;
             this.subBugReport.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.subBugReport.Click += new System.EventHandler(this.subInfoClick_Click);
             // 
             // panel1
             // 

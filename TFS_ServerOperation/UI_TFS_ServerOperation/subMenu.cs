@@ -21,9 +21,17 @@ namespace UI_TFS_ServerOperation
             VSReactive<int>.Subscribe("menu", e => tabControl1.SelectedIndex = e);
         }
 
-        private void subOpenCurrentConfig_Click(object sender, EventArgs e)
+        private void subDeleteClick_Click(object sender, EventArgs e)
         {
-
+            VSReactive<int>.SetState("subPages", int.Parse(((Control)sender).Tag.ToString()));
         }
+
+        private void subInfoClick_Click(object sender, EventArgs e)
+        {
+            VSReactive<int>.SetState("subInfoPages", int.Parse(((Control)sender).Tag.ToString()));
+        }
+
     }
+
+
 }
