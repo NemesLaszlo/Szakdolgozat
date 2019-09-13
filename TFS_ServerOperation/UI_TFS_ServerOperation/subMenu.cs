@@ -19,8 +19,6 @@ namespace UI_TFS_ServerOperation
 
         public subMenu()
         {
-
-
             InitializeComponent();
             if (Program.isInDesignMode()) return;
 
