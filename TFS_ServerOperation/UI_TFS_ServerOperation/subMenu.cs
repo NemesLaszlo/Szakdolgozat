@@ -19,18 +19,33 @@ namespace UI_TFS_ServerOperation
             if (Program.isInDesignMode()) return;
 
             VSReactive<int>.Subscribe("menu", e => tabControl1.SelectedIndex = e);
+            VSReactive<int>.Subscribe("ContentControllerPages", e => ContentControllerPages.SelectedIndex = e);
         }
 
-        private void subDeleteClick_Click(object sender, EventArgs e)
+        private void subDeleteByIds_Click(object sender, EventArgs e)
         {
-            VSReactive<int>.SetState("subPages", int.Parse(((Control)sender).Tag.ToString()));
+            subDeleteTabPages.SetPage(0);
         }
 
-        private void subInfoClick_Click(object sender, EventArgs e)
+        private void subDeleteFromFile_Click(object sender, EventArgs e)
         {
-            VSReactive<int>.SetState("subInfoPages", int.Parse(((Control)sender).Tag.ToString()));
+            subDeleteTabPages.SetPage(1);
         }
 
+        private void subCompleteDelete_Click(object sender, EventArgs e)
+        {
+            subDeleteTabPages.SetPage(2);
+        }
+
+        private void subContact_Click(object sender, EventArgs e)
+        {
+            subInfoPages.SetPage(0);
+        }
+
+        private void subBugReport_Click(object sender, EventArgs e)
+        {
+            subInfoPages.SetPage(1);
+        }
     }
 
 

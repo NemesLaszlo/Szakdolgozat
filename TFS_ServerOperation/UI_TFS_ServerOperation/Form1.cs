@@ -16,8 +16,6 @@ namespace UI_TFS_ServerOperation
         public TFS_Operator()
         {
             InitializeComponent();
-            VSReactive<int>.Subscribe("subPages", e => subDeleteTabPages.SelectedIndex = e);
-            VSReactive<int>.Subscribe("subInfoPages", e => subInfoPages.SelectedIndex = e);
         }
 
         private void MenuButton_Click(object sender, EventArgs e)
@@ -42,39 +40,39 @@ namespace UI_TFS_ServerOperation
 
         private void Settings_Click(object sender, EventArgs e)
         {
-            ContentControllerPages.SetPage(0);
             VSReactive<int>.SetState("menu", int.Parse(((Control)sender).Tag.ToString()));
+            VSReactive<int>.SetState("ContentControllerPages", int.Parse(((Control)sender).Tag.ToString()));
         }
 
         private void Upload_Click(object sender, EventArgs e)
         {
-            ContentControllerPages.SetPage(1);
             VSReactive<int>.SetState("menu", int.Parse(((Control)sender).Tag.ToString()));
+            VSReactive<int>.SetState("ContentControllerPages", int.Parse(((Control)sender).Tag.ToString()));
         }
 
         private void Delete_Click(object sender, EventArgs e)
         {
-            ContentControllerPages.SetPage(2);
-            Alert.AlertCreation("WorkItems Delete Section", AlertType.warning);
             VSReactive<int>.SetState("menu", int.Parse(((Control)sender).Tag.ToString()));
+            VSReactive<int>.SetState("ContentControllerPages", int.Parse(((Control)sender).Tag.ToString()));
+            Alert.AlertCreation("WorkItems Delete Section", AlertType.warning);
         }
 
         private void File_Click(object sender, EventArgs e)
         {
-            ContentControllerPages.SetPage(3);
             VSReactive<int>.SetState("menu", int.Parse(((Control)sender).Tag.ToString()));
+            VSReactive<int>.SetState("ContentControllerPages", int.Parse(((Control)sender).Tag.ToString()));
         }
 
         private void Log_Click(object sender, EventArgs e)
         {
-            ContentControllerPages.SetPage(4);
             VSReactive<int>.SetState("menu", int.Parse(((Control)sender).Tag.ToString()));
+            VSReactive<int>.SetState("ContentControllerPages", int.Parse(((Control)sender).Tag.ToString()));
         }
 
         private void Info_Click(object sender, EventArgs e)
         {
-            ContentControllerPages.SetPage(5);
             VSReactive<int>.SetState("menu", int.Parse(((Control)sender).Tag.ToString()));
+            VSReactive<int>.SetState("ContentControllerPages", int.Parse(((Control)sender).Tag.ToString()));
         }
     }
 }
