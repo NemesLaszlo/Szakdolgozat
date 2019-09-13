@@ -112,9 +112,6 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.Settings);
             this.tabControl1.Controls.Add(this.Upload);
             this.tabControl1.Controls.Add(this.Delete);
@@ -785,7 +782,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(799, 23);
+            this.panel1.Size = new System.Drawing.Size(799, 52);
             this.panel1.TabIndex = 1;
             // 
             // pictureBox1
@@ -894,7 +891,7 @@
             this.UploadPage.Location = new System.Drawing.Point(4, 4);
             this.UploadPage.Name = "UploadPage";
             this.UploadPage.Padding = new System.Windows.Forms.Padding(3);
-            this.UploadPage.Size = new System.Drawing.Size(570, 550);
+            this.UploadPage.Size = new System.Drawing.Size(570, 553);
             this.UploadPage.TabIndex = 1;
             this.UploadPage.Tag = "1";
             this.UploadPage.Text = "UploadPage";
@@ -933,7 +930,7 @@
             this.DeletePage.Location = new System.Drawing.Point(4, 4);
             this.DeletePage.Name = "DeletePage";
             this.DeletePage.Padding = new System.Windows.Forms.Padding(3);
-            this.DeletePage.Size = new System.Drawing.Size(570, 550);
+            this.DeletePage.Size = new System.Drawing.Size(570, 553);
             this.DeletePage.TabIndex = 2;
             this.DeletePage.Tag = "2";
             this.DeletePage.Text = "DeletePage";
@@ -1054,7 +1051,7 @@
             this.FilePage.Location = new System.Drawing.Point(4, 4);
             this.FilePage.Name = "FilePage";
             this.FilePage.Padding = new System.Windows.Forms.Padding(3);
-            this.FilePage.Size = new System.Drawing.Size(570, 550);
+            this.FilePage.Size = new System.Drawing.Size(570, 553);
             this.FilePage.TabIndex = 3;
             this.FilePage.Tag = "3";
             this.FilePage.Text = "FilePage";
@@ -1075,7 +1072,7 @@
             this.LogPage.Location = new System.Drawing.Point(4, 4);
             this.LogPage.Name = "LogPage";
             this.LogPage.Padding = new System.Windows.Forms.Padding(3);
-            this.LogPage.Size = new System.Drawing.Size(570, 550);
+            this.LogPage.Size = new System.Drawing.Size(570, 553);
             this.LogPage.TabIndex = 4;
             this.LogPage.Tag = "4";
             this.LogPage.Text = "LogPage";
@@ -1097,7 +1094,7 @@
             this.InfoPage.Location = new System.Drawing.Point(4, 4);
             this.InfoPage.Name = "InfoPage";
             this.InfoPage.Padding = new System.Windows.Forms.Padding(3);
-            this.InfoPage.Size = new System.Drawing.Size(570, 550);
+            this.InfoPage.Size = new System.Drawing.Size(570, 553);
             this.InfoPage.TabIndex = 5;
             this.InfoPage.Tag = "5";
             this.InfoPage.Text = "InfoPage";

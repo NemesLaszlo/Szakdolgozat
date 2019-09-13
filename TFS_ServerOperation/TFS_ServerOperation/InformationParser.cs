@@ -188,17 +188,5 @@ namespace TFS_ServerOperation
             ServerOperation.ServerContentDelete();
             MailSender.SendEmail(GetAddressToMail(), "All server data is gone", "Everything has been deleted from the server", null);
         }
-
-        /// <summary>
-        /// Give us the current bin folder path of the config.
-        /// </summary>
-        /// <returns></returns>
-        public string GetCurrentPathToBin()
-        {
-            string executableLocation = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            string configLocation = Path.Combine(executableLocation, "TFS_ServerOperation.exe.config");
-
-            return configLocation;
-        }
     }
 }

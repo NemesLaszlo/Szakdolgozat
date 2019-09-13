@@ -17,23 +17,10 @@ namespace UI_TFS_ServerOperation
 {
     public partial class subMenu : UserControl
     {
-        private InformationParser informationParser;
-        private Logger log;
-        private MailSender mailSender;
-        private ServerOperationManager serverOperator;
-
-        private void ControllerInit()
-        {
-            InformationParser informationParser = new InformationParser();
-            //Logger log = informationParser.Init_Log();
-            //MailSender mailSender = informationParser.Init_MailSender(log);
-            //ServerOperationManager serverOperator = informationParser.Init_ServerOperation(log);
-        }
 
         public subMenu()
         {
             InitializeComponent();
-            ControllerInit();
 
             if (Program.isInDesignMode()) return;
 
@@ -70,8 +57,9 @@ namespace UI_TFS_ServerOperation
 
         private void subOpenCurrentConfig_Click(object sender, EventArgs e)
         {
-            string path = informationParser.GetCurrentPathToBin();
-            SettingsRichTextBox.Text = System.IO.File.ReadAllText(path);
+            string executableLocation = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            string configLocation = Path.Combine(executableLocation, "TFS_ServerOperation.exe.config");
+            SettingsRichTextBox.Text = System.IO.File.ReadAllText(configLocation);
         }
 
         private void subConfigLoad_Click(object sender, EventArgs e)

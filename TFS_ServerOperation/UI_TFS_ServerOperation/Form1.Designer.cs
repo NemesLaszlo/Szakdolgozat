@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Bunifu.UI.WinForms.BunifuAnimatorNS.Animation animation17 = new Bunifu.UI.WinForms.BunifuAnimatorNS.Animation();
+            Bunifu.UI.WinForms.BunifuAnimatorNS.Animation animation1 = new Bunifu.UI.WinForms.BunifuAnimatorNS.Animation();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TFS_Operator));
-            Bunifu.UI.WinForms.BunifuAnimatorNS.Animation animation18 = new Bunifu.UI.WinForms.BunifuAnimatorNS.Animation();
+            Bunifu.UI.WinForms.BunifuAnimatorNS.Animation animation2 = new Bunifu.UI.WinForms.BunifuAnimatorNS.Animation();
             this.LeftTransformMenu = new System.Windows.Forms.Panel();
             this.smallLogo = new System.Windows.Forms.PictureBox();
             this.bunifuFlatButton1 = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -44,13 +44,11 @@
             this.BigLogo = new System.Windows.Forms.PictureBox();
             this.LogoAnimator = new Bunifu.UI.WinForms.BunifuTransition(this.components);
             this.PanelAnimator = new Bunifu.UI.WinForms.BunifuTransition(this.components);
-            this.panel1 = new System.Windows.Forms.Panel();
             this.subMenu1 = new UI_TFS_ServerOperation.subMenu();
             this.LeftTransformMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.smallLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MenuButton)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.BigLogo)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // LeftTransformMenu
@@ -350,78 +348,63 @@
             // 
             // LogoAnimator
             // 
-            this.LogoAnimator.AnimationType = Bunifu.UI.WinForms.BunifuAnimatorNS.AnimationType.ScaleAndRotate;
+            this.LogoAnimator.AnimationType = Bunifu.UI.WinForms.BunifuAnimatorNS.AnimationType.Scale;
             this.LogoAnimator.Cursor = null;
-            animation17.AnimateOnlyDifferences = true;
-            animation17.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation17.BlindCoeff")));
-            animation17.LeafCoeff = 0F;
-            animation17.MaxTime = 1F;
-            animation17.MinTime = 0F;
-            animation17.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation17.MosaicCoeff")));
-            animation17.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation17.MosaicShift")));
-            animation17.MosaicSize = 0;
-            animation17.Padding = new System.Windows.Forms.Padding(30);
-            animation17.RotateCoeff = 0.5F;
-            animation17.RotateLimit = 0.2F;
-            animation17.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation17.ScaleCoeff")));
-            animation17.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation17.SlideCoeff")));
-            animation17.TimeCoeff = 0F;
-            animation17.TransparencyCoeff = 0F;
-            this.LogoAnimator.DefaultAnimation = animation17;
+            animation1.AnimateOnlyDifferences = true;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.LogoAnimator.DefaultAnimation = animation1;
+            this.LogoAnimator.MaxAnimationTime = 1000;
             // 
             // PanelAnimator
             // 
             this.PanelAnimator.AnimationType = Bunifu.UI.WinForms.BunifuAnimatorNS.AnimationType.Transparent;
             this.PanelAnimator.Cursor = null;
-            animation18.AnimateOnlyDifferences = true;
-            animation18.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation18.BlindCoeff")));
-            animation18.LeafCoeff = 0F;
-            animation18.MaxTime = 1F;
-            animation18.MinTime = 0F;
-            animation18.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation18.MosaicCoeff")));
-            animation18.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation18.MosaicShift")));
-            animation18.MosaicSize = 0;
-            animation18.Padding = new System.Windows.Forms.Padding(0);
-            animation18.RotateCoeff = 0F;
-            animation18.RotateLimit = 0F;
-            animation18.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation18.ScaleCoeff")));
-            animation18.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation18.SlideCoeff")));
-            animation18.TimeCoeff = 0F;
-            animation18.TransparencyCoeff = 1F;
-            this.PanelAnimator.DefaultAnimation = animation18;
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.panel1.Controls.Add(this.subMenu1);
-            this.PanelAnimator.SetDecoration(this.panel1, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.LogoAnimator.SetDecoration(this.panel1, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.panel1.Location = new System.Drawing.Point(225, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(799, 579);
-            this.panel1.TabIndex = 1;
+            animation2.AnimateOnlyDifferences = true;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 1F;
+            this.PanelAnimator.DefaultAnimation = animation2;
             // 
             // subMenu1
             // 
-            this.subMenu1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.LogoAnimator.SetDecoration(this.subMenu1, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
             this.PanelAnimator.SetDecoration(this.subMenu1, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.subMenu1.Location = new System.Drawing.Point(3, 0);
+            this.subMenu1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.subMenu1.Location = new System.Drawing.Point(225, 0);
             this.subMenu1.Name = "subMenu1";
-            this.subMenu1.Size = new System.Drawing.Size(796, 579);
-            this.subMenu1.TabIndex = 0;
+            this.subMenu1.Size = new System.Drawing.Size(799, 579);
+            this.subMenu1.TabIndex = 1;
             // 
             // TFS_Operator
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1024, 579);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.subMenu1);
             this.Controls.Add(this.LeftTransformMenu);
             this.PanelAnimator.SetDecoration(this, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
             this.LogoAnimator.SetDecoration(this, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
@@ -433,7 +416,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.smallLogo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.MenuButton)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.BigLogo)).EndInit();
-            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -452,7 +434,6 @@
         private System.Windows.Forms.PictureBox smallLogo;
         private Bunifu.UI.WinForms.BunifuTransition LogoAnimator;
         private Bunifu.UI.WinForms.BunifuTransition PanelAnimator;
-        private System.Windows.Forms.Panel panel1;
         private subMenu subMenu1;
     }
 }
