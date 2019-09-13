@@ -126,5 +126,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TFS_ServerOperation\TFS_ServerOperation.csproj">
+      <Project>{019D1F49-7C62-47B4-B582-F0C93709FBB9}</Project>
+      <Name>TFS_ServerOperation</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

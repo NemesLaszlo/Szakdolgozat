@@ -175,6 +175,7 @@
             this.subOpenCurrentConfig.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.subOpenCurrentConfig.Textcolor = System.Drawing.Color.DimGray;
             this.subOpenCurrentConfig.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.subOpenCurrentConfig.Click += new System.EventHandler(this.subOpenCurrentConfig_Click);
             // 
             // subReset
             // 
@@ -210,6 +211,7 @@
             this.subReset.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.subReset.Textcolor = System.Drawing.Color.DimGray;
             this.subReset.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.subReset.Click += new System.EventHandler(this.subReset_Click);
             // 
             // subConfigLoad
             // 
@@ -245,6 +247,7 @@
             this.subConfigLoad.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.subConfigLoad.Textcolor = System.Drawing.Color.DimGray;
             this.subConfigLoad.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.subConfigLoad.Click += new System.EventHandler(this.subConfigLoad_Click);
             // 
             // subSave
             // 
@@ -280,6 +283,7 @@
             this.subSave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.subSave.Textcolor = System.Drawing.Color.DimGray;
             this.subSave.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.subSave.Click += new System.EventHandler(this.subSave_Click);
             // 
             // Upload
             // 
@@ -781,7 +785,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(799, 80);
+            this.panel1.Size = new System.Drawing.Size(799, 23);
             this.panel1.TabIndex = 1;
             // 
             // pictureBox1

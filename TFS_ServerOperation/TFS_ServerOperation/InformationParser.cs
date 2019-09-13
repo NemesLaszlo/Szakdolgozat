@@ -4,6 +4,7 @@ using System.Collections.Specialized;
 using System.Configuration;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using TFS_ServerOperation.CustomConfigSetup;
 
 namespace TFS_ServerOperation
@@ -186,6 +187,18 @@ namespace TFS_ServerOperation
         {
             ServerOperation.ServerContentDelete();
             MailSender.SendEmail(GetAddressToMail(), "All server data is gone", "Everything has been deleted from the server", null);
+        }
+
+        /// <summary>
+        /// Give us the current bin folder path of the config.
+        /// </summary>
+        /// <returns></returns>
+        public string GetCurrentPathToBin()
+        {
+            string executableLocation = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            string configLocation = Path.Combine(executableLocation, "TFS_ServerOperation.exe.config");
+
+            return configLocation;
         }
     }
 }
