@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(subMenu));
-            Utilities.BunifuPages.BunifuAnimatorNS.Animation animation2 = new Utilities.BunifuPages.BunifuAnimatorNS.Animation();
-            Utilities.BunifuPages.BunifuAnimatorNS.Animation animation4 = new Utilities.BunifuPages.BunifuAnimatorNS.Animation();
             Utilities.BunifuPages.BunifuAnimatorNS.Animation animation3 = new Utilities.BunifuPages.BunifuAnimatorNS.Animation();
+            Utilities.BunifuPages.BunifuAnimatorNS.Animation animation1 = new Utilities.BunifuPages.BunifuAnimatorNS.Animation();
+            Utilities.BunifuPages.BunifuAnimatorNS.Animation animation2 = new Utilities.BunifuPages.BunifuAnimatorNS.Animation();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Settings = new System.Windows.Forms.TabPage();
             this.subOpenCurrentConfig = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -40,7 +40,6 @@
             this.subSave = new Bunifu.Framework.UI.BunifuFlatButton();
             this.Upload = new System.Windows.Forms.TabPage();
             this.subUploadStart = new Bunifu.Framework.UI.BunifuFlatButton();
-            this.subUploadConfigCheck = new Bunifu.Framework.UI.BunifuFlatButton();
             this.Delete = new System.Windows.Forms.TabPage();
             this.subDeleteByIds = new Bunifu.Framework.UI.BunifuFlatButton();
             this.subCompleteDelete = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -63,7 +62,13 @@
             this.SettingsPage = new System.Windows.Forms.TabPage();
             this.SettingsRichTextBox = new System.Windows.Forms.RichTextBox();
             this.UploadPage = new System.Windows.Forms.TabPage();
-            this.bunifuCircleProgressbar1 = new Bunifu.Framework.UI.BunifuCircleProgressbar();
+            this.ServerTeamProjectInfoLabel = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.ServerCollectionInfoLabel = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.ServerTeamProject = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.ServerCollection = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.UploadBar = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.DeletePage = new System.Windows.Forms.TabPage();
             this.subDeleteTabPages = new Bunifu.UI.WinForms.BunifuPages();
             this.IdDelete = new System.Windows.Forms.TabPage();
@@ -121,7 +126,7 @@
             this.tabControl1.Location = new System.Drawing.Point(-9, 58);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(236, 764);
+            this.tabControl1.Size = new System.Drawing.Size(236, 1400);
             this.tabControl1.TabIndex = 0;
             // 
             // Settings
@@ -134,7 +139,7 @@
             this.Settings.Location = new System.Drawing.Point(4, 22);
             this.Settings.Name = "Settings";
             this.Settings.Padding = new System.Windows.Forms.Padding(3);
-            this.Settings.Size = new System.Drawing.Size(228, 738);
+            this.Settings.Size = new System.Drawing.Size(228, 1374);
             this.Settings.TabIndex = 0;
             this.Settings.Text = "Settings";
             // 
@@ -286,11 +291,10 @@
             // 
             this.Upload.BackColor = System.Drawing.Color.WhiteSmoke;
             this.Upload.Controls.Add(this.subUploadStart);
-            this.Upload.Controls.Add(this.subUploadConfigCheck);
             this.Upload.Location = new System.Drawing.Point(4, 22);
             this.Upload.Name = "Upload";
             this.Upload.Padding = new System.Windows.Forms.Padding(3);
-            this.Upload.Size = new System.Drawing.Size(228, 738);
+            this.Upload.Size = new System.Drawing.Size(228, 1374);
             this.Upload.TabIndex = 1;
             this.Upload.Text = "Upload";
             // 
@@ -328,41 +332,7 @@
             this.subUploadStart.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.subUploadStart.Textcolor = System.Drawing.Color.DimGray;
             this.subUploadStart.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            // 
-            // subUploadConfigCheck
-            // 
-            this.subUploadConfigCheck.Active = false;
-            this.subUploadConfigCheck.Activecolor = System.Drawing.Color.Gainsboro;
-            this.subUploadConfigCheck.BackColor = System.Drawing.Color.WhiteSmoke;
-            this.subUploadConfigCheck.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.subUploadConfigCheck.BorderRadius = 0;
-            this.subUploadConfigCheck.ButtonText = "          Check";
-            this.subUploadConfigCheck.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.subUploadConfigCheck.DisabledColor = System.Drawing.Color.Gray;
-            this.subUploadConfigCheck.Iconcolor = System.Drawing.Color.Transparent;
-            this.subUploadConfigCheck.Iconimage = null;
-            this.subUploadConfigCheck.Iconimage_right = null;
-            this.subUploadConfigCheck.Iconimage_right_Selected = null;
-            this.subUploadConfigCheck.Iconimage_Selected = null;
-            this.subUploadConfigCheck.IconMarginLeft = 0;
-            this.subUploadConfigCheck.IconMarginRight = 0;
-            this.subUploadConfigCheck.IconRightVisible = false;
-            this.subUploadConfigCheck.IconRightZoom = 0D;
-            this.subUploadConfigCheck.IconVisible = false;
-            this.subUploadConfigCheck.IconZoom = 50D;
-            this.subUploadConfigCheck.IsTab = true;
-            this.subUploadConfigCheck.Location = new System.Drawing.Point(-4, 51);
-            this.subUploadConfigCheck.Name = "subUploadConfigCheck";
-            this.subUploadConfigCheck.Normalcolor = System.Drawing.Color.WhiteSmoke;
-            this.subUploadConfigCheck.OnHovercolor = System.Drawing.Color.WhiteSmoke;
-            this.subUploadConfigCheck.OnHoverTextColor = System.Drawing.Color.Black;
-            this.subUploadConfigCheck.selected = false;
-            this.subUploadConfigCheck.Size = new System.Drawing.Size(235, 48);
-            this.subUploadConfigCheck.TabIndex = 18;
-            this.subUploadConfigCheck.Text = "          Check";
-            this.subUploadConfigCheck.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.subUploadConfigCheck.Textcolor = System.Drawing.Color.DimGray;
-            this.subUploadConfigCheck.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.subUploadStart.Click += new System.EventHandler(this.subUploadStart_Click);
             // 
             // Delete
             // 
@@ -373,7 +343,7 @@
             this.Delete.Location = new System.Drawing.Point(4, 22);
             this.Delete.Name = "Delete";
             this.Delete.Padding = new System.Windows.Forms.Padding(3);
-            this.Delete.Size = new System.Drawing.Size(228, 738);
+            this.Delete.Size = new System.Drawing.Size(228, 1374);
             this.Delete.TabIndex = 2;
             this.Delete.Text = "Delete";
             // 
@@ -496,7 +466,7 @@
             this.File.Location = new System.Drawing.Point(4, 22);
             this.File.Name = "File";
             this.File.Padding = new System.Windows.Forms.Padding(3);
-            this.File.Size = new System.Drawing.Size(228, 738);
+            this.File.Size = new System.Drawing.Size(228, 1374);
             this.File.TabIndex = 3;
             this.File.Text = "File";
             // 
@@ -579,7 +549,7 @@
             this.Log.Location = new System.Drawing.Point(4, 22);
             this.Log.Name = "Log";
             this.Log.Padding = new System.Windows.Forms.Padding(3);
-            this.Log.Size = new System.Drawing.Size(228, 738);
+            this.Log.Size = new System.Drawing.Size(228, 1374);
             this.Log.TabIndex = 4;
             this.Log.Text = "Log";
             // 
@@ -696,7 +666,7 @@
             this.Info.Location = new System.Drawing.Point(4, 22);
             this.Info.Name = "Info";
             this.Info.Padding = new System.Windows.Forms.Padding(3);
-            this.Info.Size = new System.Drawing.Size(228, 738);
+            this.Info.Size = new System.Drawing.Size(228, 1374);
             this.Info.TabIndex = 5;
             this.Info.Text = "Info";
             // 
@@ -841,22 +811,22 @@
             this.ContentControllerPages.Size = new System.Drawing.Size(578, 579);
             this.ContentControllerPages.TabIndex = 2;
             this.ContentControllerPages.Tag = "";
-            animation2.AnimateOnlyDifferences = true;
-            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
-            animation2.LeafCoeff = 0F;
-            animation2.MaxTime = 1F;
-            animation2.MinTime = 0F;
-            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
-            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
-            animation2.MosaicSize = 0;
-            animation2.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
-            animation2.RotateCoeff = 0F;
-            animation2.RotateLimit = 0F;
-            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
-            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
-            animation2.TimeCoeff = 0F;
-            animation2.TransparencyCoeff = 1F;
-            this.ContentControllerPages.Transition = animation2;
+            animation3.AnimateOnlyDifferences = true;
+            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
+            animation3.LeafCoeff = 0F;
+            animation3.MaxTime = 1F;
+            animation3.MinTime = 0F;
+            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
+            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
+            animation3.MosaicSize = 0;
+            animation3.Padding = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            animation3.RotateCoeff = 0F;
+            animation3.RotateLimit = 0F;
+            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
+            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
+            animation3.TimeCoeff = 0F;
+            animation3.TransparencyCoeff = 1F;
+            this.ContentControllerPages.Transition = animation3;
             this.ContentControllerPages.TransitionType = Utilities.BunifuPages.BunifuAnimatorNS.AnimationType.Transparent;
             // 
             // SettingsPage
@@ -887,7 +857,13 @@
             // 
             // UploadPage
             // 
-            this.UploadPage.Controls.Add(this.bunifuCircleProgressbar1);
+            this.UploadPage.Controls.Add(this.ServerTeamProjectInfoLabel);
+            this.UploadPage.Controls.Add(this.ServerCollectionInfoLabel);
+            this.UploadPage.Controls.Add(this.ServerTeamProject);
+            this.UploadPage.Controls.Add(this.ServerCollection);
+            this.UploadPage.Controls.Add(this.bunifuCustomLabel2);
+            this.UploadPage.Controls.Add(this.bunifuCustomLabel1);
+            this.UploadPage.Controls.Add(this.UploadBar);
             this.UploadPage.Location = new System.Drawing.Point(4, 4);
             this.UploadPage.Name = "UploadPage";
             this.UploadPage.Padding = new System.Windows.Forms.Padding(3);
@@ -897,31 +873,96 @@
             this.UploadPage.Text = "UploadPage";
             this.UploadPage.UseVisualStyleBackColor = true;
             // 
-            // bunifuCircleProgressbar1
+            // ServerTeamProjectInfoLabel
             // 
-            this.bunifuCircleProgressbar1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.ServerTeamProjectInfoLabel.AutoSize = true;
+            this.ServerTeamProjectInfoLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ServerTeamProjectInfoLabel.ForeColor = System.Drawing.Color.DimGray;
+            this.ServerTeamProjectInfoLabel.Location = new System.Drawing.Point(184, 76);
+            this.ServerTeamProjectInfoLabel.Name = "ServerTeamProjectInfoLabel";
+            this.ServerTeamProjectInfoLabel.Size = new System.Drawing.Size(63, 21);
+            this.ServerTeamProjectInfoLabel.TabIndex = 6;
+            this.ServerTeamProjectInfoLabel.Text = "Active";
+            // 
+            // ServerCollectionInfoLabel
+            // 
+            this.ServerCollectionInfoLabel.AutoSize = true;
+            this.ServerCollectionInfoLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ServerCollectionInfoLabel.ForeColor = System.Drawing.Color.DimGray;
+            this.ServerCollectionInfoLabel.Location = new System.Drawing.Point(184, 46);
+            this.ServerCollectionInfoLabel.Name = "ServerCollectionInfoLabel";
+            this.ServerCollectionInfoLabel.Size = new System.Drawing.Size(63, 21);
+            this.ServerCollectionInfoLabel.TabIndex = 5;
+            this.ServerCollectionInfoLabel.Text = "Active";
+            // 
+            // ServerTeamProject
+            // 
+            this.ServerTeamProject.AutoSize = true;
+            this.ServerTeamProject.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ServerTeamProject.Location = new System.Drawing.Point(6, 76);
+            this.ServerTeamProject.Name = "ServerTeamProject";
+            this.ServerTeamProject.Size = new System.Drawing.Size(172, 21);
+            this.ServerTeamProject.TabIndex = 4;
+            this.ServerTeamProject.Text = "Server Team Project: ";
+            // 
+            // ServerCollection
+            // 
+            this.ServerCollection.AutoSize = true;
+            this.ServerCollection.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.ServerCollection.Location = new System.Drawing.Point(6, 46);
+            this.ServerCollection.Name = "ServerCollection";
+            this.ServerCollection.Size = new System.Drawing.Size(66, 21);
+            this.ServerCollection.TabIndex = 3;
+            this.ServerCollection.Text = "Server: ";
+            // 
+            // bunifuCustomLabel2
+            // 
+            this.bunifuCustomLabel2.AutoSize = true;
+            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.SeaGreen;
+            this.bunifuCustomLabel2.Location = new System.Drawing.Point(184, 18);
+            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
+            this.bunifuCustomLabel2.Size = new System.Drawing.Size(63, 21);
+            this.bunifuCustomLabel2.TabIndex = 2;
+            this.bunifuCustomLabel2.Text = "Active";
+            // 
+            // bunifuCustomLabel1
+            // 
+            this.bunifuCustomLabel1.AutoSize = true;
+            this.bunifuCustomLabel1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bunifuCustomLabel1.Location = new System.Drawing.Point(6, 18);
+            this.bunifuCustomLabel1.Name = "bunifuCustomLabel1";
+            this.bunifuCustomLabel1.Size = new System.Drawing.Size(119, 21);
+            this.bunifuCustomLabel1.TabIndex = 1;
+            this.bunifuCustomLabel1.Text = "Server Status: ";
+            // 
+            // UploadBar
+            // 
+            this.UploadBar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuCircleProgressbar1.animated = false;
-            this.bunifuCircleProgressbar1.animationIterval = 5;
-            this.bunifuCircleProgressbar1.animationSpeed = 300;
-            this.bunifuCircleProgressbar1.AutoSize = true;
-            this.bunifuCircleProgressbar1.BackColor = System.Drawing.Color.White;
-            this.bunifuCircleProgressbar1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("bunifuCircleProgressbar1.BackgroundImage")));
-            this.bunifuCircleProgressbar1.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F);
-            this.bunifuCircleProgressbar1.ForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCircleProgressbar1.LabelVisible = false;
-            this.bunifuCircleProgressbar1.LineProgressThickness = 8;
-            this.bunifuCircleProgressbar1.LineThickness = 5;
-            this.bunifuCircleProgressbar1.Location = new System.Drawing.Point(78, 50);
-            this.bunifuCircleProgressbar1.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
-            this.bunifuCircleProgressbar1.MaxValue = 100;
-            this.bunifuCircleProgressbar1.Name = "bunifuCircleProgressbar1";
-            this.bunifuCircleProgressbar1.ProgressBackColor = System.Drawing.Color.Gainsboro;
-            this.bunifuCircleProgressbar1.ProgressColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCircleProgressbar1.Size = new System.Drawing.Size(411, 411);
-            this.bunifuCircleProgressbar1.TabIndex = 0;
-            this.bunifuCircleProgressbar1.Value = 0;
+            this.UploadBar.animated = true;
+            this.UploadBar.animationIterval = 1;
+            this.UploadBar.animationSpeed = 1;
+            this.UploadBar.AutoSize = true;
+            this.UploadBar.BackColor = System.Drawing.Color.Transparent;
+            this.UploadBar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("UploadBar.BackgroundImage")));
+            this.UploadBar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.UploadBar.Enabled = false;
+            this.UploadBar.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.UploadBar.ForeColor = System.Drawing.Color.DimGray;
+            this.UploadBar.LabelVisible = true;
+            this.UploadBar.LineProgressThickness = 15;
+            this.UploadBar.LineThickness = 5;
+            this.UploadBar.Location = new System.Drawing.Point(71, 106);
+            this.UploadBar.Margin = new System.Windows.Forms.Padding(10, 9, 10, 9);
+            this.UploadBar.MaxValue = 100;
+            this.UploadBar.Name = "UploadBar";
+            this.UploadBar.ProgressBackColor = System.Drawing.Color.Silver;
+            this.UploadBar.ProgressColor = System.Drawing.Color.DimGray;
+            this.UploadBar.Size = new System.Drawing.Size(411, 411);
+            this.UploadBar.TabIndex = 0;
+            this.UploadBar.Value = 0;
             // 
             // DeletePage
             // 
@@ -957,22 +998,22 @@
             this.subDeleteTabPages.Size = new System.Drawing.Size(575, 518);
             this.subDeleteTabPages.TabIndex = 1;
             this.subDeleteTabPages.Tag = "2";
-            animation4.AnimateOnlyDifferences = false;
-            animation4.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.BlindCoeff")));
-            animation4.LeafCoeff = 0F;
-            animation4.MaxTime = 1F;
-            animation4.MinTime = 0F;
-            animation4.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicCoeff")));
-            animation4.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation4.MosaicShift")));
-            animation4.MosaicSize = 0;
-            animation4.Padding = new System.Windows.Forms.Padding(0);
-            animation4.RotateCoeff = 0F;
-            animation4.RotateLimit = 0F;
-            animation4.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.ScaleCoeff")));
-            animation4.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation4.SlideCoeff")));
-            animation4.TimeCoeff = 0F;
-            animation4.TransparencyCoeff = 0F;
-            this.subDeleteTabPages.Transition = animation4;
+            animation1.AnimateOnlyDifferences = false;
+            animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
+            animation1.LeafCoeff = 0F;
+            animation1.MaxTime = 1F;
+            animation1.MinTime = 0F;
+            animation1.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicCoeff")));
+            animation1.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation1.MosaicShift")));
+            animation1.MosaicSize = 0;
+            animation1.Padding = new System.Windows.Forms.Padding(0);
+            animation1.RotateCoeff = 0F;
+            animation1.RotateLimit = 0F;
+            animation1.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.ScaleCoeff")));
+            animation1.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.SlideCoeff")));
+            animation1.TimeCoeff = 0F;
+            animation1.TransparencyCoeff = 0F;
+            this.subDeleteTabPages.Transition = animation1;
             this.subDeleteTabPages.TransitionType = Utilities.BunifuPages.BunifuAnimatorNS.AnimationType.Custom;
             // 
             // IdDelete
@@ -1119,22 +1160,22 @@
             this.subInfoPages.SelectedIndex = 0;
             this.subInfoPages.Size = new System.Drawing.Size(574, 433);
             this.subInfoPages.TabIndex = 1;
-            animation3.AnimateOnlyDifferences = false;
-            animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
-            animation3.LeafCoeff = 0F;
-            animation3.MaxTime = 1F;
-            animation3.MinTime = 0F;
-            animation3.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicCoeff")));
-            animation3.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation3.MosaicShift")));
-            animation3.MosaicSize = 0;
-            animation3.Padding = new System.Windows.Forms.Padding(0);
-            animation3.RotateCoeff = 0F;
-            animation3.RotateLimit = 0F;
-            animation3.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.ScaleCoeff")));
-            animation3.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.SlideCoeff")));
-            animation3.TimeCoeff = 0F;
-            animation3.TransparencyCoeff = 0F;
-            this.subInfoPages.Transition = animation3;
+            animation2.AnimateOnlyDifferences = false;
+            animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
+            animation2.LeafCoeff = 0F;
+            animation2.MaxTime = 1F;
+            animation2.MinTime = 0F;
+            animation2.MosaicCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicCoeff")));
+            animation2.MosaicShift = ((System.Drawing.PointF)(resources.GetObject("animation2.MosaicShift")));
+            animation2.MosaicSize = 0;
+            animation2.Padding = new System.Windows.Forms.Padding(0);
+            animation2.RotateCoeff = 0F;
+            animation2.RotateLimit = 0F;
+            animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
+            animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
+            animation2.TimeCoeff = 0F;
+            animation2.TransparencyCoeff = 0F;
+            this.subInfoPages.Transition = animation2;
             this.subInfoPages.TransitionType = Utilities.BunifuPages.BunifuAnimatorNS.AnimationType.Custom;
             // 
             // ContactPage
@@ -1261,13 +1302,12 @@
         private Bunifu.Framework.UI.BunifuFlatButton subContact;
         private Bunifu.Framework.UI.BunifuFlatButton subBugReport;
         private Bunifu.Framework.UI.BunifuFlatButton subUploadStart;
-        private Bunifu.Framework.UI.BunifuFlatButton subUploadConfigCheck;
         private System.Windows.Forms.Panel CoordinatorPanel;
         private Bunifu.UI.WinForms.BunifuPages ContentControllerPages;
         private System.Windows.Forms.TabPage SettingsPage;
         private System.Windows.Forms.RichTextBox SettingsRichTextBox;
         private System.Windows.Forms.TabPage UploadPage;
-        private Bunifu.Framework.UI.BunifuCircleProgressbar bunifuCircleProgressbar1;
+        private Bunifu.Framework.UI.BunifuCircleProgressbar UploadBar;
         private System.Windows.Forms.TabPage DeletePage;
         private Bunifu.UI.WinForms.BunifuPages subDeleteTabPages;
         private System.Windows.Forms.TabPage IdDelete;
@@ -1288,5 +1328,11 @@
         private System.Windows.Forms.TabPage BugReportPage;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label6;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
+        private Bunifu.Framework.UI.BunifuCustomLabel ServerTeamProject;
+        private Bunifu.Framework.UI.BunifuCustomLabel ServerCollection;
+        private Bunifu.Framework.UI.BunifuCustomLabel ServerTeamProjectInfoLabel;
+        private Bunifu.Framework.UI.BunifuCustomLabel ServerCollectionInfoLabel;
     }
 }

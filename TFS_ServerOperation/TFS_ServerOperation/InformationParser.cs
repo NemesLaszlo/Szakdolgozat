@@ -14,6 +14,8 @@ namespace TFS_ServerOperation
         private Dictionary<string, string> connection_data = new Dictionary<string, string>();
         private Dictionary<string, string> mail_data = new Dictionary<string, string>();
         public string ToMailAddress { get; private set; }
+        public string CurrentTfsCollectionName { get; private set; }
+        public string CurrentTeamProjectName { get; private set; }
 
         /// <summary>
         /// Initialize the Custom Logging System Path
@@ -49,6 +51,10 @@ namespace TFS_ServerOperation
 
             ConnectionAdapter ConnectionAdapter = new ConnectionAdapter(connection_data["TfsCollection"], connection_data["TeamProjectName"], log);
             ServerOperationManager ServerOperationManager = new ServerOperationManager(ConnectionAdapter, connection_data["AreaPath"], connection_data["Iteration"], log);
+
+            CurrentTfsCollectionName = connection_data["TfsCollection"];
+            CurrentTeamProjectName = connection_data["TeamProjectName"];
+
             return ServerOperationManager;
         }
 

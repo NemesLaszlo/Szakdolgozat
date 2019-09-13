@@ -9,8 +9,6 @@ namespace UI_TFS_ServerOperation
 {
     public partial class subMenu : UserControl
     {
-
-        //informationParser.UploadAndMailSend_Process(true, serverOperator, mailSender, log);
         private InformationParser informationParser;
         private Logger log;
         private ServerOperationManager serverOperator;
@@ -21,13 +19,18 @@ namespace UI_TFS_ServerOperation
 
         public subMenu()
         {
+
+
+            InitializeComponent();
+            if (Program.isInDesignMode()) return;
+
             informationParser = new InformationParser();
             log = informationParser.Init_Log();
             serverOperator = informationParser.Init_ServerOperation(log);
             mailSender = informationParser.Init_MailSender(log);
 
-            InitializeComponent();
-            if (Program.isInDesignMode()) return;
+            ServerCollectionInfoLabel.Text = informationParser.CurrentTfsCollectionName;
+            ServerTeamProjectInfoLabel.Text = informationParser.CurrentTeamProjectName;
 
             VSReactive<int>.Subscribe("menu", e => tabControl1.SelectedIndex = e);
             VSReactive<int>.Subscribe("ContentControllerPages", e => ContentControllerPages.SelectedIndex = e);
@@ -145,6 +148,31 @@ namespace UI_TFS_ServerOperation
         }
 
         // Settings section end -------------------------------------------------
+
+        // Upload section start -------------------------------------------------
+
+        private void subUploadStart_Click(object sender, EventArgs e)
+        {
+            bool result = informationParser.UploadAndMailSend_Process(true, serverOperator, mailSender, log);
+            if (result)
+            {
+                for (int i = 0; i <= 100; ++i)
+                {
+                    UploadBar.Value = i;
+                    UploadBar.Update();
+                }
+                Alert.AlertCreation("Upload Success!", AlertType.success);
+            }
+            else
+            {
+                Alert.AlertCreation("Upload Failed! Check the LOG!", AlertType.error);
+            }
+
+        }
+
+        // Upload section end -------------------------------------------------
+
+
 
     }
 
