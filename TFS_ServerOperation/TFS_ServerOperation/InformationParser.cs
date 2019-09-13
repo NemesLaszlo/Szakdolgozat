@@ -139,18 +139,27 @@ namespace TFS_ServerOperation
         /// <param name="log">Custom Logger object</param>
         public bool UploadAndMailSend_Process(bool isUIRun,ServerOperationManager ServerOperation, MailSender MailSender, Logger log)
         {
-            ServerOperation.Archive(isUIRun);
-            FileOperations writer = new FileOperations(log);
-            PbisConfigSection myPBISection = ConfigurationManager.GetSection("PBICollectionSection") as PbisConfigSection;
-            for (int i = 0; i < myPBISection.Members.Count; i++)
+            try
             {
-                PBI pbi = myPBISection.Members[i];
-                ServerOperation.Upload(isUIRun, pbi);
-            }
-            writer.WriteInCSV(ServerOperation.datasForFileModification);
-            MailSender.SendEmail(GetAddressToMail(), "Month Uploaded FilePeriod", "You can find the Result file in the Attachments.", GetUpToDateFileCSV());
+                ServerOperation.Archive(isUIRun);
+                FileOperations writer = new FileOperations(log);
+                PbisConfigSection myPBISection = ConfigurationManager.GetSection("PBICollectionSection") as PbisConfigSection;
+                for (int i = 0; i < myPBISection.Members.Count; i++)
+                {
+                    PBI pbi = myPBISection.Members[i];
+                    ServerOperation.Upload(isUIRun, pbi);
+                }
+                writer.WriteInCSV(ServerOperation.datasForFileModification);
+                MailSender.SendEmail(GetAddressToMail(), "Month Uploaded FilePeriod", "You can find the Result file in the Attachments.", GetUpToDateFileCSV());
 
-            return true;
+                return true;
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex);
+                log.Flush();
+                return false;
+            }
         }
 
         /// <summary>

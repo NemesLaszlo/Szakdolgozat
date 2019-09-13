@@ -4,6 +4,7 @@ using KimtToo.VisualReactive;
 using System.IO;
 using System.Reflection;
 using TFS_ServerOperation;
+using System.Threading;
 
 namespace UI_TFS_ServerOperation
 {
@@ -165,7 +166,8 @@ namespace UI_TFS_ServerOperation
             {
                 Alert.AlertCreation("Upload Failed! Check the LOG!", AlertType.error);
             }
-
+            Thread.Sleep(1000);
+            UploadBar.Value = 0;
         }
 
         // Upload section end -------------------------------------------------
