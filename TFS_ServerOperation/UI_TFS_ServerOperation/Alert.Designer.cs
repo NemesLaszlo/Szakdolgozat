@@ -147,7 +147,7 @@
         private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
         private Bunifu.Framework.UI.BunifuDragControl bunifuDragControl1;
         private System.Windows.Forms.Timer NotificationTimer;
-        private System.Windows.Forms.Timer Show;
-        private System.Windows.Forms.Timer Close;
+        private new System.Windows.Forms.Timer Show;
+        private new System.Windows.Forms.Timer Close;
     }
 }

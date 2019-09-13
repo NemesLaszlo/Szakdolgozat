@@ -65,6 +65,7 @@
             this.LogPage = new System.Windows.Forms.TabPage();
             this.label5 = new System.Windows.Forms.Label();
             this.InfoPage = new System.Windows.Forms.TabPage();
+            this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.subInfoPages = new Bunifu.UI.WinForms.BunifuPages();
             this.ContactPage = new System.Windows.Forms.TabPage();
             this.label8 = new System.Windows.Forms.Label();
@@ -75,7 +76,6 @@
             this.subMenu1 = new UI_TFS_ServerOperation.subMenu();
             this.LogoAnimator = new Bunifu.UI.WinForms.BunifuTransition(this.components);
             this.PanelAnimator = new Bunifu.UI.WinForms.BunifuTransition(this.components);
-            this.bunifuFlatButton2 = new Bunifu.Framework.UI.BunifuFlatButton();
             this.LeftTransformMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.smallLogo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MenuButton)).BeginInit();
@@ -424,10 +424,10 @@
             this.ContentControllerPages.Location = new System.Drawing.Point(220, 3);
             this.ContentControllerPages.Multiline = true;
             this.ContentControllerPages.Name = "ContentControllerPages";
-            this.ContentControllerPages.Page = this.InfoPage;
-            this.ContentControllerPages.PageIndex = 5;
-            this.ContentControllerPages.PageName = "InfoPage";
-            this.ContentControllerPages.PageTitle = "InfoPage";
+            this.ContentControllerPages.Page = this.DeletePage;
+            this.ContentControllerPages.PageIndex = 2;
+            this.ContentControllerPages.PageName = "DeletePage";
+            this.ContentControllerPages.PageTitle = "DeletePage";
             this.ContentControllerPages.SelectedIndex = 0;
             this.ContentControllerPages.Size = new System.Drawing.Size(579, 573);
             this.ContentControllerPages.TabIndex = 1;
@@ -535,7 +535,7 @@
             // subDeleteTabPages
             // 
             this.subDeleteTabPages.Alignment = System.Windows.Forms.TabAlignment.Bottom;
-            this.subDeleteTabPages.AllowTransitions = true;
+            this.subDeleteTabPages.AllowTransitions = false;
             this.subDeleteTabPages.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -720,10 +720,47 @@
             this.InfoPage.Text = "InfoPage";
             this.InfoPage.UseVisualStyleBackColor = true;
             // 
+            // bunifuFlatButton2
+            // 
+            this.bunifuFlatButton2.Active = false;
+            this.bunifuFlatButton2.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.bunifuFlatButton2.BorderRadius = 0;
+            this.bunifuFlatButton2.ButtonText = "bunifuFlatButton2";
+            this.bunifuFlatButton2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.LogoAnimator.SetDecoration(this.bunifuFlatButton2, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.PanelAnimator.SetDecoration(this.bunifuFlatButton2, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
+            this.bunifuFlatButton2.DisabledColor = System.Drawing.Color.Gray;
+            this.bunifuFlatButton2.Iconcolor = System.Drawing.Color.Transparent;
+            this.bunifuFlatButton2.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton2.Iconimage")));
+            this.bunifuFlatButton2.Iconimage_right = null;
+            this.bunifuFlatButton2.Iconimage_right_Selected = null;
+            this.bunifuFlatButton2.Iconimage_Selected = null;
+            this.bunifuFlatButton2.IconMarginLeft = 0;
+            this.bunifuFlatButton2.IconMarginRight = 0;
+            this.bunifuFlatButton2.IconRightVisible = false;
+            this.bunifuFlatButton2.IconRightZoom = 0D;
+            this.bunifuFlatButton2.IconVisible = false;
+            this.bunifuFlatButton2.IconZoom = 90D;
+            this.bunifuFlatButton2.IsTab = false;
+            this.bunifuFlatButton2.Location = new System.Drawing.Point(50, 50);
+            this.bunifuFlatButton2.Name = "bunifuFlatButton2";
+            this.bunifuFlatButton2.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
+            this.bunifuFlatButton2.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
+            this.bunifuFlatButton2.OnHoverTextColor = System.Drawing.Color.White;
+            this.bunifuFlatButton2.selected = false;
+            this.bunifuFlatButton2.Size = new System.Drawing.Size(241, 48);
+            this.bunifuFlatButton2.TabIndex = 2;
+            this.bunifuFlatButton2.Text = "bunifuFlatButton2";
+            this.bunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.bunifuFlatButton2.Textcolor = System.Drawing.Color.White;
+            this.bunifuFlatButton2.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            // 
             // subInfoPages
             // 
             this.subInfoPages.Alignment = System.Windows.Forms.TabAlignment.Bottom;
-            this.subInfoPages.AllowTransitions = true;
+            this.subInfoPages.AllowTransitions = false;
             this.subInfoPages.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -734,10 +771,10 @@
             this.subInfoPages.Location = new System.Drawing.Point(0, 114);
             this.subInfoPages.Multiline = true;
             this.subInfoPages.Name = "subInfoPages";
-            this.subInfoPages.Page = this.BugReportPage;
-            this.subInfoPages.PageIndex = 1;
-            this.subInfoPages.PageName = "BugReportPage";
-            this.subInfoPages.PageTitle = "BugReportPage";
+            this.subInfoPages.Page = this.ContactPage;
+            this.subInfoPages.PageIndex = 0;
+            this.subInfoPages.PageName = "ContactPage";
+            this.subInfoPages.PageTitle = "ContactPage";
             this.subInfoPages.SelectedIndex = 0;
             this.subInfoPages.Size = new System.Drawing.Size(575, 430);
             this.subInfoPages.TabIndex = 1;
@@ -836,8 +873,8 @@
             this.PanelAnimator.SetDecoration(this.subMenu1, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
             this.subMenu1.Location = new System.Drawing.Point(0, 0);
             this.subMenu1.Name = "subMenu1";
-            this.subMenu1.Size = new System.Drawing.Size(214, 579);
-            this.subMenu1.TabIndex = 1;
+            this.subMenu1.Size = new System.Drawing.Size(225, 579);
+            this.subMenu1.TabIndex = 0;
             // 
             // LogoAnimator
             // 
@@ -880,44 +917,6 @@
             animation2.TimeCoeff = 0F;
             animation2.TransparencyCoeff = 1F;
             this.PanelAnimator.DefaultAnimation = animation2;
-            // 
-            // bunifuFlatButton2
-            // 
-            this.bunifuFlatButton2.Active = false;
-            this.bunifuFlatButton2.Activecolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.bunifuFlatButton2.BorderRadius = 0;
-            this.bunifuFlatButton2.ButtonText = "bunifuFlatButton2";
-            this.bunifuFlatButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.LogoAnimator.SetDecoration(this.bunifuFlatButton2, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.PanelAnimator.SetDecoration(this.bunifuFlatButton2, Bunifu.UI.WinForms.BunifuTransition.DecorationType.None);
-            this.bunifuFlatButton2.DisabledColor = System.Drawing.Color.Gray;
-            this.bunifuFlatButton2.Iconcolor = System.Drawing.Color.Transparent;
-            this.bunifuFlatButton2.Iconimage = ((System.Drawing.Image)(resources.GetObject("bunifuFlatButton2.Iconimage")));
-            this.bunifuFlatButton2.Iconimage_right = null;
-            this.bunifuFlatButton2.Iconimage_right_Selected = null;
-            this.bunifuFlatButton2.Iconimage_Selected = null;
-            this.bunifuFlatButton2.IconMarginLeft = 0;
-            this.bunifuFlatButton2.IconMarginRight = 0;
-            this.bunifuFlatButton2.IconRightVisible = true;
-            this.bunifuFlatButton2.IconRightZoom = 0D;
-            this.bunifuFlatButton2.IconVisible = true;
-            this.bunifuFlatButton2.IconZoom = 90D;
-            this.bunifuFlatButton2.IsTab = false;
-            this.bunifuFlatButton2.Location = new System.Drawing.Point(50, 50);
-            this.bunifuFlatButton2.Name = "bunifuFlatButton2";
-            this.bunifuFlatButton2.Normalcolor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(87)))));
-            this.bunifuFlatButton2.OnHovercolor = System.Drawing.Color.FromArgb(((int)(((byte)(36)))), ((int)(((byte)(129)))), ((int)(((byte)(77)))));
-            this.bunifuFlatButton2.OnHoverTextColor = System.Drawing.Color.White;
-            this.bunifuFlatButton2.selected = false;
-            this.bunifuFlatButton2.Size = new System.Drawing.Size(241, 48);
-            this.bunifuFlatButton2.TabIndex = 2;
-            this.bunifuFlatButton2.Text = "bunifuFlatButton2";
-            this.bunifuFlatButton2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.bunifuFlatButton2.Textcolor = System.Drawing.Color.White;
-            this.bunifuFlatButton2.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bunifuFlatButton2.Click += new System.EventHandler(this.bunifuFlatButton2_Click);
             // 
             // TFS_Operator
             // 
@@ -982,7 +981,6 @@
         private Bunifu.UI.WinForms.BunifuTransition LogoAnimator;
         private Bunifu.UI.WinForms.BunifuTransition PanelAnimator;
         private System.Windows.Forms.Panel subMenuUnderPanel;
-        private subMenu subMenu1;
         private Bunifu.UI.WinForms.BunifuPages ContentControllerPages;
         private System.Windows.Forms.TabPage SettingsPage;
         private System.Windows.Forms.TabPage UploadPage;
@@ -1009,6 +1007,7 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private Bunifu.Framework.UI.BunifuFlatButton bunifuFlatButton2;
+        private subMenu subMenu1;
     }
 }
 

@@ -55,6 +55,7 @@ namespace UI_TFS_ServerOperation
         private void Delete_Click(object sender, EventArgs e)
         {
             ContentControllerPages.SetPage(2);
+            Alert.AlertCreation("WorkItems Delete Section", AlertType.warning);
             VSReactive<int>.SetState("menu", int.Parse(((Control)sender).Tag.ToString()));
         }
 
@@ -74,11 +75,6 @@ namespace UI_TFS_ServerOperation
         {
             ContentControllerPages.SetPage(5);
             VSReactive<int>.SetState("menu", int.Parse(((Control)sender).Tag.ToString()));
-        }
-
-        private void bunifuFlatButton2_Click(object sender, EventArgs e)
-        {
-            Alert.AlertCreation("Hello Hello", AlertType.success);
         }
     }
 }
