@@ -1,27 +1,32 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using KimtToo.VisualReactive;
 using System.IO;
 using System.Reflection;
 using TFS_ServerOperation;
-using System.Diagnostics;
 
 namespace UI_TFS_ServerOperation
 {
     public partial class subMenu : UserControl
     {
 
+        //informationParser.UploadAndMailSend_Process(true, serverOperator, mailSender, log);
+        private InformationParser informationParser;
+        private Logger log;
+        private ServerOperationManager serverOperator;
+        private MailSender mailSender;
+
+        int counterLoad = 0;
+        int counterDialogLoad = 0;
+
         public subMenu()
         {
-            InitializeComponent();
+            informationParser = new InformationParser();
+            log = informationParser.Init_Log();
+            serverOperator = informationParser.Init_ServerOperation(log);
+            mailSender = informationParser.Init_MailSender(log);
 
+            InitializeComponent();
             if (Program.isInDesignMode()) return;
 
             VSReactive<int>.Subscribe("menu", e => tabControl1.SelectedIndex = e);
@@ -55,26 +60,88 @@ namespace UI_TFS_ServerOperation
 
         // Settings section start -------------------------------------------------
 
+        /// <summary>
+        /// Save the curret config setting to temp, and after we can bring it back with reset button option.
+        /// </summary>
+        private void TempSaveCopy()
+        {
+            if (Directory.Exists(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location)))
+            {
+                string[] files = Directory.GetFiles(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "UI_TFS_ServerOperation.exe.config", SearchOption.AllDirectories);
+                foreach (var s in files)
+                {
+                    System.IO.File.Copy(s, Path.Combine(Path.GetTempPath(), Path.GetFileName(s)), true);
+                }
+            }
+        }
+
         private void subOpenCurrentConfig_Click(object sender, EventArgs e)
         {
+            if (counterLoad == 0)
+            {
+                TempSaveCopy();
+                ++counterLoad;
+            }
             string executableLocation = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-            string configLocation = Path.Combine(executableLocation, "TFS_ServerOperation.exe.config");
+            string configLocation = Path.Combine(executableLocation, "UI_TFS_ServerOperation.exe.config");
             SettingsRichTextBox.Text = System.IO.File.ReadAllText(configLocation);
         }
 
         private void subConfigLoad_Click(object sender, EventArgs e)
         {
+            if(counterDialogLoad == 0)
+            {
+                TempSaveCopy();
+                ++counterDialogLoad;
+            }
+            Stream configStream;
+            OpenFileDialog openFileDialog = new OpenFileDialog();
 
+            if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK )
+            {
+                if ((configStream = openFileDialog.OpenFile()) != null)
+                {
+                    string strFileName = openFileDialog.FileName;
+                    string fileText = System.IO.File.ReadAllText(strFileName);
+                    SettingsRichTextBox.Text = fileText;
+                }
+            }
         }
 
         private void subReset_Click(object sender, EventArgs e)
         {
-
+            if (Directory.Exists(Path.GetTempPath()))
+            {
+                string[] files = Directory.GetFiles(Path.GetTempPath(), "UI_TFS_ServerOperation.exe.config", SearchOption.AllDirectories);
+                foreach (var s in files)
+                {
+                    System.IO.File.Copy(s, Path.Combine(Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), Path.GetFileName(s)), true);
+                }
+            }
+            string executableLocation = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            string configLocation = Path.Combine(executableLocation, "UI_TFS_ServerOperation.exe.config");
+            SettingsRichTextBox.Text = System.IO.File.ReadAllText(configLocation);
+            Alert.AlertCreation("Config Reset Done!", AlertType.info);
         }
 
         private void subSave_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(this.SettingsRichTextBox.Text) || string.IsNullOrWhiteSpace(this.SettingsRichTextBox.Text))
+            {
+                Alert.AlertCreation("Load Something!", AlertType.error);
+                return;
+            }
+            else
+            {
+                string executableLocation = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+                string configLocation = Path.Combine(executableLocation, "UI_TFS_ServerOperation.exe.config");
 
+                TextWriter writer = new StreamWriter(configLocation);
+
+                writer.Write(SettingsRichTextBox.Text);
+                writer.Close();
+                Alert.AlertCreation("Save Success!", AlertType.success);
+            }
         }
 
         // Settings section end -------------------------------------------------

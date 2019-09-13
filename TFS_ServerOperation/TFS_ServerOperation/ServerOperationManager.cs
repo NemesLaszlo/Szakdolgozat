@@ -83,7 +83,11 @@ namespace TFS_ServerOperation
             string lastMonth = month.AddDays(-1).Month.ToString();
 
             if (isUIRun)
-            {               
+            {
+                if (actualMonthFilePath.Equals(""))
+                {
+                    return;
+                }
                 List<int> ActualMonthWorkItems = fOp.ReadCSV(actualMonthFilePath);
                 WorkItemStateChagerLoop(isUIRun, ActualMonthWorkItems);
             }
