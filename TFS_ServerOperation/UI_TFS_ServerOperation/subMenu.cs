@@ -36,6 +36,13 @@ namespace UI_TFS_ServerOperation
             ServerCollectionInfoLabel.Text = informationParser.CurrentTfsCollectionName;
             ServerTeamProjectInfoLabel.Text = informationParser.CurrentTeamProjectName;
 
+            //BarLabel init part
+            UploadBar.LabelVisible = true;
+            OneElemDeleteBar.LabelVisible = true;
+            MoreElemDeleteBar.LabelVisible = true;
+            FileDeleteProgressBar.LabelVisible = true;
+            AllServerDeleteProgressBar.LabelVisible = true;
+
             VSReactive<int>.Subscribe("menu", e => tabControl1.SelectedIndex = e);
             VSReactive<int>.Subscribe("ContentControllerPages", e => ContentControllerPages.SelectedIndex = e);
         }
@@ -191,6 +198,11 @@ namespace UI_TFS_ServerOperation
             subDeleteTabPages.SetPage(1);
         }
 
+        private void DeleteFileButton_Click(object sender, EventArgs e)
+        {
+            Alert.AlertCreation("Delete From File Success!", AlertType.success);
+        }
+
         private void subCompleteDelete_Click(object sender, EventArgs e)
         {
             subDeleteTabPages.SetPage(2);
@@ -286,7 +298,7 @@ namespace UI_TFS_ServerOperation
                     }
 
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
                     Alert.AlertCreation("Do something before!", AlertType.warning);
                 }
