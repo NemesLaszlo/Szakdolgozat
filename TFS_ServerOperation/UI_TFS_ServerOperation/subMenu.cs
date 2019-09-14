@@ -194,14 +194,53 @@ namespace UI_TFS_ServerOperation
 
         // File section start -------------------------------------------------
 
+        private string GetCurrentMontFileForOpen()
+        {
+            string currentMonth = string.Empty;
+            DateTime today = DateTime.Today;
+            string upToDateMonth = today.Month.ToString();
+
+            string[] files = Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory, "*.csv", SearchOption.AllDirectories);
+            foreach (var file in files)
+            {
+                if (file.Contains(upToDateMonth))
+                {
+                    currentMonth = file;
+                }
+            }
+            return currentMonth;
+        }
+
         private void subOpenCurrentFile_Click(object sender, EventArgs e)
         {
-
+            string currentFile = GetCurrentMontFileForOpen();
+            if (String.IsNullOrEmpty(currentFile))
+            {
+                Alert.AlertCreation("There is no Actual Monnt File!", AlertType.error);
+                return;
+            }
+            else
+            {
+                Alert.AlertCreation("Actual Mont File Loaded!", AlertType.success);
+                FileRichTextBox.Text = System.IO.File.ReadAllText(currentFile);
+            }
         }
 
         private void subOpenFileBrowse_Click(object sender, EventArgs e)
         {
+            Stream fileStream;
+            OpenFileDialog openFileDialog = new OpenFileDialog();
 
+            if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                if ((fileStream = openFileDialog.OpenFile()) != null)
+                {
+                    string strFileName = openFileDialog.FileName;
+                    string fileText = System.IO.File.ReadAllText(strFileName);
+                    FileRichTextBox.Text = fileText;
+                    Alert.AlertCreation("Load Success!", AlertType.success);
+                }
+            }
         }
 
         // File section end -------------------------------------------------
