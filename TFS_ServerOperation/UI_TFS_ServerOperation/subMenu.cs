@@ -194,6 +194,10 @@ namespace UI_TFS_ServerOperation
 
         // File section start -------------------------------------------------
 
+        /// <summary>
+        /// Get the current Month file and give the path.
+        /// </summary>
+        /// <returns>Actual Month path as string.</returns>
         private string GetCurrentMontFileForOpen()
         {
             string currentMonth = string.Empty;
@@ -211,6 +215,9 @@ namespace UI_TFS_ServerOperation
             return currentMonth;
         }
 
+        /// <summary>
+        /// Click event, Load the current Month created upload file.
+        /// </summary>
         private void subOpenCurrentFile_Click(object sender, EventArgs e)
         {
             string currentFile = GetCurrentMontFileForOpen();
@@ -226,6 +233,9 @@ namespace UI_TFS_ServerOperation
             }
         }
 
+        /// <summary>
+        /// Open File Browser and open any file.
+        /// </summary>
         private void subOpenFileBrowse_Click(object sender, EventArgs e)
         {
             Stream fileStream;
