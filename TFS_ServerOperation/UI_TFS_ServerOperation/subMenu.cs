@@ -40,21 +40,6 @@ namespace UI_TFS_ServerOperation
             VSReactive<int>.Subscribe("ContentControllerPages", e => ContentControllerPages.SelectedIndex = e);
         }
 
-        private void subDeleteByIds_Click(object sender, EventArgs e)
-        {
-            subDeleteTabPages.SetPage(0);
-        }
-
-        private void subDeleteFromFile_Click(object sender, EventArgs e)
-        {
-            subDeleteTabPages.SetPage(1);
-        }
-
-        private void subCompleteDelete_Click(object sender, EventArgs e)
-        {
-            subDeleteTabPages.SetPage(2);
-        }
-
         private void subContact_Click(object sender, EventArgs e)
         {
             subInfoPages.SetPage(0);
@@ -194,6 +179,25 @@ namespace UI_TFS_ServerOperation
 
         // Upload section end -------------------------------------------------
 
+        // Delete section start -------------------------------------------------
+
+        private void subDeleteByIds_Click(object sender, EventArgs e)
+        {
+            subDeleteTabPages.SetPage(0);
+        }
+
+        private void subDeleteFromFile_Click(object sender, EventArgs e)
+        {
+            subDeleteTabPages.SetPage(1);
+        }
+
+        private void subCompleteDelete_Click(object sender, EventArgs e)
+        {
+            subDeleteTabPages.SetPage(2);
+        }
+
+        // Delete section end -------------------------------------------------
+
         // File section start -------------------------------------------------
 
         /// <summary>
@@ -328,10 +332,6 @@ namespace UI_TFS_ServerOperation
         }
 
         // Log section end -------------------------------------------------
-
-
-
-
     }
 
 
