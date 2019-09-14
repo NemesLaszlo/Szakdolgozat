@@ -5,6 +5,8 @@ using System.IO;
 using System.Reflection;
 using TFS_ServerOperation;
 using System.Threading;
+using System.Text;
+using System.Diagnostics;
 
 namespace UI_TFS_ServerOperation
 {
@@ -216,7 +218,7 @@ namespace UI_TFS_ServerOperation
         }
 
         /// <summary>
-        /// Click event, Load the current Month created upload file.
+        /// Click event, Load the current "Month" created upload file.
         /// </summary>
         private void subOpenCurrentFile_Click(object sender, EventArgs e)
         {
@@ -254,6 +256,78 @@ namespace UI_TFS_ServerOperation
         }
 
         // File section end -------------------------------------------------
+
+        // Log section start -------------------------------------------------
+
+        /// <summary>
+        /// Click event, Load the current "Log" created upload file.
+        /// </summary>
+        private void subOpenCurrentLog_Click(object sender, EventArgs e)
+        {
+            string actualLogPath = log.datedPath;
+            if (String.IsNullOrEmpty(actualLogPath))
+            {
+                Alert.AlertCreation("There is no Actual Log File!", AlertType.error);
+                return;
+            }
+            else
+            {
+                try
+                {
+                    Alert.AlertCreation("Actual Log File Loaded!", AlertType.success);
+                    using (var fs = new FileStream(actualLogPath, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                    using (var sr = new StreamReader(fs, Encoding.Default))
+                    {
+                        LogRichTextBox.Text = sr.ReadToEnd();
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    Alert.AlertCreation("Do something before!", AlertType.warning);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Open File Browser and open any Log file.
+        /// </summary>
+        private void subLogBrowse_Click(object sender, EventArgs e)
+        {
+            Stream fileStream;
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                if ((fileStream = openFileDialog.OpenFile()) != null)
+                {
+                    string strFileName = openFileDialog.FileName;
+                    string fileText = System.IO.File.ReadAllText(strFileName);
+                    FileRichTextBox.Text = fileText;
+                    Alert.AlertCreation("Load Success!", AlertType.success);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Open actual log in external application.
+        /// </summary>
+        private void subLogExternal_Click(object sender, EventArgs e)
+        {
+            string actualLogPath = log.datedPath;
+            if (String.IsNullOrEmpty(actualLogPath))
+            {
+                Alert.AlertCreation("There is no Actual Log File!", AlertType.error);
+                return;
+            }
+            else
+            {
+                Process.Start("notepad.exe", actualLogPath);
+                Alert.AlertCreation("Actual Log File Loaded In External!", AlertType.success);
+            }
+        }
+
+        // Log section end -------------------------------------------------
 
 
 

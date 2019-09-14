@@ -80,7 +80,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.FilePage = new System.Windows.Forms.TabPage();
             this.LogPage = new System.Windows.Forms.TabPage();
-            this.label5 = new System.Windows.Forms.Label();
             this.InfoPage = new System.Windows.Forms.TabPage();
             this.subInfoPages = new Bunifu.UI.WinForms.BunifuPages();
             this.ContactPage = new System.Windows.Forms.TabPage();
@@ -89,6 +88,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.FileRichTextBox = new System.Windows.Forms.RichTextBox();
+            this.LogRichTextBox = new System.Windows.Forms.RichTextBox();
             this.tabControl1.SuspendLayout();
             this.Settings.SuspendLayout();
             this.Upload.SuspendLayout();
@@ -589,6 +589,7 @@
             this.subLogExternal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.subLogExternal.Textcolor = System.Drawing.Color.DimGray;
             this.subLogExternal.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.subLogExternal.Click += new System.EventHandler(this.subLogExternal_Click);
             // 
             // subOpenCurrentLog
             // 
@@ -624,6 +625,7 @@
             this.subOpenCurrentLog.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.subOpenCurrentLog.Textcolor = System.Drawing.Color.DimGray;
             this.subOpenCurrentLog.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.subOpenCurrentLog.Click += new System.EventHandler(this.subOpenCurrentLog_Click);
             // 
             // subLogBrowse
             // 
@@ -659,6 +661,7 @@
             this.subLogBrowse.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.subLogBrowse.Textcolor = System.Drawing.Color.DimGray;
             this.subLogBrowse.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.subLogBrowse.Click += new System.EventHandler(this.subLogBrowse_Click);
             // 
             // Info
             // 
@@ -1102,7 +1105,7 @@
             // 
             // LogPage
             // 
-            this.LogPage.Controls.Add(this.label5);
+            this.LogPage.Controls.Add(this.LogRichTextBox);
             this.LogPage.Location = new System.Drawing.Point(4, 4);
             this.LogPage.Name = "LogPage";
             this.LogPage.Padding = new System.Windows.Forms.Padding(3);
@@ -1111,15 +1114,6 @@
             this.LogPage.Tag = "4";
             this.LogPage.Text = "LogPage";
             this.LogPage.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(79, 114);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 13);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "logpage";
             // 
             // InfoPage
             // 
@@ -1232,6 +1226,18 @@
             this.FileRichTextBox.TabIndex = 0;
             this.FileRichTextBox.Text = "";
             // 
+            // LogRichTextBox
+            // 
+            this.LogRichTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.LogRichTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.LogRichTextBox.Location = new System.Drawing.Point(0, -1);
+            this.LogRichTextBox.Name = "LogRichTextBox";
+            this.LogRichTextBox.Size = new System.Drawing.Size(570, 554);
+            this.LogRichTextBox.TabIndex = 0;
+            this.LogRichTextBox.Text = "";
+            // 
             // subMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1267,7 +1273,6 @@
             this.TotalDelete.PerformLayout();
             this.FilePage.ResumeLayout(false);
             this.LogPage.ResumeLayout(false);
-            this.LogPage.PerformLayout();
             this.InfoPage.ResumeLayout(false);
             this.InfoPage.PerformLayout();
             this.subInfoPages.ResumeLayout(false);
@@ -1323,7 +1328,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TabPage FilePage;
         private System.Windows.Forms.TabPage LogPage;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TabPage InfoPage;
         private Bunifu.UI.WinForms.BunifuPages subInfoPages;
         private System.Windows.Forms.TabPage ContactPage;
@@ -1338,5 +1342,6 @@
         private Bunifu.Framework.UI.BunifuCustomLabel ServerTeamProjectInfoLabel;
         private Bunifu.Framework.UI.BunifuCustomLabel ServerCollectionInfoLabel;
         private System.Windows.Forms.RichTextBox FileRichTextBox;
+        private System.Windows.Forms.RichTextBox LogRichTextBox;
     }
 }
