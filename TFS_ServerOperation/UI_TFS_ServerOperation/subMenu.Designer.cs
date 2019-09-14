@@ -92,11 +92,11 @@
             this.MoreElemDeleteButton = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.OneElemDeleteButton = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.MoreElemDeleteBar = new Bunifu.Framework.UI.BunifuCircleProgressbar();
-            this.bunifuCustomTextbox2 = new Bunifu.Framework.BunifuCustomTextbox();
+            this.MoreDeleteTextBox = new Bunifu.Framework.BunifuCustomTextbox();
             this.bunifuCustomLabel6 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.OneElemDeleteBar = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomTextbox1 = new Bunifu.Framework.BunifuCustomTextbox();
+            this.OneDeleteTextBox = new Bunifu.Framework.BunifuCustomTextbox();
             this.DeleteFromFile = new System.Windows.Forms.TabPage();
             this.BrowseButton = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.DeleteFileButton = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
@@ -1051,10 +1051,10 @@
             this.subDeleteTabPages.Location = new System.Drawing.Point(-4, 76);
             this.subDeleteTabPages.Multiline = true;
             this.subDeleteTabPages.Name = "subDeleteTabPages";
-            this.subDeleteTabPages.Page = this.TotalDelete;
-            this.subDeleteTabPages.PageIndex = 2;
-            this.subDeleteTabPages.PageName = "TotalDelete";
-            this.subDeleteTabPages.PageTitle = "TotalDelete";
+            this.subDeleteTabPages.Page = this.IdDelete;
+            this.subDeleteTabPages.PageIndex = 0;
+            this.subDeleteTabPages.PageName = "IdDelete";
+            this.subDeleteTabPages.PageTitle = "IdDelete";
             this.subDeleteTabPages.SelectedIndex = 0;
             this.subDeleteTabPages.Size = new System.Drawing.Size(575, 474);
             this.subDeleteTabPages.TabIndex = 1;
@@ -1082,11 +1082,11 @@
             this.IdDelete.Controls.Add(this.MoreElemDeleteButton);
             this.IdDelete.Controls.Add(this.OneElemDeleteButton);
             this.IdDelete.Controls.Add(this.MoreElemDeleteBar);
-            this.IdDelete.Controls.Add(this.bunifuCustomTextbox2);
+            this.IdDelete.Controls.Add(this.MoreDeleteTextBox);
             this.IdDelete.Controls.Add(this.bunifuCustomLabel6);
             this.IdDelete.Controls.Add(this.OneElemDeleteBar);
             this.IdDelete.Controls.Add(this.bunifuCustomLabel5);
-            this.IdDelete.Controls.Add(this.bunifuCustomTextbox1);
+            this.IdDelete.Controls.Add(this.OneDeleteTextBox);
             this.IdDelete.Location = new System.Drawing.Point(4, 4);
             this.IdDelete.Name = "IdDelete";
             this.IdDelete.Padding = new System.Windows.Forms.Padding(3);
@@ -1158,6 +1158,7 @@
             this.MoreElemDeleteButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.MoreElemDeleteButton.TextMarginLeft = 0;
             this.MoreElemDeleteButton.UseDefaultRadiusAndThickness = true;
+            this.MoreElemDeleteButton.Click += new System.EventHandler(this.MoreElemDeleteButton_Click);
             // 
             // OneElemDeleteButton
             // 
@@ -1221,6 +1222,7 @@
             this.OneElemDeleteButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.OneElemDeleteButton.TextMarginLeft = 0;
             this.OneElemDeleteButton.UseDefaultRadiusAndThickness = true;
+            this.OneElemDeleteButton.Click += new System.EventHandler(this.OneElemDeleteButton_Click);
             // 
             // MoreElemDeleteBar
             // 
@@ -1234,7 +1236,7 @@
             this.MoreElemDeleteBar.Enabled = false;
             this.MoreElemDeleteBar.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.MoreElemDeleteBar.ForeColor = System.Drawing.Color.DimGray;
-            this.MoreElemDeleteBar.LabelVisible = false;
+            this.MoreElemDeleteBar.LabelVisible = true;
             this.MoreElemDeleteBar.LineProgressThickness = 15;
             this.MoreElemDeleteBar.LineThickness = 5;
             this.MoreElemDeleteBar.Location = new System.Drawing.Point(305, 279);
@@ -1247,14 +1249,14 @@
             this.MoreElemDeleteBar.TabIndex = 8;
             this.MoreElemDeleteBar.Value = 0;
             // 
-            // bunifuCustomTextbox2
+            // MoreDeleteTextBox
             // 
-            this.bunifuCustomTextbox2.BorderColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCustomTextbox2.Location = new System.Drawing.Point(167, 256);
-            this.bunifuCustomTextbox2.Multiline = true;
-            this.bunifuCustomTextbox2.Name = "bunifuCustomTextbox2";
-            this.bunifuCustomTextbox2.Size = new System.Drawing.Size(125, 20);
-            this.bunifuCustomTextbox2.TabIndex = 6;
+            this.MoreDeleteTextBox.BorderColor = System.Drawing.Color.SeaGreen;
+            this.MoreDeleteTextBox.Location = new System.Drawing.Point(167, 256);
+            this.MoreDeleteTextBox.Multiline = true;
+            this.MoreDeleteTextBox.Name = "MoreDeleteTextBox";
+            this.MoreDeleteTextBox.Size = new System.Drawing.Size(125, 20);
+            this.MoreDeleteTextBox.TabIndex = 6;
             // 
             // bunifuCustomLabel6
             // 
@@ -1279,7 +1281,7 @@
             this.OneElemDeleteBar.Enabled = false;
             this.OneElemDeleteBar.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.OneElemDeleteBar.ForeColor = System.Drawing.Color.DimGray;
-            this.OneElemDeleteBar.LabelVisible = false;
+            this.OneElemDeleteBar.LabelVisible = true;
             this.OneElemDeleteBar.LineProgressThickness = 15;
             this.OneElemDeleteBar.LineThickness = 5;
             this.OneElemDeleteBar.Location = new System.Drawing.Point(305, 45);
@@ -1303,13 +1305,13 @@
             this.bunifuCustomLabel5.TabIndex = 2;
             this.bunifuCustomLabel5.Text = "Delete WorkItem Id: ";
             // 
-            // bunifuCustomTextbox1
+            // OneDeleteTextBox
             // 
-            this.bunifuCustomTextbox1.BorderColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCustomTextbox1.Location = new System.Drawing.Point(167, 27);
-            this.bunifuCustomTextbox1.Name = "bunifuCustomTextbox1";
-            this.bunifuCustomTextbox1.Size = new System.Drawing.Size(40, 20);
-            this.bunifuCustomTextbox1.TabIndex = 1;
+            this.OneDeleteTextBox.BorderColor = System.Drawing.Color.SeaGreen;
+            this.OneDeleteTextBox.Location = new System.Drawing.Point(167, 27);
+            this.OneDeleteTextBox.Name = "OneDeleteTextBox";
+            this.OneDeleteTextBox.Size = new System.Drawing.Size(40, 20);
+            this.OneDeleteTextBox.TabIndex = 1;
             // 
             // DeleteFromFile
             // 
@@ -1528,7 +1530,7 @@
             this.AllServerDeleteProgressBar.Enabled = false;
             this.AllServerDeleteProgressBar.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.AllServerDeleteProgressBar.ForeColor = System.Drawing.Color.DimGray;
-            this.AllServerDeleteProgressBar.LabelVisible = true;
+            this.AllServerDeleteProgressBar.LabelVisible = false;
             this.AllServerDeleteProgressBar.LineProgressThickness = 15;
             this.AllServerDeleteProgressBar.LineThickness = 5;
             this.AllServerDeleteProgressBar.Location = new System.Drawing.Point(122, 90);
@@ -1877,11 +1879,11 @@
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel3;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel4;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel5;
-        private Bunifu.Framework.BunifuCustomTextbox bunifuCustomTextbox1;
+        private Bunifu.Framework.BunifuCustomTextbox OneDeleteTextBox;
         private Bunifu.Framework.UI.BunifuCircleProgressbar OneElemDeleteBar;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel6;
         private Bunifu.Framework.UI.BunifuCircleProgressbar MoreElemDeleteBar;
-        private Bunifu.Framework.BunifuCustomTextbox bunifuCustomTextbox2;
+        private Bunifu.Framework.BunifuCustomTextbox MoreDeleteTextBox;
         private Bunifu.Framework.UI.BunifuCircleProgressbar FileDeleteProgressBar;
         private Bunifu.Framework.UI.BunifuCustomLabel SelectedFile;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel7;

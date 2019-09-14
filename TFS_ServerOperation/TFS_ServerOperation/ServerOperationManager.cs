@@ -343,8 +343,9 @@ namespace TFS_ServerOperation
             {
                 log.Error(ex);
                 log.Flush();
+                return false;
             }
-            return false;
+
         }
 
         /// <summary>
@@ -366,8 +367,8 @@ namespace TFS_ServerOperation
             {
                 log.Error(ex);
                 log.Flush();
+                return false;
             }
-            return false;
         }
 
         /// <summary>

@@ -171,10 +171,13 @@ namespace TFS_ServerOperation
         /// <returns></returns>
         public bool DeleteFromFile_Process(string fileName, ServerOperationManager ServerOperation, MailSender MailSender)
         {
-            ServerOperation.DeleteFromFile(fileName);
-            MailSender.SendEmail(GetAddressToMail(), "Delete From File on the Server", "Delete method ran on the server. File Name: " + fileName, null);
-
-            return true;
+            bool result = ServerOperation.DeleteFromFile(fileName);
+            if (result)
+            {
+                MailSender.SendEmail(GetAddressToMail(), "Delete From File on the Server", "Delete method ran on the server. File Name: " + fileName, null);
+            }
+           
+            return result;
         }
 
         /// <summary>
@@ -187,10 +190,13 @@ namespace TFS_ServerOperation
         public bool DeleteByIds_Process(List<string> ids, ServerOperationManager ServerOperation, MailSender MailSender)
         {
             string deletedIds = string.Join(",", ids);
-            ServerOperation.DeleteByIds(ids);
-            MailSender.SendEmail(GetAddressToMail(), "Delete From Ids on the Server", "Delete method ran on the server. Deleted workItem ids: " + deletedIds, null);
+            bool result = ServerOperation.DeleteByIds(ids);
+            if (result)
+            {
+                MailSender.SendEmail(GetAddressToMail(), "Delete From Ids on the Server", "Delete method ran on the server. Deleted workItem ids: " + deletedIds, null);
+            }
 
-            return true;
+            return result;
         }
 
         /// <summary>

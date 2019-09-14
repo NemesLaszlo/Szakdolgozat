@@ -370,7 +370,7 @@
             // 
             // PanelAnimator
             // 
-            this.PanelAnimator.AnimationType = Bunifu.UI.WinForms.BunifuAnimatorNS.AnimationType.HorizSlide;
+            this.PanelAnimator.AnimationType = Bunifu.UI.WinForms.BunifuAnimatorNS.AnimationType.Transparent;
             this.PanelAnimator.Cursor = null;
             animation2.AnimateOnlyDifferences = true;
             animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
@@ -386,7 +386,7 @@
             animation2.ScaleCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.ScaleCoeff")));
             animation2.SlideCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.SlideCoeff")));
             animation2.TimeCoeff = 0F;
-            animation2.TransparencyCoeff = 0F;
+            animation2.TransparencyCoeff = 1F;
             this.PanelAnimator.DefaultAnimation = animation2;
             // 
             // subMenu1

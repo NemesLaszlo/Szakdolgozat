@@ -7,6 +7,7 @@ using TFS_ServerOperation;
 using System.Threading;
 using System.Text;
 using System.Diagnostics;
+using System.Collections.Generic;
 
 namespace UI_TFS_ServerOperation
 {
@@ -191,6 +192,48 @@ namespace UI_TFS_ServerOperation
         private void subDeleteByIds_Click(object sender, EventArgs e)
         {
             subDeleteTabPages.SetPage(0);
+        }
+
+        /// <summary>
+        /// Button Click, Delete WokrItem by Id from textBox.
+        /// </summary>
+        private void OneElemDeleteButton_Click(object sender, EventArgs e)
+        {
+            List<string> deleteDatas = new List<string>();
+            string deleteId = OneDeleteTextBox.Text;
+            if (String.IsNullOrEmpty(deleteId))
+            {
+                Alert.AlertCreation("Give Id to Delete!", AlertType.error);
+                return;
+            }
+            else
+            {
+                deleteDatas.Add(deleteId);
+                bool result = informationParser.DeleteByIds_Process(deleteDatas, serverOperator, mailSender);
+                if (result)
+                {
+                    for (int i = 0; i <= 100; ++i)
+                    {
+                        OneElemDeleteBar.Value = i;
+                        OneElemDeleteBar.Update();
+                    }
+                    Alert.AlertCreation("Delete Success by Id", AlertType.success);
+                }
+                else
+                {
+                    Alert.AlertCreation("WokrItem does not exist!", AlertType.error);
+                    OneElemDeleteBar.Value = 0;
+                    return;
+                }
+                OneElemDeleteBar.Value = 0;
+            }
+        }
+        /// <summary>
+        /// Button click, Delete WorkItems by Ids from a textBox.
+        /// </summary>
+        private void MoreElemDeleteButton_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void subDeleteFromFile_Click(object sender, EventArgs e)
