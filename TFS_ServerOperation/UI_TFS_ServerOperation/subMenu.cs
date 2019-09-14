@@ -226,6 +226,7 @@ namespace UI_TFS_ServerOperation
                     return;
                 }
                 OneElemDeleteBar.Value = 0;
+                OneDeleteTextBox.Clear();
             }
         }
         /// <summary>
@@ -233,7 +234,39 @@ namespace UI_TFS_ServerOperation
         /// </summary>
         private void MoreElemDeleteButton_Click(object sender, EventArgs e)
         {
-
+            List<string> deleteDatas = new List<string>();
+            string deleteId = MoreDeleteTextBox.Text;
+            if (String.IsNullOrEmpty(deleteId))
+            {
+                Alert.AlertCreation("Give Ids to Delete!", AlertType.error);
+                return;
+            }
+            else
+            {
+                string[] str = deleteId.Split(' ');
+                for(int i = 0; i < str.Length; ++i)
+                {
+                    deleteDatas.Add(str[i]);
+                }
+                bool result = informationParser.DeleteByIds_Process(deleteDatas, serverOperator, mailSender);
+                if (result)
+                {
+                    for (int i = 0; i <= 100; ++i)
+                    {
+                        MoreElemDeleteBar.Value = i;
+                        MoreElemDeleteBar.Update();
+                    }
+                    Alert.AlertCreation("Delete Success by Ids", AlertType.success);
+                }
+                else
+                {
+                    Alert.AlertCreation("WokrItems does not exist!", AlertType.error);
+                    MoreElemDeleteBar.Value = 0;
+                    return;
+                }
+                MoreElemDeleteBar.Value = 0;
+                MoreDeleteTextBox.Clear();
+            }
         }
 
         private void subDeleteFromFile_Click(object sender, EventArgs e)
