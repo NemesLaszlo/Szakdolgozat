@@ -1051,10 +1051,10 @@
             this.subDeleteTabPages.Location = new System.Drawing.Point(-4, 76);
             this.subDeleteTabPages.Multiline = true;
             this.subDeleteTabPages.Name = "subDeleteTabPages";
-            this.subDeleteTabPages.Page = this.DeleteFromFile;
-            this.subDeleteTabPages.PageIndex = 1;
-            this.subDeleteTabPages.PageName = "DeleteFromFile";
-            this.subDeleteTabPages.PageTitle = "DeleteFromFile";
+            this.subDeleteTabPages.Page = this.TotalDelete;
+            this.subDeleteTabPages.PageIndex = 2;
+            this.subDeleteTabPages.PageName = "TotalDelete";
+            this.subDeleteTabPages.PageTitle = "TotalDelete";
             this.subDeleteTabPages.SelectedIndex = 0;
             this.subDeleteTabPages.Size = new System.Drawing.Size(575, 474);
             this.subDeleteTabPages.TabIndex = 1;
@@ -1599,6 +1599,7 @@
             this.DeleteAllButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.DeleteAllButton.TextMarginLeft = 0;
             this.DeleteAllButton.UseDefaultRadiusAndThickness = true;
+            this.DeleteAllButton.Click += new System.EventHandler(this.DeleteAllButton_Click);
             // 
             // AllServerDeleteProgressBar
             // 

@@ -324,12 +324,34 @@ namespace UI_TFS_ServerOperation
                     return;
                 }
                 FileDeleteProgressBar.Value = 0;
+                SelectedFile.Visible = false;
             }
         }
 
         private void subCompleteDelete_Click(object sender, EventArgs e)
         {
             subDeleteTabPages.SetPage(2);
+        }
+
+        /// <summary>
+        /// Total Server Content Delete.
+        /// </summary>
+        private void DeleteAllButton_Click(object sender, EventArgs e)
+        {
+            const string message = "Are you sure that you would like to Delete the server content?";
+            const string caption = "Delete Server Content";
+            var result = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                informationParser.ServerContentDelete_Process(serverOperator, mailSender);
+                for (int i = 0; i <= 100; ++i)
+                {
+                    AllServerDeleteProgressBar.Value = i;
+                    AllServerDeleteProgressBar.Update();
+                }
+                Alert.AlertCreation("Delete Server Content Success!", AlertType.success);
+                AllServerDeleteProgressBar.Value = 0;
+            }
         }
 
         // Delete section end -------------------------------------------------

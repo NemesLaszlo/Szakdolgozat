@@ -95,7 +95,7 @@ namespace TFS_ServerOperation
                 }
                 catch(Exception)
                 {
-                    log.Info("Actual Monnt Work Items does not exist on the server!");
+                    log.Info("Actual Month Work Items does not exist on the server!");
                     log.Flush();
                 }
             }
@@ -120,7 +120,16 @@ namespace TFS_ServerOperation
                 else
                 {
                     List<int> LastMonthWorkItems = fOp.ReadCSV(lastMonthFile);
-                    WorkItemStateChagerLoop(isUIRun, LastMonthWorkItems);
+                    try
+                    {
+                        WorkItemStateChagerLoop(isUIRun, LastMonthWorkItems);
+                    }
+                    catch (Exception)
+                    {
+                        log.Info("Last Month Work Items does not exist on the server!");
+                        log.Flush();
+                    }
+
                 }
             }
         }

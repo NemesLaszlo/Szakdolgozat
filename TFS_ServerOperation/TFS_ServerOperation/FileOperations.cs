@@ -63,7 +63,7 @@ namespace TFS_ServerOperation
                 DateTime date = DateTime.Today;
                 string dateMonth = date.Month.ToString();
 
-                using (var fileStream = new FileStream("UploadedDatas_" + dateMonth + ".csv", FileMode.OpenOrCreate))
+                using (var fileStream = new FileStream("UploadedDatas_" + dateMonth + ".csv", FileMode.Create))
                 using (var streamWriter = new StreamWriter(fileStream))
                 {
                     streamWriter.WriteLine("Id;Title;AssignedTo;State");
