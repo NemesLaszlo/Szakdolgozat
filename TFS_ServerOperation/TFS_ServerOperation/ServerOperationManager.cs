@@ -89,7 +89,15 @@ namespace TFS_ServerOperation
                     return;
                 }
                 List<int> ActualMonthWorkItems = fOp.ReadCSV(actualMonthFilePath);
-                WorkItemStateChagerLoop(isUIRun, ActualMonthWorkItems);
+                try
+                {
+                    WorkItemStateChagerLoop(isUIRun, ActualMonthWorkItems);
+                }
+                catch(Exception)
+                {
+                    log.Info("Actual Monnt Work Items does not exist on the server!");
+                    log.Flush();
+                }
             }
             else
             {

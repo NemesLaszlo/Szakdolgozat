@@ -43,10 +43,10 @@
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges4 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
-            Utilities.BunifuPages.BunifuAnimatorNS.Animation animation2 = new Utilities.BunifuPages.BunifuAnimatorNS.Animation();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges5 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties9 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties10 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
+            Utilities.BunifuPages.BunifuAnimatorNS.Animation animation2 = new Utilities.BunifuPages.BunifuAnimatorNS.Animation();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Settings = new System.Windows.Forms.TabPage();
             this.subOpenCurrentConfig = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -98,12 +98,15 @@
             this.bunifuCustomLabel5 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.OneDeleteTextBox = new Bunifu.Framework.BunifuCustomTextbox();
             this.DeleteFromFile = new System.Windows.Forms.TabPage();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.BrowseButton = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.DeleteFileButton = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.SelectedFile = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.DeleteFileButton = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.FileDeleteProgressBar = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.TotalDelete = new System.Windows.Forms.TabPage();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.DeleteAllButton = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.AllServerDeleteProgressBar = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.FilePage = new System.Windows.Forms.TabPage();
             this.FileRichTextBox = new System.Windows.Forms.RichTextBox();
@@ -116,9 +119,6 @@
             this.BugReportPage = new System.Windows.Forms.TabPage();
             this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.DeleteAllButton = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.tabControl1.SuspendLayout();
             this.Settings.SuspendLayout();
             this.Upload.SuspendLayout();
@@ -136,15 +136,15 @@
             this.subDeleteTabPages.SuspendLayout();
             this.IdDelete.SuspendLayout();
             this.DeleteFromFile.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.TotalDelete.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.FilePage.SuspendLayout();
             this.LogPage.SuspendLayout();
             this.InfoPage.SuspendLayout();
             this.subInfoPages.SuspendLayout();
             this.ContactPage.SuspendLayout();
             this.BugReportPage.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -1051,10 +1051,10 @@
             this.subDeleteTabPages.Location = new System.Drawing.Point(-4, 76);
             this.subDeleteTabPages.Multiline = true;
             this.subDeleteTabPages.Name = "subDeleteTabPages";
-            this.subDeleteTabPages.Page = this.IdDelete;
-            this.subDeleteTabPages.PageIndex = 0;
-            this.subDeleteTabPages.PageName = "IdDelete";
-            this.subDeleteTabPages.PageTitle = "IdDelete";
+            this.subDeleteTabPages.Page = this.DeleteFromFile;
+            this.subDeleteTabPages.PageIndex = 1;
+            this.subDeleteTabPages.PageName = "DeleteFromFile";
+            this.subDeleteTabPages.PageTitle = "DeleteFromFile";
             this.subDeleteTabPages.SelectedIndex = 0;
             this.subDeleteTabPages.Size = new System.Drawing.Size(575, 474);
             this.subDeleteTabPages.TabIndex = 1;
@@ -1236,7 +1236,7 @@
             this.MoreElemDeleteBar.Enabled = false;
             this.MoreElemDeleteBar.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.MoreElemDeleteBar.ForeColor = System.Drawing.Color.DimGray;
-            this.MoreElemDeleteBar.LabelVisible = true;
+            this.MoreElemDeleteBar.LabelVisible = false;
             this.MoreElemDeleteBar.LineProgressThickness = 15;
             this.MoreElemDeleteBar.LineThickness = 5;
             this.MoreElemDeleteBar.Location = new System.Drawing.Point(305, 279);
@@ -1281,7 +1281,7 @@
             this.OneElemDeleteBar.Enabled = false;
             this.OneElemDeleteBar.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.OneElemDeleteBar.ForeColor = System.Drawing.Color.DimGray;
-            this.OneElemDeleteBar.LabelVisible = true;
+            this.OneElemDeleteBar.LabelVisible = false;
             this.OneElemDeleteBar.LineProgressThickness = 15;
             this.OneElemDeleteBar.LineThickness = 5;
             this.OneElemDeleteBar.Location = new System.Drawing.Point(305, 45);
@@ -1324,6 +1324,19 @@
             this.DeleteFromFile.TabIndex = 1;
             this.DeleteFromFile.Text = "DeleteFromFile";
             this.DeleteFromFile.UseVisualStyleBackColor = true;
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.BrowseButton);
+            this.panel2.Controls.Add(this.SelectedFile);
+            this.panel2.Controls.Add(this.DeleteFileButton);
+            this.panel2.Controls.Add(this.bunifuCustomLabel7);
+            this.panel2.Location = new System.Drawing.Point(21, 8);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1005, 130);
+            this.panel2.TabIndex = 19;
             // 
             // BrowseButton
             // 
@@ -1387,6 +1400,19 @@
             this.BrowseButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.BrowseButton.TextMarginLeft = 0;
             this.BrowseButton.UseDefaultRadiusAndThickness = true;
+            this.BrowseButton.Click += new System.EventHandler(this.BrowseButton_Click);
+            // 
+            // SelectedFile
+            // 
+            this.SelectedFile.AutoSize = true;
+            this.SelectedFile.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.SelectedFile.ForeColor = System.Drawing.Color.Red;
+            this.SelectedFile.Location = new System.Drawing.Point(265, 37);
+            this.SelectedFile.Name = "SelectedFile";
+            this.SelectedFile.Size = new System.Drawing.Size(83, 17);
+            this.SelectedFile.TabIndex = 11;
+            this.SelectedFile.Text = "SelectedFile";
+            this.SelectedFile.Visible = false;
             // 
             // DeleteFileButton
             // 
@@ -1452,18 +1478,6 @@
             this.DeleteFileButton.UseDefaultRadiusAndThickness = true;
             this.DeleteFileButton.Click += new System.EventHandler(this.DeleteFileButton_Click);
             // 
-            // SelectedFile
-            // 
-            this.SelectedFile.AutoSize = true;
-            this.SelectedFile.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.SelectedFile.ForeColor = System.Drawing.Color.Red;
-            this.SelectedFile.Location = new System.Drawing.Point(361, 18);
-            this.SelectedFile.Name = "SelectedFile";
-            this.SelectedFile.Size = new System.Drawing.Size(83, 17);
-            this.SelectedFile.TabIndex = 11;
-            this.SelectedFile.Text = "SelectedFile";
-            this.SelectedFile.Visible = false;
-            // 
             // bunifuCustomLabel7
             // 
             this.bunifuCustomLabel7.AutoSize = true;
@@ -1514,6 +1528,77 @@
             this.TotalDelete.TabIndex = 2;
             this.TotalDelete.Text = "TotalDelete";
             this.TotalDelete.UseVisualStyleBackColor = true;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.DeleteAllButton);
+            this.panel3.Location = new System.Drawing.Point(21, 9);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(375, 69);
+            this.panel3.TabIndex = 15;
+            // 
+            // DeleteAllButton
+            // 
+            this.DeleteAllButton.AllowToggling = false;
+            this.DeleteAllButton.AnimationSpeed = 200;
+            this.DeleteAllButton.AutoGenerateColors = false;
+            this.DeleteAllButton.BackColor = System.Drawing.Color.Transparent;
+            this.DeleteAllButton.BackColor1 = System.Drawing.Color.Silver;
+            this.DeleteAllButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("DeleteAllButton.BackgroundImage")));
+            this.DeleteAllButton.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.DeleteAllButton.ButtonText = "Delete ALL";
+            this.DeleteAllButton.ButtonTextMarginLeft = 0;
+            this.DeleteAllButton.ColorContrastOnClick = 45;
+            this.DeleteAllButton.ColorContrastOnHover = 45;
+            this.DeleteAllButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            borderEdges5.BottomLeft = true;
+            borderEdges5.BottomRight = true;
+            borderEdges5.TopLeft = true;
+            borderEdges5.TopRight = true;
+            this.DeleteAllButton.CustomizableEdges = borderEdges5;
+            this.DeleteAllButton.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.DeleteAllButton.DisabledBorderColor = System.Drawing.Color.Empty;
+            this.DeleteAllButton.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.DeleteAllButton.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.DeleteAllButton.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.DeleteAllButton.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.DeleteAllButton.ForeColor = System.Drawing.Color.DimGray;
+            this.DeleteAllButton.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
+            this.DeleteAllButton.IconMarginLeft = 11;
+            this.DeleteAllButton.IconPadding = 10;
+            this.DeleteAllButton.IconRightCursor = System.Windows.Forms.Cursors.Hand;
+            this.DeleteAllButton.IdleBorderColor = System.Drawing.Color.Silver;
+            this.DeleteAllButton.IdleBorderRadius = 3;
+            this.DeleteAllButton.IdleBorderThickness = 1;
+            this.DeleteAllButton.IdleFillColor = System.Drawing.Color.Silver;
+            this.DeleteAllButton.IdleIconLeftImage = null;
+            this.DeleteAllButton.IdleIconRightImage = null;
+            this.DeleteAllButton.IndicateFocus = false;
+            this.DeleteAllButton.Location = new System.Drawing.Point(3, 3);
+            this.DeleteAllButton.Name = "DeleteAllButton";
+            stateProperties9.BorderColor = System.Drawing.Color.Black;
+            stateProperties9.BorderRadius = 3;
+            stateProperties9.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties9.BorderThickness = 1;
+            stateProperties9.FillColor = System.Drawing.Color.Silver;
+            stateProperties9.ForeColor = System.Drawing.Color.Black;
+            stateProperties9.IconLeftImage = null;
+            stateProperties9.IconRightImage = null;
+            this.DeleteAllButton.onHoverState = stateProperties9;
+            stateProperties10.BorderColor = System.Drawing.Color.Black;
+            stateProperties10.BorderRadius = 3;
+            stateProperties10.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties10.BorderThickness = 1;
+            stateProperties10.FillColor = System.Drawing.Color.DimGray;
+            stateProperties10.ForeColor = System.Drawing.Color.Black;
+            stateProperties10.IconLeftImage = null;
+            stateProperties10.IconRightImage = null;
+            this.DeleteAllButton.OnPressedState = stateProperties10;
+            this.DeleteAllButton.Size = new System.Drawing.Size(210, 45);
+            this.DeleteAllButton.TabIndex = 14;
+            this.DeleteAllButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.DeleteAllButton.TextMarginLeft = 0;
+            this.DeleteAllButton.UseDefaultRadiusAndThickness = true;
             // 
             // AllServerDeleteProgressBar
             // 
@@ -1690,88 +1775,6 @@
             this.label6.TabIndex = 0;
             this.label6.Text = "infopage";
             // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.BrowseButton);
-            this.panel2.Controls.Add(this.SelectedFile);
-            this.panel2.Controls.Add(this.DeleteFileButton);
-            this.panel2.Controls.Add(this.bunifuCustomLabel7);
-            this.panel2.Location = new System.Drawing.Point(21, 8);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(540, 130);
-            this.panel2.TabIndex = 19;
-            // 
-            // DeleteAllButton
-            // 
-            this.DeleteAllButton.AllowToggling = false;
-            this.DeleteAllButton.AnimationSpeed = 200;
-            this.DeleteAllButton.AutoGenerateColors = false;
-            this.DeleteAllButton.BackColor = System.Drawing.Color.Transparent;
-            this.DeleteAllButton.BackColor1 = System.Drawing.Color.Silver;
-            this.DeleteAllButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("DeleteAllButton.BackgroundImage")));
-            this.DeleteAllButton.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            this.DeleteAllButton.ButtonText = "Delete ALL";
-            this.DeleteAllButton.ButtonTextMarginLeft = 0;
-            this.DeleteAllButton.ColorContrastOnClick = 45;
-            this.DeleteAllButton.ColorContrastOnHover = 45;
-            this.DeleteAllButton.Cursor = System.Windows.Forms.Cursors.Hand;
-            borderEdges5.BottomLeft = true;
-            borderEdges5.BottomRight = true;
-            borderEdges5.TopLeft = true;
-            borderEdges5.TopRight = true;
-            this.DeleteAllButton.CustomizableEdges = borderEdges5;
-            this.DeleteAllButton.DialogResult = System.Windows.Forms.DialogResult.None;
-            this.DeleteAllButton.DisabledBorderColor = System.Drawing.Color.Empty;
-            this.DeleteAllButton.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
-            this.DeleteAllButton.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
-            this.DeleteAllButton.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
-            this.DeleteAllButton.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.DeleteAllButton.ForeColor = System.Drawing.Color.DimGray;
-            this.DeleteAllButton.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
-            this.DeleteAllButton.IconMarginLeft = 11;
-            this.DeleteAllButton.IconPadding = 10;
-            this.DeleteAllButton.IconRightCursor = System.Windows.Forms.Cursors.Hand;
-            this.DeleteAllButton.IdleBorderColor = System.Drawing.Color.Silver;
-            this.DeleteAllButton.IdleBorderRadius = 3;
-            this.DeleteAllButton.IdleBorderThickness = 1;
-            this.DeleteAllButton.IdleFillColor = System.Drawing.Color.Silver;
-            this.DeleteAllButton.IdleIconLeftImage = null;
-            this.DeleteAllButton.IdleIconRightImage = null;
-            this.DeleteAllButton.IndicateFocus = false;
-            this.DeleteAllButton.Location = new System.Drawing.Point(3, 3);
-            this.DeleteAllButton.Name = "DeleteAllButton";
-            stateProperties9.BorderColor = System.Drawing.Color.Black;
-            stateProperties9.BorderRadius = 3;
-            stateProperties9.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties9.BorderThickness = 1;
-            stateProperties9.FillColor = System.Drawing.Color.Silver;
-            stateProperties9.ForeColor = System.Drawing.Color.Black;
-            stateProperties9.IconLeftImage = null;
-            stateProperties9.IconRightImage = null;
-            this.DeleteAllButton.onHoverState = stateProperties9;
-            stateProperties10.BorderColor = System.Drawing.Color.Black;
-            stateProperties10.BorderRadius = 3;
-            stateProperties10.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
-            stateProperties10.BorderThickness = 1;
-            stateProperties10.FillColor = System.Drawing.Color.DimGray;
-            stateProperties10.ForeColor = System.Drawing.Color.Black;
-            stateProperties10.IconLeftImage = null;
-            stateProperties10.IconRightImage = null;
-            this.DeleteAllButton.OnPressedState = stateProperties10;
-            this.DeleteAllButton.Size = new System.Drawing.Size(210, 45);
-            this.DeleteAllButton.TabIndex = 14;
-            this.DeleteAllButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.DeleteAllButton.TextMarginLeft = 0;
-            this.DeleteAllButton.UseDefaultRadiusAndThickness = true;
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.DeleteAllButton);
-            this.panel3.Location = new System.Drawing.Point(21, 9);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(375, 69);
-            this.panel3.TabIndex = 15;
-            // 
             // subMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1803,8 +1806,11 @@
             this.IdDelete.PerformLayout();
             this.DeleteFromFile.ResumeLayout(false);
             this.DeleteFromFile.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.TotalDelete.ResumeLayout(false);
             this.TotalDelete.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.FilePage.ResumeLayout(false);
             this.LogPage.ResumeLayout(false);
             this.InfoPage.ResumeLayout(false);
@@ -1814,9 +1820,6 @@
             this.ContactPage.PerformLayout();
             this.BugReportPage.ResumeLayout(false);
             this.BugReportPage.PerformLayout();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

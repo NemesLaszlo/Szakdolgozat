@@ -274,9 +274,57 @@ namespace UI_TFS_ServerOperation
             subDeleteTabPages.SetPage(1);
         }
 
+        /// <summary>
+        /// Select file for the delete section (from file) 
+        /// </summary>
+        private void BrowseButton_Click(object sender, EventArgs e)
+        {
+            Stream fileStream;
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+
+            if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+            {
+                if ((fileStream = openFileDialog.OpenFile()) != null)
+                {
+                    string strFileName = openFileDialog.FileName;
+                    SelectedFile.Text = strFileName;
+                    SelectedFile.Visible = true;
+                    Alert.AlertCreation("Load Success!", AlertType.success);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Button click, Delete WorkItems by Ids from a File.
+        /// </summary>
         private void DeleteFileButton_Click(object sender, EventArgs e)
         {
-            Alert.AlertCreation("Delete From File Success!", AlertType.success);
+            string deleteFile = SelectedFile.Text;
+            if (String.IsNullOrEmpty(deleteFile))
+            {
+                Alert.AlertCreation("Browse a File!", AlertType.error);
+                return;
+            }
+            else
+            {
+                bool result = informationParser.DeleteFromFile_Process(deleteFile, serverOperator, mailSender);
+                if (result)
+                {
+                    for (int i = 0; i <= 100; ++i)
+                    {
+                        FileDeleteProgressBar.Value = i;
+                        FileDeleteProgressBar.Update();
+                    }
+                    Alert.AlertCreation("Delete From File Success!", AlertType.success);
+                }
+                else
+                {
+                    Alert.AlertCreation("Delete From File Failed! Check the Log!", AlertType.error);
+                    FileDeleteProgressBar.Value = 0;
+                    return;
+                }
+                FileDeleteProgressBar.Value = 0;
+            }
         }
 
         private void subCompleteDelete_Click(object sender, EventArgs e)
