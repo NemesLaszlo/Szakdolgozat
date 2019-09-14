@@ -15,6 +15,7 @@ namespace UI_TFS_ServerOperation
         private ServerOperationManager serverOperator;
         private MailSender mailSender;
 
+        //check values for the Temp config save
         int counterLoad = 0;
         int counterDialogLoad = 0;
 
@@ -23,11 +24,13 @@ namespace UI_TFS_ServerOperation
             InitializeComponent();
             if (Program.isInDesignMode()) return;
 
+            // Controller Init
             informationParser = new InformationParser();
             log = informationParser.Init_Log();
             serverOperator = informationParser.Init_ServerOperation(log);
             mailSender = informationParser.Init_MailSender(log);
 
+            // Server information setting to the Upload page
             ServerCollectionInfoLabel.Text = informationParser.CurrentTfsCollectionName;
             ServerTeamProjectInfoLabel.Text = informationParser.CurrentTeamProjectName;
 
@@ -77,6 +80,9 @@ namespace UI_TFS_ServerOperation
             }
         }
 
+        /// <summary>
+        /// Click event, open the curret configuration of the uploader, where we can check our setting before usage.
+        /// </summary>
         private void subOpenCurrentConfig_Click(object sender, EventArgs e)
         {
             if (counterLoad == 0)
@@ -89,6 +95,9 @@ namespace UI_TFS_ServerOperation
             SettingsRichTextBox.Text = System.IO.File.ReadAllText(configLocation);
         }
 
+        /// <summary>
+        /// Click event, we are able to load other files to config and run our program.
+        /// </summary>
         private void subConfigLoad_Click(object sender, EventArgs e)
         {
             if(counterDialogLoad == 0)
@@ -110,6 +119,9 @@ namespace UI_TFS_ServerOperation
             }
         }
 
+        /// <summary>
+        /// Click event, reset the config file for the start original.
+        /// </summary>
         private void subReset_Click(object sender, EventArgs e)
         {
             if (Directory.Exists(Path.GetTempPath()))
@@ -126,6 +138,9 @@ namespace UI_TFS_ServerOperation
             Alert.AlertCreation("Config Reset Done!", AlertType.info);
         }
 
+        /// <summary>
+        /// Click evet, Save the curret loaded config file for the other events in the program.
+        /// </summary>
         private void subSave_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(this.SettingsRichTextBox.Text) || string.IsNullOrWhiteSpace(this.SettingsRichTextBox.Text))
@@ -150,9 +165,14 @@ namespace UI_TFS_ServerOperation
 
         // Upload section start -------------------------------------------------
 
+        /// <summary>
+        /// Click event, Start the upload the WorkItems structure to the configured server.
+        /// </summary>
         private void subUploadStart_Click(object sender, EventArgs e)
         {
+            // Controller evet calling.
             bool result = informationParser.UploadAndMailSend_Process(true, serverOperator, mailSender, log);
+
             if (result)
             {
                 for (int i = 0; i <= 100; ++i)
@@ -171,6 +191,21 @@ namespace UI_TFS_ServerOperation
         }
 
         // Upload section end -------------------------------------------------
+
+        // File section start -------------------------------------------------
+
+        private void subOpenCurrentFile_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void subOpenFileBrowse_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        // File section end -------------------------------------------------
+
 
 
 
