@@ -165,10 +165,12 @@ namespace UI_TFS_ServerOperation
             ConfigurationManager.RefreshSection("system.diagnostics");
 
             // Controller evet calling.
-            bool result = informationParser.UploadAndMailSend_Process(true, serverOperator, mailSender, log);
+            bool result = informationParser.Upload_Process(true, serverOperator, mailSender, log);
+            FileOperations writer = new FileOperations(log);
+            writer.WriteInCSV(serverOperator.datasForFileModification);
 
             if (result)
-            {
+            {               
                 for (int i = 0; i <= 100; ++i)
                 {
                     UploadBar.Value = i;

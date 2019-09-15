@@ -9,10 +9,11 @@ namespace TFS_ServerOperation
         {
             InformationParser informationParser = new InformationParser();
             Logger log = informationParser.Init_Log();
-            ServerOperationManager oSm = informationParser.Init_ServerOperation(log);
-            MailSender mS = informationParser.Init_MailSender(log);
 
-            //informationParser.ConsoleRun(args, log);
+            informationParser.ConsoleRun(args, log);
+
+            //ServerOperationManager oSm = informationParser.Init_ServerOperation(log);
+            //MailSender mS = informationParser.Init_MailSender(log);
 
             //List<string> datas = new List<string>() { "73", "74" };
 

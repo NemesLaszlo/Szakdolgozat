@@ -79,7 +79,7 @@ namespace TFS_ServerOperation
         /// Get the E-Mail Address Where we would like to send a mail / message
         /// </summary>
         /// <returns></returns>
-        private string GetAddressToMail()
+        public string GetAddressToMail()
         {
             return ToMailAddress;
         }
@@ -88,7 +88,7 @@ namespace TFS_ServerOperation
         /// Get the path to the up to date Month .csv file, to attach to the email
         /// </summary>
         /// <returns></returns>
-        private string GetUpToDateFileCSV()
+        public string GetUpToDateFileCSV()
         {
             string currentMonth = string.Empty;
             DateTime today = DateTime.Today;
@@ -121,7 +121,10 @@ namespace TFS_ServerOperation
                 }
                 else
                 {
-                    UploadAndMailSend_Process(false,ServerOperation, MailSender, log);
+                    Upload_Process(false,ServerOperation, MailSender, log);
+                    FileOperations writer = new FileOperations(log);
+                    writer.WriteInCSV(ServerOperation.datasForFileModification);
+                    MailSender.SendEmail(GetAddressToMail(), "Scheduled Month Uploaded File Period", "You can find the Result file in the Attachments.", GetUpToDateFileCSV());
                 }
             }
             catch (Exception ex)
@@ -132,15 +135,16 @@ namespace TFS_ServerOperation
         }
 
         /// <summary>
-        /// Upload and Send a mail about the result file. Return True if its dome with no problem.
+        /// Upload the configuration data to the server. Return True if its done with no problem.
         /// </summary>
         /// <param name="ServerOperation">ServerOperationManager object</param>
         /// <param name="MailSender">MailSender object</param>
         /// <param name="log">Custom Logger object</param>
-        public bool UploadAndMailSend_Process(bool isUIRun,ServerOperationManager ServerOperation, MailSender MailSender, Logger log)
+        public bool Upload_Process(bool isUIRun,ServerOperationManager ServerOperation, MailSender MailSender, Logger log)
         {
             try
             {
+                ServerOperation.datasForFileModification.Clear();
                 ServerOperation.Archive(isUIRun);
                 FileOperations writer = new FileOperations(log);
                 PbisConfigSection myPBISection = ConfigurationManager.GetSection("PBICollectionSection") as PbisConfigSection;
@@ -148,9 +152,7 @@ namespace TFS_ServerOperation
                 {
                     PBI pbi = myPBISection.Members[i];
                     ServerOperation.Upload(isUIRun, pbi);
-                }
-                writer.WriteInCSV(ServerOperation.datasForFileModification);
-                MailSender.SendEmail(GetAddressToMail(), "Month Uploaded FilePeriod", "You can find the Result file in the Attachments.", GetUpToDateFileCSV());
+                }  
 
                 return true;
             }
