@@ -80,6 +80,7 @@ namespace UI_TFS_ServerOperation
             string executableLocation = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             string configLocation = Path.Combine(executableLocation, "UI_TFS_ServerOperation.exe.config");
             SettingsRichTextBox.Text = System.IO.File.ReadAllText(configLocation);
+
         }
 
         /// <summary>
@@ -207,24 +208,34 @@ namespace UI_TFS_ServerOperation
             else
             {
                 deleteDatas.Add(deleteId);
-                bool result = informationParser.DeleteByIds_Process(deleteDatas, serverOperator, mailSender);
-                if (result)
+                CustomMessageBox messageBox = new CustomMessageBox("Are you sure that you would like to Delete form the Server by Id?");
+                messageBox.ShowDialog();
+                if (messageBox.returnValue == true)
                 {
-                    for (int i = 0; i <= 100; ++i)
+                    Alert.AlertCreation("Yes", AlertType.info);
+                    bool result = informationParser.DeleteByIds_Process(deleteDatas, serverOperator, mailSender);
+                    if (result)
                     {
-                        OneElemDeleteBar.Value = i;
-                        OneElemDeleteBar.Update();
+                        for (int i = 0; i <= 100; ++i)
+                        {
+                            OneElemDeleteBar.Value = i;
+                            OneElemDeleteBar.Update();
+                        }
+                        Alert.AlertCreation("Delete Success by Id", AlertType.success);
                     }
-                    Alert.AlertCreation("Delete Success by Id", AlertType.success);
+                    else
+                    {
+                        Alert.AlertCreation("WokrItem does not exist!", AlertType.error);
+                        OneElemDeleteBar.Value = 0;
+                        return;
+                    }
+                    OneElemDeleteBar.Value = 0;
+                    OneDeleteTextBox.Clear();
                 }
                 else
                 {
-                    Alert.AlertCreation("WokrItem does not exist!", AlertType.error);
-                    OneElemDeleteBar.Value = 0;
-                    return;
-                }
-                OneElemDeleteBar.Value = 0;
-                OneDeleteTextBox.Clear();
+                    Alert.AlertCreation("No", AlertType.info);
+                }             
             }
         }
         /// <summary>
@@ -242,28 +253,38 @@ namespace UI_TFS_ServerOperation
             else
             {
                 string[] str = deleteId.Split(' ');
-                for(int i = 0; i < str.Length; ++i)
+                for (int i = 0; i < str.Length; ++i)
                 {
                     deleteDatas.Add(str[i]);
                 }
-                bool result = informationParser.DeleteByIds_Process(deleteDatas, serverOperator, mailSender);
-                if (result)
+                CustomMessageBox messageBox = new CustomMessageBox("Are you sure that you would like to Delete form the Server by Ids?");
+                messageBox.ShowDialog();
+                if (messageBox.returnValue == true)
                 {
-                    for (int i = 0; i <= 100; ++i)
+                    Alert.AlertCreation("Yes", AlertType.info);
+                    bool result = informationParser.DeleteByIds_Process(deleteDatas, serverOperator, mailSender);
+                    if (result)
                     {
-                        MoreElemDeleteBar.Value = i;
-                        MoreElemDeleteBar.Update();
+                        for (int i = 0; i <= 100; ++i)
+                        {
+                            MoreElemDeleteBar.Value = i;
+                            MoreElemDeleteBar.Update();
+                        }
+                        Alert.AlertCreation("Delete Success by Ids", AlertType.success);
                     }
-                    Alert.AlertCreation("Delete Success by Ids", AlertType.success);
+                    else
+                    {
+                        Alert.AlertCreation("WokrItems does not exist!", AlertType.error);
+                        MoreElemDeleteBar.Value = 0;
+                        return;
+                    }
+                    MoreElemDeleteBar.Value = 0;
+                    MoreDeleteTextBox.Clear();
                 }
                 else
                 {
-                    Alert.AlertCreation("WokrItems does not exist!", AlertType.error);
-                    MoreElemDeleteBar.Value = 0;
-                    return;
+                    Alert.AlertCreation("No", AlertType.info);
                 }
-                MoreElemDeleteBar.Value = 0;
-                MoreDeleteTextBox.Clear();
             }
         }
 
@@ -305,24 +326,34 @@ namespace UI_TFS_ServerOperation
             }
             else
             {
-                bool result = informationParser.DeleteFromFile_Process(deleteFile, serverOperator, mailSender);
-                if (result)
+                CustomMessageBox messageBox = new CustomMessageBox("Are you sure that you would like to Delete form the Server by Selected File?");
+                messageBox.ShowDialog();
+                if (messageBox.returnValue == true)
                 {
-                    for (int i = 0; i <= 100; ++i)
+                    Alert.AlertCreation("Yes", AlertType.info);
+                    bool result = informationParser.DeleteFromFile_Process(deleteFile, serverOperator, mailSender);
+                    if (result)
                     {
-                        FileDeleteProgressBar.Value = i;
-                        FileDeleteProgressBar.Update();
+                        for (int i = 0; i <= 100; ++i)
+                        {
+                            FileDeleteProgressBar.Value = i;
+                            FileDeleteProgressBar.Update();
+                        }
+                        Alert.AlertCreation("Delete From File Success!", AlertType.success);
                     }
-                    Alert.AlertCreation("Delete From File Success!", AlertType.success);
+                    else
+                    {
+                        Alert.AlertCreation("Delete From File Failed!", AlertType.error);
+                        FileDeleteProgressBar.Value = 0;
+                        return;
+                    }
+                    FileDeleteProgressBar.Value = 0;
+                    SelectedFile.Visible = false;
                 }
                 else
                 {
-                    Alert.AlertCreation("Delete From File Failed!", AlertType.error);
-                    FileDeleteProgressBar.Value = 0;
-                    return;
+                    Alert.AlertCreation("No", AlertType.info);
                 }
-                FileDeleteProgressBar.Value = 0;
-                SelectedFile.Visible = false;
             }
         }
 
@@ -336,11 +367,11 @@ namespace UI_TFS_ServerOperation
         /// </summary>
         private void DeleteAllButton_Click(object sender, EventArgs e)
         {
-            const string message = "Are you sure that you would like to Delete the server content?";
-            const string caption = "Delete Server Content";
-            var result = MessageBox.Show(message, caption, MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if (result == DialogResult.Yes)
+            CustomMessageBox messageBox = new CustomMessageBox("Are you sure that you would like to Delete the server content?");
+            messageBox.ShowDialog();
+            if (messageBox.returnValue == true)
             {
+                Alert.AlertCreation("Yes", AlertType.info);
                 informationParser.ServerContentDelete_Process(serverOperator, mailSender);
                 for (int i = 0; i <= 100; ++i)
                 {
@@ -349,6 +380,10 @@ namespace UI_TFS_ServerOperation
                 }
                 Alert.AlertCreation("Delete Server Content Success!", AlertType.success);
                 AllServerDeleteProgressBar.Value = 0;
+            }
+            else
+            {
+                Alert.AlertCreation("No", AlertType.info);
             }
         }
 
@@ -377,6 +412,19 @@ namespace UI_TFS_ServerOperation
             return currentMonth;
         }
 
+        private string GetFileContent(string path)
+        {
+            string result = string.Empty;
+            using (var fs = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+            using (var sr = new StreamReader(fs, Encoding.Default))
+            {
+                result = sr.ReadToEnd();
+                sr.Close();
+                fs.Close();
+            }
+            return result;
+        }
+
         /// <summary>
         /// Click event, Load the current "Month" created upload file.
         /// </summary>
@@ -391,7 +439,7 @@ namespace UI_TFS_ServerOperation
             else
             {
                 Alert.AlertCreation("Actual Mont File Loaded!", AlertType.success);
-                FileRichTextBox.Text = System.IO.File.ReadAllText(currentFile);
+                FileRichTextBox.Text = GetFileContent(currentFile);
             }
         }
 
@@ -408,8 +456,7 @@ namespace UI_TFS_ServerOperation
                 if ((fileStream = openFileDialog.OpenFile()) != null)
                 {
                     string strFileName = openFileDialog.FileName;
-                    string fileText = System.IO.File.ReadAllText(strFileName);
-                    FileRichTextBox.Text = fileText;
+                    FileRichTextBox.Text = GetFileContent(strFileName);
                     Alert.AlertCreation("Load Success!", AlertType.success);
                 }
             }
@@ -439,8 +486,9 @@ namespace UI_TFS_ServerOperation
                     using (var sr = new StreamReader(fs, Encoding.Default))
                     {
                         LogRichTextBox.Text = sr.ReadToEnd();
+                        sr.Close();
+                        fs.Close();
                     }
-
                 }
                 catch (Exception)
                 {

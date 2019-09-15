@@ -73,6 +73,7 @@ namespace TFS_ServerOperation
                     }
                     streamWriter.Flush();
                     streamWriter.Close();
+                    fileStream.Close();
                     log.Info("File period fine!");
                     log.Flush();
                 }
