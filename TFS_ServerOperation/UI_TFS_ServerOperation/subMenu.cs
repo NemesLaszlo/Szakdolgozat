@@ -326,7 +326,7 @@ namespace UI_TFS_ServerOperation
                 }
                 else
                 {
-                    Alert.AlertCreation("Delete From File Failed! Check the Log!", AlertType.error);
+                    Alert.AlertCreation("Delete From File Failed!", AlertType.error);
                     FileDeleteProgressBar.Value = 0;
                     return;
                 }

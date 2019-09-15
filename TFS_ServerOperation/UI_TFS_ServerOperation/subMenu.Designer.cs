@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(subMenu));
             Utilities.BunifuPages.BunifuAnimatorNS.Animation animation3 = new Utilities.BunifuPages.BunifuAnimatorNS.Animation();
             Utilities.BunifuPages.BunifuAnimatorNS.Animation animation1 = new Utilities.BunifuPages.BunifuAnimatorNS.Animation();
@@ -119,6 +120,7 @@
             this.BugReportPage = new System.Windows.Forms.TabPage();
             this.label9 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.bunifuToolTip1 = new Bunifu.UI.WinForms.BunifuToolTip(this.components);
             this.tabControl1.SuspendLayout();
             this.Settings.SuspendLayout();
             this.Upload.SuspendLayout();
@@ -160,6 +162,9 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(236, 1400);
             this.tabControl1.TabIndex = 0;
+            this.bunifuToolTip1.SetToolTip(this.tabControl1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.tabControl1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.tabControl1, "");
             // 
             // Settings
             // 
@@ -174,6 +179,9 @@
             this.Settings.Size = new System.Drawing.Size(228, 1374);
             this.Settings.TabIndex = 0;
             this.Settings.Text = "Settings";
+            this.bunifuToolTip1.SetToolTip(this.Settings, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.Settings, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.Settings, "");
             // 
             // subOpenCurrentConfig
             // 
@@ -209,6 +217,9 @@
             this.subOpenCurrentConfig.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.subOpenCurrentConfig.Textcolor = System.Drawing.Color.DimGray;
             this.subOpenCurrentConfig.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bunifuToolTip1.SetToolTip(this.subOpenCurrentConfig, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.subOpenCurrentConfig, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.subOpenCurrentConfig, "");
             this.subOpenCurrentConfig.Click += new System.EventHandler(this.subOpenCurrentConfig_Click);
             // 
             // subReset
@@ -245,6 +256,9 @@
             this.subReset.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.subReset.Textcolor = System.Drawing.Color.DimGray;
             this.subReset.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bunifuToolTip1.SetToolTip(this.subReset, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.subReset, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.subReset, "");
             this.subReset.Click += new System.EventHandler(this.subReset_Click);
             // 
             // subConfigLoad
@@ -281,6 +295,9 @@
             this.subConfigLoad.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.subConfigLoad.Textcolor = System.Drawing.Color.DimGray;
             this.subConfigLoad.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bunifuToolTip1.SetToolTip(this.subConfigLoad, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.subConfigLoad, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.subConfigLoad, "");
             this.subConfigLoad.Click += new System.EventHandler(this.subConfigLoad_Click);
             // 
             // subSave
@@ -317,6 +334,9 @@
             this.subSave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.subSave.Textcolor = System.Drawing.Color.DimGray;
             this.subSave.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bunifuToolTip1.SetToolTip(this.subSave, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.subSave, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.subSave, "");
             this.subSave.Click += new System.EventHandler(this.subSave_Click);
             // 
             // Upload
@@ -329,6 +349,9 @@
             this.Upload.Size = new System.Drawing.Size(228, 1374);
             this.Upload.TabIndex = 1;
             this.Upload.Text = "Upload";
+            this.bunifuToolTip1.SetToolTip(this.Upload, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.Upload, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.Upload, "");
             // 
             // subUploadStart
             // 
@@ -364,6 +387,9 @@
             this.subUploadStart.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.subUploadStart.Textcolor = System.Drawing.Color.DimGray;
             this.subUploadStart.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bunifuToolTip1.SetToolTip(this.subUploadStart, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.subUploadStart, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.subUploadStart, "");
             this.subUploadStart.Click += new System.EventHandler(this.subUploadStart_Click);
             // 
             // Delete
@@ -378,6 +404,9 @@
             this.Delete.Size = new System.Drawing.Size(228, 1374);
             this.Delete.TabIndex = 2;
             this.Delete.Text = "Delete";
+            this.bunifuToolTip1.SetToolTip(this.Delete, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.Delete, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.Delete, "");
             // 
             // subDeleteByIds
             // 
@@ -414,6 +443,9 @@
             this.subDeleteByIds.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.subDeleteByIds.Textcolor = System.Drawing.Color.DimGray;
             this.subDeleteByIds.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bunifuToolTip1.SetToolTip(this.subDeleteByIds, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.subDeleteByIds, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.subDeleteByIds, "");
             this.subDeleteByIds.Click += new System.EventHandler(this.subDeleteByIds_Click);
             // 
             // subCompleteDelete
@@ -451,6 +483,9 @@
             this.subCompleteDelete.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.subCompleteDelete.Textcolor = System.Drawing.Color.DimGray;
             this.subCompleteDelete.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bunifuToolTip1.SetToolTip(this.subCompleteDelete, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.subCompleteDelete, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.subCompleteDelete, "");
             this.subCompleteDelete.Click += new System.EventHandler(this.subCompleteDelete_Click);
             // 
             // subDeleteFromFile
@@ -488,6 +523,9 @@
             this.subDeleteFromFile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.subDeleteFromFile.Textcolor = System.Drawing.Color.DimGray;
             this.subDeleteFromFile.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bunifuToolTip1.SetToolTip(this.subDeleteFromFile, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.subDeleteFromFile, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.subDeleteFromFile, "");
             this.subDeleteFromFile.Click += new System.EventHandler(this.subDeleteFromFile_Click);
             // 
             // File
@@ -501,6 +539,9 @@
             this.File.Size = new System.Drawing.Size(228, 1374);
             this.File.TabIndex = 3;
             this.File.Text = "File";
+            this.bunifuToolTip1.SetToolTip(this.File, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.File, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.File, "");
             // 
             // subOpenCurrentFile
             // 
@@ -536,6 +577,9 @@
             this.subOpenCurrentFile.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.subOpenCurrentFile.Textcolor = System.Drawing.Color.DimGray;
             this.subOpenCurrentFile.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bunifuToolTip1.SetToolTip(this.subOpenCurrentFile, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.subOpenCurrentFile, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.subOpenCurrentFile, "");
             this.subOpenCurrentFile.Click += new System.EventHandler(this.subOpenCurrentFile_Click);
             // 
             // subOpenFileBrowse
@@ -572,6 +616,9 @@
             this.subOpenFileBrowse.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.subOpenFileBrowse.Textcolor = System.Drawing.Color.DimGray;
             this.subOpenFileBrowse.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bunifuToolTip1.SetToolTip(this.subOpenFileBrowse, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.subOpenFileBrowse, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.subOpenFileBrowse, "");
             this.subOpenFileBrowse.Click += new System.EventHandler(this.subOpenFileBrowse_Click);
             // 
             // Log
@@ -586,6 +633,9 @@
             this.Log.Size = new System.Drawing.Size(228, 1374);
             this.Log.TabIndex = 4;
             this.Log.Text = "Log";
+            this.bunifuToolTip1.SetToolTip(this.Log, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.Log, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.Log, "");
             // 
             // subLogExternal
             // 
@@ -621,6 +671,9 @@
             this.subLogExternal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.subLogExternal.Textcolor = System.Drawing.Color.DimGray;
             this.subLogExternal.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bunifuToolTip1.SetToolTip(this.subLogExternal, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.subLogExternal, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.subLogExternal, "");
             this.subLogExternal.Click += new System.EventHandler(this.subLogExternal_Click);
             // 
             // subOpenCurrentLog
@@ -657,6 +710,9 @@
             this.subOpenCurrentLog.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.subOpenCurrentLog.Textcolor = System.Drawing.Color.DimGray;
             this.subOpenCurrentLog.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bunifuToolTip1.SetToolTip(this.subOpenCurrentLog, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.subOpenCurrentLog, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.subOpenCurrentLog, "");
             this.subOpenCurrentLog.Click += new System.EventHandler(this.subOpenCurrentLog_Click);
             // 
             // subLogBrowse
@@ -693,6 +749,9 @@
             this.subLogBrowse.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.subLogBrowse.Textcolor = System.Drawing.Color.DimGray;
             this.subLogBrowse.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bunifuToolTip1.SetToolTip(this.subLogBrowse, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.subLogBrowse, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.subLogBrowse, "");
             this.subLogBrowse.Click += new System.EventHandler(this.subLogBrowse_Click);
             // 
             // Info
@@ -706,6 +765,9 @@
             this.Info.Size = new System.Drawing.Size(228, 1374);
             this.Info.TabIndex = 5;
             this.Info.Text = "Info";
+            this.bunifuToolTip1.SetToolTip(this.Info, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.Info, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.Info, "");
             // 
             // subContact
             // 
@@ -742,6 +804,9 @@
             this.subContact.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.subContact.Textcolor = System.Drawing.Color.DimGray;
             this.subContact.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bunifuToolTip1.SetToolTip(this.subContact, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.subContact, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.subContact, "");
             this.subContact.Click += new System.EventHandler(this.subContact_Click);
             // 
             // subBugReport
@@ -779,6 +844,9 @@
             this.subBugReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.subBugReport.Textcolor = System.Drawing.Color.DimGray;
             this.subBugReport.TextFont = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bunifuToolTip1.SetToolTip(this.subBugReport, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.subBugReport, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.subBugReport, "");
             this.subBugReport.Click += new System.EventHandler(this.subBugReport_Click);
             // 
             // panel1
@@ -791,6 +859,9 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(799, 80);
             this.panel1.TabIndex = 1;
+            this.bunifuToolTip1.SetToolTip(this.panel1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.panel1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.panel1, "");
             // 
             // pictureBox1
             // 
@@ -801,6 +872,9 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.pictureBox1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.pictureBox1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.pictureBox1, "");
             // 
             // Dashboard
             // 
@@ -812,6 +886,9 @@
             this.Dashboard.Size = new System.Drawing.Size(95, 19);
             this.Dashboard.TabIndex = 0;
             this.Dashboard.Text = "Dashboard";
+            this.bunifuToolTip1.SetToolTip(this.Dashboard, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.Dashboard, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.Dashboard, "");
             // 
             // CoordinatorPanel
             // 
@@ -823,6 +900,9 @@
             this.CoordinatorPanel.Name = "CoordinatorPanel";
             this.CoordinatorPanel.Size = new System.Drawing.Size(578, 579);
             this.CoordinatorPanel.TabIndex = 2;
+            this.bunifuToolTip1.SetToolTip(this.CoordinatorPanel, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.CoordinatorPanel, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.CoordinatorPanel, "");
             // 
             // ContentControllerPages
             // 
@@ -848,6 +928,9 @@
             this.ContentControllerPages.Size = new System.Drawing.Size(578, 579);
             this.ContentControllerPages.TabIndex = 2;
             this.ContentControllerPages.Tag = "";
+            this.bunifuToolTip1.SetToolTip(this.ContentControllerPages, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.ContentControllerPages, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.ContentControllerPages, "");
             animation3.AnimateOnlyDifferences = true;
             animation3.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation3.BlindCoeff")));
             animation3.LeafCoeff = 0F;
@@ -876,6 +959,9 @@
             this.SettingsPage.TabIndex = 0;
             this.SettingsPage.Tag = "0";
             this.SettingsPage.Text = "SettingsPage";
+            this.bunifuToolTip1.SetToolTip(this.SettingsPage, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.SettingsPage, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.SettingsPage, "");
             this.SettingsPage.UseVisualStyleBackColor = true;
             // 
             // SettingsRichTextBox
@@ -891,6 +977,9 @@
             this.SettingsRichTextBox.TabIndex = 1;
             this.SettingsRichTextBox.Tag = "0";
             this.SettingsRichTextBox.Text = "";
+            this.bunifuToolTip1.SetToolTip(this.SettingsRichTextBox, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.SettingsRichTextBox, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.SettingsRichTextBox, "");
             // 
             // UploadPage
             // 
@@ -908,6 +997,9 @@
             this.UploadPage.TabIndex = 1;
             this.UploadPage.Tag = "1";
             this.UploadPage.Text = "UploadPage";
+            this.bunifuToolTip1.SetToolTip(this.UploadPage, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.UploadPage, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.UploadPage, "");
             this.UploadPage.UseVisualStyleBackColor = true;
             // 
             // ServerTeamProjectInfoLabel
@@ -920,6 +1012,9 @@
             this.ServerTeamProjectInfoLabel.Size = new System.Drawing.Size(63, 21);
             this.ServerTeamProjectInfoLabel.TabIndex = 6;
             this.ServerTeamProjectInfoLabel.Text = "Active";
+            this.bunifuToolTip1.SetToolTip(this.ServerTeamProjectInfoLabel, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.ServerTeamProjectInfoLabel, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.ServerTeamProjectInfoLabel, "");
             // 
             // ServerCollectionInfoLabel
             // 
@@ -931,6 +1026,9 @@
             this.ServerCollectionInfoLabel.Size = new System.Drawing.Size(63, 21);
             this.ServerCollectionInfoLabel.TabIndex = 5;
             this.ServerCollectionInfoLabel.Text = "Active";
+            this.bunifuToolTip1.SetToolTip(this.ServerCollectionInfoLabel, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.ServerCollectionInfoLabel, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.ServerCollectionInfoLabel, "");
             // 
             // ServerTeamProject
             // 
@@ -941,6 +1039,9 @@
             this.ServerTeamProject.Size = new System.Drawing.Size(172, 21);
             this.ServerTeamProject.TabIndex = 4;
             this.ServerTeamProject.Text = "Server Team Project: ";
+            this.bunifuToolTip1.SetToolTip(this.ServerTeamProject, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.ServerTeamProject, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.ServerTeamProject, "");
             // 
             // ServerCollection
             // 
@@ -951,6 +1052,9 @@
             this.ServerCollection.Size = new System.Drawing.Size(66, 21);
             this.ServerCollection.TabIndex = 3;
             this.ServerCollection.Text = "Server: ";
+            this.bunifuToolTip1.SetToolTip(this.ServerCollection, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.ServerCollection, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.ServerCollection, "");
             // 
             // bunifuCustomLabel2
             // 
@@ -962,6 +1066,9 @@
             this.bunifuCustomLabel2.Size = new System.Drawing.Size(63, 21);
             this.bunifuCustomLabel2.TabIndex = 2;
             this.bunifuCustomLabel2.Text = "Active";
+            this.bunifuToolTip1.SetToolTip(this.bunifuCustomLabel2, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuCustomLabel2, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuCustomLabel2, "");
             // 
             // bunifuCustomLabel1
             // 
@@ -972,6 +1079,9 @@
             this.bunifuCustomLabel1.Size = new System.Drawing.Size(119, 21);
             this.bunifuCustomLabel1.TabIndex = 1;
             this.bunifuCustomLabel1.Text = "Server Status: ";
+            this.bunifuToolTip1.SetToolTip(this.bunifuCustomLabel1, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuCustomLabel1, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuCustomLabel1, "");
             // 
             // UploadBar
             // 
@@ -996,6 +1106,9 @@
             this.UploadBar.ProgressColor = System.Drawing.Color.DimGray;
             this.UploadBar.Size = new System.Drawing.Size(411, 411);
             this.UploadBar.TabIndex = 0;
+            this.bunifuToolTip1.SetToolTip(this.UploadBar, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.UploadBar, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.UploadBar, "");
             this.UploadBar.Value = 0;
             // 
             // DeletePage
@@ -1010,6 +1123,9 @@
             this.DeletePage.TabIndex = 2;
             this.DeletePage.Tag = "2";
             this.DeletePage.Text = "DeletePage";
+            this.bunifuToolTip1.SetToolTip(this.DeletePage, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.DeletePage, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.DeletePage, "");
             this.DeletePage.UseVisualStyleBackColor = true;
             // 
             // bunifuCustomLabel4
@@ -1023,6 +1139,9 @@
             this.bunifuCustomLabel4.TabIndex = 3;
             this.bunifuCustomLabel4.Text = "These interfaces allow you to perform a delete operation on the server\r\nAll opera" +
     "tions will be notified by mail\r\n";
+            this.bunifuToolTip1.SetToolTip(this.bunifuCustomLabel4, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuCustomLabel4, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuCustomLabel4, "");
             // 
             // bunifuCustomLabel3
             // 
@@ -1034,6 +1153,9 @@
             this.bunifuCustomLabel3.Size = new System.Drawing.Size(79, 21);
             this.bunifuCustomLabel3.TabIndex = 2;
             this.bunifuCustomLabel3.Text = "Warning!";
+            this.bunifuToolTip1.SetToolTip(this.bunifuCustomLabel3, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuCustomLabel3, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuCustomLabel3, "");
             // 
             // subDeleteTabPages
             // 
@@ -1048,14 +1170,17 @@
             this.subDeleteTabPages.Location = new System.Drawing.Point(-4, 76);
             this.subDeleteTabPages.Multiline = true;
             this.subDeleteTabPages.Name = "subDeleteTabPages";
-            this.subDeleteTabPages.Page = this.TotalDelete;
-            this.subDeleteTabPages.PageIndex = 2;
-            this.subDeleteTabPages.PageName = "TotalDelete";
-            this.subDeleteTabPages.PageTitle = "TotalDelete";
+            this.subDeleteTabPages.Page = this.IdDelete;
+            this.subDeleteTabPages.PageIndex = 0;
+            this.subDeleteTabPages.PageName = "IdDelete";
+            this.subDeleteTabPages.PageTitle = "IdDelete";
             this.subDeleteTabPages.SelectedIndex = 0;
             this.subDeleteTabPages.Size = new System.Drawing.Size(575, 474);
             this.subDeleteTabPages.TabIndex = 1;
             this.subDeleteTabPages.Tag = "2";
+            this.bunifuToolTip1.SetToolTip(this.subDeleteTabPages, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.subDeleteTabPages, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.subDeleteTabPages, "");
             animation1.AnimateOnlyDifferences = true;
             animation1.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation1.BlindCoeff")));
             animation1.LeafCoeff = 0F;
@@ -1091,6 +1216,9 @@
             this.IdDelete.TabIndex = 0;
             this.IdDelete.Tag = "0";
             this.IdDelete.Text = "IdDelete";
+            this.bunifuToolTip1.SetToolTip(this.IdDelete, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.IdDelete, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.IdDelete, "");
             this.IdDelete.UseVisualStyleBackColor = true;
             // 
             // MoreElemDeleteButton
@@ -1154,6 +1282,9 @@
             this.MoreElemDeleteButton.TabIndex = 16;
             this.MoreElemDeleteButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.MoreElemDeleteButton.TextMarginLeft = 0;
+            this.bunifuToolTip1.SetToolTip(this.MoreElemDeleteButton, "Delete The WorkItems from te Box by Ids\r\n(Ids separated with spaces!)\r\n");
+            this.bunifuToolTip1.SetToolTipIcon(this.MoreElemDeleteButton, ((System.Drawing.Image)(resources.GetObject("MoreElemDeleteButton.ToolTipIcon"))));
+            this.bunifuToolTip1.SetToolTipTitle(this.MoreElemDeleteButton, "Delete WokrkItems");
             this.MoreElemDeleteButton.UseDefaultRadiusAndThickness = true;
             this.MoreElemDeleteButton.Click += new System.EventHandler(this.MoreElemDeleteButton_Click);
             // 
@@ -1218,6 +1349,9 @@
             this.OneElemDeleteButton.TabIndex = 15;
             this.OneElemDeleteButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.OneElemDeleteButton.TextMarginLeft = 0;
+            this.bunifuToolTip1.SetToolTip(this.OneElemDeleteButton, "Delete One WokrItem");
+            this.bunifuToolTip1.SetToolTipIcon(this.OneElemDeleteButton, ((System.Drawing.Image)(resources.GetObject("OneElemDeleteButton.ToolTipIcon"))));
+            this.bunifuToolTip1.SetToolTipTitle(this.OneElemDeleteButton, "Delete");
             this.OneElemDeleteButton.UseDefaultRadiusAndThickness = true;
             this.OneElemDeleteButton.Click += new System.EventHandler(this.OneElemDeleteButton_Click);
             // 
@@ -1244,6 +1378,9 @@
             this.MoreElemDeleteBar.ProgressColor = System.Drawing.Color.DimGray;
             this.MoreElemDeleteBar.Size = new System.Drawing.Size(157, 157);
             this.MoreElemDeleteBar.TabIndex = 8;
+            this.bunifuToolTip1.SetToolTip(this.MoreElemDeleteBar, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.MoreElemDeleteBar, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.MoreElemDeleteBar, "");
             this.MoreElemDeleteBar.Value = 0;
             // 
             // MoreDeleteTextBox
@@ -1254,6 +1391,9 @@
             this.MoreDeleteTextBox.Name = "MoreDeleteTextBox";
             this.MoreDeleteTextBox.Size = new System.Drawing.Size(125, 20);
             this.MoreDeleteTextBox.TabIndex = 6;
+            this.bunifuToolTip1.SetToolTip(this.MoreDeleteTextBox, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.MoreDeleteTextBox, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.MoreDeleteTextBox, "");
             // 
             // bunifuCustomLabel6
             // 
@@ -1265,6 +1405,9 @@
             this.bunifuCustomLabel6.Size = new System.Drawing.Size(145, 17);
             this.bunifuCustomLabel6.TabIndex = 5;
             this.bunifuCustomLabel6.Text = "Delete WorkItem Ids: ";
+            this.bunifuToolTip1.SetToolTip(this.bunifuCustomLabel6, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuCustomLabel6, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuCustomLabel6, "");
             // 
             // OneElemDeleteBar
             // 
@@ -1289,6 +1432,9 @@
             this.OneElemDeleteBar.ProgressColor = System.Drawing.Color.DimGray;
             this.OneElemDeleteBar.Size = new System.Drawing.Size(157, 157);
             this.OneElemDeleteBar.TabIndex = 4;
+            this.bunifuToolTip1.SetToolTip(this.OneElemDeleteBar, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.OneElemDeleteBar, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.OneElemDeleteBar, "");
             this.OneElemDeleteBar.Value = 0;
             // 
             // bunifuCustomLabel5
@@ -1301,6 +1447,9 @@
             this.bunifuCustomLabel5.Size = new System.Drawing.Size(140, 17);
             this.bunifuCustomLabel5.TabIndex = 2;
             this.bunifuCustomLabel5.Text = "Delete WorkItem Id: ";
+            this.bunifuToolTip1.SetToolTip(this.bunifuCustomLabel5, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuCustomLabel5, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuCustomLabel5, "");
             // 
             // OneDeleteTextBox
             // 
@@ -1309,6 +1458,9 @@
             this.OneDeleteTextBox.Name = "OneDeleteTextBox";
             this.OneDeleteTextBox.Size = new System.Drawing.Size(40, 20);
             this.OneDeleteTextBox.TabIndex = 1;
+            this.bunifuToolTip1.SetToolTip(this.OneDeleteTextBox, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.OneDeleteTextBox, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.OneDeleteTextBox, "");
             // 
             // DeleteFromFile
             // 
@@ -1320,6 +1472,9 @@
             this.DeleteFromFile.Size = new System.Drawing.Size(567, 448);
             this.DeleteFromFile.TabIndex = 1;
             this.DeleteFromFile.Text = "DeleteFromFile";
+            this.bunifuToolTip1.SetToolTip(this.DeleteFromFile, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.DeleteFromFile, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.DeleteFromFile, "");
             this.DeleteFromFile.UseVisualStyleBackColor = true;
             // 
             // panel2
@@ -1334,6 +1489,9 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1005, 130);
             this.panel2.TabIndex = 19;
+            this.bunifuToolTip1.SetToolTip(this.panel2, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.panel2, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.panel2, "");
             // 
             // BrowseButton
             // 
@@ -1396,6 +1554,9 @@
             this.BrowseButton.TabIndex = 18;
             this.BrowseButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.BrowseButton.TextMarginLeft = 0;
+            this.bunifuToolTip1.SetToolTip(this.BrowseButton, "Select a file with the Delete Informations");
+            this.bunifuToolTip1.SetToolTipIcon(this.BrowseButton, ((System.Drawing.Image)(resources.GetObject("BrowseButton.ToolTipIcon"))));
+            this.bunifuToolTip1.SetToolTipTitle(this.BrowseButton, "Browse");
             this.BrowseButton.UseDefaultRadiusAndThickness = true;
             this.BrowseButton.Click += new System.EventHandler(this.BrowseButton_Click);
             // 
@@ -1409,6 +1570,9 @@
             this.SelectedFile.Size = new System.Drawing.Size(83, 17);
             this.SelectedFile.TabIndex = 11;
             this.SelectedFile.Text = "SelectedFile";
+            this.bunifuToolTip1.SetToolTip(this.SelectedFile, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.SelectedFile, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.SelectedFile, "");
             this.SelectedFile.Visible = false;
             // 
             // DeleteFileButton
@@ -1472,6 +1636,9 @@
             this.DeleteFileButton.TabIndex = 17;
             this.DeleteFileButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.DeleteFileButton.TextMarginLeft = 0;
+            this.bunifuToolTip1.SetToolTip(this.DeleteFileButton, "Delete WokrItems by the File");
+            this.bunifuToolTip1.SetToolTipIcon(this.DeleteFileButton, ((System.Drawing.Image)(resources.GetObject("DeleteFileButton.ToolTipIcon"))));
+            this.bunifuToolTip1.SetToolTipTitle(this.DeleteFileButton, "Delete");
             this.DeleteFileButton.UseDefaultRadiusAndThickness = true;
             this.DeleteFileButton.Click += new System.EventHandler(this.DeleteFileButton_Click);
             // 
@@ -1485,6 +1652,9 @@
             this.bunifuCustomLabel7.Size = new System.Drawing.Size(95, 17);
             this.bunifuCustomLabel7.TabIndex = 10;
             this.bunifuCustomLabel7.Text = "Selected File: ";
+            this.bunifuToolTip1.SetToolTip(this.bunifuCustomLabel7, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuCustomLabel7, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuCustomLabel7, "");
             // 
             // FileDeleteProgressBar
             // 
@@ -1509,6 +1679,9 @@
             this.FileDeleteProgressBar.ProgressColor = System.Drawing.Color.DimGray;
             this.FileDeleteProgressBar.Size = new System.Drawing.Size(252, 252);
             this.FileDeleteProgressBar.TabIndex = 8;
+            this.bunifuToolTip1.SetToolTip(this.FileDeleteProgressBar, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.FileDeleteProgressBar, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.FileDeleteProgressBar, "");
             this.FileDeleteProgressBar.Value = 0;
             // 
             // TotalDelete
@@ -1521,6 +1694,9 @@
             this.TotalDelete.Size = new System.Drawing.Size(567, 448);
             this.TotalDelete.TabIndex = 2;
             this.TotalDelete.Text = "TotalDelete";
+            this.bunifuToolTip1.SetToolTip(this.TotalDelete, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.TotalDelete, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.TotalDelete, "");
             this.TotalDelete.UseVisualStyleBackColor = true;
             // 
             // panel3
@@ -1530,6 +1706,9 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(375, 69);
             this.panel3.TabIndex = 15;
+            this.bunifuToolTip1.SetToolTip(this.panel3, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.panel3, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.panel3, "");
             // 
             // DeleteAllButton
             // 
@@ -1592,6 +1771,9 @@
             this.DeleteAllButton.TabIndex = 14;
             this.DeleteAllButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.DeleteAllButton.TextMarginLeft = 0;
+            this.bunifuToolTip1.SetToolTip(this.DeleteAllButton, "Delete every Content from the Server!");
+            this.bunifuToolTip1.SetToolTipIcon(this.DeleteAllButton, ((System.Drawing.Image)(resources.GetObject("DeleteAllButton.ToolTipIcon"))));
+            this.bunifuToolTip1.SetToolTipTitle(this.DeleteAllButton, "All Content Delete");
             this.DeleteAllButton.UseDefaultRadiusAndThickness = true;
             this.DeleteAllButton.Click += new System.EventHandler(this.DeleteAllButton_Click);
             // 
@@ -1618,6 +1800,9 @@
             this.AllServerDeleteProgressBar.ProgressColor = System.Drawing.Color.DimGray;
             this.AllServerDeleteProgressBar.Size = new System.Drawing.Size(325, 325);
             this.AllServerDeleteProgressBar.TabIndex = 13;
+            this.bunifuToolTip1.SetToolTip(this.AllServerDeleteProgressBar, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.AllServerDeleteProgressBar, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.AllServerDeleteProgressBar, "");
             this.AllServerDeleteProgressBar.Value = 0;
             // 
             // FilePage
@@ -1630,6 +1815,9 @@
             this.FilePage.TabIndex = 3;
             this.FilePage.Tag = "3";
             this.FilePage.Text = "FilePage";
+            this.bunifuToolTip1.SetToolTip(this.FilePage, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.FilePage, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.FilePage, "");
             this.FilePage.UseVisualStyleBackColor = true;
             // 
             // FileRichTextBox
@@ -1643,6 +1831,9 @@
             this.FileRichTextBox.Size = new System.Drawing.Size(570, 547);
             this.FileRichTextBox.TabIndex = 0;
             this.FileRichTextBox.Text = "";
+            this.bunifuToolTip1.SetToolTip(this.FileRichTextBox, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.FileRichTextBox, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.FileRichTextBox, "");
             // 
             // LogPage
             // 
@@ -1654,6 +1845,9 @@
             this.LogPage.TabIndex = 4;
             this.LogPage.Tag = "4";
             this.LogPage.Text = "LogPage";
+            this.bunifuToolTip1.SetToolTip(this.LogPage, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.LogPage, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.LogPage, "");
             this.LogPage.UseVisualStyleBackColor = true;
             // 
             // LogRichTextBox
@@ -1667,6 +1861,9 @@
             this.LogRichTextBox.Size = new System.Drawing.Size(570, 554);
             this.LogRichTextBox.TabIndex = 0;
             this.LogRichTextBox.Text = "";
+            this.bunifuToolTip1.SetToolTip(this.LogRichTextBox, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.LogRichTextBox, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.LogRichTextBox, "");
             // 
             // InfoPage
             // 
@@ -1679,6 +1876,9 @@
             this.InfoPage.TabIndex = 5;
             this.InfoPage.Tag = "5";
             this.InfoPage.Text = "InfoPage";
+            this.bunifuToolTip1.SetToolTip(this.InfoPage, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.InfoPage, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.InfoPage, "");
             this.InfoPage.UseVisualStyleBackColor = true;
             // 
             // subInfoPages
@@ -1700,6 +1900,9 @@
             this.subInfoPages.SelectedIndex = 0;
             this.subInfoPages.Size = new System.Drawing.Size(574, 433);
             this.subInfoPages.TabIndex = 1;
+            this.bunifuToolTip1.SetToolTip(this.subInfoPages, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.subInfoPages, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.subInfoPages, "");
             animation2.AnimateOnlyDifferences = false;
             animation2.BlindCoeff = ((System.Drawing.PointF)(resources.GetObject("animation2.BlindCoeff")));
             animation2.LeafCoeff = 0F;
@@ -1727,6 +1930,9 @@
             this.ContactPage.Size = new System.Drawing.Size(566, 407);
             this.ContactPage.TabIndex = 0;
             this.ContactPage.Text = "ContactPage";
+            this.bunifuToolTip1.SetToolTip(this.ContactPage, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.ContactPage, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.ContactPage, "");
             this.ContactPage.UseVisualStyleBackColor = true;
             // 
             // label8
@@ -1737,6 +1943,9 @@
             this.label8.Size = new System.Drawing.Size(67, 13);
             this.label8.TabIndex = 0;
             this.label8.Text = "contactpage";
+            this.bunifuToolTip1.SetToolTip(this.label8, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.label8, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.label8, "");
             // 
             // BugReportPage
             // 
@@ -1747,6 +1956,9 @@
             this.BugReportPage.Size = new System.Drawing.Size(566, 407);
             this.BugReportPage.TabIndex = 1;
             this.BugReportPage.Text = "BugReportPage";
+            this.bunifuToolTip1.SetToolTip(this.BugReportPage, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.BugReportPage, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.BugReportPage, "");
             this.BugReportPage.UseVisualStyleBackColor = true;
             // 
             // label9
@@ -1757,6 +1969,9 @@
             this.label9.Size = new System.Drawing.Size(76, 13);
             this.label9.TabIndex = 0;
             this.label9.Text = "bugreportpage";
+            this.bunifuToolTip1.SetToolTip(this.label9, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.label9, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.label9, "");
             // 
             // label6
             // 
@@ -1766,6 +1981,44 @@
             this.label6.Size = new System.Drawing.Size(48, 13);
             this.label6.TabIndex = 0;
             this.label6.Text = "infopage";
+            this.bunifuToolTip1.SetToolTip(this.label6, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.label6, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.label6, "");
+            // 
+            // bunifuToolTip1
+            // 
+            this.bunifuToolTip1.Active = true;
+            this.bunifuToolTip1.AlignTextWithTitle = false;
+            this.bunifuToolTip1.AllowAutoClose = false;
+            this.bunifuToolTip1.AllowFading = true;
+            this.bunifuToolTip1.AutoCloseDuration = 5000;
+            this.bunifuToolTip1.BackColor = System.Drawing.SystemColors.Control;
+            this.bunifuToolTip1.BorderColor = System.Drawing.Color.Gainsboro;
+            this.bunifuToolTip1.ClickToShowDisplayControl = false;
+            this.bunifuToolTip1.ConvertNewlinesToBreakTags = true;
+            this.bunifuToolTip1.DisplayControl = null;
+            this.bunifuToolTip1.EntryAnimationSpeed = 350;
+            this.bunifuToolTip1.ExitAnimationSpeed = 200;
+            this.bunifuToolTip1.GenerateAutoCloseDuration = false;
+            this.bunifuToolTip1.IconMargin = 6;
+            this.bunifuToolTip1.InitialDelay = 0;
+            this.bunifuToolTip1.Name = "bunifuToolTip1";
+            this.bunifuToolTip1.Opacity = 1D;
+            this.bunifuToolTip1.OverrideToolTipTitles = false;
+            this.bunifuToolTip1.Padding = new System.Windows.Forms.Padding(10);
+            this.bunifuToolTip1.ReshowDelay = 100;
+            this.bunifuToolTip1.ShowAlways = true;
+            this.bunifuToolTip1.ShowBorders = false;
+            this.bunifuToolTip1.ShowIcons = true;
+            this.bunifuToolTip1.ShowShadows = true;
+            this.bunifuToolTip1.Tag = null;
+            this.bunifuToolTip1.TextFont = new System.Drawing.Font("Segoe UI", 9F);
+            this.bunifuToolTip1.TextForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.bunifuToolTip1.TextMargin = 2;
+            this.bunifuToolTip1.TitleFont = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.bunifuToolTip1.TitleForeColor = System.Drawing.Color.Black;
+            this.bunifuToolTip1.ToolTipPosition = new System.Drawing.Point(0, 0);
+            this.bunifuToolTip1.ToolTipTitle = null;
             // 
             // subMenu
             // 
@@ -1776,6 +2029,9 @@
             this.Controls.Add(this.tabControl1);
             this.Name = "subMenu";
             this.Size = new System.Drawing.Size(799, 579);
+            this.bunifuToolTip1.SetToolTip(this, "");
+            this.bunifuToolTip1.SetToolTipIcon(this, null);
+            this.bunifuToolTip1.SetToolTipTitle(this, "");
             this.tabControl1.ResumeLayout(false);
             this.Settings.ResumeLayout(false);
             this.Upload.ResumeLayout(false);
@@ -1890,5 +2146,6 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton DeleteAllButton;
+        private Bunifu.UI.WinForms.BunifuToolTip bunifuToolTip1;
     }
 }

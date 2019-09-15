@@ -49,6 +49,9 @@
     <Reference Include="Bunifu.UI.WinForms.BunifuPages">
       <HintPath>..\..\..\Bunifu Framework\Bunifu.UI.WinForms.BunifuPages.dll</HintPath>
     </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuToolTip">
+      <HintPath>..\..\..\Bunifu Framework\Bunifu.UI.WinForms.BunifuToolTip.dll</HintPath>
+    </Reference>
     <Reference Include="Bunifu.UI.WinForms.BunifuTransition">
       <HintPath>..\..\..\Bunifu Framework\Bunifu.UI.WinForms.BunifuTransition.dll</HintPath>
     </Reference>
