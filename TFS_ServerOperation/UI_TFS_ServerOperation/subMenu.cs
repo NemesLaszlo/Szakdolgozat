@@ -8,6 +8,7 @@ using System.Threading;
 using System.Text;
 using System.Diagnostics;
 using System.Collections.Generic;
+using System.Configuration;
 
 namespace UI_TFS_ServerOperation
 {
@@ -165,6 +166,12 @@ namespace UI_TFS_ServerOperation
         /// </summary>
         private void subUploadStart_Click(object sender, EventArgs e)
         {
+            // Relod Config Period for changes.
+            ConfigurationManager.RefreshSection("PBICollectionSection");
+            ConfigurationManager.RefreshSection("Connection");
+            ConfigurationManager.RefreshSection("MailInformation");
+            ConfigurationManager.RefreshSection("system.diagnostics");
+
             // Controller evet calling.
             bool result = informationParser.UploadAndMailSend_Process(true, serverOperator, mailSender, log);
 

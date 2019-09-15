@@ -975,9 +975,6 @@
             // 
             // UploadBar
             // 
-            this.UploadBar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.UploadBar.animated = true;
             this.UploadBar.animationIterval = 1;
             this.UploadBar.animationSpeed = 1;
@@ -1491,9 +1488,6 @@
             // 
             // FileDeleteProgressBar
             // 
-            this.FileDeleteProgressBar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.FileDeleteProgressBar.animated = true;
             this.FileDeleteProgressBar.animationIterval = 1;
             this.FileDeleteProgressBar.animationSpeed = 1;
@@ -1603,9 +1597,6 @@
             // 
             // AllServerDeleteProgressBar
             // 
-            this.AllServerDeleteProgressBar.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.AllServerDeleteProgressBar.animated = true;
             this.AllServerDeleteProgressBar.animationIterval = 1;
             this.AllServerDeleteProgressBar.animationSpeed = 1;
