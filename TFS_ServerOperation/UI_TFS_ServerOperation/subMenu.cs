@@ -9,6 +9,7 @@ using System.Text;
 using System.Diagnostics;
 using System.Collections.Generic;
 using System.Configuration;
+using System.Text.RegularExpressions;
 
 namespace UI_TFS_ServerOperation
 {
@@ -47,16 +48,6 @@ namespace UI_TFS_ServerOperation
 
             VSReactive<int>.Subscribe("menu", e => tabControl1.SelectedIndex = e);
             VSReactive<int>.Subscribe("ContentControllerPages", e => ContentControllerPages.SelectedIndex = e);
-        }
-
-        private void subContact_Click(object sender, EventArgs e)
-        {
-            subInfoPages.SetPage(0);
-        }
-
-        private void subBugReport_Click(object sender, EventArgs e)
-        {
-            subInfoPages.SetPage(1);
         }
 
         // Settings section start -------------------------------------------------
@@ -497,7 +488,139 @@ namespace UI_TFS_ServerOperation
         }
 
         // Log section end -------------------------------------------------
+
+        // Info section start -------------------------------------------------
+
+        private void subContact_Click(object sender, EventArgs e)
+        {
+            subInfoPages.SetPage(0);
+        }
+
+        private void subBugReport_Click(object sender, EventArgs e)
+        {
+            subInfoPages.SetPage(1);
+        }
+
+        private void LinkLabel_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Process.Start("https://docs.microsoft.com/en-us/azure/devops/server/tfs-is-now-azure-devops-server?view=azure-devops");
+        }
+
+        /// <summary>
+        /// Click event, Send a mail on the contact section.
+        /// </summary>
+        private void ContactSendButton_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(NameTextBox.Text) || String.IsNullOrEmpty(MailTextBox.Text) || 
+                String.IsNullOrEmpty(SubjectTextBox.Text) || String.IsNullOrEmpty(ContentTextBox.Text))
+            {
+                Alert.AlertCreation("Fill Every Field!", AlertType.error);
+                return;
+            }
+            else
+            {
+                string emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\." +
+                                    "[a-zA-Z0-9_+&*-]+)*@" +
+                                    "(?:[a-zA-Z0-9-]+\\.)+[a-z" +
+                                    "A-Z]{2,7}$";
+
+                bool isEmail = Regex.IsMatch(MailTextBox.Text, emailRegex);
+                if (isEmail)
+                {
+                    bool result = informationParser.SendMail(mailSender, log, SubjectTextBox.Text,
+                        "Mail sender Name: " + NameTextBox.Text + "<br>" + "Mail Sender Address: " + MailTextBox.Text + "<br>" + ContentTextBox.Text, null);
+                    if (result)
+                    {
+                        Alert.AlertCreation("Mail has been sent.", AlertType.success);
+                        NameTextBox.Clear();
+                        MailTextBox.Clear();
+                        SubjectTextBox.Clear();
+                        ContentTextBox.Clear();
+                    }
+                    else
+                    {
+                        Alert.AlertCreation("Mail Problem.", AlertType.error);
+                        return;
+                    }
+                }
+                else
+                {
+                    Alert.AlertCreation("Mail Address Format Problem.", AlertType.error);
+                    return;
+                }            
+            }
+        }
+
+        /// <summary>
+        /// Check which button is active on the Report section for Subject type.
+        /// </summary>
+        /// <returns></returns>
+        private string CheckSelectedReportButton()
+        {
+            if(FunctionBugButton.selected == true && UIBugButton.selected == false && OtherBugButton.selected == false)
+            {
+                return FunctionBugButton.Text;
+
+            }else if (FunctionBugButton.selected == false && UIBugButton.selected == true && OtherBugButton.selected == false)
+            {
+                return UIBugButton.Text;
+
+            }else if (FunctionBugButton.selected == false && UIBugButton.selected == false && OtherBugButton.selected == true)
+            {
+                return OtherBugButton.Text;
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Click event, Send a Bug Report on the Report section.
+        /// </summary>
+        private void BugReportSendButton_Click(object sender, EventArgs e)
+        {
+            if (String.IsNullOrEmpty(BugNameTextBox.Text) || String.IsNullOrEmpty(BugMailTextBox.Text) 
+                || String.IsNullOrEmpty(BugContentTextBox.Text) || 
+                (FunctionBugButton.selected == false && UIBugButton.selected == false && OtherBugButton.selected == false))
+            {
+                Alert.AlertCreation("Fill Every Field!", AlertType.error);
+                return;
+            }
+            else
+            {
+                string emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\." +
+                                    "[a-zA-Z0-9_+&*-]+)*@" +
+                                    "(?:[a-zA-Z0-9-]+\\.)+[a-z" +
+                                    "A-Z]{2,7}$";
+
+                bool isEmail = Regex.IsMatch(BugMailTextBox.Text, emailRegex);
+                if (isEmail)
+                {
+                    string subject = CheckSelectedReportButton();
+                    bool result = informationParser.SendMail(mailSender, log, subject, 
+                        "Mail sender Name: " + BugNameTextBox.Text + "<br>" + "Mail Sender Address: " + BugMailTextBox.Text + "<br>" + BugContentTextBox.Text, null);
+                    if (result)
+                    {
+                        Alert.AlertCreation("Bug Report has been sent.", AlertType.success);
+                        BugNameTextBox.Clear();
+                        BugMailTextBox.Clear();
+                        FunctionBugButton.selected = false;
+                        UIBugButton.selected = false;
+                        OtherBugButton.selected = false;
+                        BugContentTextBox.Clear();
+                    }
+                    else
+                    {
+                        Alert.AlertCreation("Report Problem.", AlertType.error);
+                        return;
+                    }
+                }
+                else
+                {
+                    Alert.AlertCreation("Mail Address Format Problem.", AlertType.error);
+                    return;
+                }
+            }
+        }
+
+        // Info section end -------------------------------------------------
     }
-
-
 }

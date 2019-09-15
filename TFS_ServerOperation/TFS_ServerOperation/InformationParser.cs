@@ -163,6 +163,22 @@ namespace TFS_ServerOperation
         }
 
         /// <summary>
+        /// Send a mail.
+        /// </summary>
+        /// <param name="MailSender">MailSender object</param>
+        /// <param name="log">Custom Logger object</param>
+        /// <param name="subject">Subject of the mail</param>
+        /// <param name="body">Mail content</param>
+        /// <param name="attachment">Mail attachment</param>
+        /// <returns></returns>
+        public bool SendMail(MailSender MailSender, Logger log, string subject, string body, string attachment)
+        {
+            bool result = MailSender.SendEmail(GetAddressToMail(), subject, body, null);
+
+            return result;
+        }
+
+        /// <summary>
         /// Delete datas from the server about the file, and send a mail about it.
         /// </summary>
         /// <param name="fileName">Name of the file for the delete section</param>

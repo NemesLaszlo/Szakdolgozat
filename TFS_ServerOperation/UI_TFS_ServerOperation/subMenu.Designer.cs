@@ -48,6 +48,12 @@
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties9 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
             Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties10 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
             Utilities.BunifuPages.BunifuAnimatorNS.Animation animation2 = new Utilities.BunifuPages.BunifuAnimatorNS.Animation();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges6 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties11 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties12 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges borderEdges7 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderEdges();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties13 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
+            Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties stateProperties14 = new Bunifu.UI.WinForms.BunifuButton.BunifuButton.StateProperties();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.Settings = new System.Windows.Forms.TabPage();
             this.subOpenCurrentConfig = new Bunifu.Framework.UI.BunifuFlatButton();
@@ -114,12 +120,41 @@
             this.LogPage = new System.Windows.Forms.TabPage();
             this.LogRichTextBox = new System.Windows.Forms.RichTextBox();
             this.InfoPage = new System.Windows.Forms.TabPage();
+            this.CreatorLabel = new System.Windows.Forms.Label();
+            this.VersionNUmberLabel = new System.Windows.Forms.Label();
+            this.LinkLabel = new System.Windows.Forms.LinkLabel();
             this.subInfoPages = new Bunifu.UI.WinForms.BunifuPages();
             this.ContactPage = new System.Windows.Forms.TabPage();
-            this.label8 = new System.Windows.Forms.Label();
+            this.ContactSendButton = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.bunifuCustomLabel17 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.ContentTextBox = new System.Windows.Forms.TextBox();
+            this.bunifuCustomLabel16 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.SubjectTextBox = new System.Windows.Forms.TextBox();
+            this.bunifuCustomLabel15 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.MailTextBox = new System.Windows.Forms.TextBox();
+            this.bunifuCustomLabel14 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.NameTextBox = new System.Windows.Forms.TextBox();
+            this.bunifuCustomLabel13 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.BugReportPage = new System.Windows.Forms.TabPage();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.OtherBugButton = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.UIBugButton = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.FunctionBugButton = new Bunifu.Framework.UI.BunifuFlatButton();
+            this.BugReportSendButton = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
+            this.bunifuCustomLabel18 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.BugContentTextBox = new System.Windows.Forms.TextBox();
+            this.bunifuCustomLabel20 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.BugMailTextBox = new System.Windows.Forms.TextBox();
+            this.bunifuCustomLabel21 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.BugNameTextBox = new System.Windows.Forms.TextBox();
+            this.bunifuCustomLabel22 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel12 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel11 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel10 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.bunifuCustomLabel9 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuToolTip1 = new Bunifu.UI.WinForms.BunifuToolTip(this.components);
             this.tabControl1.SuspendLayout();
             this.Settings.SuspendLayout();
@@ -147,6 +182,9 @@
             this.subInfoPages.SuspendLayout();
             this.ContactPage.SuspendLayout();
             this.BugReportPage.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -920,10 +958,10 @@
             this.ContentControllerPages.Location = new System.Drawing.Point(0, 0);
             this.ContentControllerPages.Multiline = true;
             this.ContentControllerPages.Name = "ContentControllerPages";
-            this.ContentControllerPages.Page = this.DeletePage;
-            this.ContentControllerPages.PageIndex = 2;
-            this.ContentControllerPages.PageName = "DeletePage";
-            this.ContentControllerPages.PageTitle = "DeletePage";
+            this.ContentControllerPages.Page = this.InfoPage;
+            this.ContentControllerPages.PageIndex = 5;
+            this.ContentControllerPages.PageName = "InfoPage";
+            this.ContentControllerPages.PageTitle = "InfoPage";
             this.ContentControllerPages.SelectedIndex = 0;
             this.ContentControllerPages.Size = new System.Drawing.Size(578, 579);
             this.ContentControllerPages.TabIndex = 2;
@@ -973,7 +1011,7 @@
             this.SettingsRichTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.SettingsRichTextBox.Location = new System.Drawing.Point(6, 0);
             this.SettingsRichTextBox.Name = "SettingsRichTextBox";
-            this.SettingsRichTextBox.Size = new System.Drawing.Size(561, 547);
+            this.SettingsRichTextBox.Size = new System.Drawing.Size(561, 550);
             this.SettingsRichTextBox.TabIndex = 1;
             this.SettingsRichTextBox.Tag = "0";
             this.SettingsRichTextBox.Text = "";
@@ -1858,7 +1896,7 @@
             this.LogRichTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.LogRichTextBox.Location = new System.Drawing.Point(0, -1);
             this.LogRichTextBox.Name = "LogRichTextBox";
-            this.LogRichTextBox.Size = new System.Drawing.Size(570, 554);
+            this.LogRichTextBox.Size = new System.Drawing.Size(570, 557);
             this.LogRichTextBox.TabIndex = 0;
             this.LogRichTextBox.Text = "";
             this.bunifuToolTip1.SetToolTip(this.LogRichTextBox, "");
@@ -1867,8 +1905,14 @@
             // 
             // InfoPage
             // 
+            this.InfoPage.Controls.Add(this.CreatorLabel);
+            this.InfoPage.Controls.Add(this.VersionNUmberLabel);
+            this.InfoPage.Controls.Add(this.LinkLabel);
             this.InfoPage.Controls.Add(this.subInfoPages);
-            this.InfoPage.Controls.Add(this.label6);
+            this.InfoPage.Controls.Add(this.bunifuCustomLabel12);
+            this.InfoPage.Controls.Add(this.bunifuCustomLabel11);
+            this.InfoPage.Controls.Add(this.bunifuCustomLabel10);
+            this.InfoPage.Controls.Add(this.panel4);
             this.InfoPage.Location = new System.Drawing.Point(4, 4);
             this.InfoPage.Name = "InfoPage";
             this.InfoPage.Padding = new System.Windows.Forms.Padding(3);
@@ -1881,6 +1925,50 @@
             this.bunifuToolTip1.SetToolTipTitle(this.InfoPage, "");
             this.InfoPage.UseVisualStyleBackColor = true;
             // 
+            // CreatorLabel
+            // 
+            this.CreatorLabel.AutoSize = true;
+            this.CreatorLabel.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.CreatorLabel.Location = new System.Drawing.Point(235, 203);
+            this.CreatorLabel.Name = "CreatorLabel";
+            this.CreatorLabel.Size = new System.Drawing.Size(87, 17);
+            this.CreatorLabel.TabIndex = 12;
+            this.CreatorLabel.Text = "Laszlo Nemes";
+            this.bunifuToolTip1.SetToolTip(this.CreatorLabel, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.CreatorLabel, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.CreatorLabel, "");
+            // 
+            // VersionNUmberLabel
+            // 
+            this.VersionNUmberLabel.AutoSize = true;
+            this.VersionNUmberLabel.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.VersionNUmberLabel.ForeColor = System.Drawing.Color.Black;
+            this.VersionNUmberLabel.Location = new System.Drawing.Point(235, 180);
+            this.VersionNUmberLabel.Name = "VersionNUmberLabel";
+            this.VersionNUmberLabel.Size = new System.Drawing.Size(45, 17);
+            this.VersionNUmberLabel.TabIndex = 11;
+            this.VersionNUmberLabel.Text = "1.0.0.0";
+            this.bunifuToolTip1.SetToolTip(this.VersionNUmberLabel, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.VersionNUmberLabel, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.VersionNUmberLabel, "");
+            // 
+            // LinkLabel
+            // 
+            this.LinkLabel.ActiveLinkColor = System.Drawing.Color.DimGray;
+            this.LinkLabel.AutoSize = true;
+            this.LinkLabel.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LinkLabel.LinkColor = System.Drawing.Color.Black;
+            this.LinkLabel.Location = new System.Drawing.Point(232, 224);
+            this.LinkLabel.Name = "LinkLabel";
+            this.LinkLabel.Size = new System.Drawing.Size(152, 17);
+            this.LinkLabel.TabIndex = 10;
+            this.LinkLabel.TabStop = true;
+            this.LinkLabel.Text = "Team Foundation Server";
+            this.bunifuToolTip1.SetToolTip(this.LinkLabel, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.LinkLabel, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.LinkLabel, "");
+            this.LinkLabel.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.LinkLabel_LinkClicked);
+            // 
             // subInfoPages
             // 
             this.subInfoPages.Alignment = System.Windows.Forms.TabAlignment.Bottom;
@@ -1890,15 +1978,15 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.subInfoPages.Controls.Add(this.ContactPage);
             this.subInfoPages.Controls.Add(this.BugReportPage);
-            this.subInfoPages.Location = new System.Drawing.Point(0, 114);
+            this.subInfoPages.Location = new System.Drawing.Point(0, 244);
             this.subInfoPages.Multiline = true;
             this.subInfoPages.Name = "subInfoPages";
-            this.subInfoPages.Page = this.ContactPage;
-            this.subInfoPages.PageIndex = 0;
-            this.subInfoPages.PageName = "ContactPage";
-            this.subInfoPages.PageTitle = "ContactPage";
+            this.subInfoPages.Page = this.BugReportPage;
+            this.subInfoPages.PageIndex = 1;
+            this.subInfoPages.PageName = "BugReportPage";
+            this.subInfoPages.PageTitle = "BugReportPage";
             this.subInfoPages.SelectedIndex = 0;
-            this.subInfoPages.Size = new System.Drawing.Size(574, 433);
+            this.subInfoPages.Size = new System.Drawing.Size(570, 309);
             this.subInfoPages.TabIndex = 1;
             this.bunifuToolTip1.SetToolTip(this.subInfoPages, "");
             this.bunifuToolTip1.SetToolTipIcon(this.subInfoPages, null);
@@ -1923,11 +2011,20 @@
             // 
             // ContactPage
             // 
-            this.ContactPage.Controls.Add(this.label8);
+            this.ContactPage.Controls.Add(this.ContactSendButton);
+            this.ContactPage.Controls.Add(this.bunifuCustomLabel17);
+            this.ContactPage.Controls.Add(this.ContentTextBox);
+            this.ContactPage.Controls.Add(this.bunifuCustomLabel16);
+            this.ContactPage.Controls.Add(this.SubjectTextBox);
+            this.ContactPage.Controls.Add(this.bunifuCustomLabel15);
+            this.ContactPage.Controls.Add(this.MailTextBox);
+            this.ContactPage.Controls.Add(this.bunifuCustomLabel14);
+            this.ContactPage.Controls.Add(this.NameTextBox);
+            this.ContactPage.Controls.Add(this.bunifuCustomLabel13);
             this.ContactPage.Location = new System.Drawing.Point(4, 4);
             this.ContactPage.Name = "ContactPage";
             this.ContactPage.Padding = new System.Windows.Forms.Padding(3);
-            this.ContactPage.Size = new System.Drawing.Size(566, 407);
+            this.ContactPage.Size = new System.Drawing.Size(562, 283);
             this.ContactPage.TabIndex = 0;
             this.ContactPage.Text = "ContactPage";
             this.bunifuToolTip1.SetToolTip(this.ContactPage, "");
@@ -1935,25 +2032,210 @@
             this.bunifuToolTip1.SetToolTipTitle(this.ContactPage, "");
             this.ContactPage.UseVisualStyleBackColor = true;
             // 
-            // label8
+            // ContactSendButton
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(42, 77);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(67, 13);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "contactpage";
-            this.bunifuToolTip1.SetToolTip(this.label8, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.label8, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.label8, "");
+            this.ContactSendButton.AllowToggling = false;
+            this.ContactSendButton.AnimationSpeed = 200;
+            this.ContactSendButton.AutoGenerateColors = false;
+            this.ContactSendButton.BackColor = System.Drawing.Color.Transparent;
+            this.ContactSendButton.BackColor1 = System.Drawing.Color.Silver;
+            this.ContactSendButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("ContactSendButton.BackgroundImage")));
+            this.ContactSendButton.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.ContactSendButton.ButtonText = "Send";
+            this.ContactSendButton.ButtonTextMarginLeft = 0;
+            this.ContactSendButton.ColorContrastOnClick = 45;
+            this.ContactSendButton.ColorContrastOnHover = 45;
+            this.ContactSendButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            borderEdges6.BottomLeft = true;
+            borderEdges6.BottomRight = true;
+            borderEdges6.TopLeft = true;
+            borderEdges6.TopRight = true;
+            this.ContactSendButton.CustomizableEdges = borderEdges6;
+            this.ContactSendButton.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.ContactSendButton.DisabledBorderColor = System.Drawing.Color.Empty;
+            this.ContactSendButton.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.ContactSendButton.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.ContactSendButton.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.ContactSendButton.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.ContactSendButton.ForeColor = System.Drawing.Color.DimGray;
+            this.ContactSendButton.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
+            this.ContactSendButton.IconMarginLeft = 11;
+            this.ContactSendButton.IconPadding = 10;
+            this.ContactSendButton.IconRightCursor = System.Windows.Forms.Cursors.Hand;
+            this.ContactSendButton.IdleBorderColor = System.Drawing.Color.Silver;
+            this.ContactSendButton.IdleBorderRadius = 3;
+            this.ContactSendButton.IdleBorderThickness = 1;
+            this.ContactSendButton.IdleFillColor = System.Drawing.Color.Silver;
+            this.ContactSendButton.IdleIconLeftImage = null;
+            this.ContactSendButton.IdleIconRightImage = null;
+            this.ContactSendButton.IndicateFocus = false;
+            this.ContactSendButton.Location = new System.Drawing.Point(131, 291);
+            this.ContactSendButton.Name = "ContactSendButton";
+            stateProperties11.BorderColor = System.Drawing.Color.Black;
+            stateProperties11.BorderRadius = 3;
+            stateProperties11.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties11.BorderThickness = 1;
+            stateProperties11.FillColor = System.Drawing.Color.Silver;
+            stateProperties11.ForeColor = System.Drawing.Color.Black;
+            stateProperties11.IconLeftImage = null;
+            stateProperties11.IconRightImage = null;
+            this.ContactSendButton.onHoverState = stateProperties11;
+            stateProperties12.BorderColor = System.Drawing.Color.Black;
+            stateProperties12.BorderRadius = 3;
+            stateProperties12.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties12.BorderThickness = 1;
+            stateProperties12.FillColor = System.Drawing.Color.DimGray;
+            stateProperties12.ForeColor = System.Drawing.Color.Black;
+            stateProperties12.IconLeftImage = null;
+            stateProperties12.IconRightImage = null;
+            this.ContactSendButton.OnPressedState = stateProperties12;
+            this.ContactSendButton.Size = new System.Drawing.Size(210, 45);
+            this.ContactSendButton.TabIndex = 17;
+            this.ContactSendButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.ContactSendButton.TextMarginLeft = 0;
+            this.bunifuToolTip1.SetToolTip(this.ContactSendButton, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.ContactSendButton, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.ContactSendButton, "");
+            this.ContactSendButton.UseDefaultRadiusAndThickness = true;
+            this.ContactSendButton.Click += new System.EventHandler(this.ContactSendButton_Click);
+            // 
+            // bunifuCustomLabel17
+            // 
+            this.bunifuCustomLabel17.AutoSize = true;
+            this.bunifuCustomLabel17.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bunifuCustomLabel17.ForeColor = System.Drawing.Color.DimGray;
+            this.bunifuCustomLabel17.Location = new System.Drawing.Point(40, 140);
+            this.bunifuCustomLabel17.Name = "bunifuCustomLabel17";
+            this.bunifuCustomLabel17.Size = new System.Drawing.Size(85, 21);
+            this.bunifuCustomLabel17.TabIndex = 16;
+            this.bunifuCustomLabel17.Text = "Content: ";
+            this.bunifuCustomLabel17.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.bunifuToolTip1.SetToolTip(this.bunifuCustomLabel17, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuCustomLabel17, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuCustomLabel17, "");
+            // 
+            // ContentTextBox
+            // 
+            this.ContentTextBox.ForeColor = System.Drawing.Color.DimGray;
+            this.ContentTextBox.Location = new System.Drawing.Point(131, 141);
+            this.ContentTextBox.Multiline = true;
+            this.ContentTextBox.Name = "ContentTextBox";
+            this.ContentTextBox.Size = new System.Drawing.Size(408, 131);
+            this.ContentTextBox.TabIndex = 15;
+            this.bunifuToolTip1.SetToolTip(this.ContentTextBox, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.ContentTextBox, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.ContentTextBox, "");
+            // 
+            // bunifuCustomLabel16
+            // 
+            this.bunifuCustomLabel16.AutoSize = true;
+            this.bunifuCustomLabel16.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bunifuCustomLabel16.ForeColor = System.Drawing.Color.DimGray;
+            this.bunifuCustomLabel16.Location = new System.Drawing.Point(40, 105);
+            this.bunifuCustomLabel16.Name = "bunifuCustomLabel16";
+            this.bunifuCustomLabel16.Size = new System.Drawing.Size(77, 21);
+            this.bunifuCustomLabel16.TabIndex = 14;
+            this.bunifuCustomLabel16.Text = "Subject: ";
+            this.bunifuCustomLabel16.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.bunifuToolTip1.SetToolTip(this.bunifuCustomLabel16, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuCustomLabel16, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuCustomLabel16, "");
+            // 
+            // SubjectTextBox
+            // 
+            this.SubjectTextBox.ForeColor = System.Drawing.Color.DimGray;
+            this.SubjectTextBox.Location = new System.Drawing.Point(132, 106);
+            this.SubjectTextBox.Name = "SubjectTextBox";
+            this.SubjectTextBox.Size = new System.Drawing.Size(215, 20);
+            this.SubjectTextBox.TabIndex = 13;
+            this.bunifuToolTip1.SetToolTip(this.SubjectTextBox, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.SubjectTextBox, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.SubjectTextBox, "");
+            // 
+            // bunifuCustomLabel15
+            // 
+            this.bunifuCustomLabel15.AutoSize = true;
+            this.bunifuCustomLabel15.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bunifuCustomLabel15.ForeColor = System.Drawing.Color.DimGray;
+            this.bunifuCustomLabel15.Location = new System.Drawing.Point(40, 74);
+            this.bunifuCustomLabel15.Name = "bunifuCustomLabel15";
+            this.bunifuCustomLabel15.Size = new System.Drawing.Size(86, 21);
+            this.bunifuCustomLabel15.TabIndex = 12;
+            this.bunifuCustomLabel15.Text = "Your Mail:";
+            this.bunifuCustomLabel15.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.bunifuToolTip1.SetToolTip(this.bunifuCustomLabel15, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuCustomLabel15, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuCustomLabel15, "");
+            // 
+            // MailTextBox
+            // 
+            this.MailTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.MailTextBox.ForeColor = System.Drawing.Color.DimGray;
+            this.MailTextBox.Location = new System.Drawing.Point(132, 74);
+            this.MailTextBox.Name = "MailTextBox";
+            this.MailTextBox.Size = new System.Drawing.Size(215, 20);
+            this.MailTextBox.TabIndex = 11;
+            this.bunifuToolTip1.SetToolTip(this.MailTextBox, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.MailTextBox, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.MailTextBox, "");
+            // 
+            // bunifuCustomLabel14
+            // 
+            this.bunifuCustomLabel14.AutoSize = true;
+            this.bunifuCustomLabel14.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bunifuCustomLabel14.ForeColor = System.Drawing.Color.DimGray;
+            this.bunifuCustomLabel14.Location = new System.Drawing.Point(40, 41);
+            this.bunifuCustomLabel14.Name = "bunifuCustomLabel14";
+            this.bunifuCustomLabel14.Size = new System.Drawing.Size(66, 21);
+            this.bunifuCustomLabel14.TabIndex = 10;
+            this.bunifuCustomLabel14.Text = "Name: ";
+            this.bunifuCustomLabel14.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.bunifuToolTip1.SetToolTip(this.bunifuCustomLabel14, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuCustomLabel14, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuCustomLabel14, "");
+            // 
+            // NameTextBox
+            // 
+            this.NameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.NameTextBox.ForeColor = System.Drawing.Color.DimGray;
+            this.NameTextBox.Location = new System.Drawing.Point(131, 42);
+            this.NameTextBox.Name = "NameTextBox";
+            this.NameTextBox.Size = new System.Drawing.Size(216, 20);
+            this.NameTextBox.TabIndex = 9;
+            this.bunifuToolTip1.SetToolTip(this.NameTextBox, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.NameTextBox, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.NameTextBox, "");
+            // 
+            // bunifuCustomLabel13
+            // 
+            this.bunifuCustomLabel13.AutoSize = true;
+            this.bunifuCustomLabel13.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bunifuCustomLabel13.ForeColor = System.Drawing.Color.DimGray;
+            this.bunifuCustomLabel13.Location = new System.Drawing.Point(6, 3);
+            this.bunifuCustomLabel13.Name = "bunifuCustomLabel13";
+            this.bunifuCustomLabel13.Size = new System.Drawing.Size(88, 22);
+            this.bunifuCustomLabel13.TabIndex = 8;
+            this.bunifuCustomLabel13.Text = "Contact";
+            this.bunifuCustomLabel13.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.bunifuToolTip1.SetToolTip(this.bunifuCustomLabel13, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuCustomLabel13, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuCustomLabel13, "");
             // 
             // BugReportPage
             // 
-            this.BugReportPage.Controls.Add(this.label9);
+            this.BugReportPage.Controls.Add(this.panel5);
+            this.BugReportPage.Controls.Add(this.BugReportSendButton);
+            this.BugReportPage.Controls.Add(this.bunifuCustomLabel18);
+            this.BugReportPage.Controls.Add(this.BugContentTextBox);
+            this.BugReportPage.Controls.Add(this.bunifuCustomLabel20);
+            this.BugReportPage.Controls.Add(this.BugMailTextBox);
+            this.BugReportPage.Controls.Add(this.bunifuCustomLabel21);
+            this.BugReportPage.Controls.Add(this.BugNameTextBox);
+            this.BugReportPage.Controls.Add(this.bunifuCustomLabel22);
             this.BugReportPage.Location = new System.Drawing.Point(4, 4);
             this.BugReportPage.Name = "BugReportPage";
             this.BugReportPage.Padding = new System.Windows.Forms.Padding(3);
-            this.BugReportPage.Size = new System.Drawing.Size(566, 407);
+            this.BugReportPage.Size = new System.Drawing.Size(562, 283);
             this.BugReportPage.TabIndex = 1;
             this.BugReportPage.Text = "BugReportPage";
             this.bunifuToolTip1.SetToolTip(this.BugReportPage, "");
@@ -1961,29 +2243,398 @@
             this.bunifuToolTip1.SetToolTipTitle(this.BugReportPage, "");
             this.BugReportPage.UseVisualStyleBackColor = true;
             // 
-            // label9
+            // panel5
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(70, 89);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(76, 13);
-            this.label9.TabIndex = 0;
-            this.label9.Text = "bugreportpage";
-            this.bunifuToolTip1.SetToolTip(this.label9, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.label9, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.label9, "");
+            this.panel5.Controls.Add(this.OtherBugButton);
+            this.panel5.Controls.Add(this.UIBugButton);
+            this.panel5.Controls.Add(this.FunctionBugButton);
+            this.panel5.Location = new System.Drawing.Point(131, 101);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(492, 34);
+            this.panel5.TabIndex = 28;
+            this.bunifuToolTip1.SetToolTip(this.panel5, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.panel5, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.panel5, "");
             // 
-            // label6
+            // OtherBugButton
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 5);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(48, 13);
-            this.label6.TabIndex = 0;
-            this.label6.Text = "infopage";
-            this.bunifuToolTip1.SetToolTip(this.label6, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.label6, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.label6, "");
+            this.OtherBugButton.Active = false;
+            this.OtherBugButton.Activecolor = System.Drawing.Color.DimGray;
+            this.OtherBugButton.BackColor = System.Drawing.Color.Silver;
+            this.OtherBugButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.OtherBugButton.BorderRadius = 0;
+            this.OtherBugButton.ButtonText = "Other Bug";
+            this.OtherBugButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.OtherBugButton.DisabledColor = System.Drawing.Color.Gray;
+            this.OtherBugButton.Iconcolor = System.Drawing.Color.Transparent;
+            this.OtherBugButton.Iconimage = null;
+            this.OtherBugButton.Iconimage_right = null;
+            this.OtherBugButton.Iconimage_right_Selected = null;
+            this.OtherBugButton.Iconimage_Selected = null;
+            this.OtherBugButton.IconMarginLeft = 0;
+            this.OtherBugButton.IconMarginRight = 0;
+            this.OtherBugButton.IconRightVisible = true;
+            this.OtherBugButton.IconRightZoom = 0D;
+            this.OtherBugButton.IconVisible = true;
+            this.OtherBugButton.IconZoom = 90D;
+            this.OtherBugButton.IsTab = true;
+            this.OtherBugButton.Location = new System.Drawing.Point(290, 0);
+            this.OtherBugButton.Name = "OtherBugButton";
+            this.OtherBugButton.Normalcolor = System.Drawing.Color.Silver;
+            this.OtherBugButton.OnHovercolor = System.Drawing.Color.DimGray;
+            this.OtherBugButton.OnHoverTextColor = System.Drawing.Color.Black;
+            this.OtherBugButton.selected = false;
+            this.OtherBugButton.Size = new System.Drawing.Size(145, 34);
+            this.OtherBugButton.TabIndex = 2;
+            this.OtherBugButton.Text = "Other Bug";
+            this.OtherBugButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.OtherBugButton.Textcolor = System.Drawing.Color.Black;
+            this.OtherBugButton.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuToolTip1.SetToolTip(this.OtherBugButton, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.OtherBugButton, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.OtherBugButton, "");
+            // 
+            // UIBugButton
+            // 
+            this.UIBugButton.Active = false;
+            this.UIBugButton.Activecolor = System.Drawing.Color.DimGray;
+            this.UIBugButton.BackColor = System.Drawing.Color.Silver;
+            this.UIBugButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.UIBugButton.BorderRadius = 0;
+            this.UIBugButton.ButtonText = "UI Bug";
+            this.UIBugButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.UIBugButton.DisabledColor = System.Drawing.Color.Gray;
+            this.UIBugButton.Iconcolor = System.Drawing.Color.Transparent;
+            this.UIBugButton.Iconimage = null;
+            this.UIBugButton.Iconimage_right = null;
+            this.UIBugButton.Iconimage_right_Selected = null;
+            this.UIBugButton.Iconimage_Selected = null;
+            this.UIBugButton.IconMarginLeft = 0;
+            this.UIBugButton.IconMarginRight = 0;
+            this.UIBugButton.IconRightVisible = true;
+            this.UIBugButton.IconRightZoom = 0D;
+            this.UIBugButton.IconVisible = true;
+            this.UIBugButton.IconZoom = 90D;
+            this.UIBugButton.IsTab = true;
+            this.UIBugButton.Location = new System.Drawing.Point(145, 0);
+            this.UIBugButton.Name = "UIBugButton";
+            this.UIBugButton.Normalcolor = System.Drawing.Color.Silver;
+            this.UIBugButton.OnHovercolor = System.Drawing.Color.DimGray;
+            this.UIBugButton.OnHoverTextColor = System.Drawing.Color.Black;
+            this.UIBugButton.selected = false;
+            this.UIBugButton.Size = new System.Drawing.Size(145, 34);
+            this.UIBugButton.TabIndex = 1;
+            this.UIBugButton.Text = "UI Bug";
+            this.UIBugButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.UIBugButton.Textcolor = System.Drawing.Color.Black;
+            this.UIBugButton.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuToolTip1.SetToolTip(this.UIBugButton, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.UIBugButton, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.UIBugButton, "");
+            // 
+            // FunctionBugButton
+            // 
+            this.FunctionBugButton.Active = false;
+            this.FunctionBugButton.Activecolor = System.Drawing.Color.DimGray;
+            this.FunctionBugButton.BackColor = System.Drawing.Color.Silver;
+            this.FunctionBugButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.FunctionBugButton.BorderRadius = 0;
+            this.FunctionBugButton.ButtonText = "Function Bug";
+            this.FunctionBugButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.FunctionBugButton.DisabledColor = System.Drawing.Color.Gray;
+            this.FunctionBugButton.Iconcolor = System.Drawing.Color.Transparent;
+            this.FunctionBugButton.Iconimage = null;
+            this.FunctionBugButton.Iconimage_right = null;
+            this.FunctionBugButton.Iconimage_right_Selected = null;
+            this.FunctionBugButton.Iconimage_Selected = null;
+            this.FunctionBugButton.IconMarginLeft = 0;
+            this.FunctionBugButton.IconMarginRight = 0;
+            this.FunctionBugButton.IconRightVisible = true;
+            this.FunctionBugButton.IconRightZoom = 0D;
+            this.FunctionBugButton.IconVisible = true;
+            this.FunctionBugButton.IconZoom = 90D;
+            this.FunctionBugButton.IsTab = true;
+            this.FunctionBugButton.Location = new System.Drawing.Point(0, 0);
+            this.FunctionBugButton.Name = "FunctionBugButton";
+            this.FunctionBugButton.Normalcolor = System.Drawing.Color.Silver;
+            this.FunctionBugButton.OnHovercolor = System.Drawing.Color.DimGray;
+            this.FunctionBugButton.OnHoverTextColor = System.Drawing.Color.Black;
+            this.FunctionBugButton.selected = false;
+            this.FunctionBugButton.Size = new System.Drawing.Size(145, 34);
+            this.FunctionBugButton.TabIndex = 0;
+            this.FunctionBugButton.Text = "Function Bug";
+            this.FunctionBugButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.FunctionBugButton.Textcolor = System.Drawing.Color.Black;
+            this.FunctionBugButton.TextFont = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bunifuToolTip1.SetToolTip(this.FunctionBugButton, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.FunctionBugButton, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.FunctionBugButton, "");
+            // 
+            // BugReportSendButton
+            // 
+            this.BugReportSendButton.AllowToggling = false;
+            this.BugReportSendButton.AnimationSpeed = 200;
+            this.BugReportSendButton.AutoGenerateColors = false;
+            this.BugReportSendButton.BackColor = System.Drawing.Color.Transparent;
+            this.BugReportSendButton.BackColor1 = System.Drawing.Color.Silver;
+            this.BugReportSendButton.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BugReportSendButton.BackgroundImage")));
+            this.BugReportSendButton.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            this.BugReportSendButton.ButtonText = "Report Send";
+            this.BugReportSendButton.ButtonTextMarginLeft = 0;
+            this.BugReportSendButton.ColorContrastOnClick = 45;
+            this.BugReportSendButton.ColorContrastOnHover = 45;
+            this.BugReportSendButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            borderEdges7.BottomLeft = true;
+            borderEdges7.BottomRight = true;
+            borderEdges7.TopLeft = true;
+            borderEdges7.TopRight = true;
+            this.BugReportSendButton.CustomizableEdges = borderEdges7;
+            this.BugReportSendButton.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.BugReportSendButton.DisabledBorderColor = System.Drawing.Color.Empty;
+            this.BugReportSendButton.DisabledFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.BugReportSendButton.DisabledForecolor = System.Drawing.Color.FromArgb(((int)(((byte)(168)))), ((int)(((byte)(160)))), ((int)(((byte)(168)))));
+            this.BugReportSendButton.FocusState = Bunifu.UI.WinForms.BunifuButton.BunifuButton.ButtonStates.Pressed;
+            this.BugReportSendButton.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.BugReportSendButton.ForeColor = System.Drawing.Color.DimGray;
+            this.BugReportSendButton.IconLeftCursor = System.Windows.Forms.Cursors.Hand;
+            this.BugReportSendButton.IconMarginLeft = 11;
+            this.BugReportSendButton.IconPadding = 10;
+            this.BugReportSendButton.IconRightCursor = System.Windows.Forms.Cursors.Hand;
+            this.BugReportSendButton.IdleBorderColor = System.Drawing.Color.Silver;
+            this.BugReportSendButton.IdleBorderRadius = 3;
+            this.BugReportSendButton.IdleBorderThickness = 1;
+            this.BugReportSendButton.IdleFillColor = System.Drawing.Color.Silver;
+            this.BugReportSendButton.IdleIconLeftImage = null;
+            this.BugReportSendButton.IdleIconRightImage = null;
+            this.BugReportSendButton.IndicateFocus = false;
+            this.BugReportSendButton.Location = new System.Drawing.Point(131, 291);
+            this.BugReportSendButton.Name = "BugReportSendButton";
+            stateProperties13.BorderColor = System.Drawing.Color.Black;
+            stateProperties13.BorderRadius = 3;
+            stateProperties13.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties13.BorderThickness = 1;
+            stateProperties13.FillColor = System.Drawing.Color.Silver;
+            stateProperties13.ForeColor = System.Drawing.Color.Black;
+            stateProperties13.IconLeftImage = null;
+            stateProperties13.IconRightImage = null;
+            this.BugReportSendButton.onHoverState = stateProperties13;
+            stateProperties14.BorderColor = System.Drawing.Color.Black;
+            stateProperties14.BorderRadius = 3;
+            stateProperties14.BorderStyle = Bunifu.UI.WinForms.BunifuButton.BunifuButton.BorderStyles.Solid;
+            stateProperties14.BorderThickness = 1;
+            stateProperties14.FillColor = System.Drawing.Color.DimGray;
+            stateProperties14.ForeColor = System.Drawing.Color.Black;
+            stateProperties14.IconLeftImage = null;
+            stateProperties14.IconRightImage = null;
+            this.BugReportSendButton.OnPressedState = stateProperties14;
+            this.BugReportSendButton.Size = new System.Drawing.Size(210, 45);
+            this.BugReportSendButton.TabIndex = 27;
+            this.BugReportSendButton.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.BugReportSendButton.TextMarginLeft = 0;
+            this.bunifuToolTip1.SetToolTip(this.BugReportSendButton, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.BugReportSendButton, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.BugReportSendButton, "");
+            this.BugReportSendButton.UseDefaultRadiusAndThickness = true;
+            this.BugReportSendButton.Click += new System.EventHandler(this.BugReportSendButton_Click);
+            // 
+            // bunifuCustomLabel18
+            // 
+            this.bunifuCustomLabel18.AutoSize = true;
+            this.bunifuCustomLabel18.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bunifuCustomLabel18.ForeColor = System.Drawing.Color.DimGray;
+            this.bunifuCustomLabel18.Location = new System.Drawing.Point(40, 140);
+            this.bunifuCustomLabel18.Name = "bunifuCustomLabel18";
+            this.bunifuCustomLabel18.Size = new System.Drawing.Size(85, 21);
+            this.bunifuCustomLabel18.TabIndex = 26;
+            this.bunifuCustomLabel18.Text = "Content: ";
+            this.bunifuCustomLabel18.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.bunifuToolTip1.SetToolTip(this.bunifuCustomLabel18, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuCustomLabel18, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuCustomLabel18, "");
+            // 
+            // BugContentTextBox
+            // 
+            this.BugContentTextBox.ForeColor = System.Drawing.Color.DimGray;
+            this.BugContentTextBox.Location = new System.Drawing.Point(131, 141);
+            this.BugContentTextBox.Multiline = true;
+            this.BugContentTextBox.Name = "BugContentTextBox";
+            this.BugContentTextBox.Size = new System.Drawing.Size(435, 131);
+            this.BugContentTextBox.TabIndex = 25;
+            this.bunifuToolTip1.SetToolTip(this.BugContentTextBox, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.BugContentTextBox, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.BugContentTextBox, "");
+            // 
+            // bunifuCustomLabel20
+            // 
+            this.bunifuCustomLabel20.AutoSize = true;
+            this.bunifuCustomLabel20.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bunifuCustomLabel20.ForeColor = System.Drawing.Color.DimGray;
+            this.bunifuCustomLabel20.Location = new System.Drawing.Point(40, 74);
+            this.bunifuCustomLabel20.Name = "bunifuCustomLabel20";
+            this.bunifuCustomLabel20.Size = new System.Drawing.Size(86, 21);
+            this.bunifuCustomLabel20.TabIndex = 22;
+            this.bunifuCustomLabel20.Text = "Your Mail:";
+            this.bunifuCustomLabel20.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.bunifuToolTip1.SetToolTip(this.bunifuCustomLabel20, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuCustomLabel20, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuCustomLabel20, "");
+            // 
+            // BugMailTextBox
+            // 
+            this.BugMailTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.BugMailTextBox.ForeColor = System.Drawing.Color.DimGray;
+            this.BugMailTextBox.Location = new System.Drawing.Point(132, 74);
+            this.BugMailTextBox.Name = "BugMailTextBox";
+            this.BugMailTextBox.Size = new System.Drawing.Size(215, 20);
+            this.BugMailTextBox.TabIndex = 21;
+            this.bunifuToolTip1.SetToolTip(this.BugMailTextBox, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.BugMailTextBox, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.BugMailTextBox, "");
+            // 
+            // bunifuCustomLabel21
+            // 
+            this.bunifuCustomLabel21.AutoSize = true;
+            this.bunifuCustomLabel21.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bunifuCustomLabel21.ForeColor = System.Drawing.Color.DimGray;
+            this.bunifuCustomLabel21.Location = new System.Drawing.Point(40, 41);
+            this.bunifuCustomLabel21.Name = "bunifuCustomLabel21";
+            this.bunifuCustomLabel21.Size = new System.Drawing.Size(66, 21);
+            this.bunifuCustomLabel21.TabIndex = 20;
+            this.bunifuCustomLabel21.Text = "Name: ";
+            this.bunifuCustomLabel21.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.bunifuToolTip1.SetToolTip(this.bunifuCustomLabel21, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuCustomLabel21, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuCustomLabel21, "");
+            // 
+            // BugNameTextBox
+            // 
+            this.BugNameTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.BugNameTextBox.ForeColor = System.Drawing.Color.DimGray;
+            this.BugNameTextBox.Location = new System.Drawing.Point(131, 42);
+            this.BugNameTextBox.Name = "BugNameTextBox";
+            this.BugNameTextBox.Size = new System.Drawing.Size(216, 20);
+            this.BugNameTextBox.TabIndex = 19;
+            this.bunifuToolTip1.SetToolTip(this.BugNameTextBox, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.BugNameTextBox, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.BugNameTextBox, "");
+            // 
+            // bunifuCustomLabel22
+            // 
+            this.bunifuCustomLabel22.AutoSize = true;
+            this.bunifuCustomLabel22.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bunifuCustomLabel22.ForeColor = System.Drawing.Color.DimGray;
+            this.bunifuCustomLabel22.Location = new System.Drawing.Point(6, 3);
+            this.bunifuCustomLabel22.Name = "bunifuCustomLabel22";
+            this.bunifuCustomLabel22.Size = new System.Drawing.Size(113, 22);
+            this.bunifuCustomLabel22.TabIndex = 18;
+            this.bunifuCustomLabel22.Text = "Bug Report";
+            this.bunifuCustomLabel22.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.bunifuToolTip1.SetToolTip(this.bunifuCustomLabel22, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuCustomLabel22, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuCustomLabel22, "");
+            // 
+            // bunifuCustomLabel12
+            // 
+            this.bunifuCustomLabel12.AutoSize = true;
+            this.bunifuCustomLabel12.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bunifuCustomLabel12.ForeColor = System.Drawing.Color.DimGray;
+            this.bunifuCustomLabel12.Location = new System.Drawing.Point(76, 218);
+            this.bunifuCustomLabel12.Name = "bunifuCustomLabel12";
+            this.bunifuCustomLabel12.Size = new System.Drawing.Size(58, 21);
+            this.bunifuCustomLabel12.TabIndex = 9;
+            this.bunifuCustomLabel12.Text = "More: ";
+            this.bunifuCustomLabel12.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.bunifuToolTip1.SetToolTip(this.bunifuCustomLabel12, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuCustomLabel12, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuCustomLabel12, "");
+            // 
+            // bunifuCustomLabel11
+            // 
+            this.bunifuCustomLabel11.AutoSize = true;
+            this.bunifuCustomLabel11.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bunifuCustomLabel11.ForeColor = System.Drawing.Color.DimGray;
+            this.bunifuCustomLabel11.Location = new System.Drawing.Point(76, 197);
+            this.bunifuCustomLabel11.Name = "bunifuCustomLabel11";
+            this.bunifuCustomLabel11.Size = new System.Drawing.Size(106, 21);
+            this.bunifuCustomLabel11.TabIndex = 8;
+            this.bunifuCustomLabel11.Text = "Created By: ";
+            this.bunifuCustomLabel11.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.bunifuToolTip1.SetToolTip(this.bunifuCustomLabel11, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuCustomLabel11, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuCustomLabel11, "");
+            // 
+            // bunifuCustomLabel10
+            // 
+            this.bunifuCustomLabel10.AutoSize = true;
+            this.bunifuCustomLabel10.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bunifuCustomLabel10.ForeColor = System.Drawing.Color.DimGray;
+            this.bunifuCustomLabel10.Location = new System.Drawing.Point(76, 176);
+            this.bunifuCustomLabel10.Name = "bunifuCustomLabel10";
+            this.bunifuCustomLabel10.Size = new System.Drawing.Size(140, 21);
+            this.bunifuCustomLabel10.TabIndex = 7;
+            this.bunifuCustomLabel10.Text = "Verison Number: ";
+            this.bunifuCustomLabel10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.bunifuToolTip1.SetToolTip(this.bunifuCustomLabel10, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuCustomLabel10, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuCustomLabel10, "");
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.pictureBox2);
+            this.panel4.Controls.Add(this.bunifuCustomLabel9);
+            this.panel4.Controls.Add(this.bunifuCustomLabel8);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(3, 3);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(564, 152);
+            this.panel4.TabIndex = 6;
+            this.bunifuToolTip1.SetToolTip(this.panel4, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.panel4, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.panel4, "");
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(355, 20);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(100, 50);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 6;
+            this.pictureBox2.TabStop = false;
+            this.bunifuToolTip1.SetToolTip(this.pictureBox2, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.pictureBox2, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.pictureBox2, "");
+            // 
+            // bunifuCustomLabel9
+            // 
+            this.bunifuCustomLabel9.AutoSize = true;
+            this.bunifuCustomLabel9.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bunifuCustomLabel9.ForeColor = System.Drawing.Color.Black;
+            this.bunifuCustomLabel9.Location = new System.Drawing.Point(365, 73);
+            this.bunifuCustomLabel9.Name = "bunifuCustomLabel9";
+            this.bunifuCustomLabel9.Size = new System.Drawing.Size(75, 19);
+            this.bunifuCustomLabel9.TabIndex = 4;
+            this.bunifuCustomLabel9.Text = "App Info";
+            this.bunifuCustomLabel9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.bunifuToolTip1.SetToolTip(this.bunifuCustomLabel9, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuCustomLabel9, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuCustomLabel9, "");
+            // 
+            // bunifuCustomLabel8
+            // 
+            this.bunifuCustomLabel8.AutoSize = true;
+            this.bunifuCustomLabel8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.bunifuCustomLabel8.ForeColor = System.Drawing.Color.DimGray;
+            this.bunifuCustomLabel8.Location = new System.Drawing.Point(139, 101);
+            this.bunifuCustomLabel8.Name = "bunifuCustomLabel8";
+            this.bunifuCustomLabel8.Size = new System.Drawing.Size(550, 42);
+            this.bunifuCustomLabel8.TabIndex = 5;
+            this.bunifuCustomLabel8.Text = "Application for the TFS server automatization time scheduler and \r\ngive opportuni" +
+    "ty for the missing and extra delete and server functions\r\n";
+            this.bunifuCustomLabel8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.bunifuToolTip1.SetToolTip(this.bunifuCustomLabel8, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.bunifuCustomLabel8, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.bunifuCustomLabel8, "");
             // 
             // bunifuToolTip1
             // 
@@ -2068,6 +2719,10 @@
             this.ContactPage.PerformLayout();
             this.BugReportPage.ResumeLayout(false);
             this.BugReportPage.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2115,10 +2770,7 @@
         private System.Windows.Forms.TabPage InfoPage;
         private Bunifu.UI.WinForms.BunifuPages subInfoPages;
         private System.Windows.Forms.TabPage ContactPage;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TabPage BugReportPage;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label6;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private Bunifu.Framework.UI.BunifuCustomLabel ServerTeamProject;
@@ -2147,5 +2799,37 @@
         private System.Windows.Forms.Panel panel3;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton DeleteAllButton;
         private Bunifu.UI.WinForms.BunifuToolTip bunifuToolTip1;
+        private System.Windows.Forms.Panel panel4;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel9;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel8;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label CreatorLabel;
+        private System.Windows.Forms.Label VersionNUmberLabel;
+        private System.Windows.Forms.LinkLabel LinkLabel;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel12;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel11;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel10;
+        private System.Windows.Forms.TextBox NameTextBox;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel13;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel15;
+        private System.Windows.Forms.TextBox MailTextBox;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel14;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel16;
+        private System.Windows.Forms.TextBox SubjectTextBox;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel17;
+        private System.Windows.Forms.TextBox ContentTextBox;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton ContactSendButton;
+        private Bunifu.UI.WinForms.BunifuButton.BunifuButton BugReportSendButton;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel18;
+        private System.Windows.Forms.TextBox BugContentTextBox;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel20;
+        private System.Windows.Forms.TextBox BugMailTextBox;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel21;
+        private System.Windows.Forms.TextBox BugNameTextBox;
+        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel22;
+        private System.Windows.Forms.Panel panel5;
+        private Bunifu.Framework.UI.BunifuFlatButton OtherBugButton;
+        private Bunifu.Framework.UI.BunifuFlatButton UIBugButton;
+        private Bunifu.Framework.UI.BunifuFlatButton FunctionBugButton;
     }
 }
