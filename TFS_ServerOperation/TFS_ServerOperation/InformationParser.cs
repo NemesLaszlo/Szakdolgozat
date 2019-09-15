@@ -79,7 +79,7 @@ namespace TFS_ServerOperation
         /// Get the E-Mail Address Where we would like to send a mail / message
         /// </summary>
         /// <returns></returns>
-        public string GetAddressToMail()
+        private string GetAddressToMail()
         {
             return ToMailAddress;
         }
@@ -88,7 +88,7 @@ namespace TFS_ServerOperation
         /// Get the path to the up to date Month .csv file, to attach to the email
         /// </summary>
         /// <returns></returns>
-        public string GetUpToDateFileCSV()
+        private string GetUpToDateFileCSV()
         {
             string currentMonth = string.Empty;
             DateTime today = DateTime.Today;
