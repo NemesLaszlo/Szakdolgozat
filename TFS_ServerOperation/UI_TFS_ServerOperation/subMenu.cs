@@ -351,8 +351,8 @@ namespace UI_TFS_ServerOperation
                 if ((fileStream = openFileDialog.OpenFile()) != null)
                 {
                     string strFileName = openFileDialog.FileName;
-                    SelectedFile.Text = strFileName;
-                    SelectedFile.Visible = true;
+                    SelctedFileTextBox.Text = strFileName;
+                    SelctedFileTextBox.Visible = true;
                     Alert.AlertCreation("Load Success!", AlertType.success);
                 }
             }
@@ -363,7 +363,7 @@ namespace UI_TFS_ServerOperation
         /// </summary>
         private void DeleteFileButton_Click(object sender, EventArgs e)
         {
-            string deleteFile = SelectedFile.Text;
+            string deleteFile = SelctedFileTextBox.Text;
             if (String.IsNullOrEmpty(deleteFile))
             {
                 Alert.AlertCreation("Browse a File!", AlertType.error);
@@ -393,7 +393,7 @@ namespace UI_TFS_ServerOperation
                         return;
                     }
                     FileDeleteProgressBar.Value = 0;
-                    SelectedFile.Visible = false;
+                    SelctedFileTextBox.Visible = false;
                 }
                 else
                 {

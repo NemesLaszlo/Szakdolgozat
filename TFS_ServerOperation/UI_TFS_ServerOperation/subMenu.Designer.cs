@@ -107,7 +107,6 @@
             this.DeleteFromFile = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
             this.BrowseButton = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
-            this.SelectedFile = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.DeleteFileButton = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.FileDeleteProgressBar = new Bunifu.Framework.UI.BunifuCircleProgressbar();
@@ -156,6 +155,7 @@
             this.bunifuCustomLabel9 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuToolTip1 = new Bunifu.UI.WinForms.BunifuToolTip(this.components);
+            this.SelctedFileTextBox = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.Settings.SuspendLayout();
             this.Upload.SuspendLayout();
@@ -958,10 +958,10 @@
             this.ContentControllerPages.Location = new System.Drawing.Point(0, 0);
             this.ContentControllerPages.Multiline = true;
             this.ContentControllerPages.Name = "ContentControllerPages";
-            this.ContentControllerPages.Page = this.UploadPage;
-            this.ContentControllerPages.PageIndex = 1;
-            this.ContentControllerPages.PageName = "UploadPage";
-            this.ContentControllerPages.PageTitle = "UploadPage";
+            this.ContentControllerPages.Page = this.DeletePage;
+            this.ContentControllerPages.PageIndex = 2;
+            this.ContentControllerPages.PageName = "DeletePage";
+            this.ContentControllerPages.PageTitle = "DeletePage";
             this.ContentControllerPages.SelectedIndex = 0;
             this.ContentControllerPages.Size = new System.Drawing.Size(578, 579);
             this.ContentControllerPages.TabIndex = 2;
@@ -1208,10 +1208,10 @@
             this.subDeleteTabPages.Location = new System.Drawing.Point(-4, 76);
             this.subDeleteTabPages.Multiline = true;
             this.subDeleteTabPages.Name = "subDeleteTabPages";
-            this.subDeleteTabPages.Page = this.IdDelete;
-            this.subDeleteTabPages.PageIndex = 0;
-            this.subDeleteTabPages.PageName = "IdDelete";
-            this.subDeleteTabPages.PageTitle = "IdDelete";
+            this.subDeleteTabPages.Page = this.DeleteFromFile;
+            this.subDeleteTabPages.PageIndex = 1;
+            this.subDeleteTabPages.PageName = "DeleteFromFile";
+            this.subDeleteTabPages.PageTitle = "DeleteFromFile";
             this.subDeleteTabPages.SelectedIndex = 0;
             this.subDeleteTabPages.Size = new System.Drawing.Size(575, 474);
             this.subDeleteTabPages.TabIndex = 1;
@@ -1519,8 +1519,8 @@
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.SelctedFileTextBox);
             this.panel2.Controls.Add(this.BrowseButton);
-            this.panel2.Controls.Add(this.SelectedFile);
             this.panel2.Controls.Add(this.DeleteFileButton);
             this.panel2.Controls.Add(this.bunifuCustomLabel7);
             this.panel2.Location = new System.Drawing.Point(21, 8);
@@ -1597,21 +1597,6 @@
             this.bunifuToolTip1.SetToolTipTitle(this.BrowseButton, "Browse");
             this.BrowseButton.UseDefaultRadiusAndThickness = true;
             this.BrowseButton.Click += new System.EventHandler(this.BrowseButton_Click);
-            // 
-            // SelectedFile
-            // 
-            this.SelectedFile.AutoSize = true;
-            this.SelectedFile.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.SelectedFile.ForeColor = System.Drawing.Color.Red;
-            this.SelectedFile.Location = new System.Drawing.Point(265, 37);
-            this.SelectedFile.Name = "SelectedFile";
-            this.SelectedFile.Size = new System.Drawing.Size(83, 17);
-            this.SelectedFile.TabIndex = 11;
-            this.SelectedFile.Text = "SelectedFile";
-            this.bunifuToolTip1.SetToolTip(this.SelectedFile, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.SelectedFile, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.SelectedFile, "");
-            this.SelectedFile.Visible = false;
             // 
             // DeleteFileButton
             // 
@@ -2671,6 +2656,25 @@
             this.bunifuToolTip1.ToolTipPosition = new System.Drawing.Point(0, 0);
             this.bunifuToolTip1.ToolTipTitle = null;
             // 
+            // SelctedFileTextBox
+            // 
+            this.SelctedFileTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.SelctedFileTextBox.BackColor = System.Drawing.Color.White;
+            this.SelctedFileTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.SelctedFileTextBox.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.SelctedFileTextBox.ForeColor = System.Drawing.Color.Red;
+            this.SelctedFileTextBox.Location = new System.Drawing.Point(270, 38);
+            this.SelctedFileTextBox.Multiline = true;
+            this.SelctedFileTextBox.Name = "SelctedFileTextBox";
+            this.SelctedFileTextBox.Size = new System.Drawing.Size(480, 58);
+            this.SelctedFileTextBox.TabIndex = 19;
+            this.SelctedFileTextBox.Text = "SelectedFile";
+            this.bunifuToolTip1.SetToolTip(this.SelctedFileTextBox, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.SelctedFileTextBox, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.SelctedFileTextBox, "");
+            this.SelctedFileTextBox.Visible = false;
+            // 
             // subMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2788,7 +2792,6 @@
         private Bunifu.Framework.UI.BunifuCircleProgressbar MoreElemDeleteBar;
         private Bunifu.Framework.BunifuCustomTextbox MoreDeleteTextBox;
         private Bunifu.Framework.UI.BunifuCircleProgressbar FileDeleteProgressBar;
-        private Bunifu.Framework.UI.BunifuCustomLabel SelectedFile;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel7;
         private Bunifu.Framework.UI.BunifuCircleProgressbar AllServerDeleteProgressBar;
         private Bunifu.UI.WinForms.BunifuButton.BunifuButton OneElemDeleteButton;
@@ -2831,5 +2834,6 @@
         private Bunifu.Framework.UI.BunifuFlatButton OtherBugButton;
         private Bunifu.Framework.UI.BunifuFlatButton UIBugButton;
         private Bunifu.Framework.UI.BunifuFlatButton FunctionBugButton;
+        private System.Windows.Forms.TextBox SelctedFileTextBox;
     }
 }
