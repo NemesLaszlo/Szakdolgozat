@@ -85,10 +85,10 @@ namespace TFS_ServerOperation
         }*/
 
         /// <summary>
-        /// Get the path to the up to date Month .csv file, to attach to the email
+        /// Get the path to the up to date Month .csv file, to attach to the email (teamProject's file)
         /// </summary>
         /// <returns></returns>
-        private string GetUpToDateFileCSV()
+        private string GetUpToDateFileCSV(string currentTeamProject)
         {
             string currentMonth = string.Empty;
             DateTime today = DateTime.Today;
@@ -97,7 +97,7 @@ namespace TFS_ServerOperation
             string[] files = Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory, "*.csv", SearchOption.AllDirectories);
             foreach (var file in files)
             {
-                if (file.Contains(upToDateMonth))
+                if (file.Contains(upToDateMonth) && file.Contains(currentTeamProject))
                 {
                     currentMonth = file;
                 }
@@ -106,25 +106,28 @@ namespace TFS_ServerOperation
         }
 
         /// <summary>
-        /// Running from console. Only Upload and delete from file.
+        /// Running from console.
         /// </summary>
         /// <param name="array">Console parameters</param>
-        public void ConsoleRun(string[] array, Logger log)
+        public void ConsoleRun(string[] array)
         {
+            var log = Init_Log();
             try
             {
-                var ServerOperation = Init_ServerOperation(log);
-                var MailSender = Init_MailSender(log);
-                if (array.Contains(@"/delete") && File.Exists(array[Array.IndexOf(array, @"/delete") + 1]))
+                if (array.Contains(@"/config") && File.Exists(array[Array.IndexOf(array, @"/config") + 1]))
                 {
-                    ServerOperation.DeleteFromFile(array[Array.IndexOf(array, @"/delete") + 1]);
+                    var ServerOperation = Init_ServerOperation(log);
+                    var MailSender = Init_MailSender(log);
+
+                    Upload_Process(false, ServerOperation, MailSender, log);
+                    FileOperations writer = new FileOperations(log);
+                    writer.WriteInCSV(CurrentTeamProjectName, ServerOperation.datasForFileModification);
+                    MailSender.SendEmail(ToMailAddress, "Scheduled Month Uploaded File Period", "You can find the Result file in the Attachments.", GetUpToDateFileCSV(CurrentTeamProjectName));
                 }
                 else
                 {
-                    Upload_Process(false,ServerOperation, MailSender, log);
-                    FileOperations writer = new FileOperations(log);
-                    writer.WriteInCSV(CurrentTeamProjectName, ServerOperation.datasForFileModification);
-                    MailSender.SendEmail(ToMailAddress, "Scheduled Month Uploaded File Period", "You can find the Result file in the Attachments.", GetUpToDateFileCSV());
+                    log.Error("Wrong parameter list!");
+                    log.Flush();
                 }
             }
             catch (Exception ex)

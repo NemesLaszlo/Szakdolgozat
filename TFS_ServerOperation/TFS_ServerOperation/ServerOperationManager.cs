@@ -105,7 +105,7 @@ namespace TFS_ServerOperation
                 string[] files = Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory, "*.csv", SearchOption.AllDirectories);
                 foreach (var file in files)
                 {
-                    if (file.Contains(lastMonth))
+                    if (file.Contains(lastMonth) && file.Contains(currentTeamProject))
                     {
                         lastMonthFile = file;
                     }

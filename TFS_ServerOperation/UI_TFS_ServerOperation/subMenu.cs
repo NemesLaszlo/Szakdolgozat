@@ -440,7 +440,7 @@ namespace UI_TFS_ServerOperation
         /// Get the current Month file and give the path.
         /// </summary>
         /// <returns>Actual Month path as string.</returns>
-        private string GetCurrentMontFileForOpen()
+        private string GetCurrentMontFileForOpen(string currentTeamProject)
         {
             string currentMonth = string.Empty;
             DateTime today = DateTime.Today;
@@ -449,7 +449,7 @@ namespace UI_TFS_ServerOperation
             string[] files = Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory, "*.csv", SearchOption.AllDirectories);
             foreach (var file in files)
             {
-                if (file.Contains(upToDateMonth))
+                if (file.Contains(upToDateMonth) && file.Contains(currentTeamProject))
                 {
                     currentMonth = file;
                 }
@@ -475,7 +475,7 @@ namespace UI_TFS_ServerOperation
         /// </summary>
         private void subOpenCurrentFile_Click(object sender, EventArgs e)
         {
-            string currentFile = GetCurrentMontFileForOpen();
+            string currentFile = GetCurrentMontFileForOpen(informationParser.CurrentTeamProjectName);
             if (String.IsNullOrEmpty(currentFile))
             {
                 Alert.AlertCreation("There is no Actual Monnt File!", AlertType.error);
