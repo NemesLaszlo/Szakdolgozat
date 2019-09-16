@@ -79,10 +79,10 @@ namespace TFS_ServerOperation
         /// Get the E-Mail Address Where we would like to send a mail / message
         /// </summary>
         /// <returns></returns>
-        private string GetAddressToMail()
+       /* private string GetAddressToMail()
         {
             return ToMailAddress;
-        }
+        }*/
 
         /// <summary>
         /// Get the path to the up to date Month .csv file, to attach to the email
@@ -123,8 +123,8 @@ namespace TFS_ServerOperation
                 {
                     Upload_Process(false,ServerOperation, MailSender, log);
                     FileOperations writer = new FileOperations(log);
-                    writer.WriteInCSV(ServerOperation.datasForFileModification);
-                    MailSender.SendEmail(GetAddressToMail(), "Scheduled Month Uploaded File Period", "You can find the Result file in the Attachments.", GetUpToDateFileCSV());
+                    writer.WriteInCSV(CurrentTeamProjectName, ServerOperation.datasForFileModification);
+                    MailSender.SendEmail(ToMailAddress, "Scheduled Month Uploaded File Period", "You can find the Result file in the Attachments.", GetUpToDateFileCSV());
                 }
             }
             catch (Exception ex)
@@ -145,13 +145,13 @@ namespace TFS_ServerOperation
             try
             {
                 ServerOperation.datasForFileModification.Clear();
-                ServerOperation.Archive(isUIRun);
+                ServerOperation.Archive(isUIRun, CurrentTeamProjectName);
                 FileOperations writer = new FileOperations(log);
                 PbisConfigSection myPBISection = ConfigurationManager.GetSection("PBICollectionSection") as PbisConfigSection;
                 for (int i = 0; i < myPBISection.Members.Count; i++)
                 {
                     PBI pbi = myPBISection.Members[i];
-                    ServerOperation.Upload(isUIRun, pbi);
+                    ServerOperation.Upload(isUIRun, pbi, ServerOperation.AreaPath);
                 }  
 
                 return true;
@@ -175,7 +175,7 @@ namespace TFS_ServerOperation
         /// <returns></returns>
         public bool SendMail(MailSender MailSender, Logger log, string subject, string body, string attachment)
         {
-            bool result = MailSender.SendEmail(GetAddressToMail(), subject, body, null);
+            bool result = MailSender.SendEmail(ToMailAddress, subject, body, null);
 
             return result;
         }
@@ -192,7 +192,7 @@ namespace TFS_ServerOperation
             bool result = ServerOperation.DeleteFromFile(fileName);
             if (result)
             {
-                MailSender.SendEmail(GetAddressToMail(), "Delete From File on the Server", "Delete method ran on the server. File Name: " + fileName, null);
+                MailSender.SendEmail(ToMailAddress, "Delete From File on the Server", "Delete method ran on the server. File Name: " + fileName, null);
             }
            
             return result;
@@ -211,7 +211,7 @@ namespace TFS_ServerOperation
             bool result = ServerOperation.DeleteByIds(ids);
             if (result)
             {
-                MailSender.SendEmail(GetAddressToMail(), "Delete From Ids on the Server", "Delete method ran on the server. Deleted workItem ids: " + deletedIds, null);
+                MailSender.SendEmail(ToMailAddress, "Delete From Ids on the Server", "Delete method ran on the server. Deleted workItem ids: " + deletedIds, null);
             }
 
             return result;
@@ -225,7 +225,7 @@ namespace TFS_ServerOperation
         public void ServerContentDelete_Process(ServerOperationManager ServerOperation, MailSender MailSender)
         {
             ServerOperation.ServerContentDelete();
-            MailSender.SendEmail(GetAddressToMail(), "All server data is gone", "Everything has been deleted from the server", null);
+            MailSender.SendEmail(ToMailAddress, "All server data is gone", "Everything has been deleted from the server", null);
         }
     }
 }

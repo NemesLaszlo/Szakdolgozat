@@ -56,14 +56,15 @@ namespace TFS_ServerOperation
         /// This method write the Upload datas into a file.
         /// </summary>
         /// <param name="datas"> Upload datas in string list </param>
-        public void WriteInCSV(List<string> datas)
+        /// <param name="serverCollection"> Current active server team project for the separations of the different project's month file</param>
+        public void WriteInCSV(string serverTeamProject, List<string> datas)
         {
             try
             {
                 DateTime date = DateTime.Today;
                 string dateMonth = date.Month.ToString();
 
-                using (var fileStream = new FileStream("UploadedDatas_" + dateMonth + ".csv", FileMode.Create))
+                using (var fileStream = new FileStream(serverTeamProject + "_UploadedDatas_" + dateMonth + ".csv", FileMode.Create))
                 using (var streamWriter = new StreamWriter(fileStream))
                 {
                     streamWriter.WriteLine("Id;Title;AssignedTo;State");

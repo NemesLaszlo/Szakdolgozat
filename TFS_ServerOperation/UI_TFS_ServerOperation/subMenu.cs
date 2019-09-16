@@ -10,6 +10,7 @@ using System.Diagnostics;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Text.RegularExpressions;
+using System.Drawing;
 
 namespace UI_TFS_ServerOperation
 {
@@ -145,6 +146,39 @@ namespace UI_TFS_ServerOperation
 
                 writer.Write(SettingsRichTextBox.Text);
                 writer.Close();
+
+                try
+                {
+                    ConfigurationManager.RefreshSection("PBICollectionSection");
+                    ConfigurationManager.RefreshSection("Connection");
+                    ConfigurationManager.RefreshSection("MailInformation");
+                    ConfigurationManager.RefreshSection("system.diagnostics");
+
+                    // Controller ReInit
+                    informationParser = new InformationParser();
+                    log = informationParser.Init_Log();
+                    serverOperator = informationParser.Init_ServerOperation(log);
+                    mailSender = informationParser.Init_MailSender(log);
+
+                    // Server information setting to the Upload page
+                    ServerCollectionInfoLabel.Text = informationParser.CurrentTfsCollectionName;
+                    ServerTeamProjectInfoLabel.Text = informationParser.CurrentTeamProjectName;
+                    UploadActiveButton.Text = "Active";
+                    UploadActiveButton.ForeColor = Color.SeaGreen;
+                    ServerCollectionInfoLabel.Refresh();
+                    ServerTeamProjectInfoLabel.Refresh();
+                    UploadActiveButton.Refresh();
+                }
+                catch(Exception)
+                {
+                    log.Error("Server connection fail!");
+                    log.Flush();
+                    ServerCollectionInfoLabel.Text = "Fail";
+                    ServerTeamProjectInfoLabel.Text = "Fail";
+                    UploadActiveButton.Text = "Inactive";
+                    UploadActiveButton.ForeColor = Color.Red;
+                    Alert.AlertCreation("Server connection fail!", AlertType.error);
+                }
                 Alert.AlertCreation("Save Success!", AlertType.success);
             }
         }
@@ -165,9 +199,18 @@ namespace UI_TFS_ServerOperation
             ConfigurationManager.RefreshSection("system.diagnostics");
 
             // Controller evet calling.
-            bool result = informationParser.Upload_Process(true, serverOperator, mailSender, log);
-            FileOperations writer = new FileOperations(log);
-            writer.WriteInCSV(serverOperator.datasForFileModification);
+            bool result = false;
+            if (UploadActiveButton.Text.Equals("Active"))
+            {
+                result = informationParser.Upload_Process(true, serverOperator, mailSender, log);
+                FileOperations writer = new FileOperations(log);
+                writer.WriteInCSV(informationParser.CurrentTeamProjectName, serverOperator.datasForFileModification);
+            }
+            else
+            {
+                Alert.AlertCreation("Server Connection Problem!", AlertType.error);
+                return;
+            }
 
             if (result)
             {               

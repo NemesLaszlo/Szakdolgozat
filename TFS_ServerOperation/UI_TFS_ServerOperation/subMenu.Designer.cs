@@ -88,7 +88,7 @@
             this.ServerCollectionInfoLabel = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.ServerTeamProject = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.ServerCollection = new Bunifu.Framework.UI.BunifuCustomLabel();
-            this.bunifuCustomLabel2 = new Bunifu.Framework.UI.BunifuCustomLabel();
+            this.UploadActiveButton = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel1 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.UploadBar = new Bunifu.Framework.UI.BunifuCircleProgressbar();
             this.DeletePage = new System.Windows.Forms.TabPage();
@@ -958,10 +958,10 @@
             this.ContentControllerPages.Location = new System.Drawing.Point(0, 0);
             this.ContentControllerPages.Multiline = true;
             this.ContentControllerPages.Name = "ContentControllerPages";
-            this.ContentControllerPages.Page = this.InfoPage;
-            this.ContentControllerPages.PageIndex = 5;
-            this.ContentControllerPages.PageName = "InfoPage";
-            this.ContentControllerPages.PageTitle = "InfoPage";
+            this.ContentControllerPages.Page = this.UploadPage;
+            this.ContentControllerPages.PageIndex = 1;
+            this.ContentControllerPages.PageName = "UploadPage";
+            this.ContentControllerPages.PageTitle = "UploadPage";
             this.ContentControllerPages.SelectedIndex = 0;
             this.ContentControllerPages.Size = new System.Drawing.Size(578, 579);
             this.ContentControllerPages.TabIndex = 2;
@@ -1025,7 +1025,7 @@
             this.UploadPage.Controls.Add(this.ServerCollectionInfoLabel);
             this.UploadPage.Controls.Add(this.ServerTeamProject);
             this.UploadPage.Controls.Add(this.ServerCollection);
-            this.UploadPage.Controls.Add(this.bunifuCustomLabel2);
+            this.UploadPage.Controls.Add(this.UploadActiveButton);
             this.UploadPage.Controls.Add(this.bunifuCustomLabel1);
             this.UploadPage.Controls.Add(this.UploadBar);
             this.UploadPage.Location = new System.Drawing.Point(4, 4);
@@ -1094,19 +1094,19 @@
             this.bunifuToolTip1.SetToolTipIcon(this.ServerCollection, null);
             this.bunifuToolTip1.SetToolTipTitle(this.ServerCollection, "");
             // 
-            // bunifuCustomLabel2
+            // UploadActiveButton
             // 
-            this.bunifuCustomLabel2.AutoSize = true;
-            this.bunifuCustomLabel2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.bunifuCustomLabel2.ForeColor = System.Drawing.Color.SeaGreen;
-            this.bunifuCustomLabel2.Location = new System.Drawing.Point(184, 18);
-            this.bunifuCustomLabel2.Name = "bunifuCustomLabel2";
-            this.bunifuCustomLabel2.Size = new System.Drawing.Size(63, 21);
-            this.bunifuCustomLabel2.TabIndex = 2;
-            this.bunifuCustomLabel2.Text = "Active";
-            this.bunifuToolTip1.SetToolTip(this.bunifuCustomLabel2, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.bunifuCustomLabel2, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.bunifuCustomLabel2, "");
+            this.UploadActiveButton.AutoSize = true;
+            this.UploadActiveButton.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.UploadActiveButton.ForeColor = System.Drawing.Color.SeaGreen;
+            this.UploadActiveButton.Location = new System.Drawing.Point(184, 18);
+            this.UploadActiveButton.Name = "UploadActiveButton";
+            this.UploadActiveButton.Size = new System.Drawing.Size(63, 21);
+            this.UploadActiveButton.TabIndex = 2;
+            this.UploadActiveButton.Text = "Active";
+            this.bunifuToolTip1.SetToolTip(this.UploadActiveButton, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.UploadActiveButton, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.UploadActiveButton, "");
             // 
             // bunifuCustomLabel1
             // 
@@ -2273,9 +2273,9 @@
             this.OtherBugButton.Iconimage_Selected = null;
             this.OtherBugButton.IconMarginLeft = 0;
             this.OtherBugButton.IconMarginRight = 0;
-            this.OtherBugButton.IconRightVisible = true;
+            this.OtherBugButton.IconRightVisible = false;
             this.OtherBugButton.IconRightZoom = 0D;
-            this.OtherBugButton.IconVisible = true;
+            this.OtherBugButton.IconVisible = false;
             this.OtherBugButton.IconZoom = 90D;
             this.OtherBugButton.IsTab = true;
             this.OtherBugButton.Location = new System.Drawing.Point(290, 0);
@@ -2311,9 +2311,9 @@
             this.UIBugButton.Iconimage_Selected = null;
             this.UIBugButton.IconMarginLeft = 0;
             this.UIBugButton.IconMarginRight = 0;
-            this.UIBugButton.IconRightVisible = true;
+            this.UIBugButton.IconRightVisible = false;
             this.UIBugButton.IconRightZoom = 0D;
-            this.UIBugButton.IconVisible = true;
+            this.UIBugButton.IconVisible = false;
             this.UIBugButton.IconZoom = 90D;
             this.UIBugButton.IsTab = true;
             this.UIBugButton.Location = new System.Drawing.Point(145, 0);
@@ -2349,9 +2349,9 @@
             this.FunctionBugButton.Iconimage_Selected = null;
             this.FunctionBugButton.IconMarginLeft = 0;
             this.FunctionBugButton.IconMarginRight = 0;
-            this.FunctionBugButton.IconRightVisible = true;
+            this.FunctionBugButton.IconRightVisible = false;
             this.FunctionBugButton.IconRightZoom = 0D;
-            this.FunctionBugButton.IconVisible = true;
+            this.FunctionBugButton.IconVisible = false;
             this.FunctionBugButton.IconZoom = 90D;
             this.FunctionBugButton.IsTab = true;
             this.FunctionBugButton.Location = new System.Drawing.Point(0, 0);
@@ -2771,7 +2771,7 @@
         private Bunifu.UI.WinForms.BunifuPages subInfoPages;
         private System.Windows.Forms.TabPage ContactPage;
         private System.Windows.Forms.TabPage BugReportPage;
-        private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel2;
+        private Bunifu.Framework.UI.BunifuCustomLabel UploadActiveButton;
         private Bunifu.Framework.UI.BunifuCustomLabel bunifuCustomLabel1;
         private Bunifu.Framework.UI.BunifuCustomLabel ServerTeamProject;
         private Bunifu.Framework.UI.BunifuCustomLabel ServerCollection;
