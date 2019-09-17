@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.329
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TFS_ServerOperation", "TFS_ServerOperation\TFS_ServerOperation.csproj", "{019D1F49-7C62-47B4-B582-F0C93709FBB9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI_TFS_ServerOperation", "UI_TFS_ServerOperation\UI_TFS_ServerOperation.csproj", "{92125F89-58FE-4230-B706-30DBA64023FA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{019D1F49-7C62-47B4-B582-F0C93709FBB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{019D1F49-7C62-47B4-B582-F0C93709FBB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{019D1F49-7C62-47B4-B582-F0C93709FBB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92125F89-58FE-4230-B706-30DBA64023FA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92125F89-58FE-4230-B706-30DBA64023FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92125F89-58FE-4230-B706-30DBA64023FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92125F89-58FE-4230-B706-30DBA64023FA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

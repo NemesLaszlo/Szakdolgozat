@@ -9,6 +9,7 @@ namespace TFS_ServerOperation
         private string dateForLogTitle = string.Empty;
         // path, where we would like to take our created log files
         private string path;
+        public string datedPath { get; private set; }
 
         /// <summary>
         /// Constructor for our custom logger.
@@ -20,7 +21,8 @@ namespace TFS_ServerOperation
             dateForLogTitle = DateTime.Now.ToString();
             string correctForm = dateForLogTitle.Replace(" ", string.Empty).Replace(".", "-").Replace(":", "_");
             string[] str = path.Split('.');
-            textLogTraceListener = new TextLogTraceListener(str[0] + " " + correctForm + "." + str[1]);
+            datedPath = str[0] + " " + correctForm + "." + str[1];
+            textLogTraceListener = new TextLogTraceListener(datedPath);
         }
 
         /// <summary>
