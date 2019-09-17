@@ -2,7 +2,7 @@
 
 namespace TFS_ServerOperation
 {
-    interface IFileInteraction
+    public interface IFileInteraction
     {
         void WriteInCSV(string serverName, List<string> datas);
         List<int> ReadCSV(string fileName);
