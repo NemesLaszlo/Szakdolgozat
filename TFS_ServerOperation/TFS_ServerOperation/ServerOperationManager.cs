@@ -16,7 +16,7 @@ namespace TFS_ServerOperation
         private WorkItemType TaskType;
         private Logger log;
 
-        private string AreaPath;
+        public string AreaPath { get; private set; }
         private string Iteration;
 
         public List<string> datasForFileModification = new List<string>();
@@ -72,27 +72,40 @@ namespace TFS_ServerOperation
         /// If the bool flag is true, so this is a restore run from the UI, so take every actual month file to the closed section
         /// </summary>
         /// <param name="isUIRun">logical flag, is it a UI run or Automated run</param>
-        public void Archive(bool isUIRun)
+        /// <param name="currentTeamProject">project name for the archive run</param>
+        public void Archive(bool isUIRun, string currentTeamProject)
         {
             FileOperations fOp = new FileOperations(log);
             string lastMonthFile = string.Empty;
-            string actualMonthFilePath = GetUpToDateFileCSVForUserOverWrite();
+            string actualMonthFilePath = GetUpToDateFileCSVForUserOverWrite(currentTeamProject);
 
             DateTime today = DateTime.Today;
             DateTime month = new DateTime(today.Year, today.Month, 1);
             string lastMonth = month.AddDays(-1).Month.ToString();
 
             if (isUIRun)
-            {               
+            {
+                if (actualMonthFilePath.Equals(""))
+                {
+                    return;
+                }
                 List<int> ActualMonthWorkItems = fOp.ReadCSV(actualMonthFilePath);
-                WorkItemStateChagerLoop(isUIRun, ActualMonthWorkItems);
+                try
+                {
+                    WorkItemStateChagerLoop(isUIRun, ActualMonthWorkItems);
+                }
+                catch(Exception)
+                {
+                    log.Info("Actual Month Work Items does not exist on the server!");
+                    log.Flush();
+                }
             }
             else
             {
                 string[] files = Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory, "*.csv", SearchOption.AllDirectories);
                 foreach (var file in files)
                 {
-                    if (file.Contains(lastMonth))
+                    if (file.Contains(lastMonth) && file.Contains(currentTeamProject))
                     {
                         lastMonthFile = file;
                     }
@@ -108,7 +121,16 @@ namespace TFS_ServerOperation
                 else
                 {
                     List<int> LastMonthWorkItems = fOp.ReadCSV(lastMonthFile);
-                    WorkItemStateChagerLoop(isUIRun, LastMonthWorkItems);
+                    try
+                    {
+                        WorkItemStateChagerLoop(isUIRun, LastMonthWorkItems);
+                    }
+                    catch (Exception)
+                    {
+                        log.Info("Last Month Work Items does not exist on the server!");
+                        log.Flush();
+                    }
+
                 }
             }
         }
@@ -152,7 +174,7 @@ namespace TFS_ServerOperation
         /// Get the path to the up to date Month .csv file, for the user overwrite run from UI
         /// </summary>
         /// <returns></returns>
-        private string GetUpToDateFileCSVForUserOverWrite()
+        private string GetUpToDateFileCSVForUserOverWrite(string currentTeamProject)
         {
             string currentMonth = string.Empty;
             DateTime today = DateTime.Today;
@@ -161,7 +183,7 @@ namespace TFS_ServerOperation
             string[] files = Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory, "*.csv", SearchOption.AllDirectories);
             foreach (var file in files)
             {
-                if (file.Contains(upToDateMonth))
+                if (file.Contains(upToDateMonth) && file.Contains(currentTeamProject))
                 {
                     currentMonth = file;
                 }
@@ -175,7 +197,7 @@ namespace TFS_ServerOperation
         /// <param name="isUIRun">logical flag, is it a UI run or Automated run section</param>
         /// <param name="pbi"> Parameter is a PBI / User Story, what we would like to upload to the server.</param>
         /// <returns></returns>
-        public bool Upload(bool isUIRun, PBI pbi)
+        public bool Upload(bool isUIRun, PBI pbi, string AreaPath)
         {
             try
             {
@@ -199,7 +221,7 @@ namespace TFS_ServerOperation
 
 
                 //Run a query for check this WorkItem with this title already exist or not
-                Query query = new Query(conn.WorkItemStore, string.Format("SELECT Id FROM WorkItems WHERE System.Title = '{0}' AND (System.State = '{1}' OR System.State = '{2}')", TFSpbi.Title,"Active","New"));
+                Query query = new Query(conn.WorkItemStore, string.Format("SELECT Id FROM WorkItems WHERE System.Title = '{0}' AND System.AreaPath = '{1}' AND (System.State = '{2}' OR System.State = '{3}')", TFSpbi.Title, AreaPath, "Active","New"));
                 WorkItemCollection workItemCollection = query.RunQuery();
                 if (workItemCollection.Count == 0)
                 {
@@ -339,8 +361,9 @@ namespace TFS_ServerOperation
             {
                 log.Error(ex);
                 log.Flush();
+                return false;
             }
-            return false;
+
         }
 
         /// <summary>
@@ -362,8 +385,8 @@ namespace TFS_ServerOperation
             {
                 log.Error(ex);
                 log.Flush();
+                return false;
             }
-            return false;
         }
 
         /// <summary>
