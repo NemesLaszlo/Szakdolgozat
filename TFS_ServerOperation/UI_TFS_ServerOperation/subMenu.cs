@@ -632,7 +632,7 @@ namespace UI_TFS_ServerOperation
                     }
                     else
                     {
-                        Alert.AlertCreation("Mail Problem.", AlertType.error);
+                        Alert.AlertCreation("Mail Problem. (Check SMTP)", AlertType.error);
                         return;
                     }
                 }

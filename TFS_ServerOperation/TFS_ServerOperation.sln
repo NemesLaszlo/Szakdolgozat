@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TFS_ServerOperation", "TFS_
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UI_TFS_ServerOperation", "UI_TFS_ServerOperation\UI_TFS_ServerOperation.csproj", "{92125F89-58FE-4230-B706-30DBA64023FA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TFS_ServerOperation.Tests", "TFS_ServerOperation.Tests\TFS_ServerOperation.Tests.csproj", "{DCD6D904-3916-4459-BC5E-EEFAB4DA1D27}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{92125F89-58FE-4230-B706-30DBA64023FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{92125F89-58FE-4230-B706-30DBA64023FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{92125F89-58FE-4230-B706-30DBA64023FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCD6D904-3916-4459-BC5E-EEFAB4DA1D27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCD6D904-3916-4459-BC5E-EEFAB4DA1D27}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCD6D904-3916-4459-BC5E-EEFAB4DA1D27}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCD6D904-3916-4459-BC5E-EEFAB4DA1D27}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
