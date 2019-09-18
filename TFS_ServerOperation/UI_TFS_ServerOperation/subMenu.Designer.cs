@@ -106,6 +106,7 @@
             this.OneDeleteTextBox = new Bunifu.Framework.BunifuCustomTextbox();
             this.DeleteFromFile = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.SelctedFileTextBox = new System.Windows.Forms.TextBox();
             this.BrowseButton = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.DeleteFileButton = new Bunifu.UI.WinForms.BunifuButton.BunifuButton();
             this.bunifuCustomLabel7 = new Bunifu.Framework.UI.BunifuCustomLabel();
@@ -155,7 +156,6 @@
             this.bunifuCustomLabel9 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuCustomLabel8 = new Bunifu.Framework.UI.BunifuCustomLabel();
             this.bunifuToolTip1 = new Bunifu.UI.WinForms.BunifuToolTip(this.components);
-            this.SelctedFileTextBox = new System.Windows.Forms.TextBox();
             this.tabControl1.SuspendLayout();
             this.Settings.SuspendLayout();
             this.Upload.SuspendLayout();
@@ -958,10 +958,10 @@
             this.ContentControllerPages.Location = new System.Drawing.Point(0, 0);
             this.ContentControllerPages.Multiline = true;
             this.ContentControllerPages.Name = "ContentControllerPages";
-            this.ContentControllerPages.Page = this.DeletePage;
-            this.ContentControllerPages.PageIndex = 2;
-            this.ContentControllerPages.PageName = "DeletePage";
-            this.ContentControllerPages.PageTitle = "DeletePage";
+            this.ContentControllerPages.Page = this.InfoPage;
+            this.ContentControllerPages.PageIndex = 5;
+            this.ContentControllerPages.PageName = "InfoPage";
+            this.ContentControllerPages.PageTitle = "InfoPage";
             this.ContentControllerPages.SelectedIndex = 0;
             this.ContentControllerPages.Size = new System.Drawing.Size(578, 579);
             this.ContentControllerPages.TabIndex = 2;
@@ -1531,6 +1531,25 @@
             this.bunifuToolTip1.SetToolTipIcon(this.panel2, null);
             this.bunifuToolTip1.SetToolTipTitle(this.panel2, "");
             // 
+            // SelctedFileTextBox
+            // 
+            this.SelctedFileTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.SelctedFileTextBox.BackColor = System.Drawing.Color.White;
+            this.SelctedFileTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.SelctedFileTextBox.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.SelctedFileTextBox.ForeColor = System.Drawing.Color.Red;
+            this.SelctedFileTextBox.Location = new System.Drawing.Point(270, 38);
+            this.SelctedFileTextBox.Multiline = true;
+            this.SelctedFileTextBox.Name = "SelctedFileTextBox";
+            this.SelctedFileTextBox.Size = new System.Drawing.Size(480, 58);
+            this.SelctedFileTextBox.TabIndex = 19;
+            this.SelctedFileTextBox.Text = "SelectedFile";
+            this.bunifuToolTip1.SetToolTip(this.SelctedFileTextBox, "");
+            this.bunifuToolTip1.SetToolTipIcon(this.SelctedFileTextBox, null);
+            this.bunifuToolTip1.SetToolTipTitle(this.SelctedFileTextBox, "");
+            this.SelctedFileTextBox.Visible = false;
+            // 
             // BrowseButton
             // 
             this.BrowseButton.AllowToggling = false;
@@ -1966,10 +1985,10 @@
             this.subInfoPages.Location = new System.Drawing.Point(0, 244);
             this.subInfoPages.Multiline = true;
             this.subInfoPages.Name = "subInfoPages";
-            this.subInfoPages.Page = this.BugReportPage;
-            this.subInfoPages.PageIndex = 1;
-            this.subInfoPages.PageName = "BugReportPage";
-            this.subInfoPages.PageTitle = "BugReportPage";
+            this.subInfoPages.Page = this.ContactPage;
+            this.subInfoPages.PageIndex = 0;
+            this.subInfoPages.PageName = "ContactPage";
+            this.subInfoPages.PageTitle = "ContactPage";
             this.subInfoPages.SelectedIndex = 0;
             this.subInfoPages.Size = new System.Drawing.Size(570, 309);
             this.subInfoPages.TabIndex = 1;
@@ -2105,7 +2124,7 @@
             this.ContentTextBox.Location = new System.Drawing.Point(131, 141);
             this.ContentTextBox.Multiline = true;
             this.ContentTextBox.Name = "ContentTextBox";
-            this.ContentTextBox.Size = new System.Drawing.Size(408, 131);
+            this.ContentTextBox.Size = new System.Drawing.Size(435, 131);
             this.ContentTextBox.TabIndex = 15;
             this.bunifuToolTip1.SetToolTip(this.ContentTextBox, "");
             this.bunifuToolTip1.SetToolTipIcon(this.ContentTextBox, null);
@@ -2655,25 +2674,6 @@
             this.bunifuToolTip1.TitleForeColor = System.Drawing.Color.Black;
             this.bunifuToolTip1.ToolTipPosition = new System.Drawing.Point(0, 0);
             this.bunifuToolTip1.ToolTipTitle = null;
-            // 
-            // SelctedFileTextBox
-            // 
-            this.SelctedFileTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.SelctedFileTextBox.BackColor = System.Drawing.Color.White;
-            this.SelctedFileTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.SelctedFileTextBox.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.SelctedFileTextBox.ForeColor = System.Drawing.Color.Red;
-            this.SelctedFileTextBox.Location = new System.Drawing.Point(270, 38);
-            this.SelctedFileTextBox.Multiline = true;
-            this.SelctedFileTextBox.Name = "SelctedFileTextBox";
-            this.SelctedFileTextBox.Size = new System.Drawing.Size(480, 58);
-            this.SelctedFileTextBox.TabIndex = 19;
-            this.SelctedFileTextBox.Text = "SelectedFile";
-            this.bunifuToolTip1.SetToolTip(this.SelctedFileTextBox, "");
-            this.bunifuToolTip1.SetToolTipIcon(this.SelctedFileTextBox, null);
-            this.bunifuToolTip1.SetToolTipTitle(this.SelctedFileTextBox, "");
-            this.SelctedFileTextBox.Visible = false;
             // 
             // subMenu
             // 
