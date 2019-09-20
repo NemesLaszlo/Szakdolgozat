@@ -168,6 +168,7 @@ namespace UI_TFS_ServerOperation
                     ServerCollectionInfoLabel.Refresh();
                     ServerTeamProjectInfoLabel.Refresh();
                     UploadActiveButton.Refresh();
+                    FileRichTextBox.Clear();
                 }
                 catch(Exception)
                 {
