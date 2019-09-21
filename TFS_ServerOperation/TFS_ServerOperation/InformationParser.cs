@@ -104,14 +104,21 @@ namespace TFS_ServerOperation
         public string GetFileContent(string path)
         {
             string result = string.Empty;
-            using (var fs = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
-            using (var sr = new StreamReader(fs, Encoding.Default))
+            try
             {
-                result = sr.ReadToEnd();
-                sr.Close();
-                fs.Close();
+                using (var fs = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                using (var sr = new StreamReader(fs, Encoding.Default))
+                {
+                    result = sr.ReadToEnd();
+                    sr.Close();
+                    fs.Close();
+                }
+                return result;
             }
-            return result;
+            catch (Exception)
+            {
+                return result;
+            }
         }
 
         /// <summary>

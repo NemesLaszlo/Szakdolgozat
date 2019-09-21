@@ -1,10 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using TFS_ServerOperation;
 
 namespace TFS_ServerOperation.Tests
 {
@@ -57,21 +52,43 @@ namespace TFS_ServerOperation.Tests
         [TestMethod]
         public void Test_SendMail_Right()
         {
-            Logger log = new Logger("path1.log");
+            // Arrange
+            Logger log = new Logger("Mailsend_path1.log");
             FakeMailSender sender = new FakeMailSender("MailSmtpHost", "1234", log);
 
+            // Act
             bool result = sender.SendEmail("test@test.com","testing","testbody",null); // if every value are right, so it can send a mail.
+
+            // Assert
             Assert.AreEqual(true, result);
         }
 
         [TestMethod]
         public void Test_SendMail_Smtp_problem()
         {
-            Logger log = new Logger("path2.log");
+            // Arrange
+            Logger log = new Logger("Mailsend_path2.log");
             FakeMailSender sender = new FakeMailSender("MailSmtpHost", "onetwo", log); // smtp is the key, if we can init it, we can send a mail.
 
+            // Act
             bool result = sender.SendEmail("test@test.com", "testing", "testbody", null); 
+
+            // Assert
             Assert.AreEqual(false, result);
+        }
+
+        [TestMethod]
+        public void Test_SendMail_Attachment()
+        {
+            // Arrange
+            Logger log = new Logger("Mailsend_path3.log");
+            FakeMailSender sender = new FakeMailSender("MailSmtpHost", "1234", log);
+
+            // Act
+            bool result = sender.SendEmail("test@test.com", "testing", "testbody", "File.csv");
+
+            // Assert
+            Assert.AreEqual(true, result);
         }
     }
 }
