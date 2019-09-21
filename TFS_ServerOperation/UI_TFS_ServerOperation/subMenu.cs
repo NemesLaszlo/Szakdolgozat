@@ -438,45 +438,11 @@ namespace UI_TFS_ServerOperation
         // File section start -------------------------------------------------
 
         /// <summary>
-        /// Get the current Month file and give the path.
-        /// </summary>
-        /// <returns>Actual Month path as string.</returns>
-        private string GetCurrentMontFileForOpen(string currentTeamProject)
-        {
-            string currentMonth = string.Empty;
-            DateTime today = DateTime.Today;
-            string upToDateMonth = today.Month.ToString();
-
-            string[] files = Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory, "*.csv", SearchOption.AllDirectories);
-            foreach (var file in files)
-            {
-                if (file.Contains(upToDateMonth) && file.Contains(currentTeamProject))
-                {
-                    currentMonth = file;
-                }
-            }
-            return currentMonth;
-        }
-
-        private string GetFileContent(string path)
-        {
-            string result = string.Empty;
-            using (var fs = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
-            using (var sr = new StreamReader(fs, Encoding.Default))
-            {
-                result = sr.ReadToEnd();
-                sr.Close();
-                fs.Close();
-            }
-            return result;
-        }
-
-        /// <summary>
         /// Click event, Load the current "Month" created upload file.
         /// </summary>
         private void subOpenCurrentFile_Click(object sender, EventArgs e)
         {
-            string currentFile = GetCurrentMontFileForOpen(informationParser.CurrentTeamProjectName);
+            string currentFile = informationParser.GetUpToDateFileCSV(informationParser.CurrentTeamProjectName);
             if (String.IsNullOrEmpty(currentFile))
             {
                 Alert.AlertCreation("There is no Actual Monnt File!", AlertType.error);
@@ -485,7 +451,7 @@ namespace UI_TFS_ServerOperation
             else
             {
                 Alert.AlertCreation("Actual Mont File Loaded!", AlertType.success);
-                FileRichTextBox.Text = GetFileContent(currentFile);
+                FileRichTextBox.Text = informationParser.GetFileContent(currentFile);
             }
         }
 
@@ -502,7 +468,7 @@ namespace UI_TFS_ServerOperation
                 if ((fileStream = openFileDialog.OpenFile()) != null)
                 {
                     string strFileName = openFileDialog.FileName;
-                    FileRichTextBox.Text = GetFileContent(strFileName);
+                    FileRichTextBox.Text = informationParser.GetFileContent(strFileName);
                     Alert.AlertCreation("Load Success!", AlertType.success);
                 }
             }
