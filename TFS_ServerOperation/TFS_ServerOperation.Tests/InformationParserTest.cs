@@ -75,7 +75,6 @@ namespace TFS_ServerOperation.Tests
 
             // Assert
             Assert.AreEqual("http://localhost:8080/tfs/SzakdolgozatCollection",informationParser.CurrentTfsCollectionName);
-            Thread.Sleep(3000);
         }
 
         [TestMethod]

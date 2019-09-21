@@ -39,7 +39,7 @@ namespace TFS_ServerOperation.Tests
             bool result = serverOperation.DeleteFromFile(path);
 
             // Assert
-            Assert.AreEqual(false, result);
+            Assert.AreEqual(true, result);
         }
 
         [TestMethod]

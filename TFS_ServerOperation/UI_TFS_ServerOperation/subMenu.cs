@@ -203,7 +203,7 @@ namespace UI_TFS_ServerOperation
             bool result = false;
             if (UploadActiveButton.Text.Equals("Active"))
             {
-                result = informationParser.Upload_Process(true, serverOperator, mailSender, log);
+                result = informationParser.Upload_Process(true, serverOperator,log);
                 FileOperations writer = new FileOperations(log);
                 writer.WriteInCSV(informationParser.CurrentTeamProjectName, serverOperator.datasForFileModification);
             }

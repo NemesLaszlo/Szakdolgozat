@@ -135,7 +135,7 @@ namespace TFS_ServerOperation
                     var ServerOperation = Init_ServerOperation(log);
                     var MailSender = Init_MailSender(log);
 
-                    Upload_Process(false, ServerOperation, MailSender, log);
+                    Upload_Process(false, ServerOperation,log);
                     FileOperations writer = new FileOperations(log);
                     writer.WriteInCSV(CurrentTeamProjectName, ServerOperation.datasForFileModification);
                     MailSender.SendEmail(ToMailAddress, "Scheduled Month Uploaded File Period", "You can find the Result file in the Attachments.", GetUpToDateFileCSV(CurrentTeamProjectName));
@@ -157,9 +157,8 @@ namespace TFS_ServerOperation
         /// Upload the configuration data to the server. Return True if its done with no problem.
         /// </summary>
         /// <param name="ServerOperation">ServerOperationManager object</param>
-        /// <param name="MailSender">MailSender object</param>
         /// <param name="log">Custom Logger object</param>
-        public bool Upload_Process(bool isUIRun,ServerOperationManager ServerOperation, MailSender MailSender, Logger log)
+        public bool Upload_Process(bool isUIRun,ServerOperationManager ServerOperation, Logger log)
         {
             try
             {
