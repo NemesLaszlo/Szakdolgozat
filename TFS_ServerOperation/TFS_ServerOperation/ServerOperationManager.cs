@@ -130,7 +130,6 @@ namespace TFS_ServerOperation
                         log.Info("Last Month Work Items does not exist on the server!");
                         log.Flush();
                     }
-
                 }
             }
         }
