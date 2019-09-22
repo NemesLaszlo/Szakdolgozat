@@ -272,7 +272,7 @@ namespace UI_TFS_ServerOperation
                     }
                     else
                     {
-                        Alert.AlertCreation("WokrItem does not exist!", AlertType.error);
+                        Alert.AlertCreation("Only One WokrItem!", AlertType.error);
                         OneElemDeleteBar.Value = 0;
                         return;
                     }
@@ -303,6 +303,11 @@ namespace UI_TFS_ServerOperation
                 for (int i = 0; i < str.Length; ++i)
                 {
                     deleteDatas.Add(str[i]);
+                }
+                if (deleteDatas.Count < 2)
+                {
+                    Alert.AlertCreation("Two or More WokrItem!", AlertType.error);
+                    return;
                 }
                 CustomMessageBox messageBox = new CustomMessageBox("Are you sure that you would like to Delete form the Server by Ids?");
                 messageBox.ShowDialog();
