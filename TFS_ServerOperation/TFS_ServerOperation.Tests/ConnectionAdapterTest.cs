@@ -29,7 +29,7 @@ namespace TFS_ServerOperation.Tests
         }
 
         [TestMethod]
-        [ExpectedException(typeof(NullReferenceException))]
+        [ExpectedException(typeof(DeniedOrNotExistException))]
         public void Test_Project_Connection_Fail_WrongParameter()
         {
             //Arrange , Act

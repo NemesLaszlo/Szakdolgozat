@@ -34,8 +34,6 @@ namespace TFS_ServerOperation
         {
             if (!(TfsConnection == null || TeamProjectName == null))
             {
-                try
-                {
                     connUri = new Uri(TfsConnection);
                     tpc = new TfsTeamProjectCollection(connUri);
                     WorkItemStore = tpc.GetService<WorkItemStore>();
@@ -43,12 +41,6 @@ namespace TFS_ServerOperation
                     string message = string.Format("Connection was successful to {0} and the ProjectName is {1}", TfsConnection, TeamProjectName);
                     log.Info(message);
                     log.Flush();
-                }
-                catch (Exception)
-                {
-                    log.Error("Connection Fail, Wrong Parameter.");
-                    log.Flush();
-                }
             }
             else
             {

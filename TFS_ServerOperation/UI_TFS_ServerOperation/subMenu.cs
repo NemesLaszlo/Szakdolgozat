@@ -169,6 +169,7 @@ namespace UI_TFS_ServerOperation
                     ServerTeamProjectInfoLabel.Refresh();
                     UploadActiveButton.Refresh();
                     FileRichTextBox.Clear();
+                    LogRichTextBox.Clear();
                 }
                 catch(Exception)
                 {
@@ -523,7 +524,7 @@ namespace UI_TFS_ServerOperation
                 {
                     string strFileName = openFileDialog.FileName;
                     string fileText = System.IO.File.ReadAllText(strFileName);
-                    FileRichTextBox.Text = fileText;
+                    LogRichTextBox.Text = fileText;
                     Alert.AlertCreation("Load Success!", AlertType.success);
                 }
             }
