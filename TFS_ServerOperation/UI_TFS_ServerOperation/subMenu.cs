@@ -276,6 +276,7 @@ namespace UI_TFS_ServerOperation
                         {
                             Alert.AlertCreation("Only One WokrItem!", AlertType.error);
                             OneElemDeleteBar.Value = 0;
+                            OneDeleteTextBox.Clear();
                             return;
                         }
                         OneElemDeleteBar.Value = 0;
@@ -316,6 +317,7 @@ namespace UI_TFS_ServerOperation
                 if (deleteDatas.Count < 2)
                 {
                     Alert.AlertCreation("Two or More WokrItem!", AlertType.error);
+                    MoreDeleteTextBox.Clear();
                     return;
                 }
                 CustomMessageBox messageBox = new CustomMessageBox("Are you sure that you would like to Delete form the Server by Ids?");
