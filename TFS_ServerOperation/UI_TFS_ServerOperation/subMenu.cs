@@ -259,25 +259,34 @@ namespace UI_TFS_ServerOperation
                 messageBox.ShowDialog();
                 if (messageBox.returnValue == true)
                 {
-                    Alert.AlertCreation("Yes", AlertType.info);
-                    bool result = informationParser.DeleteByIds_Process(deleteDatas, serverOperator, mailSender);
-                    if (result)
+                    if (UploadActiveButton.Text.Equals("Active"))
                     {
-                        for (int i = 0; i <= 100; ++i)
+                        Alert.AlertCreation("Yes", AlertType.info);
+                        bool result = informationParser.DeleteByIds_Process(deleteDatas, serverOperator, mailSender);
+                        if (result)
                         {
-                            OneElemDeleteBar.Value = i;
-                            OneElemDeleteBar.Update();
+                            for (int i = 0; i <= 100; ++i)
+                            {
+                                OneElemDeleteBar.Value = i;
+                                OneElemDeleteBar.Update();
+                            }
+                            Alert.AlertCreation("Delete Success by Id", AlertType.success);
                         }
-                        Alert.AlertCreation("Delete Success by Id", AlertType.success);
+                        else
+                        {
+                            Alert.AlertCreation("Only One WokrItem!", AlertType.error);
+                            OneElemDeleteBar.Value = 0;
+                            return;
+                        }
+                        OneElemDeleteBar.Value = 0;
+                        OneDeleteTextBox.Clear();
                     }
                     else
                     {
-                        Alert.AlertCreation("Only One WokrItem!", AlertType.error);
-                        OneElemDeleteBar.Value = 0;
+                        Alert.AlertCreation("Inactive Server Connection", AlertType.error);
+                        OneDeleteTextBox.Clear();
                         return;
-                    }
-                    OneElemDeleteBar.Value = 0;
-                    OneDeleteTextBox.Clear();
+                    }                
                 }
                 else
                 {
@@ -313,25 +322,34 @@ namespace UI_TFS_ServerOperation
                 messageBox.ShowDialog();
                 if (messageBox.returnValue == true)
                 {
-                    Alert.AlertCreation("Yes", AlertType.info);
-                    bool result = informationParser.DeleteByIds_Process(deleteDatas, serverOperator, mailSender);
-                    if (result)
+                    if (UploadActiveButton.Text.Equals("Active"))
                     {
-                        for (int i = 0; i <= 100; ++i)
+                        Alert.AlertCreation("Yes", AlertType.info);
+                        bool result = informationParser.DeleteByIds_Process(deleteDatas, serverOperator, mailSender);
+                        if (result)
                         {
-                            MoreElemDeleteBar.Value = i;
-                            MoreElemDeleteBar.Update();
+                            for (int i = 0; i <= 100; ++i)
+                            {
+                                MoreElemDeleteBar.Value = i;
+                                MoreElemDeleteBar.Update();
+                            }
+                            Alert.AlertCreation("Delete Success by Ids", AlertType.success);
                         }
-                        Alert.AlertCreation("Delete Success by Ids", AlertType.success);
+                        else
+                        {
+                            Alert.AlertCreation("WokrItems does not exist!", AlertType.error);
+                            MoreElemDeleteBar.Value = 0;
+                            return;
+                        }
+                        MoreElemDeleteBar.Value = 0;
+                        MoreDeleteTextBox.Clear();
                     }
                     else
                     {
-                        Alert.AlertCreation("WokrItems does not exist!", AlertType.error);
-                        MoreElemDeleteBar.Value = 0;
+                        Alert.AlertCreation("Inactive Server Connection", AlertType.error);
+                        MoreDeleteTextBox.Clear();
                         return;
-                    }
-                    MoreElemDeleteBar.Value = 0;
-                    MoreDeleteTextBox.Clear();
+                    }                
                 }
                 else
                 {
@@ -382,25 +400,34 @@ namespace UI_TFS_ServerOperation
                 messageBox.ShowDialog();
                 if (messageBox.returnValue == true)
                 {
-                    Alert.AlertCreation("Yes", AlertType.info);
-                    bool result = informationParser.DeleteFromFile_Process(deleteFile, serverOperator, mailSender);
-                    if (result)
+                    if (UploadActiveButton.Text.Equals("Active"))
                     {
-                        for (int i = 0; i <= 100; ++i)
+                        Alert.AlertCreation("Yes", AlertType.info);
+                        bool result = informationParser.DeleteFromFile_Process(deleteFile, serverOperator, mailSender);
+                        if (result)
                         {
-                            FileDeleteProgressBar.Value = i;
-                            FileDeleteProgressBar.Update();
+                            for (int i = 0; i <= 100; ++i)
+                            {
+                                FileDeleteProgressBar.Value = i;
+                                FileDeleteProgressBar.Update();
+                            }
+                            Alert.AlertCreation("Delete From File Success!", AlertType.success);
                         }
-                        Alert.AlertCreation("Delete From File Success!", AlertType.success);
+                        else
+                        {
+                            Alert.AlertCreation("Delete From File Failed!", AlertType.error);
+                            FileDeleteProgressBar.Value = 0;
+                            return;
+                        }
+                        FileDeleteProgressBar.Value = 0;
+                        SelctedFileTextBox.Visible = false;
                     }
                     else
                     {
-                        Alert.AlertCreation("Delete From File Failed!", AlertType.error);
-                        FileDeleteProgressBar.Value = 0;
+                        Alert.AlertCreation("Inactive Server Connection", AlertType.error);
+                        SelctedFileTextBox.Clear();
                         return;
                     }
-                    FileDeleteProgressBar.Value = 0;
-                    SelctedFileTextBox.Visible = false;
                 }
                 else
                 {
@@ -423,15 +450,23 @@ namespace UI_TFS_ServerOperation
             messageBox.ShowDialog();
             if (messageBox.returnValue == true)
             {
-                Alert.AlertCreation("Yes", AlertType.info);
-                informationParser.ServerContentDelete_Process(serverOperator, mailSender);
-                for (int i = 0; i <= 100; ++i)
+                if (UploadActiveButton.Text.Equals("Active"))
                 {
-                    AllServerDeleteProgressBar.Value = i;
-                    AllServerDeleteProgressBar.Update();
+                    Alert.AlertCreation("Yes", AlertType.info);
+                    informationParser.ServerContentDelete_Process(serverOperator, mailSender);
+                    for (int i = 0; i <= 100; ++i)
+                    {
+                        AllServerDeleteProgressBar.Value = i;
+                        AllServerDeleteProgressBar.Update();
+                    }
+                    Alert.AlertCreation("Delete Server Content Success!", AlertType.success);
+                    AllServerDeleteProgressBar.Value = 0;
                 }
-                Alert.AlertCreation("Delete Server Content Success!", AlertType.success);
-                AllServerDeleteProgressBar.Value = 0;
+                else
+                {
+                    Alert.AlertCreation("Inactive Server Connection", AlertType.error);
+                    return;
+                }
             }
             else
             {
