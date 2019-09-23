@@ -562,13 +562,21 @@ namespace UI_TFS_ServerOperation
 
             if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                if ((fileStream = openFileDialog.OpenFile()) != null)
+                try
                 {
-                    string strFileName = openFileDialog.FileName;
-                    string fileText = System.IO.File.ReadAllText(strFileName);
-                    LogRichTextBox.Text = fileText;
-                    Alert.AlertCreation("Load Success!", AlertType.success);
+                    if ((fileStream = openFileDialog.OpenFile()) != null)
+                    {
+                        string strFileName = openFileDialog.FileName;
+                        string fileText = informationParser.GetFileContent(strFileName);
+                        LogRichTextBox.Text = fileText;
+                        Alert.AlertCreation("Load Success!", AlertType.success);
+                    }
                 }
+                catch (Exception)
+                {
+                    Alert.AlertCreation("This is the current Log!", AlertType.warning);
+                }
+                
             }
         }
 
