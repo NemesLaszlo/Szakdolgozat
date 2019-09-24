@@ -1,7 +1,7 @@
 ﻿
 namespace TFS_ServerOperation
 {
-    interface IConnection
+    public interface IConnection
     {
         void Connection(string TfsConnection, string TeamProjectName);
     }

@@ -1,0 +1,405 @@
+UI_Opportunity_BaseMenuSide_BaseFormTest
+ Nemes László 
+ Tags: Non-Functional part as well, UI_Manual Test
+
+    Open Visual Studio @Version
+    Start the UI_TFS_ServerOeration Solution  - Project start and the UI appears in the center of the screen
+    Click to the little "Menu" icon to close and open the menu section. - In Closed mode you can see only the menu points icon, and if it is opened you can see the text next to the icons of the menu points
+    Using the little "Menu" icon the Application's logo has a little animation.  - The logo will appear animated in normal size and small in size when closed
+    Click to the "Settings" menu point - On the dashboard you can see the Sub Menu points (Open current config, Import config, Reset, Save)
+    Click to the "Upload" menu point - On the dashboard you can see the Sub Menu point (Upload) and the server informations from the config (Active,Inactive) plus the CircleProgressBar.
+    Click to the "Delete" menu point  - You have to see a warning alert info box in the right up corner of the screen, and  on the dashboard you have to see the following Sub Menu points (Delete by Ids, Delete From File, Complete Delete)
+    Click to the "File" menu point  - You have to see two Sub Menu points on the dashboard (Open Current File, Open File Browse)
+    Click to the "Log" menu point - You have to see the following three menu points (Open Current Log, Open Log Browse, Open Log External)
+    Click to the "Info" menu point -  You have to see two Sub Menu Poits (Contact and Bug Report)
+    You are able to drag the application Form and you can change the size as well, and everything is looks fine
+
+UI_Settings Menu Point Test
+ Nemes László
+ Tags: Functional Test, Non-Functional part as well, UI_Manual Test
+
+    Open Visual Studio @Version 
+    Start the UI_TFS_ServerOperation project
+    Click to the "Settings" menu point  - The default "Dashboard" setup is the same with the "Settings" menu point's Sub Menu list
+    Click to the first Sub Menu "Open Current Config"  - Next to the "Dashboard" on the working area the actual config section will open (.config xml form)
+    You can edit the config of the server operation  - You are able to write into the config and delete from the config
+    Click to the second Sub Menu "Import Config"  - File Dialog Section appears
+    Import a other config to the application - Select a file (.config) in the File Dialog Section and Click to "Open"
+    On the Working area the Imported file appears, and you can edit is as well like in the  5th test point
+    Write a random sentence into the config  - You can write into the config editor
+    Click to the "Reset" Button - The file will be back in the pre-edit state and in the right corner we will get an info message
+    Change the server "URL" to the Test Server URL (TFS server) and change the "Project" to the test project which is on the test server. - You can change the parameters. 
+    Click to the "Save" button - In the right corner you will get a Success info Alert, which means everything is fine and your config is saved and ready
+    After the Save click you get a new Log file with this new settings  - You can find this new log file on the same path, which is in the config file (logging settings section)
+
+UI_Upload Menu Point Test Successful Upload
+ Nemes László
+ Tags: Functional Test, Non-Functional part as well, UI_Manual Test
+
+    Open Visual Studio @Version
+    Start the UI_TFS_ServerOperation project
+    Click to the "Upload" menu point - The default "Dashboard" setup will change to the "Upload" section Sub Menu section, Where you see only one button ("Start")
+    Click back to the "Settings" menu point and "Open current Config" - The Sub Menu Section and the working area will change to the Settings part, and you can edit the configuration
+    Edit the configuration, to the Test TFS Server and Team Project, change the log path if you want to, You can change the PBI part as well if you want to - You are able to edit the config and change this parameters
+    Save the modification  - Success Save alert notification in the right up corner.
+    Click back to the "Upload" menu point - On the working area you can check your configuration result, Server Status - "Active" and the Server and TeamProject informations are ready and the same what you have set it up in the Settings section
+    Click to the "Start" button - Upload start. A little time and patient the circle progress bar earn the 100 %  run as well and get a Success notification as well
+    Check the Log file - Everything was fine and the upload was successful
+    Check the Server - On the Server -> Work -> Backlog -> Board, you have to see the result of the upload period
+
+UI_Upload Menu Point Test Inactive Upload
+ Nemes László
+ Tags: Functional Test, Non-Functional part as well, UI_Manual Test
+
+    Open Visual Studio @Version  
+    Start the UI_TFS_ServerOperation project 
+    Click to the "Upload" menu point  - The default "Dashboard" setup will change to the "Upload" section Sub Menu section, Where you see only one button ("Start") 
+    Click back to the "Settings" menu point and "Open current Config"  - The Sub Menu Section and the working area will change to the Settings part, and you can edit the configuration
+    Edit the Configuration with a wrong TFS Test Server URL or wrong TeamProjectName value  - You are able to edit the config and change this parameters
+    Save the modification -  Success Save alert notification in the right up corner.
+    Go Back to the "Upload" section - On the working area you can check the configuration results, the Server Status - "Inactive" and any other informations value is "Fail"
+    Click to the "Start" - Error notification appears - " Server Connection Problem"
+    Check the Log - Server Connection Fail - Error log message
+
+UI_Upload Menu Point Test Inactive Upload FixingUseCaseTest
+ Nemes László
+ Tags: Functional Test, Non-Functional part as well, UI_Manual Test
+
+    Run this test after the "UI_Upload Menu Point Test Inactive Upload"  - Next Part of this test
+    Open Visual Studio @Version  
+    Start the UI_TFS_ServerOperation project  
+    After the failure of uploading, go back to the "Settings" menu and click to the "Open Current Config" - The "Settings" Sub Menu points will appear and on the working area you see this config with the wrong parameters
+    Click to "Reset" - The config change back to the "original" before the wrong modification
+    Click to "Save" - Save Success
+    Go back to the Upload section - "Dashboard" sub menus change to the "Upload" section menu points and the "Server Status" - is "Active" and every other information is good as well
+    Click to "Start" - Upload Success, Circle bar earn the 100% and Success notification appears
+    Check the log - Upload success information parts
+    Check the Server - Upload result is there and right 
+
+UI_Delete Menu Point Test Delete By Ids One Element Delete
+ Nemes László
+ Tags: Functional Test, Non-Functional part as well, UI_Manual Test
+
+    Open Visual Studio @Version
+    Start the UI_TFS_ServerOperation project 
+    Select the "Delete" Menu possibility - You are in the "Delete" Menu Section and the default "Dashboard" and working area section is the Id Delete part
+    Write a Id to the "Delete WoktItem id: " textbox (Test Task Id, what task you can delete) - You are able to write into the textbox
+    Move your cursor to the "Delete" button - Tool Tip Message appears with information about delete
+    Move your cursor away from the button - Tool Tip Message disappear
+    Click to the "Delete" button of the "Delete WoktItem Id: " - Pop up message box appears
+    Click "No" on the Message box - Message box disappear and nothing happens in the delete working area
+    Click again to the "Delete" button of the "Delete WokrItem Id: " - Pop up message box appears
+    Click "Yes", you would like to delete this right id's workItem from the server - Progress Circle Bar ran to 100% and Success notification appears
+    Check the Log - Everything went well with the deletion
+    Check the Test Server - Everything went well with the deletion
+
+UI_Delete Menu Point Test Delete By Ids One WorkItem does not exist
+ Nemes László
+ Tags: Functional Test, Non-Functional part as well, UI_Manual Test
+
+    Open Visual Studio @Version
+    Start the UI_TFS_ServerOperation project 
+    Select the "Delete" Menu possibility - You are in the "Delete" Menu Section and the default "Dashboard" and working area section is the Id Delete part 
+    Write a Id to the "Delete WoktItem id: " textbox (Test Task Id, does not exist)  - You are able to write into the textbox
+    Move your cursor to the "Delete" button - Tool Tip Message appears with information about delete
+    Move your cursor away from the button  - Tool Tip Message disappear
+    Click to the "Delete" button of the "Delete WoktItem Id: " - Pop up message box appears 
+    Click "No" on the Message box - Message box disappear and nothing happens in the delete working area 
+    Click again to the "Delete" button of the "Delete WokrItem Id: " - Pop up message box appears
+    Click "Yes", you would like to delete this right id's workItem from the server - Progress Circle Bar ran to 100% and Success notification appears, but create another log file
+    Check the Extra Log - Process ran but there is no WorkItem with that ID on the Server
+
+UI_Delete Menu Point Test Delete By Ids Alert Tests
+ Nemes László
+ Tags: Functional Test, Non-Functional part as well, UI_Manual Test
+
+    Open Visual Studio @Version
+    Start the UI_TFS_ServerOperation project
+    Select the "Delete" menu possibility - You are in the "Delete" Menu Section and the default "Dashboard" and working area section is the Id Delete part 
+    Do Not Write any Id to the "Delete WorkItem id: " textbox - Textbox is empty 
+    Move your cursor to the "Delete" button - Tool Tip Message appears with information about delete
+    Move your cursor away from the button - Tool Tip Message disappear
+    Click to the "Delete" button of the "Delete WoktItem Id: " - Error Notification, because of the textbox is empty
+    Write 2 or more ids to the textbox - You are able to write the values
+    Click to the "Delete" button of the "Delete WoktItem Id: - Messagebox appears
+    Click "Yes" - Messagebox disappear
+    Error Notification, because there are more then one value in the textbox (One Item delete section) 
+    Go to the "Settings" menu and "Open Current Config" - Settings menu Sub Menu possibilities appears
+    Change the Server settings part values something wrong value - You are able to change the settings on the working section
+    Save the configuration with the wrong values - Save success
+    Go back to the "Delete" section - Delete sub menu possibilities appears and on the working section the Id delete section is the default
+    Do Not Write any Id to the "Delete WorkItem id: " textbox - Textbox is empty
+    Click to the "Delete" button of the "Delete WoktItem Id: " - Error Notification, because of the textbox is empty
+    Write a Id to the "Delete WoktItem id:  (Server is Inactive) - You can write value to the textbox
+    Click to the "Delete" button of the "Delete WoktItem Id: " - Messagebox appears
+    Click "Yes" - Messagebox disappear, start delete, but server is inactive
+    Error Notification "Inactive Server Connection"
+    Check the Log - In the Log : Server Connection Fail - Error
+
+UI_Delete Menu Point Test Delete By Ids More Than One Element Delete
+ Nemes László
+ Tags: Functional Test, Non-Functional part as well, UI_Manual Test
+
+    Open Visual Studio @Version 
+    Start the UI_TFS_ServerOperation project
+    Select the "Delete" Menu possibility - You are in the "Delete" Menu Section and the default "Dashboard" and working area section is the Id Delete part
+    Write Ids (Separated with spaces) to the "Delete WoktItem ids: " textbox (Test Tasks Ids, what task you can delete) - You are able to write more value into the textbox
+    Move your cursor to the "Delete WorkItems" button - Tool Tip Message appears with information about delete
+    Move your cursor away from the button - Tool Tip Message disappear
+    Click to the "Delete WorkItems" button of the "Delete WoktItem Ids: " - Pop up message box appears
+    Click "No" on the Message box - Message box disappear and nothing happens in the delete working area
+    Click again to the "Delete WorkItems" button of the "Delete WokrItem Ids: " - Pop up message box appears
+    Click "Yes", you would like to delete this right WorkItems ids from the server - Progress Circle Bar ran to 100% and Success notification appears
+    Check the Log - Everything went well with the deletion
+    Check the Test Server - Everything went well with the deletion
+
+UI_Delete Menu Point Test Delete By Ids More Than One WorkItem does not exist
+ Nemes László
+ Tags: Functional Test, Non-Functional part as well, UI_Manual Test
+
+    Open Visual Studio @Version
+    Start the UI_TFS_ServerOperation project
+    Select the "Delete" Menu possibility - You are in the "Delete" Menu Section and the default "Dashboard" and working area section is the Id Delete part 
+    Write Ids (Separated with spaces) to the "Delete WoktItem ids: " textbox (Test Task Ids, does not exist) - You are able to write into the textbox
+    Move your cursor to the "Delete WorkItems" button - Tool Tip Message appears with information about delete
+    Move your cursor away from the button - Tool Tip Message disappear
+    Click to the "Delete WorkItems" button of the "Delete WoktItem Ids: " - Pop up message box appears
+    Click "No" on the Message box - Message box disappear and nothing happens in the delete working area  
+    Click again to the "Delete WorkItems" button of the "Delete WokrItem Ids: " - Pop up message box appears
+    Click "Yes", you would like to delete this workItems by ids from the server - Progress Circle Bar ran to 100% and Success notification appears, but create another log file
+    Check the Extra Log - Process ran but there are no WorkItems with that IDs on the Server
+
+UI_Delete Menu Point Test Delete More Than One By Ids Alert Tests
+ Nemes László
+ Tags: Functional Test, Non-Functional part as well, UI_Manual Test
+
+    Open Visual Studio @Version   
+    Start the UI_TFS_ServerOperation project
+    Select the "Delete" menu possibility - You are in the "Delete" Menu Section and the default "Dashboard" and working area section is the Id Delete part  
+    Do Not Write Ids to the "Delete WorkItem ids: " textbox  - Textbox is empty 
+    Move your cursor to the "Delete" button - Tool Tip Message appears with information about delete
+    Move your cursor away from the button - Tool Tip Message disappear
+    Click to the "Delete WorkItems" button of the "Delete WoktItem Ids: " - Error Notification, because of the textbox is empty
+    Write only one id to the textbox - You are able to write the values
+    Click to the "Delete WokrItems" button of the "Delete WoktItem Ids: - Error Notification, because there is only one value in the textbox (More Than One Item delete section)
+    Go to the "Settings" menu and "Open Current Config" - Settings menu Sub Menu possibilities appears
+    Change the Server settings part values something wrong value - You are able to change the settings on the working section
+    Save the configuration with the wrong values - Save success
+    Go back to the "Delete" section - Delete sub menu possibilities appears and on the working section the Id delete section is the default
+    Do Not Write Ids to the "Delete WorkItem ids: " textbox - Textbox is empty  
+    Click to the "Delete WorkItems" button of the "Delete WoktItem Ids: - Error Notification, because of the textbox is empty
+    Write Ids to the "Delete WoktItem ids:  (Server is Inactive) - You can write values to the textbox 
+    Click to the "Delete WorkItems" button of the "Delete WoktItem Ids: " - Messagebox appears
+    Click "Yes" - Messagebox disappear, start delete, but server is inactive
+    Error Notification "Inactive Server Connection"  
+    Check the Log - In the Log : Server Connection Fail - Error 
+
+UI_Delete Menu Point Test Delete From File
+ Nemes László
+ Tags: Functional Test, Non-Functional part as well, UI_Manual Test
+
+    Open Visual Studio @Version
+    Start the UI_TFS_ServerOperation project
+    In the "Settings" change the configuration to cennect to the Test Server and Project - Save Success and server changed 
+    Select the "Delete" Menu possibility - You are in the "Delete" Menu Section and the default "Dashboard" and working area section is the Id Delete part
+    Select the "Delete From File" menu point - Delete From File working area appears on the working part of the application
+    Move your cursor to the "Browse" button - Tool Tip appears about this button
+    "Browse" a valid file - Selected file url and name appears in the information section of this panel
+    Move your cursor to the "Delete" button - Tool Tip appears about this button
+    Click to the "Delete" button - Message box appears
+    Click "No" and Click again to the "Delete" button - Message box disappear and nothing happens in the delete working area, and the message box appears again 
+    Click to "Yes" - Progress Circle Bar ran to 100% and Success notification appears
+    Check the Log - Everything went well with the deletion
+    Check the Test Server - Everything went well with the deletion
+
+UI_Delete Menu Point Test Delete From File WrongFile
+ Nemes László
+ Tags: Functional Test, Non-Functional part as well, UI_Manual Test
+
+    Open Visual Studio @Version
+    Start the UI_TFS_ServerOperation project
+    In the "Settings" change the configuration to cennect to the Test Server and Project - Save Success and server changed 
+    Select the "Delete" Menu possibility - You are in the "Delete" Menu Section and the default "Dashboard" and working area section is the Id Delete part
+    Select the "Delete From File" menu point - Delete From File working area appears on the working part of the application
+    Move your cursor to the "Browse" button - Tool Tip appears about this button
+    "Browse" a invalid file - Selected file url and name appears in the information section of this panel
+    Move your cursor to the "Delete" button - Tool Tip appears about this button
+    Click to the "Delete" button - Message box appears
+    Click "No" and Click again to the "Delete" button - Message box disappear and nothing happens in the delete working area, and the message box appears again
+    Click to "Yes" - Error message - "Delete From File Failed"
+    Check the log - Wrong File - log
+    Check the server - No deletion occurred
+
+UI_Delete Menu Point Test Delete From File Alerts Tests
+ Nemes László
+ Tags: Functional Test, Non-Functional part as well, UI_Manual Test
+
+    Open Visual Studio @Version
+    Start the UI_TFS_ServerOperation project 
+    In the "Settings" change the configuration to connect to the Test Server and Project - Save Success and server changed 
+    Select the "Delete" Menu possibility - You are in the "Delete" Menu Section and the default "Dashboard" and working area section is the Id Delete part
+    Select the "Delete From File" menu point - Delete From File working area appears on the working part of the application
+    Do Not "Browse" any file - "Selected file" information section is empty
+    Click to the "Delete" button - Message box appears
+    Click to "Yes" - Error message - no browsed file for the deletion - "Delete From File Failed" alert notification
+    Check the log - Error message - no browsed file for the deletion
+
+UI_Delete Menu Point Test Complete Delete WARNING
+ Nemes László
+ Tags: Functional Test, Non-Functional part as well, UI_Manual Test, Warning - Test Server
+
+    Open Visual Studio @Version  
+    Start the UI_TFS_ServerOperation project 
+    In the "Settings" change the configuration to connect to the Test Server and Project (You will delete the whole content, make sure this is a test server for this) - Save Success and server changed
+    Select the "Delete" Menu possibility - You are in the "Delete" Menu Section and the default "Dashboard" and working area section is the Id Delete part 
+    Select the "Complete Delete" menu point - Complete Delete working area appears on the working part of the application
+    Move your cursor to the "Delete ALL" button - Tool Tip appears about this button
+    Click to the "Delete ALL" button - Message box appears
+    Click "No" and Click again to the "Delete ALL" button - Message box disappear and nothing happens in the delete working area, and the message box appears again 
+    Click to "Yes"  (Make sure this is a right server for this test) - Progress Circle Bar ran to 100% and Success notification appears 
+    Check the Log - Everything went well with the deletion
+    Check the Server content Board - Everything went well with the deletion - Empty Server 
+
+UI_Delete Menu Point Test Complete Delete Inactive Server
+ Nemes László
+ Tags: Functional Test, Non-Functional part as well, UI_Manual Test, Warning - Test Server
+
+    Open Visual Studio @Version   
+    Start the UI_TFS_ServerOperation project  
+    In the "Settings" change the configuration to wrong values (wrong server or / and team project value) - Save Success, and Inactive status
+    Go to the "Upload" and Check the "Server status" is Invalid - Server status is Invalid 
+    Select the "Delete" Menu possibility - You are in the "Delete" Menu Section and the default "Dashboard" and working area section is the Id Delete part 
+    Select the "Complete Delete" menu point - Complete Delete working area appears on the working part of the application
+    Click to the "Delete ALL" button - Message box appears
+    Click to "Yes" - Error notification about "Inactive Server Connection"
+    Check the Log - Error Log message - "Server Connection Fail"
+
+UI_File Menu Point Test Open Current File Previous Month File Does Not Exist Open Error 
+ Nemes László
+ Tags: Functional Test, Non-Functional part as well, UI_Manual Test
+
+    Open Visual Studio @Version 
+    Start the UI_TFS_ServerOperation project  
+    Click to the "Settings" menu point - The default "Dashboard" setup is the same with the "Settings" menu point's Sub Menu list 
+    Click to the first Sub Menu "Open Current Config" - Next to the "Dashboard" on the working area the actual config section will open (.config xml form) 
+    Connect to the Test Server (test project as well) Modify the config and save it - Save Success 
+    Click to the "Upload" menu point and check the "Server Status" - "Server Status" is Active and every other information is correct as well
+    Click to the "File" menu point - Working section changed (Next to the Dashboard) (Empty, file modification section panel)
+    Make sure there is no previous month file for this project on this server (other project files on the same server is not important now) - There is no file 
+    Click to the "Open Current File" - Error Notification - "There is no Actual Month File"
+
+UI_File Menu Point Test Open Current File After a Success Upload
+ Nemes László
+ Tags: Functional Test, Non-Functional part as well, UI_Manual Test
+
+    Open Visual Studio @Version 
+    Start the UI_TFS_ServerOperation project  
+    Click to the "Settings" menu point - The default "Dashboard" setup is the same with the "Settings" menu point's Sub Menu list 
+    Click to the first Sub Menu "Open Current Config" - Next to the "Dashboard" on the working area the actual config section will open (.config xml form) 
+    Connect to the Test Server (test project as well) Modify the config and save it - Save Success  
+    Click to the "Upload" menu point and check the "Server Status" - "Server Status" is Active and every other information is correct as well
+    Click to "Start" and upload the PBIs - Upload Success notification, Circle Progress Bar reached the 100%
+    Check the Log - Everything is fine with the upload
+    Check the server - Everything is fine with the upload, you can see and click to the upload WorkItems
+    Memorize the Ids of this Work Items, what you upload, or take a note about this Ids
+    Click to the "File" - "File" Sub Menus appears with the file working section as well  
+    Click to the "Open Current File" - You can see the information about the upload Work Items
+    Check the Ids, and any other informations which are fine with your note or your memorized informations - Everything is correct
+
+UI_File Menu Point Test Open File Browse
+ Nemes László
+ Tags: Functional Test, Non-Functional part as well, UI_Manual Test
+
+    Open Visual Studio @Version
+    Start the UI_TFS_ServerOperation project
+    Click to the "Settings" menu point 
+    Click to the first Sub Menu "Open Current Config" - Next to the "Dashboard" on the working area the actual config section will open (.config xml form) 
+    Connect to the Test Server (test project as well) Modify the config and save it - Save Success 
+    Click to the "Upload" menu point and check the "Server Status" - "Server Status" is Active and every other information is correct as well
+    Click to the "File" menu point - "File" Sub Menu and Working area appears
+    Click to "Open File Browse" - FileDialog box appears
+    Select a file for open in the application (something text) and Click to "Open" - File opens in the application file section panel, and readable, everything is fine
+
+UI_Log Menu Point Test Log External Start Test
+ Nemes László
+ Tags: Functional Test, Non-Functional part as well, UI_Manual Test
+
+    Open Visual Studio @Version
+    Start the UI_TFS_ServerOperation project  
+    Click to the "Settings" menu point  
+    Click to the first Sub Menu "Open Current Config" - Next to the "Dashboard" on the working area the actual config section will open (.config xml form)  
+    Connect to the Test Server (test project as well) Modify the config and save it - Save Success 
+    Click to the "Upload" menu point and check the "Server Status" -  "Server Status" is Active and every other information is correct as well
+    Click to "Start" and upload something, if you need or want, go back to the "Settings" and add some PBI to the PBISection - Progress Circle bar reached 100% and Success Notification Message
+    Go to the "Log" Menu point - Menu point section appear with the Sub Menus and working part
+    Click to "Open Log External" - Actual log file opens in notepad in the center of the screen, and every information is correct with the upload and server connection
+    Check the Server - Upload Success, files are there
+
+UI_Log Menu Point Test Open Log Browse Test
+ Nemes László
+ Tags: Functional Test, Non-Functional part as well, UI_Manual Test
+
+    Open Visual Studio @Version  
+    Start the UI_TFS_ServerOperation project 
+    Click to the "Settings" menu point   
+    Click to the first Sub Menu "Open Current Config" - Next to the "Dashboard" on the working area the actual config section will open (.config xml form)   
+    Connect to the Test Server (test project as well) Modify the config and save it - Save Success
+    Click to the "Upload" menu point and check the "Server Status" - "Server Status" is Active and every other information is correct as well 
+    Click to "Start" and upload something, if you need or want, go back to the "Settings" and add some PBI to the PBISection - Progress Circle bar reached 100% and Success Notification message
+    Go to the "Log" Menu point - Menu point section appear with the Sub Menus and working part
+    Click to the "Open Log Browse" and "Open" the current log file - Warning message, about this is the current log file
+    Click to "Open Current Log" - Actual log opens and every information is fine
+    Check the server - Upload was fine
+    Change the settings (PBISection) and upload again like in this test before - Upload Success
+    Go back to the "Log" Menu - Menu point section appear with the Sub Menus and working part
+    Click to the "Open Log Browse" and load the previous log - Log loaded
+    Click to the "Open Log Browse" and load the current log - Warning message, about this is the current log file
+    Click to "Open Current Log" - Actual log opens and every information is fine
+
+UI_Log Menu Point Test Open Current Log
+ Nemes László
+ Tags: Functional Test, Non-Functional part as well, UI_Manual Test
+
+    Open Visual Studio @Version   
+    Start the UI_TFS_ServerOperation project  
+    Click to the "Settings" menu point   
+    Click to the first Sub Menu "Open Current Config" - Next to the "Dashboard" on the working area the actual config section will open (.config xml form)    
+    Connect to the Test Server (test project as well) Modify the config and save it - Save Success 
+    Click to the "Upload" menu point and check the "Server Status" - "Server Status" is Active and every other information is correct as well 
+    Click to "Start" and upload something, if you need or want, go back to the "Settings" and add some PBI to the PBISection - Progress Circle bar reached 100% and Success Notification message
+    Go to the "Log" Menu point - Menu point section appear with the Sub Menus and working part
+    Click to the "Open Current Log" - Actual log opens and every information is fine
+    Check the log file out of the application - Every information is the same
+    Check the Server - Upload was successful 
+
+UI_Info Menu Point Test Contact Test
+ Nemes László
+ Tags: Functional Test, Non-Functional part as well, UI_Manual Test
+
+    Open Visual Studio @Version 
+    Start the UI_TFS_ServerOperation project
+    Click to the "Info" menu point and go to the "Contact" Sub Menu - Information panel and Sub Menu appears, the informations are readable, and the "More" link is clickable
+    Click to "Send" Button - Error Notification - "Fill Every Field"
+    Fill every Field. but write a wrong mail address to the textbox - Error Notification - "Mail Address Format Problem"
+    Turn off, or delete the SMTP informations - SMTP Service is not working
+    Fill Every Field with good values, and click to "Send" - "Mail Problem (Check SMTP)" - Notification
+    Reset the SMTP Settings - SMTP Service is fine
+    Click to "Send" button - Mail has been sent
+    Check the Log - Mail has been sent 
+    Check the mail from the config setup, where the mail has been sent - Check the mail from the config setup, contact message has been sent to this address
+
+UI_Info Menu Point Test Bug Report Test
+ Nemes László
+ Tags: Functional Test, Non-Functional part as well, UI_Manual Test
+
+    Open Visual Studio @Version
+    Start the UI_TFS_ServerOperation project
+    Click to the "Info" menu point  and go to the "Bug Report" Sub Menu - Information panel and Sub Menu appears, the informations are readable, and the "More" link is clickable 
+    Click to "Report Send" Button - Error Notification - "Fill Every Field"
+    Fill every Field. and select a Subject Report Type, but write a wrong mail address to the textbox - Error Notification - "Mail Address Format Problem"
+    Turn off, or delete the SMTP informations - SMTP Service is not working
+    Fill Every Field with good values and select a Subject Type, then click to "Report Send" - "Mail Problem (Check SMTP)" - Notification
+    Reset the SMTP Settings - SMTP Service is fine 
+    Click to "Report Send" button - Mail has been sent
+    Check the Log - Mail has been sent  
+    Check the mail from the config setup, where the mail has been sent - Check the mail from the config setup, contact message has been sent to this address

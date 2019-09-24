@@ -3,7 +3,7 @@ using TFS_ServerOperation.CustomConfigSetup;
 
 namespace TFS_ServerOperation
 {
-    interface IServerInteraction
+    public interface IServerInteraction
     {
         void Archive(bool isUIRun, string currentTeamProject);
         bool Upload(bool isUIRun,PBI pbi, string AreaPath);

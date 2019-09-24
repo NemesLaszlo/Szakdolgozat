@@ -4,7 +4,7 @@ using System.Collections.Specialized;
 using System.Configuration;
 using System.IO;
 using System.Linq;
-using System.Reflection;
+using System.Text;
 using TFS_ServerOperation.CustomConfigSetup;
 
 namespace TFS_ServerOperation
@@ -76,20 +76,16 @@ namespace TFS_ServerOperation
         }
 
         /// <summary>
-        /// Get the E-Mail Address Where we would like to send a mail / message
+        /// Get the path to the up to date Month .csv file, to attach to the email (teamProject's file) or open.
         /// </summary>
         /// <returns></returns>
-       /* private string GetAddressToMail()
+        public string GetUpToDateFileCSV(string currentTeamProject)
         {
-            return ToMailAddress;
-        }*/
+            if (String.IsNullOrEmpty(currentTeamProject))
+            {
+                return "";
+            }
 
-        /// <summary>
-        /// Get the path to the up to date Month .csv file, to attach to the email (teamProject's file)
-        /// </summary>
-        /// <returns></returns>
-        private string GetUpToDateFileCSV(string currentTeamProject)
-        {
             string currentMonth = string.Empty;
             DateTime today = DateTime.Today;
             string upToDateMonth = today.Month.ToString();
@@ -106,6 +102,31 @@ namespace TFS_ServerOperation
         }
 
         /// <summary>
+        /// Get the current file content.
+        /// </summary>
+        /// <param name="path">File access path</param>
+        /// <returns></returns>
+        public string GetFileContent(string path)
+        {
+            string result = string.Empty;
+            try
+            {
+                using (var fs = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                using (var sr = new StreamReader(fs, Encoding.Default))
+                {
+                    result = sr.ReadToEnd();
+                    sr.Close();
+                    fs.Close();
+                }
+                return result;
+            }
+            catch (Exception)
+            {
+                return result;
+            }
+        }
+
+        /// <summary>
         /// Running from console.
         /// </summary>
         /// <param name="array">Console parameters</param>
@@ -119,7 +140,7 @@ namespace TFS_ServerOperation
                     var ServerOperation = Init_ServerOperation(log);
                     var MailSender = Init_MailSender(log);
 
-                    Upload_Process(false, ServerOperation, MailSender, log);
+                    Upload_Process(false, ServerOperation,log);
                     FileOperations writer = new FileOperations(log);
                     writer.WriteInCSV(CurrentTeamProjectName, ServerOperation.datasForFileModification);
                     MailSender.SendEmail(ToMailAddress, "Scheduled Month Uploaded File Period", "You can find the Result file in the Attachments.", GetUpToDateFileCSV(CurrentTeamProjectName));
@@ -141,9 +162,8 @@ namespace TFS_ServerOperation
         /// Upload the configuration data to the server. Return True if its done with no problem.
         /// </summary>
         /// <param name="ServerOperation">ServerOperationManager object</param>
-        /// <param name="MailSender">MailSender object</param>
         /// <param name="log">Custom Logger object</param>
-        public bool Upload_Process(bool isUIRun,ServerOperationManager ServerOperation, MailSender MailSender, Logger log)
+        public bool Upload_Process(bool isUIRun,ServerOperationManager ServerOperation, Logger log)
         {
             try
             {
