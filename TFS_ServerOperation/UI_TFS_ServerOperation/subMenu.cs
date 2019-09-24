@@ -493,7 +493,7 @@ namespace UI_TFS_ServerOperation
             }
             else
             {
-                Alert.AlertCreation("Actual Mont File Loaded!", AlertType.success);
+                Alert.AlertCreation("Actual Month File Loaded!", AlertType.success);
                 FileRichTextBox.Text = informationParser.GetFileContent(currentFile);
             }
         }

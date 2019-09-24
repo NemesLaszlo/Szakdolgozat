@@ -81,6 +81,11 @@ namespace TFS_ServerOperation
         /// <returns></returns>
         public string GetUpToDateFileCSV(string currentTeamProject)
         {
+            if (String.IsNullOrEmpty(currentTeamProject))
+            {
+                return "";
+            }
+
             string currentMonth = string.Empty;
             DateTime today = DateTime.Today;
             string upToDateMonth = today.Month.ToString();
