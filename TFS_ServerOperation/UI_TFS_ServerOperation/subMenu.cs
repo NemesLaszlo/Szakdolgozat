@@ -168,6 +168,8 @@ namespace UI_TFS_ServerOperation
                     ServerCollectionInfoLabel.Refresh();
                     ServerTeamProjectInfoLabel.Refresh();
                     UploadActiveButton.Refresh();
+                    FileRichTextBox.Clear();
+                    LogRichTextBox.Clear();
                 }
                 catch(Exception)
                 {
@@ -202,7 +204,7 @@ namespace UI_TFS_ServerOperation
             bool result = false;
             if (UploadActiveButton.Text.Equals("Active"))
             {
-                result = informationParser.Upload_Process(true, serverOperator, mailSender, log);
+                result = informationParser.Upload_Process(true, serverOperator,log);
                 FileOperations writer = new FileOperations(log);
                 writer.WriteInCSV(informationParser.CurrentTeamProjectName, serverOperator.datasForFileModification);
             }
@@ -257,25 +259,35 @@ namespace UI_TFS_ServerOperation
                 messageBox.ShowDialog();
                 if (messageBox.returnValue == true)
                 {
-                    Alert.AlertCreation("Yes", AlertType.info);
-                    bool result = informationParser.DeleteByIds_Process(deleteDatas, serverOperator, mailSender);
-                    if (result)
+                    if (UploadActiveButton.Text.Equals("Active"))
                     {
-                        for (int i = 0; i <= 100; ++i)
+                        Alert.AlertCreation("Yes", AlertType.info);
+                        bool result = informationParser.DeleteByIds_Process(deleteDatas, serverOperator, mailSender);
+                        if (result)
                         {
-                            OneElemDeleteBar.Value = i;
-                            OneElemDeleteBar.Update();
+                            for (int i = 0; i <= 100; ++i)
+                            {
+                                OneElemDeleteBar.Value = i;
+                                OneElemDeleteBar.Update();
+                            }
+                            Alert.AlertCreation("Delete Success by Id", AlertType.success);
                         }
-                        Alert.AlertCreation("Delete Success by Id", AlertType.success);
+                        else
+                        {
+                            Alert.AlertCreation("Only One WokrItem!", AlertType.error);
+                            OneElemDeleteBar.Value = 0;
+                            OneDeleteTextBox.Clear();
+                            return;
+                        }
+                        OneElemDeleteBar.Value = 0;
+                        OneDeleteTextBox.Clear();
                     }
                     else
                     {
-                        Alert.AlertCreation("WokrItem does not exist!", AlertType.error);
-                        OneElemDeleteBar.Value = 0;
+                        Alert.AlertCreation("Inactive Server Connection", AlertType.error);
+                        OneDeleteTextBox.Clear();
                         return;
-                    }
-                    OneElemDeleteBar.Value = 0;
-                    OneDeleteTextBox.Clear();
+                    }                
                 }
                 else
                 {
@@ -302,29 +314,44 @@ namespace UI_TFS_ServerOperation
                 {
                     deleteDatas.Add(str[i]);
                 }
+                if (deleteDatas.Count < 2)
+                {
+                    Alert.AlertCreation("Two or More WokrItem!", AlertType.error);
+                    MoreDeleteTextBox.Clear();
+                    return;
+                }
                 CustomMessageBox messageBox = new CustomMessageBox("Are you sure that you would like to Delete form the Server by Ids?");
                 messageBox.ShowDialog();
                 if (messageBox.returnValue == true)
                 {
-                    Alert.AlertCreation("Yes", AlertType.info);
-                    bool result = informationParser.DeleteByIds_Process(deleteDatas, serverOperator, mailSender);
-                    if (result)
+                    if (UploadActiveButton.Text.Equals("Active"))
                     {
-                        for (int i = 0; i <= 100; ++i)
+                        Alert.AlertCreation("Yes", AlertType.info);
+                        bool result = informationParser.DeleteByIds_Process(deleteDatas, serverOperator, mailSender);
+                        if (result)
                         {
-                            MoreElemDeleteBar.Value = i;
-                            MoreElemDeleteBar.Update();
+                            for (int i = 0; i <= 100; ++i)
+                            {
+                                MoreElemDeleteBar.Value = i;
+                                MoreElemDeleteBar.Update();
+                            }
+                            Alert.AlertCreation("Delete Success by Ids", AlertType.success);
                         }
-                        Alert.AlertCreation("Delete Success by Ids", AlertType.success);
+                        else
+                        {
+                            Alert.AlertCreation("WokrItems does not exist!", AlertType.error);
+                            MoreElemDeleteBar.Value = 0;
+                            return;
+                        }
+                        MoreElemDeleteBar.Value = 0;
+                        MoreDeleteTextBox.Clear();
                     }
                     else
                     {
-                        Alert.AlertCreation("WokrItems does not exist!", AlertType.error);
-                        MoreElemDeleteBar.Value = 0;
+                        Alert.AlertCreation("Inactive Server Connection", AlertType.error);
+                        MoreDeleteTextBox.Clear();
                         return;
-                    }
-                    MoreElemDeleteBar.Value = 0;
-                    MoreDeleteTextBox.Clear();
+                    }                
                 }
                 else
                 {
@@ -375,25 +402,34 @@ namespace UI_TFS_ServerOperation
                 messageBox.ShowDialog();
                 if (messageBox.returnValue == true)
                 {
-                    Alert.AlertCreation("Yes", AlertType.info);
-                    bool result = informationParser.DeleteFromFile_Process(deleteFile, serverOperator, mailSender);
-                    if (result)
+                    if (UploadActiveButton.Text.Equals("Active"))
                     {
-                        for (int i = 0; i <= 100; ++i)
+                        Alert.AlertCreation("Yes", AlertType.info);
+                        bool result = informationParser.DeleteFromFile_Process(deleteFile, serverOperator, mailSender);
+                        if (result)
                         {
-                            FileDeleteProgressBar.Value = i;
-                            FileDeleteProgressBar.Update();
+                            for (int i = 0; i <= 100; ++i)
+                            {
+                                FileDeleteProgressBar.Value = i;
+                                FileDeleteProgressBar.Update();
+                            }
+                            Alert.AlertCreation("Delete From File Success!", AlertType.success);
                         }
-                        Alert.AlertCreation("Delete From File Success!", AlertType.success);
+                        else
+                        {
+                            Alert.AlertCreation("Delete From File Failed!", AlertType.error);
+                            FileDeleteProgressBar.Value = 0;
+                            return;
+                        }
+                        FileDeleteProgressBar.Value = 0;
+                        SelctedFileTextBox.Visible = false;
                     }
                     else
                     {
-                        Alert.AlertCreation("Delete From File Failed!", AlertType.error);
-                        FileDeleteProgressBar.Value = 0;
+                        Alert.AlertCreation("Inactive Server Connection", AlertType.error);
+                        SelctedFileTextBox.Clear();
                         return;
                     }
-                    FileDeleteProgressBar.Value = 0;
-                    SelctedFileTextBox.Visible = false;
                 }
                 else
                 {
@@ -416,15 +452,23 @@ namespace UI_TFS_ServerOperation
             messageBox.ShowDialog();
             if (messageBox.returnValue == true)
             {
-                Alert.AlertCreation("Yes", AlertType.info);
-                informationParser.ServerContentDelete_Process(serverOperator, mailSender);
-                for (int i = 0; i <= 100; ++i)
+                if (UploadActiveButton.Text.Equals("Active"))
                 {
-                    AllServerDeleteProgressBar.Value = i;
-                    AllServerDeleteProgressBar.Update();
+                    Alert.AlertCreation("Yes", AlertType.info);
+                    informationParser.ServerContentDelete_Process(serverOperator, mailSender);
+                    for (int i = 0; i <= 100; ++i)
+                    {
+                        AllServerDeleteProgressBar.Value = i;
+                        AllServerDeleteProgressBar.Update();
+                    }
+                    Alert.AlertCreation("Delete Server Content Success!", AlertType.success);
+                    AllServerDeleteProgressBar.Value = 0;
                 }
-                Alert.AlertCreation("Delete Server Content Success!", AlertType.success);
-                AllServerDeleteProgressBar.Value = 0;
+                else
+                {
+                    Alert.AlertCreation("Inactive Server Connection", AlertType.error);
+                    return;
+                }
             }
             else
             {
@@ -437,45 +481,11 @@ namespace UI_TFS_ServerOperation
         // File section start -------------------------------------------------
 
         /// <summary>
-        /// Get the current Month file and give the path.
-        /// </summary>
-        /// <returns>Actual Month path as string.</returns>
-        private string GetCurrentMontFileForOpen(string currentTeamProject)
-        {
-            string currentMonth = string.Empty;
-            DateTime today = DateTime.Today;
-            string upToDateMonth = today.Month.ToString();
-
-            string[] files = Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory, "*.csv", SearchOption.AllDirectories);
-            foreach (var file in files)
-            {
-                if (file.Contains(upToDateMonth) && file.Contains(currentTeamProject))
-                {
-                    currentMonth = file;
-                }
-            }
-            return currentMonth;
-        }
-
-        private string GetFileContent(string path)
-        {
-            string result = string.Empty;
-            using (var fs = new FileStream(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
-            using (var sr = new StreamReader(fs, Encoding.Default))
-            {
-                result = sr.ReadToEnd();
-                sr.Close();
-                fs.Close();
-            }
-            return result;
-        }
-
-        /// <summary>
         /// Click event, Load the current "Month" created upload file.
         /// </summary>
         private void subOpenCurrentFile_Click(object sender, EventArgs e)
         {
-            string currentFile = GetCurrentMontFileForOpen(informationParser.CurrentTeamProjectName);
+            string currentFile = informationParser.GetUpToDateFileCSV(informationParser.CurrentTeamProjectName);
             if (String.IsNullOrEmpty(currentFile))
             {
                 Alert.AlertCreation("There is no Actual Monnt File!", AlertType.error);
@@ -483,8 +493,8 @@ namespace UI_TFS_ServerOperation
             }
             else
             {
-                Alert.AlertCreation("Actual Mont File Loaded!", AlertType.success);
-                FileRichTextBox.Text = GetFileContent(currentFile);
+                Alert.AlertCreation("Actual Month File Loaded!", AlertType.success);
+                FileRichTextBox.Text = informationParser.GetFileContent(currentFile);
             }
         }
 
@@ -501,7 +511,7 @@ namespace UI_TFS_ServerOperation
                 if ((fileStream = openFileDialog.OpenFile()) != null)
                 {
                     string strFileName = openFileDialog.FileName;
-                    FileRichTextBox.Text = GetFileContent(strFileName);
+                    FileRichTextBox.Text = informationParser.GetFileContent(strFileName);
                     Alert.AlertCreation("Load Success!", AlertType.success);
                 }
             }
@@ -552,13 +562,21 @@ namespace UI_TFS_ServerOperation
 
             if (openFileDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                if ((fileStream = openFileDialog.OpenFile()) != null)
+                try
                 {
-                    string strFileName = openFileDialog.FileName;
-                    string fileText = System.IO.File.ReadAllText(strFileName);
-                    FileRichTextBox.Text = fileText;
-                    Alert.AlertCreation("Load Success!", AlertType.success);
+                    if ((fileStream = openFileDialog.OpenFile()) != null)
+                    {
+                        string strFileName = openFileDialog.FileName;
+                        string fileText = informationParser.GetFileContent(strFileName);
+                        LogRichTextBox.Text = fileText;
+                        Alert.AlertCreation("Load Success!", AlertType.success);
+                    }
                 }
+                catch (Exception)
+                {
+                    Alert.AlertCreation("This is the current Log!", AlertType.warning);
+                }
+                
             }
         }
 
@@ -632,7 +650,7 @@ namespace UI_TFS_ServerOperation
                     }
                     else
                     {
-                        Alert.AlertCreation("Mail Problem.", AlertType.error);
+                        Alert.AlertCreation("Mail Problem. (Check SMTP)", AlertType.error);
                         return;
                     }
                 }
