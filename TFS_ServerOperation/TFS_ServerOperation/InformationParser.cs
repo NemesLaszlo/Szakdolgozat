@@ -169,7 +169,6 @@ namespace TFS_ServerOperation
             {
                 ServerOperation.datasForFileModification.Clear();
                 ServerOperation.Archive(isUIRun, CurrentTeamProjectName);
-                FileOperations writer = new FileOperations(log);
                 PbisConfigSection myPBISection = ConfigurationManager.GetSection("PBICollectionSection") as PbisConfigSection;
                 for (int i = 0; i < myPBISection.Members.Count; i++)
                 {
