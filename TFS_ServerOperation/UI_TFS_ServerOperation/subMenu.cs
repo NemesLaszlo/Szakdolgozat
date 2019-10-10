@@ -30,16 +30,27 @@ namespace UI_TFS_ServerOperation
             InitializeComponent();
             if (Program.isInDesignMode()) return;
 
-            // Controller Init
-            informationParser = new InformationParser();
-            log = informationParser.Init_Log();
-            serverOperator = informationParser.Init_ServerOperation(log);
-            mailSender = informationParser.Init_MailSender(log);
+            try
+            {
+                // Controller Init
+                informationParser = new InformationParser();
+                log = informationParser.Init_Log();
+                serverOperator = informationParser.Init_ServerOperation(log);
+                mailSender = informationParser.Init_MailSender(log);
 
-            // Server information setting to the Upload page
-            ServerCollectionInfoLabel.Text = informationParser.CurrentTfsCollectionName;
-            ServerTeamProjectInfoLabel.Text = informationParser.CurrentTeamProjectName;
-
+                // Server information setting to the Upload page
+                ServerCollectionInfoLabel.Text = informationParser.CurrentTfsCollectionName;
+                ServerTeamProjectInfoLabel.Text = informationParser.CurrentTeamProjectName;
+            }
+            catch (Exception)
+            {
+                ServerCollectionInfoLabel.Text = "Fail";
+                ServerTeamProjectInfoLabel.Text = "Fail";
+                UploadActiveButton.Text = "Inactive";
+                UploadActiveButton.ForeColor = Color.Red;
+                Alert.AlertCreation("Configure your Settings!", AlertType.info);
+            }
+            
             //BarLabel init part
             UploadBar.LabelVisible = true;
             OneElemDeleteBar.LabelVisible = true;
